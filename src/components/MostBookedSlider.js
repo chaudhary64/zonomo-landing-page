@@ -1,4 +1,3 @@
-// app/components/MostBookedSlider.js
 "use client";
 
 import Image from "next/image";
