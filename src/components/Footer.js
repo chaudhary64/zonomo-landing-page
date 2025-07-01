@@ -14,9 +14,9 @@ export default function Footer() {
         <div>
           <div className="flex items-center space-x-2 mb-4">
             <div className="bg-black text-white text-xs font-bold px-2 py-1 rounded">
-              UC
+              Z
             </div>
-            <span className="font-semibold text-lg">Urban Company</span>
+            <span className="font-semibold text-lg">Zonomo</span>
           </div>
           <div>
             <h3 className="font-semibold mb-2">Company</h3>
