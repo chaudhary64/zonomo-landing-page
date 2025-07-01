@@ -130,6 +130,7 @@ const Silk = ({
       }}
       camera={{ position: [0, 0, 1] }}
       style={{ width: "100%", height: "100%" }}
+      className="rounded-lg"
     >
       <SilkPlane ref={meshRef} uniforms={uniforms} />
     </Canvas>
