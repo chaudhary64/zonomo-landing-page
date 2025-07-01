@@ -1,4 +1,11 @@
 // components/Footer.js
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-50 text-gray-700">
@@ -87,44 +94,44 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-2">Social links</h3>
           <div className="flex space-x-3 mb-4">
-            <a href="#">
-              <img src="/icons/twitter.svg" alt="Twitter" className="h-6 w-6" />
+            <a
+              href="#"
+              className="text-gray-700 hover:text-blue-500 transition-colors"
+            >
+              <FaTwitter className="h-6 w-6" />
             </a>
-            <a href="#">
-              <img
-                src="/icons/facebook.svg"
-                alt="Facebook"
-                className="h-6 w-6"
-              />
+            <a
+              href="#"
+              className="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              <FaFacebookF className="h-6 w-6" />
             </a>
-            <a href="#">
-              <img
-                src="/icons/instagram.svg"
-                alt="Instagram"
-                className="h-6 w-6"
-              />
+            <a
+              href="#"
+              className="text-gray-700 hover:text-pink-500 transition-colors"
+            >
+              <FaInstagram className="h-6 w-6" />
             </a>
-            <a href="#">
-              <img
-                src="/icons/linkedin.svg"
-                alt="LinkedIn"
-                className="h-6 w-6"
-              />
+            <a
+              href="#"
+              className="text-gray-700 hover:text-blue-700 transition-colors"
+            >
+              <FaLinkedinIn className="h-6 w-6" />
             </a>
           </div>
-          <div className="space-y-2">
+          <div className="flex flex-col space-y-1.5">
             <a href="#">
               <img
-                src="/badges/appstore.png"
+                src="/badges/ios-donwload.webp"
                 alt="App Store"
-                className="h-10"
+                className="h-7"
               />
             </a>
             <a href="#">
               <img
-                src="/badges/googleplay.png"
+                src="/badges/android-download.webp"
                 alt="Google Play"
-                className="h-10"
+                className="h-7"
               />
             </a>
           </div>
