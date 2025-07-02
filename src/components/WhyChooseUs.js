@@ -220,7 +220,7 @@ function WhyChooseUs() {
             <p className="mt-5 text-base text-gray-600 font-pj">
               Simple 3-step booking process. Choose your service, select a
               professional, and schedule at your convenience. Book in minutes,
-              not hours.
+              not hours
             </p>
           </div>
           <div className="md:p-8 lg:p-14 md:border-t md:border-gray-200">
