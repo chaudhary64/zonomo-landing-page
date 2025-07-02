@@ -222,7 +222,7 @@ function Scene() {
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full min-h-screen bg-white overflow-hidden flex items-center justify-center px-4 sm:px-8 py-12">
+    <div className="relative w-full min-h-[calc(100vh-4rem)] bg-white overflow-hidden flex items-center justify-center px-4 sm:px-8 pt-8 pb-12">
       {/* Background Canvas */}
       <div className="absolute inset-0 z-0 opacity-80">
         <Canvas
@@ -234,13 +234,13 @@ export default function HeroSection() {
         </Canvas>
       </div>
 
-      <div className="relative z-10 w-full max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
+      <div className="relative z-10 w-full max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col justify-center space-y-8"
+          className="flex flex-col justify-center space-y-6"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -257,14 +257,13 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl sm:text-6xl font-bold text-gray-900 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
           >
             Revolutionizing <br />
             <span className="relative inline-block">
               <span className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
                 Urban Services
               </span>
-              <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-200/70 -rotate-1 -z-0"></span>
             </span>
           </motion.h1>
 
@@ -272,7 +271,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-gray-700 text-lg max-w-lg"
+            className="text-gray-700 text-base sm:text-lg max-w-lg leading-relaxed"
           >
             From doorstep repairs to healthcare, professional services to
             personal care – all services on one intelligent platform. Connect
@@ -284,24 +283,24 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0"
+            className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 pt-2"
           >
-            <button className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+            <button className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
               <span className="relative z-10">Get Started</span>
               <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </button>
 
-            <button className="relative overflow-hidden group bg-white text-gray-800 px-8 py-4 rounded-xl font-semibold border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300">
+            <button className="relative overflow-hidden group bg-white text-gray-800 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300">
               <span className="relative z-10">How It Works</span>
               <span className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </button>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4"
           >
             {[
               { label: "Active Users", value: "2.5M+", color: "text-blue-600" },
@@ -320,13 +319,15 @@ export default function HeroSection() {
               <motion.div
                 key={i}
                 whileHover={{ y: -5 }}
-                // className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-sm border border-gray-100"
+                className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-sm border border-gray-100"
               >
-                {/* <p className={`text-2xl font-bold ${item.color}`}>{item.value}</p>
-              <p className="text-sm text-gray-500 mt-1">{item.label}</p> */}
+                <p className={`text-2xl font-bold ${item.color}`}>
+                  {item.value}
+                </p>
+                <p className="text-sm text-gray-500 mt-1">{item.label}</p>
               </motion.div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Right Image Grid */}
@@ -336,7 +337,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative"
         >
-          <div className="grid grid-cols-2 grid-rows-3 gap-4 h-[550px]">
+          <div className="grid grid-cols-2 grid-rows-3 gap-3 h-[500px] sm:h-[550px]">
             {/* Large Image - Top Left, spans 2 rows */}
             <motion.div
               whileHover={{ scale: 1.03 }}
