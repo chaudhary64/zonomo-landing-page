@@ -270,7 +270,7 @@ export default function HeroSection() {
       </Canvas>
     </div>
 
-    <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div className="relative z-10 w-full max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
       {/* Left Content */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -300,7 +300,7 @@ export default function HeroSection() {
             <span className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
               Urban Services
             </span>
-            {/* <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-200/70 -rotate-1 -z-0"></span> */}
+            <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-200/70 -rotate-1 -z-0"></span>
           </span>
         </motion.h1>
 
