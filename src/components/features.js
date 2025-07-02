@@ -46,25 +46,159 @@ const AIBrainIcon = ({ className = "w-16 h-16" }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
+    {/* Central Processing Unit */}
+    <rect
+      x="35"
+      y="35"
+      width="30"
+      height="30"
+      rx="6"
+      fill="currentColor"
+      opacity="0.9"
+    />
+
+    {/* Neural Network Nodes */}
+    <circle cx="15" cy="25" r="4" fill="currentColor" opacity="0.8" />
+    <circle cx="15" cy="50" r="4" fill="currentColor" opacity="0.8" />
+    <circle cx="15" cy="75" r="4" fill="currentColor" opacity="0.8" />
+
+    <circle cx="85" cy="25" r="4" fill="currentColor" opacity="0.8" />
+    <circle cx="85" cy="50" r="4" fill="currentColor" opacity="0.8" />
+    <circle cx="85" cy="75" r="4" fill="currentColor" opacity="0.8" />
+
+    {/* Connection Lines */}
     <path
-      d="M50 10C35 10 25 20 25 35C25 40 26 44 28 48C30 52 33 55 37 57C40 59 44 60 48 60H52C56 60 60 59 63 57C67 55 70 52 72 48C74 44 75 40 75 35C75 20 65 10 50 10Z"
-      fill="url(#brainGradient)"
-      stroke="#3B82F6"
+      d="M19 25L31 40M19 50L31 50M19 75L31 60"
+      stroke="currentColor"
       strokeWidth="2"
+      opacity="0.7"
     />
-    <circle cx="42" cy="35" r="3" fill="#1D4ED8" />
-    <circle cx="58" cy="35" r="3" fill="#1D4ED8" />
     <path
-      d="M30 45L70 45M35 50L65 50M40 55L60 55"
-      stroke="#60A5FA"
-      strokeWidth="1.5"
-      strokeLinecap="round"
+      d="M69 40L81 25M69 50L81 50M69 60L81 75"
+      stroke="currentColor"
+      strokeWidth="2"
+      opacity="0.7"
     />
+
+    {/* CPU Details */}
+    <rect
+      x="40"
+      y="40"
+      width="5"
+      height="5"
+      fill="currentColor"
+      opacity="0.6"
+    />
+    <rect
+      x="47"
+      y="40"
+      width="5"
+      height="5"
+      fill="currentColor"
+      opacity="0.6"
+    />
+    <rect
+      x="54"
+      y="40"
+      width="5"
+      height="5"
+      fill="currentColor"
+      opacity="0.6"
+    />
+    <rect
+      x="40"
+      y="47"
+      width="5"
+      height="5"
+      fill="currentColor"
+      opacity="0.6"
+    />
+    <rect
+      x="47"
+      y="47"
+      width="5"
+      height="5"
+      fill="currentColor"
+      opacity="0.6"
+    />
+    <rect
+      x="54"
+      y="47"
+      width="5"
+      height="5"
+      fill="currentColor"
+      opacity="0.6"
+    />
+    <rect
+      x="40"
+      y="54"
+      width="5"
+      height="5"
+      fill="currentColor"
+      opacity="0.6"
+    />
+    <rect
+      x="47"
+      y="54"
+      width="5"
+      height="5"
+      fill="currentColor"
+      opacity="0.6"
+    />
+    <rect
+      x="54"
+      y="54"
+      width="5"
+      height="5"
+      fill="currentColor"
+      opacity="0.6"
+    />
+
+    {/* Data Flow Indicators */}
+    <path
+      d="M50 15L50 30"
+      stroke="currentColor"
+      strokeWidth="3"
+      strokeLinecap="round"
+      opacity="0.8"
+    />
+    <path
+      d="M50 70L50 85"
+      stroke="currentColor"
+      strokeWidth="3"
+      strokeLinecap="round"
+      opacity="0.8"
+    />
+
+    {/* Arrow indicators */}
+    <path
+      d="M47 18L50 15L53 18"
+      stroke="currentColor"
+      strokeWidth="2"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      opacity="0.8"
+    />
+    <path
+      d="M47 82L50 85L53 82"
+      stroke="currentColor"
+      strokeWidth="2"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      opacity="0.8"
+    />
+
+    {/* Glowing effect */}
     <defs>
-      <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.1" />
-        <stop offset="100%" stopColor="#1D4ED8" stopOpacity="0.3" />
-      </linearGradient>
+      <filter id="aiGlow">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+        <feMerge>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
     </defs>
   </svg>
 );
@@ -82,20 +216,31 @@ const MLIcon = ({ className = "w-16 h-16" }) => (
       cy="50"
       r="30"
       fill="none"
-      stroke="#10B981"
+      stroke="currentColor"
       strokeWidth="2"
       strokeDasharray="4 4"
+      opacity="0.7"
     />
-    <circle cx="50" cy="30" r="8" fill="#10B981" />
-    <circle cx="70" cy="50" r="6" fill="#059669" />
-    <circle cx="50" cy="70" r="7" fill="#34D399" />
-    <circle cx="30" cy="50" r="5" fill="#6EE7B7" />
+    <circle cx="50" cy="30" r="8" fill="currentColor" />
+    <circle cx="70" cy="50" r="6" fill="currentColor" opacity="0.8" />
+    <circle cx="50" cy="70" r="7" fill="currentColor" opacity="0.9" />
+    <circle cx="30" cy="50" r="5" fill="currentColor" opacity="0.6" />
     <path
       d="M50 30L70 50L50 70L30 50L50 30"
-      stroke="#10B981"
-      strokeWidth="1.5"
+      stroke="currentColor"
+      strokeWidth="2"
       fill="none"
+      opacity="0.8"
     />
+    <defs>
+      <filter id="mlGlow">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+        <feMerge>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
   </svg>
 );
 
@@ -109,23 +254,46 @@ const PredictiveIcon = ({ className = "w-16 h-16" }) => (
   >
     <path
       d="M10 80L25 65L40 70L55 45L70 50L85 25"
-      stroke="#8B5CF6"
+      stroke="currentColor"
       strokeWidth="3"
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <circle cx="85" cy="25" r="4" fill="#8B5CF6" />
+    <circle cx="85" cy="25" r="4" fill="currentColor" />
     <path
       d="M75 15L85 25L75 35"
-      stroke="#8B5CF6"
+      stroke="currentColor"
       strokeWidth="2"
       fill="none"
       strokeLinecap="round"
     />
-    <rect x="8" y="78" width="4" height="4" fill="#A78BFA" />
-    <rect x="23" y="63" width="4" height="4" fill="#A78BFA" />
-    <rect x="38" y="68" width="4" height="4" fill="#A78BFA" />
+    <rect x="8" y="78" width="4" height="4" fill="currentColor" opacity="0.8" />
+    <rect
+      x="23"
+      y="63"
+      width="4"
+      height="4"
+      fill="currentColor"
+      opacity="0.8"
+    />
+    <rect
+      x="38"
+      y="68"
+      width="4"
+      height="4"
+      fill="currentColor"
+      opacity="0.8"
+    />
+    <defs>
+      <filter id="predictiveGlow">
+        <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
+        <feMerge>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
   </svg>
 );
 
@@ -144,18 +312,35 @@ const NLPIcon = ({ className = "w-16 h-16" }) => (
       height="40"
       rx="8"
       fill="none"
-      stroke="#F59E0B"
+      stroke="currentColor"
       strokeWidth="2"
     />
     <path
       d="M30 45H70M30 55H65"
-      stroke="#F59E0B"
-      strokeWidth="2"
+      stroke="currentColor"
+      strokeWidth="2.5"
       strokeLinecap="round"
+      opacity="0.9"
     />
-    <circle cx="25" cy="25" r="3" fill="#FBBF24" />
-    <circle cx="35" cy="20" r="2" fill="#F59E0B" />
-    <circle cx="75" cy="22" r="2.5" fill="#FCD34D" />
+    <circle cx="25" cy="25" r="3" fill="currentColor" opacity="0.8" />
+    <circle cx="35" cy="20" r="2" fill="currentColor" opacity="0.9" />
+    <circle cx="75" cy="22" r="2.5" fill="currentColor" opacity="0.7" />
+    <path
+      d="M22 25L28 30M33 20L37 25M72 22L78 27"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      opacity="0.6"
+    />
+    <defs>
+      <filter id="nlpGlow">
+        <feGaussianBlur stdDeviation="1" result="coloredBlur" />
+        <feMerge>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
   </svg>
 );
 
