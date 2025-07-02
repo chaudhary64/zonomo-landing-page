@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -187,7 +187,7 @@ function FloatingParticles() {
   );
 }
 
-function FloatingTextIcon({ emoji = '🧺', position = [0, 0, 0], size = 1 }) {
+function FloatingTextIcon({ emoji = "🧺", position = [0, 0, 0], size = 1 }) {
   const ref = useRef();
 
   useFrame(({ clock }) => {
@@ -234,23 +234,19 @@ function Scene() {
         color="#ec4899"
       />
       <pointLight position={[0, -10, 0]} intensity={0.3} color="#06b6d4" />
-      {/* Multiple floating objects */}
-      {/* <FloatingIcosahedron position={[4, 1, 0]} scale={1.2} color="#8b5cf6" /> */}
-      {/* <FloatingIcosahedron position={[6, -2, -2]} scale={0.8} color="#a855f7" /> */}
-      <FloatingTorus position={[2, 2, -1]} scale={0.7} />
-      {/* <FloatingOctahedron position={[5, -1, 2]} scale={0.9} /> */}
-      {/* <FloatingCube position={[7, 1, -3]} scale={0.6} /> */}
+      {/* Multiple floating objects - responsive positioning */}
+      <FloatingTorus position={[2, 2, -1]} scale={0.6} />
       <FloatingParticles />
-      <FloatingTextIcon emoji="🧺" position={[-5, 2, -1]} size={1.5} />
-      <FloatingTextIcon emoji="🧼" position={[-5.5, 0, -1]} size={1.3} />
+      <FloatingTextIcon emoji="🧺" position={[-4, 2, -1]} size={1.2} />
+      <FloatingTextIcon emoji="🧼" position={[-4.5, 0, -1]} size={1} />
 
-      <FloatingTextIcon emoji="🧹" position={[5, 2, -1]} size={1.4} />
-      <FloatingTextIcon emoji="🛁" position={[5.5, 0, -1]} size={1.2} />
+      <FloatingTextIcon emoji="🧹" position={[4, 2, -1]} size={1.1} />
+      <FloatingTextIcon emoji="🛁" position={[4.5, 0, -1]} size={0.9} />
 
       <OrbitControls
         enableZoom={false}
         autoRotate
-        autoRotateSpeed={0.5}
+        autoRotateSpeed={0.3}
         enablePan={false}
       />
     </>
@@ -258,41 +254,133 @@ function Scene() {
 }
 
 export default function HeroSection() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        mobileMenuOpen &&
+        !event.target.closest("nav") &&
+        !event.target.closest("[data-mobile-menu]")
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [mobileMenuOpen]);
+
+  // Close mobile menu on escape key
+  useEffect(() => {
+    const handleEscapeKey = (event) => {
+      if (event.key === "Escape" && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscapeKey);
+    return () => document.removeEventListener("keydown", handleEscapeKey);
+  }, [mobileMenuOpen]);
+
   return (
     <div className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-black via-gray-900 to-purple-950">
       {/* Animated background overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-950/50 to-indigo-950/60 z-0"></div>
 
       {/* Navigation */}
-      <nav className="relative z-20 px-8 py-6 flex justify-between items-center backdrop-blur-sm bg-black/20">
-        <div className="cursor-pointer text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+      <nav className="relative z-30 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex justify-between items-center backdrop-blur-sm bg-black/20">
+        <div className="cursor-pointer text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
           Zonomo
         </div>
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden lg:flex space-x-6 xl:space-x-8">
           {["Services", "How It Works", "About", "Cities"].map((item) => (
             <Link
               key={item}
               href="#"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
+              className="text-gray-400 hover:text-white transition-colors duration-300 text-sm xl:text-base"
             >
               {item}
             </Link>
           ))}
         </div>
-        <div className="flex space-x-4">
-          <button className="text-gray-400 hover:text-white transition-colors duration-300">
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          <button className="text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base">
             Login
           </button>
-          <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+          <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 sm:px-6 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-purple-500/25 text-sm sm:text-base">
             Sign up
           </button>
+
+          {/* Mobile menu button */}
+          <button
+            className="lg:hidden text-white p-2 hover:bg-white/10 rounded-md transition-colors duration-200"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {mobileMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
         </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-full left-0 right-0 z-40 bg-gradient-to-br from-purple-900/95 via-violet-900/95 to-indigo-900/95 backdrop-blur-md lg:hidden border-t border-purple-400/30 shadow-xl shadow-purple-500/20"
+            data-mobile-menu
+          >
+            <div className="px-4 py-6 space-y-4">
+              {["Services", "How It Works", "About", "Cities"].map((item) => (
+                <Link
+                  key={item}
+                  href="#"
+                  className="block text-purple-100 hover:text-white hover:bg-purple-800/30 transition-all duration-300 text-lg py-3 px-3 rounded-lg border-b border-purple-400/20 last:border-b-0"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </nav>
 
       {/* Enhanced 3D Canvas */}
       <div className="absolute inset-0 z-10">
         <Canvas
-          camera={{ position: [0, 0, 8], fov: 60 }}
+          camera={{ position: [0, 0, 8], fov: 70 }}
           gl={{ alpha: true, antialias: true }}
           dpr={[1, 2]}
         >
@@ -301,12 +389,12 @@ export default function HeroSection() {
       </div>
 
       {/* Content with enhanced styling */}
-      <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-8 max-w-4xl mx-auto">
+      <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
         >
           Your Urban Lifestyle <br />
           <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
@@ -318,7 +406,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-2xl text-purple-200 mb-6 font-light"
+          className="text-lg sm:text-xl md:text-2xl text-purple-200 mb-4 sm:mb-6 font-light"
         >
           AI-powered services at your fingertips
         </motion.p>
@@ -327,7 +415,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg text-gray-400 mb-10 leading-relaxed"
+          className="text-sm sm:text-base lg:text-lg text-gray-400 mb-6 sm:mb-8 lg:mb-10 leading-relaxed max-w-3xl"
         >
           Zonomo is transforming urban living with intelligent, voice-enabled
           services - from home repairs and cleaning to beauty treatments and
@@ -338,12 +426,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
+          className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6 w-full justify-center items-center"
         >
-          <button className="cursor-pointer bg-gradient-to-r from-purple-900 via-gray-600 to-cyan-600 text-white px-10 py-4 rounded-xl hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 font-semibold">
+          <button className="cursor-pointer bg-gradient-to-r from-purple-900 via-gray-600 to-cyan-600 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 font-semibold text-sm sm:text-base w-full sm:w-auto">
             Try Zonomo AI
           </button>
-          <button className="border-2 border-purple-500/50 text-purple-200 px-10 py-4 rounded-xl hover:bg-purple-900/30 hover:border-purple-400 transition-all duration-300 backdrop-blur-sm cursor-pointer">
+          <button className="border-2 border-purple-500/50 text-purple-200 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl hover:bg-purple-900/30 hover:border-purple-400 transition-all duration-300 backdrop-blur-sm cursor-pointer text-sm sm:text-base w-full sm:w-auto">
             See how it works
           </button>
         </motion.div>
@@ -351,16 +439,16 @@ export default function HeroSection() {
 
       {/* Enhanced floating elements */}
       <div
-        className="absolute bottom-10 left-10 w-20 h-20 border border-purple-500/30 rounded-full animate-spin"
+        className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 border border-purple-500/30 rounded-full animate-spin"
         style={{ animationDuration: "20s" }}
       ></div>
-      <div className="absolute top-20 right-20 w-16 h-16 border border-pink-500/30 rounded-full animate-ping"></div>
-      <div className="absolute bottom-32 right-32 w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full animate-pulse"></div>
+      <div className="absolute top-16 sm:top-20 right-6 sm:right-20 w-10 sm:w-12 lg:w-16 h-10 sm:h-12 lg:h-16 border border-pink-500/30 rounded-full animate-ping"></div>
+      <div className="absolute bottom-20 sm:bottom-32 right-16 sm:right-32 w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full animate-pulse"></div>
 
       {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
       <div
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-pink-600/10 rounded-full blur-3xl animate-pulse"
+        className="absolute bottom-1/4 right-1/4 w-40 sm:w-56 md:w-72 lg:w-80 h-40 sm:h-56 md:h-72 lg:h-80 bg-pink-600/10 rounded-full blur-3xl animate-pulse"
         style={{ animationDelay: "1s" }}
       ></div>
     </div>
