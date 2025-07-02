@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <HeroSection/>
       {/* <Slider/> */}
-      <Nav />
+      {/* <Nav /> */}
       <MostBookedSlider />
       <SilkPlaneWrapper />
       <Footer />
