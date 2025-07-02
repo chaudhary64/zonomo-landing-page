@@ -7,6 +7,7 @@ import SilkPlaneWrapper from "@/components/SilkPlaneWrapper";
 import HowitWorks from "./../components/HowitWorks";
 import WhyChooseUs from "./../components/WhyChooseUs";
 import FAQ from "@/components/Faq";
+import AIFeatures from "@/components/features";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       {/* <Slider/> */}
       {/* <MostBookedSlider /> */}
       <WhyChooseUs />
+      <AIFeatures />
       <HowitWorks />
       <FAQ />
       <SilkPlaneWrapper />
