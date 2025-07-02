@@ -1,8 +1,31 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP, DrawSVGPlugin, ScrollTrigger);
 
 function HowitWorks() {
+  useGSAP(() => {
+    gsap.set("#how-it-works svg path", {
+      drawSVG: "0%",
+    });
+
+    gsap.to("#how-it-works svg path", {
+      drawSVG: "100%",
+      scrollTrigger: {
+        trigger: "#how-it-works",
+        start: "top 90%",
+        end: "bottom 40%",
+        scrub: 1,
+        // markers: true, // Enable markers for debugging
+      },
+    });
+  }, []);
+
   return (
     <section className="py-10 bg-white sm:py-16 lg:py-20">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -16,15 +39,23 @@ function HowitWorks() {
             steps.
           </p>
         </div>
-        <div className="relative mt-12 lg:mt-20">
+        <div id="how-it-works" className="relative mt-12 lg:mt-20">
           <div className="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
-            <Image
+            <svg
               className="w-full"
-              src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg"
-              alt="Curved dotted line"
-              width={800}
-              height={50}
-            />
+              viewBox="0 0 800 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M50 25 Q200 5 400 25 T750 25"
+                stroke="#D1D5DB"
+                strokeWidth="2"
+                strokeDasharray="8,8"
+                fill="none"
+                strokeLinecap="round"
+              />
+            </svg>
           </div>
           <div className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
             <div>
