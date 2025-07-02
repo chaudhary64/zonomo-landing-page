@@ -97,13 +97,13 @@ export default function MostBookedSlider() {
         >
           {services.map((service, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white shadow border border-gray-200 rounded-xl overflow-hidden">
+              <div className="bg-white shadow border border-gray-200 rounded-xl overflow-hidden hover:bg-gray-200">
                 <Image
                   src={service.img}
                   alt={service.title}
                   width={400}
                   height={300}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-64 object-cover cursor-pointer"
                 />
                 <div className="p-6">
                   <p className="font-medium text-base mb-3">{service.title}</p>
