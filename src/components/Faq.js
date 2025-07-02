@@ -104,7 +104,7 @@ const FAQ = () => {
           >
             Got Questions?
             <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
-              We've Got Answers
+              We&apos;ve Got Answers
             </span>
           </motion.h2>
 
@@ -115,7 +115,7 @@ const FAQ = () => {
             transition={{ duration: 0.3, delay: 0.15 }}
             className="mt-6 text-lg leading-relaxed text-gray-600"
           >
-            Everything you need to know about Zonomo's services and how we make
+            Everything you need to know about Zonomo&apos;s services and how we make
             urban services more accessible and convenient.
           </motion.p>
         </motion.div>
