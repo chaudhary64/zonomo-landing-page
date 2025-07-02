@@ -162,7 +162,7 @@ function WhyChooseUs() {
             </svg>
 
             <h3 className="mt-8 text-xl font-bold text-gray-900 font-pj">
-              Genetic AI Assistance
+              Smart AI Assistant
             </h3>
 
             <p className="mt-5 text-base text-gray-600 font-pj">
