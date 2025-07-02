@@ -1,16 +1,17 @@
-"use client"
+"use client";
 import React from "react";
 function HowitWorks() {
   return (
-    <section className="py-10 bg-white sm:py-16 lg:py-24">
+    <section className="py-10 bg-white sm:py-16 lg:py-20">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
             How does it work?
           </h2>
           <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis.
+            Getting professional services has never been easier. Book trusted
+            professionals for all your home service needs in just three simple
+            steps.
           </p>
         </div>
         <div className="relative mt-12 lg:mt-20">
@@ -27,11 +28,12 @@ function HowitWorks() {
                 <span className="text-xl font-semibold text-gray-700"> 1 </span>
               </div>
               <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">
-                Create a free account
+                Choose Your Service
               </h3>
               <p className="mt-4 text-base text-gray-600">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
+                Browse through our wide range of home services - from AC repairs
+                and cleaning to healthcare and personal care. Select what you
+                need.
               </p>
             </div>
             <div>
@@ -39,11 +41,12 @@ function HowitWorks() {
                 <span className="text-xl font-semibold text-gray-700"> 2 </span>
               </div>
               <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">
-                Build your website
+                Book Trusted Professionals
               </h3>
               <p className="mt-4 text-base text-gray-600">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
+                Get instant quotes from verified professionals near you. Compare
+                prices, read reviews, and book the best service provider for
+                your needs.
               </p>
             </div>
             <div>
@@ -51,11 +54,12 @@ function HowitWorks() {
                 <span className="text-xl font-semibold text-gray-700"> 3 </span>
               </div>
               <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">
-                Release &amp; Launch
+                Enjoy Quality Service
               </h3>
               <p className="mt-4 text-base text-gray-600">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
+                Relax while our professionals handle your service needs. Track
+                progress in real-time and enjoy hassle-free, quality service at
+                your doorstep.
               </p>
             </div>
           </div>

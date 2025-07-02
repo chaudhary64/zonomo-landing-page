@@ -8,7 +8,7 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-gray-50 text-gray-700">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+      <div className="max-w-7xl mx-auto px-6 py-10 sm:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
         {/* Logo + Company Section */}
         <div>
           <div className="flex items-center space-x-2 mb-4">

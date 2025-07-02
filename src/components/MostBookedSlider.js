@@ -47,7 +47,7 @@ const services = [
 
 export default function MostBookedSlider() {
   return (
-    <div className="px-6 py-8">
+    <div className="px-6 py-10 sm:py-16 lg:py-20">
       <h2 className="text-3xl font-bold mb-6">Most booked services</h2>
       <div className="relative">
         {/* Custom Navigation Buttons */}

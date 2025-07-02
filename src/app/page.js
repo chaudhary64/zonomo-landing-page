@@ -13,7 +13,7 @@ export default function Home() {
       <Nav />
       <HeroSection/>
       {/* <Slider/> */}
-      <MostBookedSlider />
+      {/* <MostBookedSlider /> */}
       <WhyChooseUs/>
       <HowitWorks/>
       <SilkPlaneWrapper />

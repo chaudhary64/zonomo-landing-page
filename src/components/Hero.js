@@ -253,11 +253,7 @@ function Scene() {
 
 export default function HeroSection() {
  return (
-  <div className="relative w-full min-h-screen bg-gradient-to-br from-white to-indigo-50 overflow-hidden flex items-center justify-center px-4 sm:px-8 py-12">
-    {/* Animated Gradient Background */}
-    <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute -top-1/2 -left-1/4 w-[150%] h-[150%] bg-gradient-to-r from-blue-100/30 via-purple-100/20 to-pink-100/30 animate-[spin_30s_linear_infinite]"></div>
-    </div>
+  <div className="relative w-full min-h-screen bg-white overflow-hidden flex items-center justify-center px-4 sm:px-8 py-12">
 
     {/* Background Canvas */}
     <div className="absolute inset-0 z-0 opacity-80">
