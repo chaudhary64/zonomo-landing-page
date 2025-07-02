@@ -40,30 +40,6 @@ const faqData = [
     answer:
       "Your satisfaction is our priority! If you're not happy with the service, you can report it through our app. We offer service guarantees, and if needed, we'll send another professional to redo the work at no extra cost.",
   },
-  {
-    id: 7,
-    question: "How quickly can I get a service professional?",
-    answer:
-      "We offer same-day service for most requests! Depending on availability and your location, you can get a professional within 1-4 hours. For urgent services, we also offer express booking with faster response times.",
-  },
-  {
-    id: 8,
-    question: "Do I need to be present during the service?",
-    answer:
-      "For most services, your presence is recommended but not always required. For services like cleaning or repairs, you can provide access instructions. However, for personal services like medical examinations or beauty treatments, your presence is necessary.",
-  },
-  {
-    id: 9,
-    question: "Is there a minimum order value or booking fee?",
-    answer:
-      "There's no minimum order value for most services! However, some specialized services may have minimum charges. Booking fees, if any, are clearly mentioned before you confirm your order. We believe in transparent pricing.",
-  },
-  {
-    id: 10,
-    question: "How can I track my service professional and get updates?",
-    answer:
-      "Once your booking is confirmed, you'll receive real-time updates via SMS and app notifications. You can track your service professional's location, get ETA updates, and communicate directly through our secure messaging system.",
-  },
 ];
 
 const FAQ = () => {
