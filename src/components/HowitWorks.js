@@ -49,7 +49,7 @@ function HowitWorks() {
             >
               <path
                 d="M50 25 Q200 5 400 25 T750 25"
-                stroke="#D1D5DB"
+                stroke="black"
                 strokeWidth="2"
                 strokeDasharray="8,8"
                 fill="none"
