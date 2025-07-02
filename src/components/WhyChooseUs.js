@@ -55,71 +55,122 @@ function WhyChooseUs() {
             </h3>
             <p className="mt-5 text-base text-gray-600 font-pj">
               Round-the-clock customer support to help you with booking,
-              scheduling, and any service-related queries. We&apos;re here whenever
-              you need us.
+              scheduling, and any service-related queries. We&apos;re here
+              whenever you need us.
             </p>
           </div>
+
           <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200">
+            {/* AI SVG Icon */}
             <svg
               className="mx-auto"
-              width={46}
-              height={46}
-              viewBox="0 0 46 46"
+              width={64}
+              height={64}
+              viewBox="0 0 64 64"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M27 27H19V45H27V27Z"
+              {/* Chip Outer Border */}
+              <rect
+                x="12"
+                y="12"
+                width="40"
+                height="40"
+                rx="6"
                 stroke="#161616"
                 strokeWidth={2}
-                strokeMiterlimit={10}
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                fill="#F4F4F5"
               />
+
+              {/* Internal circuit lines */}
               <path
-                d="M9 37H1V45H9V37Z"
-                fill="#D4D4D8"
+                d="M32 20V44"
                 stroke="#161616"
                 strokeWidth={2}
-                strokeMiterlimit={10}
                 strokeLinecap="round"
-                strokeLinejoin="round"
               />
               <path
-                d="M45 17H37V45H45V17Z"
-                fill="#D4D4D8"
+                d="M20 32H44"
                 stroke="#161616"
                 strokeWidth={2}
-                strokeMiterlimit={10}
                 strokeLinecap="round"
-                strokeLinejoin="round"
+              />
+
+              {/* Pins around the chip */}
+              <path
+                d="M32 4V10"
+                stroke="#161616"
+                strokeWidth={2}
+                strokeLinecap="round"
               />
               <path
-                d="M5 17L15 7L23 15L37 1"
+                d="M32 54V60"
                 stroke="#161616"
                 strokeWidth={2}
-                strokeMiterlimit={10}
                 strokeLinecap="round"
-                strokeLinejoin="round"
               />
               <path
-                d="M28 1H37V10"
+                d="M4 32H10"
                 stroke="#161616"
                 strokeWidth={2}
-                strokeMiterlimit={10}
                 strokeLinecap="round"
-                strokeLinejoin="round"
               />
+              <path
+                d="M54 32H60"
+                stroke="#161616"
+                strokeWidth={2}
+                strokeLinecap="round"
+              />
+              <path
+                d="M14 14L10 10"
+                stroke="#161616"
+                strokeWidth={2}
+                strokeLinecap="round"
+              />
+              <path
+                d="M50 14L54 10"
+                stroke="#161616"
+                strokeWidth={2}
+                strokeLinecap="round"
+              />
+              <path
+                d="M14 50L10 54"
+                stroke="#161616"
+                strokeWidth={2}
+                strokeLinecap="round"
+              />
+              <path
+                d="M50 50L54 54"
+                stroke="#161616"
+                strokeWidth={2}
+                strokeLinecap="round"
+              />
+
+              {/* AI Text Center */}
+              <text
+                x="50%"
+                y="50%"
+                dominantBaseline="middle"
+                textAnchor="middle"
+                fontSize="16"
+                fontWeight="bold"
+                fontFamily="Arial, sans-serif"
+                fill="#161616"
+              >
+                AI
+              </text>
             </svg>
-            <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">
-              Transparent Pricing
+
+            <h3 className="mt-8 text-xl font-bold text-gray-900 font-pj">
+              Genetic AI Assistance
             </h3>
+
             <p className="mt-5 text-base text-gray-600 font-pj">
-              No hidden charges or surprise fees. Get upfront pricing with
-              detailed quotes before booking. Compare prices from multiple
-              professionals easily.
+              Just say the word—our smart assistant books your service, confirms
+              the details, and gets you to checkout. Fast. Easy. Voice-powered.
             </p>
           </div>
+
           <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200">
             <svg
               className="mx-auto"
@@ -293,8 +344,9 @@ function WhyChooseUs() {
               Guaranteed Satisfaction
             </h3>
             <p className="mt-5 text-base text-gray-600 font-pj">
-              100% satisfaction guarantee on all services. If you&apos;re not happy
-              with the service, we&apos;ll make it right or provide a full refund.
+              100% satisfaction guarantee on all services. If you&apos;re not
+              happy with the service, we&apos;ll make it right or provide a full
+              refund.
             </p>
           </div>
         </div>
