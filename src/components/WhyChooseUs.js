@@ -55,7 +55,7 @@ function WhyChooseUs() {
             </h3>
             <p className="mt-5 text-base text-gray-600 font-pj">
               Round-the-clock customer support to help you with booking,
-              scheduling, and any service-related queries. We're here whenever
+              scheduling, and any service-related queries. We&apos;re here whenever
               you need us.
             </p>
           </div>
@@ -293,8 +293,8 @@ function WhyChooseUs() {
               Guaranteed Satisfaction
             </h3>
             <p className="mt-5 text-base text-gray-600 font-pj">
-              100% satisfaction guarantee on all services. If you're not happy
-              with the service, we'll make it right or provide a full refund.
+              100% satisfaction guarantee on all services. If you&apos;re not happy
+              with the service, we&apos;ll make it right or provide a full refund.
             </p>
           </div>
         </div>

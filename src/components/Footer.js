@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   FaTwitter,
   FaFacebookF,
@@ -120,17 +121,21 @@ export default function Footer() {
           </div>
           <div className="flex flex-col space-y-1.5">
             <a href="#">
-              <img
+              <Image
                 src="/badges/ios-donwload.webp"
                 alt="App Store"
                 className="h-7"
+                width={120}
+                height={28}
               />
             </a>
             <a href="#">
-              <img
+              <Image
                 src="/badges/android-download.webp"
                 alt="Google Play"
                 className="h-7"
+                width={120}
+                height={28}
               />
             </a>
           </div>
