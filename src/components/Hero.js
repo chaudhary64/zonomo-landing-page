@@ -1,20 +1,15 @@
 "use client";
-import { useRef, useMemo, useState, useEffect } from "react";
+import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   OrbitControls,
-  Sphere,
-  Torus,
-  Box,
-  Octahedron,
 } from "@react-three/drei";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import * as THREE from "three";
 import { Text } from "@react-three/drei";
 
 // Enhanced floating icosahedron with glow effect
-function FloatingIcosahedron({ position, scale = 1, color = "#8b5cf6" }) {
+function FloatingIcosahedron({ position, scale = 1, color = "#3b82f6" }) {
   const mesh = useRef();
   const glowMesh = useRef();
 
@@ -37,9 +32,9 @@ function FloatingIcosahedron({ position, scale = 1, color = "#8b5cf6" }) {
       <mesh ref={glowMesh} scale={scale * 1.3}>
         <icosahedronGeometry args={[1.2, 1]} />
         <meshBasicMaterial
-          color={color}
+          color="#60a5fa"
           transparent
-          opacity={0.1}
+          opacity={0.15}
           side={THREE.BackSide}
         />
       </mesh>
@@ -49,10 +44,10 @@ function FloatingIcosahedron({ position, scale = 1, color = "#8b5cf6" }) {
         <icosahedronGeometry args={[1, 2]} />
         <meshStandardMaterial
           color={color}
-          emissive={color}
-          emissiveIntensity={0.3}
-          metalness={0.8}
-          roughness={0.2}
+          emissive="#1d4ed8"
+          emissiveIntensity={0.2}
+          metalness={0.4}
+          roughness={0.3}
           wireframe={false}
         />
       </mesh>
@@ -60,7 +55,7 @@ function FloatingIcosahedron({ position, scale = 1, color = "#8b5cf6" }) {
       {/* Wireframe overlay */}
       <mesh ref={mesh} scale={scale * 1.01}>
         <icosahedronGeometry args={[1, 2]} />
-        <meshBasicMaterial color={color} wireframe transparent opacity={0.3} />
+        <meshBasicMaterial color="#93c5fd" wireframe transparent opacity={0.4} />
       </mesh>
     </group>
   );
@@ -86,11 +81,11 @@ function FloatingTorus({ position, scale = 1 }) {
     <mesh ref={mesh} position={position}>
       <torusGeometry args={[0.8, 0.3, 16, 32]} />
       <meshStandardMaterial
-        color="#ec4899"
-        emissive="#ec4899"
-        emissiveIntensity={0.4}
-        metalness={0.9}
-        roughness={0.1}
+        color="#3b82f6"
+        emissive="#295FF8"
+        emissiveIntensity={0.15}
+        metalness={0.4}
+        roughness={0.3}
       />
     </mesh>
   );
@@ -112,13 +107,13 @@ function FloatingOctahedron({ position, scale = 1 }) {
     <mesh ref={mesh} position={position} scale={scale}>
       <octahedronGeometry args={[1, 0]} />
       <meshStandardMaterial
-        color="#06b6d4"
-        emissive="#06b6d4"
-        emissiveIntensity={0.2}
-        metalness={0.7}
-        roughness={0.3}
+        color="#f59e0b"
+        emissive="#d97706"
+        emissiveIntensity={0.1}
+        metalness={0.5}
+        roughness={0.4}
         transparent
-        opacity={0.8}
+        opacity={0.9}
       />
     </mesh>
   );
@@ -140,11 +135,11 @@ function FloatingCube({ position, scale = 1 }) {
     <mesh ref={mesh} position={position} scale={scale}>
       <boxGeometry args={[1.2, 1.2, 1.2]} />
       <meshStandardMaterial
-        color="#10b981"
-        emissive="#10b981"
-        emissiveIntensity={0.3}
-        metalness={0.6}
-        roughness={0.4}
+        color="#8b5cf6"
+        emissive="#7c3aed"
+        emissiveIntensity={0.12}
+        metalness={0.3}
+        roughness={0.5}
       />
     </mesh>
   );
@@ -177,7 +172,7 @@ function FloatingParticles() {
   return (
     <points ref={points} geometry={particlesGeometry}>
       <pointsMaterial
-        color="#8b5cf6"
+        color="#3b82f6"
         size={0.02}
         transparent
         opacity={0.6}
@@ -204,7 +199,7 @@ function FloatingTextIcon({ emoji = "🧺", position = [0, 0, 0], size = 1 }) {
       ref={ref}
       position={position}
       fontSize={size}
-      color="white"
+      color="#6366f1"
       anchorX="center"
       anchorY="middle"
     >
@@ -218,22 +213,22 @@ function Scene() {
   return (
     <>
       {/* Enhanced lighting */}
-      <ambientLight intensity={0.2} />
+      <ambientLight intensity={0.8} />
       <spotLight
         position={[10, 10, 10]}
-        angle={0.3}
+        angle={0.4}
         penumbra={1}
-        intensity={0.8}
-        color="#8b5cf6"
+        intensity={0.3}
+        color="#ffffff"
       />
       <spotLight
         position={[-10, 10, -10]}
-        angle={0.3}
+        angle={0.4}
         penumbra={1}
-        intensity={0.5}
-        color="#ec4899"
+        intensity={0.2}
+        color="#ffffff"
       />
-      <pointLight position={[0, -10, 0]} intensity={0.3} color="#06b6d4" />
+      <pointLight position={[0, -10, 0]} intensity={0.1} color="#ffffff" />
       {/* Multiple floating objects - responsive positioning */}
       <FloatingTorus position={[2, 2, -1]} scale={0.6} />
       <FloatingParticles />
@@ -254,128 +249,11 @@ function Scene() {
 }
 
 export default function HeroSection() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        mobileMenuOpen &&
-        !event.target.closest("nav") &&
-        !event.target.closest("[data-mobile-menu]")
-      ) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [mobileMenuOpen]);
-
-  // Close mobile menu on escape key
-  useEffect(() => {
-    const handleEscapeKey = (event) => {
-      if (event.key === "Escape" && mobileMenuOpen) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("keydown", handleEscapeKey);
-    return () => document.removeEventListener("keydown", handleEscapeKey);
-  }, [mobileMenuOpen]);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-black via-gray-900 to-purple-950">
+    <div className="relative h-screen w-full overflow-hidden bg-white">
       {/* Animated background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-950/50 to-indigo-950/60 z-0"></div>
-
-      {/* Navigation */}
-      <nav className="relative z-30 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex justify-between items-center backdrop-blur-sm bg-black/20">
-        <div className="cursor-pointer text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Zonomo
-        </div>
-        <div className="hidden lg:flex space-x-6 xl:space-x-8">
-          {["Services", "How It Works", "About", "Cities"].map((item) => (
-            <Link
-              key={item}
-              href="#"
-              className="text-gray-400 hover:text-white transition-colors duration-300 text-sm xl:text-base"
-            >
-              {item}
-            </Link>
-          ))}
-        </div>
-        <div className="flex items-center space-x-2 sm:space-x-4">
-          <button className="text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base">
-            Login
-          </button>
-          <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 sm:px-6 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-purple-500/25 text-sm sm:text-base">
-            Sign up
-          </button>
-
-          {/* Mobile menu button */}
-          <button
-            className="lg:hidden text-white p-2 hover:bg-white/10 rounded-md transition-colors duration-200"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            {mobileMenuOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
-
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="absolute top-full left-0 right-0 z-40 bg-gradient-to-br from-purple-900/95 via-violet-900/95 to-indigo-900/95 backdrop-blur-md lg:hidden border-t border-purple-400/30 shadow-xl shadow-purple-500/20"
-            data-mobile-menu
-          >
-            <div className="px-4 py-6 space-y-4">
-              {["Services", "How It Works", "About", "Cities"].map((item) => (
-                <Link
-                  key={item}
-                  href="#"
-                  className="block text-purple-100 hover:text-white hover:bg-purple-800/30 transition-all duration-300 text-lg py-3 px-3 rounded-lg border-b border-purple-400/20 last:border-b-0"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </nav>
+      <div className="absolute inset-0 bg-white z-0"></div>
 
       {/* Enhanced 3D Canvas */}
       <div className="absolute inset-0 z-10">
@@ -394,10 +272,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-800 mb-4 sm:mb-6 leading-tight"
         >
           Your Urban Lifestyle <br />
-          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
+          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
             Revolutionized
           </span>
         </motion.h1>
@@ -406,7 +284,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg sm:text-xl md:text-2xl text-purple-200 mb-4 sm:mb-6 font-light"
+          className="text-lg sm:text-xl md:text-2xl text-gray-800 mb-4 sm:mb-6 font-medium"
         >
           AI-powered services at your fingertips
         </motion.p>
@@ -415,7 +293,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-sm sm:text-base lg:text-lg text-gray-400 mb-6 sm:mb-8 lg:mb-10 leading-relaxed max-w-3xl"
+          className="text-sm sm:text-base lg:text-lg text-gray-700 mb-6 sm:mb-8 lg:mb-10 leading-relaxed max-w-3xl"
         >
           Zonomo is transforming urban living with intelligent, voice-enabled
           services - from home repairs and cleaning to beauty treatments and
@@ -428,10 +306,10 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6 w-full justify-center items-center"
         >
-          <button className="cursor-pointer bg-gradient-to-r from-purple-900 via-gray-600 to-cyan-600 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 font-semibold text-sm sm:text-base w-full sm:w-auto">
+          <button className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 font-semibold text-sm sm:text-base w-full sm:w-auto shadow-lg">
             Try Zonomo AI
           </button>
-          <button className="border-2 border-purple-500/50 text-purple-200 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl hover:bg-purple-900/30 hover:border-purple-400 transition-all duration-300 backdrop-blur-sm cursor-pointer text-sm sm:text-base w-full sm:w-auto">
+          <button className="border-2 border-blue-400 text-blue-700 bg-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl hover:bg-blue-50 hover:border-blue-500 transition-all duration-300 cursor-pointer text-sm sm:text-base w-full sm:w-auto font-medium shadow-md">
             See how it works
           </button>
         </motion.div>
@@ -439,16 +317,16 @@ export default function HeroSection() {
 
       {/* Enhanced floating elements */}
       <div
-        className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 border border-purple-500/30 rounded-full animate-spin"
+        className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 border-2 border-blue-300 rounded-full animate-spin"
         style={{ animationDuration: "20s" }}
       ></div>
-      <div className="absolute top-16 sm:top-20 right-6 sm:right-20 w-10 sm:w-12 lg:w-16 h-10 sm:h-12 lg:h-16 border border-pink-500/30 rounded-full animate-ping"></div>
-      <div className="absolute bottom-20 sm:bottom-32 right-16 sm:right-32 w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full animate-pulse"></div>
+      <div className="absolute top-16 sm:top-20 right-6 sm:right-20 w-10 sm:w-12 lg:w-16 h-10 sm:h-12 lg:h-16 border-2 border-purple-300 rounded-full animate-ping"></div>
+      <div className="absolute bottom-20 sm:bottom-32 right-16 sm:right-32 w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full animate-pulse"></div>
 
       {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl animate-pulse opacity-60"></div>
       <div
-        className="absolute bottom-1/4 right-1/4 w-40 sm:w-56 md:w-72 lg:w-80 h-40 sm:h-56 md:h-72 lg:h-80 bg-pink-600/10 rounded-full blur-3xl animate-pulse"
+        className="absolute bottom-1/4 right-1/4 w-40 sm:w-56 md:w-72 lg:w-80 h-40 sm:h-56 md:h-72 lg:h-80 bg-gradient-to-br from-indigo-100 to-blue-100 rounded-full blur-3xl animate-pulse opacity-60"
         style={{ animationDelay: "1s" }}
       ></div>
     </div>

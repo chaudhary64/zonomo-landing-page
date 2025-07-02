@@ -8,9 +8,9 @@ import SilkPlaneWrapper from "@/components/SilkPlaneWrapper";
 export default function Home() {
   return (
     <>
+      <Nav />
       <HeroSection/>
       {/* <Slider/> */}
-      {/* <Nav /> */}
       <MostBookedSlider />
       <SilkPlaneWrapper />
       <Footer />
