@@ -1,10 +1,109 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 function WhyChooseUs() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log("Current x:", latest);
+  });
+
+  // Transform scroll progress into animation values
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.7, 1], [0, 1, 1, 0]);
+  const titleY = useTransform(scrollYProgress, [0, 0.2], [50, 0]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [0, 0, 1]);
+
+  // Top row animations with staggering - starting earlier
+  const topRow1Y = useTransform(scrollYProgress, [0.05, 0.3], [-40, 0]);
+  const topRow1X = useTransform(scrollYProgress, [0.05, 0.3], [-20, 0]);
+  const topRow1Scale = useTransform(scrollYProgress, [0.05, 0.3], [0.7, 1]);
+  const topRow1RotateY = useTransform(scrollYProgress, [0.05, 0.3], [-10, 0]);
+  const topRow1Opacity = useTransform(
+    scrollYProgress,
+    [0.05, 0.15, 0.25],
+    [0, 0, 1]
+  );
+
+  const topRow2Y = useTransform(scrollYProgress, [0.1, 0.35], [-40, 0]);
+  const topRow2X = useTransform(scrollYProgress, [0.1, 0.35], [-20, 0]);
+  const topRow2Scale = useTransform(scrollYProgress, [0.1, 0.35], [0.7, 1]);
+  const topRow2RotateY = useTransform(scrollYProgress, [0.1, 0.35], [-10, 0]);
+  const topRow2Opacity = useTransform(
+    scrollYProgress,
+    [0.1, 0.2, 0.3],
+    [0, 0, 1]
+  );
+
+  const topRow3Y = useTransform(scrollYProgress, [0.15, 0.4], [-40, 0]);
+  const topRow3X = useTransform(scrollYProgress, [0.15, 0.4], [-20, 0]);
+  const topRow3Scale = useTransform(scrollYProgress, [0.15, 0.4], [0.7, 1]);
+  const topRow3RotateY = useTransform(scrollYProgress, [0.15, 0.4], [-10, 0]);
+  const topRow3Opacity = useTransform(
+    scrollYProgress,
+    [0.15, 0.25, 0.35],
+    [0, 0, 1]
+  );
+
+  // Bottom row animations with staggering - starting earlier
+  const bottomRow1Y = useTransform(scrollYProgress, [0.25, 0.55], [80, 0]);
+  const bottomRow1X = useTransform(scrollYProgress, [0.25, 0.55], [20, 0]);
+  const bottomRow1Scale = useTransform(scrollYProgress, [0.25, 0.55], [0.6, 1]);
+  const bottomRow1RotateY = useTransform(
+    scrollYProgress,
+    [0.25, 0.55],
+    [10, 0]
+  );
+  const bottomRow1Opacity = useTransform(
+    scrollYProgress,
+    [0.25, 0.35, 0.45],
+    [0, 0, 1]
+  );
+
+  const bottomRow2Y = useTransform(scrollYProgress, [0.3, 0.6], [80, 0]);
+  const bottomRow2X = useTransform(scrollYProgress, [0.3, 0.6], [20, 0]);
+  const bottomRow2Scale = useTransform(scrollYProgress, [0.3, 0.6], [0.6, 1]);
+  const bottomRow2RotateY = useTransform(scrollYProgress, [0.3, 0.6], [10, 0]);
+  const bottomRow2Opacity = useTransform(
+    scrollYProgress,
+    [0.3, 0.4, 0.5],
+    [0, 0, 1]
+  );
+
+  const bottomRow3Y = useTransform(scrollYProgress, [0.35, 0.65], [80, 0]);
+  const bottomRow3X = useTransform(scrollYProgress, [0.35, 0.65], [20, 0]);
+  const bottomRow3Scale = useTransform(scrollYProgress, [0.35, 0.65], [0.6, 1]);
+  const bottomRow3RotateY = useTransform(
+    scrollYProgress,
+    [0.35, 0.65],
+    [10, 0]
+  );
+  const bottomRow3Opacity = useTransform(
+    scrollYProgress,
+    [0.35, 0.45, 0.55],
+    [0, 0, 1]
+  );
+
   return (
-    <section className="py-10 bg-white sm:py-16 lg:py-20">
+    <section className="py-10 bg-white sm:py-16 lg:py-20" ref={ref}>
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          style={{
+            opacity: titleOpacity,
+            y: titleY,
+          }}
+        >
           <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">
             Why Choose Us?
           </h2>
@@ -12,9 +111,25 @@ function WhyChooseUs() {
             Trusted professionals, guaranteed quality, and convenience at your
             doorstep
           </p>
-        </div>
-        <div className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-24">
-          <div className="md:p-8 lg:p-14">
+        </motion.div>
+        <motion.div
+          className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-24"
+          style={{
+            perspective: "1000px",
+            opacity: opacity,
+          }}
+        >
+          {/* Top Row */}
+          <motion.div
+            className="md:p-8 lg:p-14"
+            style={{
+              opacity: topRow1Opacity,
+              y: topRow1Y,
+              x: topRow1X,
+              scale: topRow1Scale,
+              rotateY: topRow1RotateY,
+            }}
+          >
             <svg
               className="mx-auto"
               width={46}
@@ -58,9 +173,18 @@ function WhyChooseUs() {
               scheduling, and any service-related queries. We&apos;re here
               whenever you need us.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200">
+          <motion.div
+            className="md:p-8 lg:p-14 md:border-l md:border-gray-200"
+            style={{
+              opacity: topRow2Opacity,
+              y: topRow2Y,
+              x: topRow2X,
+              scale: topRow2Scale,
+              rotateY: topRow2RotateY,
+            }}
+          >
             {/* AI SVG Icon */}
             <svg
               className="mx-auto"
@@ -169,9 +293,18 @@ function WhyChooseUs() {
               Just say the word—our smart assistant books your service, confirms
               the details, and gets you to checkout. Fast. Easy. Voice-powered.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200">
+          <motion.div
+            className="md:p-8 lg:p-14 md:border-l md:border-gray-200"
+            style={{
+              opacity: topRow3Opacity,
+              y: topRow3Y,
+              x: topRow3X,
+              scale: topRow3Scale,
+              rotateY: topRow3RotateY,
+            }}
+          >
             <svg
               className="mx-auto"
               width={42}
@@ -222,8 +355,18 @@ function WhyChooseUs() {
               professional, and schedule at your convenience. Book in minutes,
               not hours
             </p>
-          </div>
-          <div className="md:p-8 lg:p-14 md:border-t md:border-gray-200">
+          </motion.div>
+          {/* Bottom Row */}
+          <motion.div
+            className="md:p-8 lg:p-14 md:border-t md:border-gray-200"
+            style={{
+              opacity: bottomRow1Opacity,
+              y: bottomRow1Y,
+              x: bottomRow1X,
+              scale: bottomRow1Scale,
+              rotateY: bottomRow1RotateY,
+            }}
+          >
             <svg
               className="mx-auto"
               width={42}
@@ -276,8 +419,17 @@ function WhyChooseUs() {
               From AC repairs and cleaning to healthcare and personal care
               services. All your home service needs covered under one platform.
             </p>
-          </div>
-          <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200 md:border-t">
+          </motion.div>
+          <motion.div
+            className="md:p-8 lg:p-14 md:border-l md:border-gray-200 md:border-t"
+            style={{
+              opacity: bottomRow2Opacity,
+              y: bottomRow2Y,
+              x: bottomRow2X,
+              scale: bottomRow2Scale,
+              rotateY: bottomRow2RotateY,
+            }}
+          >
             <svg
               className="mx-auto"
               width={46}
@@ -312,8 +464,17 @@ function WhyChooseUs() {
               verified. Read real reviews and ratings from previous customers
               before booking.
             </p>
-          </div>
-          <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200 md:border-t">
+          </motion.div>
+          <motion.div
+            className="md:p-8 lg:p-14 md:border-l md:border-gray-200 md:border-t"
+            style={{
+              opacity: bottomRow3Opacity,
+              y: bottomRow3Y,
+              x: bottomRow3X,
+              scale: bottomRow3Scale,
+              rotateY: bottomRow3RotateY,
+            }}
+          >
             <svg
               className="mx-auto"
               width={44}
@@ -348,8 +509,8 @@ function WhyChooseUs() {
               happy with the service, we&apos;ll make it right or provide a full
               refund.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
