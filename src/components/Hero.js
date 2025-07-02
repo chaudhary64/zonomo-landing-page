@@ -64,36 +64,6 @@ function FloatingIcosahedron({ position, scale = 1, color = "#3b82f6" }) {
   );
 }
 
-// Floating torus with pulsing effect
-function FloatingTorus({ position, scale = 1 }) {
-  const mesh = useRef();
-
-  useFrame(({ clock }) => {
-    const time = clock.getElapsedTime();
-    mesh.current.rotation.x = time * 0.4;
-    mesh.current.rotation.y = time * 0.6;
-    mesh.current.position.x = position[0] + Math.sin(time * 0.5) * 0.5;
-    mesh.current.position.y = position[1] + Math.cos(time * 0.7) * 0.3;
-
-    // Pulsing scale
-    const pulse = 1 + Math.sin(time * 2) * 0.1;
-    mesh.current.scale.setScalar(scale * pulse);
-  });
-
-  return (
-    <mesh ref={mesh} position={position}>
-      <torusGeometry args={[0.8, 0.3, 16, 32]} />
-      <meshStandardMaterial
-        color="#3b82f6"
-        emissive="#295FF8"
-        emissiveIntensity={0.15}
-        metalness={0.4}
-        roughness={0.3}
-      />
-    </mesh>
-  );
-}
-
 // Floating octahedron with morphing
 function FloatingOctahedron({ position, scale = 1 }) {
   const mesh = useRef();
@@ -233,7 +203,6 @@ function Scene() {
       />
       <pointLight position={[0, -10, 0]} intensity={0.1} color="#ffffff" />
       {/* Multiple floating objects - responsive positioning */}
-      <FloatingTorus position={[-2, 4, -1]} scale={0.6} />
       <FloatingParticles />
       <FloatingTextIcon emoji="🧺" position={[-8, 2, -1]} size={1.2} />
       <FloatingTextIcon emoji="🧼" position={[-4.5, 0, -1]} size={1} />
@@ -252,217 +221,233 @@ function Scene() {
 }
 
 export default function HeroSection() {
- return (
-  <div className="relative w-full min-h-screen bg-white overflow-hidden flex items-center justify-center px-4 sm:px-8 py-12">
-
-    {/* Background Canvas */}
-    <div className="absolute inset-0 z-0 opacity-80">
-      <Canvas
-        camera={{ position: [0, 0, 8], fov: 70 }}
-        gl={{ alpha: true, antialias: true }}
-        dpr={[1, 2]}
-      >
-        <Scene />
-      </Canvas>
-    </div>
-
-    <div className="relative z-10 w-full max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
-      {/* Left Content */}
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex flex-col justify-center space-y-8"
-      >
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-block"
+  return (
+    <div className="relative w-full min-h-screen bg-white overflow-hidden flex items-center justify-center px-4 sm:px-8 py-12">
+      {/* Background Canvas */}
+      <div className="absolute inset-0 z-0 opacity-80">
+        <Canvas
+          camera={{ position: [0, 0, 8], fov: 70 }}
+          gl={{ alpha: true, antialias: true }}
+          dpr={[1, 2]}
         >
-          <span className="px-3 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">
-            New Generation Platform
-          </span>
-        </motion.div>
+          <Scene />
+        </Canvas>
+      </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl sm:text-6xl font-bold text-gray-900 leading-tight"
+      <div className="relative z-10 w-full max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
+        {/* Left Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col justify-center space-y-8"
         >
-          Revolutionizing <br />
-          <span className="relative inline-block">
-            <span className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
-              Urban Services
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="inline-block"
+          >
+            <span className="px-3 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">
+              New Generation Platform
             </span>
-            <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-200/70 -rotate-1 -z-0"></span>
-          </span>
-        </motion.h1>
+          </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-gray-700 text-lg max-w-lg"
-        >
-          From doorstep repairs to healthcare, professional services to personal care – 
-          all services on one intelligent platform. Connect with verified professionals, 
-          get instant quotes, and experience seamless service delivery.
-        </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-5xl sm:text-6xl font-bold text-gray-900 leading-tight"
+          >
+            Revolutionizing <br />
+            <span className="relative inline-block">
+              <span className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
+                Urban Services
+              </span>
+              <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-200/70 -rotate-1 -z-0"></span>
+            </span>
+          </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0"
-        >
-          <button className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
-            <span className="relative z-10">Get Started</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          </button>
-          
-          <button className="relative overflow-hidden group bg-white text-gray-800 px-8 py-4 rounded-xl font-semibold border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300">
-            <span className="relative z-10">How It Works</span>
-            <span className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          </button>
-        </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-gray-700 text-lg max-w-lg"
+          >
+            From doorstep repairs to healthcare, professional services to
+            personal care – all services on one intelligent platform. Connect
+            with verified professionals, get instant quotes, and experience
+            seamless service delivery.
+          </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6"
-        >
-          {[
-            { label: "Active Users", value: "2.5M+", color: "text-blue-600" },
-            { label: "Partner Stores", value: "50K+", color: "text-purple-600" },
-            { label: "Avg Delivery", value: "15min", color: "text-indigo-600" },
-            { label: "Success Rate", value: "98%", color: "text-green-600" },
-          ].map((item, i) => (
-            <motion.div 
-              key={i}
-              whileHover={{ y: -5 }}
-              // className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-sm border border-gray-100"
-            >
-              {/* <p className={`text-2xl font-bold ${item.color}`}>{item.value}</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0"
+          >
+            <button className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+              <span className="relative z-10">Get Started</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </button>
+
+            <button className="relative overflow-hidden group bg-white text-gray-800 px-8 py-4 rounded-xl font-semibold border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300">
+              <span className="relative z-10">How It Works</span>
+              <span className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6"
+          >
+            {[
+              { label: "Active Users", value: "2.5M+", color: "text-blue-600" },
+              {
+                label: "Partner Stores",
+                value: "50K+",
+                color: "text-purple-600",
+              },
+              {
+                label: "Avg Delivery",
+                value: "15min",
+                color: "text-indigo-600",
+              },
+              { label: "Success Rate", value: "98%", color: "text-green-600" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -5 }}
+                // className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-sm border border-gray-100"
+              >
+                {/* <p className={`text-2xl font-bold ${item.color}`}>{item.value}</p>
               <p className="text-sm text-gray-500 mt-1">{item.label}</p> */}
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
 
-      {/* Right Image Grid */}
-      <motion.div
-        initial={{ opacity: 0, x: 50, rotate: 2 }}
-        animate={{ opacity: 1, x: 0, rotate: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="relative"
-      >
-        <div className="grid grid-cols-2 grid-rows-3 gap-4 h-[550px]">
-          {/* Large Image - Top Left, spans 2 rows */}
+        {/* Right Image Grid */}
+        <motion.div
+          initial={{ opacity: 0, x: 50, rotate: 2 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative"
+        >
+          <div className="grid grid-cols-2 grid-rows-3 gap-4 h-[550px]">
+            {/* Large Image - Top Left, spans 2 rows */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative row-span-2 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-slate-100 overflow-hidden group"
+            >
+              <motion.img
+                src="/images/ac-repairs.jpg"
+                alt="AC Repair Service"
+                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                initial={{ scale: 1.05 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.8 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span className="text-white font-medium text-sm">
+                  Home Repairs
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Small Top Right */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg border border-slate-100 overflow-hidden group"
+            >
+              <motion.img
+                src="/images/laundry.jpg"
+                alt="Laundry Service"
+                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 p-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span className="text-white font-medium text-sm">
+                  Laundry Services
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Small Middle Right */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg border border-slate-100 overflow-hidden group"
+            >
+              <motion.img
+                src="/images/medical-examination-service-2.jpg"
+                alt="Medical Service"
+                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 p-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span className="text-white font-medium text-sm">
+                  Healthcare
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Bottom Full Width */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative col-span-2 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg border border-slate-100 overflow-hidden group"
+            >
+              <motion.img
+                src="/images/medical-examination-service-1.jpg"
+                alt="Medical Examination"
+                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span className="text-white font-medium">
+                  Doctor Home Visits
+                </span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Floating elements */}
           <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="relative row-span-2 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-slate-100 overflow-hidden group"
-          >
-            <motion.img
-              src="/images/ac-repairs.jpg"
-              alt="AC Repair Service"
-              className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-              initial={{ scale: 1.05 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.8 }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-              <span className="text-white font-medium text-sm">Home Repairs</span>
-            </div>
-          </motion.div>
-
-          {/* Small Top Right */}
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute -top-6 -left-6 w-12 h-12 bg-blue-400/20 rounded-full blur-md"
+          />
           <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="relative bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg border border-slate-100 overflow-hidden group"
-          >
-            <motion.img
-              src="/images/laundry.jpg"
-              alt="Laundry Service"
-              className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="absolute bottom-0 left-0 p-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-              <span className="text-white font-medium text-sm">Laundry Services</span>
-            </div>
-          </motion.div>
-
-          {/* Small Middle Right */}
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="relative bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg border border-slate-100 overflow-hidden group"
-          >
-            <motion.img
-              src="/images/medical-examination-service-2.jpg"
-              alt="Medical Service"
-              className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="absolute bottom-0 left-0 p-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-              <span className="text-white font-medium text-sm">Healthcare</span>
-            </div>
-          </motion.div>
-
-          {/* Bottom Full Width */}
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="relative col-span-2 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg border border-slate-100 overflow-hidden group"
-          >
-            <motion.img
-              src="/images/medical-examination-service-1.jpg"
-              alt="Medical Examination"
-              className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-              <span className="text-white font-medium">Doctor Home Visits</span>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Floating elements */}
-        <motion.div 
-          animate={{
-            y: [0, -10, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute -top-6 -left-6 w-12 h-12 bg-blue-400/20 rounded-full blur-md"
-        />
-        <motion.div 
-          animate={{
-            y: [0, 15, 0],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5
-          }}
-          className="absolute -bottom-4 -right-4 w-16 h-16 bg-purple-400/20 rounded-full blur-md"
-        />
-      </motion.div>
+            animate={{
+              y: [0, 15, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
+            className="absolute -bottom-4 -right-4 w-16 h-16 bg-purple-400/20 rounded-full blur-md"
+          />
+        </motion.div>
+      </div>
     </div>
-  </div>
-);
+  );
 }
