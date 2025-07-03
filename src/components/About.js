@@ -14,18 +14,20 @@ const TeamMemberCard = ({ member, delay = 0 }) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay }}
     viewport={{ once: true }}
-    className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+    className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow duration-300"
   >
-    <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-      <span className="text-white text-2xl font-bold font-poppins">
+    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+      <span className="text-white text-lg sm:text-xl md:text-2xl font-bold font-poppins">
         {member.initials}
       </span>
     </div>
-    <h3 className="text-xl font-semibold text-gray-900 mb-2 font-poppins">
+    <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-gray-900 mb-1 sm:mb-2 font-poppins">
       {member.name}
     </h3>
-    <p className="text-blue-600 font-medium mb-3 font-inter">{member.role}</p>
-    <p className="text-gray-600 text-sm leading-relaxed font-inter">
+    <p className="text-blue-600 font-medium mb-2 sm:mb-3 text-xs sm:text-sm md:text-base font-inter">
+      {member.role}
+    </p>
+    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed font-inter">
       {member.description}
     </p>
   </motion.div>
@@ -41,25 +43,25 @@ const StatCard = ({ stat, delay = 0 }) => (
     whileHover={{ scale: 1.05, y: -5 }}
     className="text-center group"
   >
-    <div className="relative bg-white rounded-3xl p-8 mb-4 shadow-lg border border-blue-100 group-hover:shadow-2xl transition-all duration-500">
+    <div className="relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 mb-3 sm:mb-4 shadow-lg border border-blue-100 group-hover:shadow-2xl transition-all duration-500">
       {/* Animated Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-teal-500/5 rounded-3xl group-hover:from-blue-500/10 group-hover:to-teal-500/10 transition-all duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-teal-500/5 rounded-2xl sm:rounded-3xl group-hover:from-blue-500/10 group-hover:to-teal-500/10 transition-all duration-500"></div>
 
       {/* Floating Icon */}
-      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
-        <span className="text-white text-sm">📊</span>
+      <div className="absolute -top-2 sm:-top-4 left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
+        <span className="text-white text-xs sm:text-sm">📊</span>
       </div>
 
       <div className="relative">
-        <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 mb-3 group-hover:scale-110 transition-transform duration-300 font-poppins">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300 font-poppins">
           {stat.number}
         </h3>
-        <p className="text-gray-600 font-semibold text-lg font-inter">
+        <p className="text-gray-600 font-semibold text-sm sm:text-base lg:text-lg font-inter">
           {stat.label}
         </p>
 
         {/* Progress Line */}
-        <div className="mt-4 h-1 bg-gray-200 rounded-full overflow-hidden">
+        <div className="mt-3 sm:mt-4 h-1 bg-gray-200 rounded-full overflow-hidden">
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
@@ -79,14 +81,16 @@ const ValueCard = ({ value, delay = 0 }) => (
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.6, delay }}
     viewport={{ once: true }}
-    className="flex items-start space-x-4"
+    className="flex items-start space-x-3 sm:space-x-4"
   >
-    <div className="bg-blue-100 rounded-lg p-3 flex-shrink-0">{value.icon}</div>
+    <div className="bg-blue-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
+      {value.icon}
+    </div>
     <div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2 font-poppins">
+      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2 font-poppins">
         {value.title}
       </h3>
-      <p className="text-gray-600 leading-relaxed font-inter">
+      <p className="text-gray-600 leading-relaxed text-sm sm:text-base font-inter">
         {value.description}
       </p>
     </div>
@@ -94,15 +98,22 @@ const ValueCard = ({ value, delay = 0 }) => (
 );
 
 function About() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
+  const headerRef = useRef(null);
+
+  // Separate useScroll for header animation
+  const { scrollYProgress: headerScrollProgress } = useScroll({
+    target: headerRef,
+    offset: ["start end", "center"],
   });
 
-  // Transform scroll progress into animation values
-  const headerY = useTransform(scrollYProgress, [0, 0.2], [50, 0]);
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  // Transform scroll progress into animation values for header
+  const headerY = useTransform(headerScrollProgress, [0, 1], [50, 0]);
+  const headerOpacity = useTransform(headerScrollProgress, [0, 1], [0, 1]);
+
+  // Transform values for Interactive Floating Icons
+  const iconsY = useTransform(headerScrollProgress, [0, 1], [80, 0]);
+  const iconsOpacity = useTransform(headerScrollProgress, [0, 1], [0, 1]);
+  const iconsScale = useTransform(headerScrollProgress, [0, 1], [0.8, 1]);
 
   // Team data
   const teamMembers = [
@@ -235,18 +246,19 @@ function About() {
   ];
 
   return (
-    <div className="bg-white overflow-hidden" ref={ref}>
+    <div className="bg-white overflow-hidden">
       {/* Hero Section with Enhanced Visual Elements */}
-      <section className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-blue-50 via-white to-teal-50">
         {/* Background Decorations */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-teal-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-teal-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-100/30 to-teal-100/30 rounded-full blur-3xl"></div>
+          <div className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-br from-blue-400/20 to-teal-400/20 rounded-full blur-xl sm:blur-3xl"></div>
+          <div className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-tr from-teal-400/20 to-blue-400/20 rounded-full blur-xl sm:blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-blue-100/30 to-teal-100/30 rounded-full blur-xl sm:blur-3xl"></div>
         </div>
 
-        <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="relative px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
           <motion.div
+            ref={headerRef}
             className="text-center"
             style={{
               opacity: headerOpacity,
@@ -258,15 +270,15 @@ function About() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-blue-200/50 mb-8 shadow-lg"
+              className="inline-flex items-center px-3 py-2 sm:px-4 bg-white/80 backdrop-blur-sm rounded-full border border-blue-200/50 mb-6 sm:mb-8 shadow-lg"
             >
               <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-              <span className="text-sm font-medium text-gray-700 font-inter">
+              <span className="text-xs sm:text-sm font-medium text-gray-700 font-inter">
                 Trusted by 50,000+ Customers
               </span>
             </motion.div>
 
-            <h1 className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl xl:text-6xl font-poppins">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 font-poppins">
               About{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500 animate-pulse font-playfair">
                 Our Story
@@ -277,7 +289,7 @@ function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-6 text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto font-inter"
+              className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto font-inter px-2 sm:px-0"
             >
               We&apos;re revolutionizing the home services industry by
               connecting homeowners with trusted professionals through
@@ -285,7 +297,14 @@ function About() {
             </motion.p>
 
             {/* Interactive Floating Icons */}
-            <div className="flex justify-center space-x-8 mt-12">
+            <motion.div
+              className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 px-2 sm:px-0"
+              style={{
+                opacity: iconsOpacity,
+                y: iconsY,
+                scale: iconsScale,
+              }}
+            >
               {[
                 { icon: "🏠", label: "Home Services" },
                 { icon: "⚡", label: "Fast Response" },
@@ -298,21 +317,23 @@ function About() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                   whileHover={{ scale: 1.1, y: -5 }}
-                  className="flex flex-col items-center p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100 shadow-md hover:shadow-lg transition-all duration-300"
+                  className="flex flex-col items-center p-2 sm:p-3 md:p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-blue-100 shadow-md hover:shadow-lg transition-all duration-300 min-w-[70px] sm:min-w-[80px]"
                 >
-                  <span className="text-2xl mb-2">{item.icon}</span>
-                  <span className="text-xs font-medium text-gray-600 font-inter">
+                  <span className="text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2">
+                    {item.icon}
+                  </span>
+                  <span className="text-[10px] sm:text-xs font-medium text-gray-600 font-inter text-center leading-tight">
                     {item.label}
                   </span>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Mission & Vision Section with Enhanced Design */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50/30 relative">
+      <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 to-blue-50/30 relative">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
@@ -323,8 +344,8 @@ function About() {
           ></div>
         </div>
 
-        <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -333,12 +354,12 @@ function About() {
               className="relative"
             >
               {/* Mission Card with Glow Effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-teal-500/20 rounded-3xl blur-2xl"></div>
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-blue-100 shadow-xl">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-500 rounded-xl flex items-center justify-center mr-4">
+              <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-blue-500/20 to-teal-500/20 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl"></div>
+              <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-xl">
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4">
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -351,45 +372,45 @@ function About() {
                       />
                     </svg>
                   </div>
-                  <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl font-poppins">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 font-poppins">
                     Our Mission
                   </h2>
                 </div>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6 font-inter">
+                <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6 font-inter">
                   To make quality home services accessible, reliable, and
                   stress-free for everyone. We believe that maintaining your
                   home shouldn&apos;t be a hassle – it should be simple,
                   transparent, and delivered by professionals you can trust.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed font-inter">
+                <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed font-inter">
                   Whether you need AC repair, deep cleaning, healthcare
                   services, or personal care, we&apos;re here to connect you
                   with vetted professionals who take pride in their work.
                 </p>
 
                 {/* Mission Stats */}
-                <div className="flex items-center space-x-6 mt-8">
+                <div className="flex items-center justify-center sm:justify-start space-x-4 sm:space-x-6 mt-6 sm:mt-8">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600 font-poppins">
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 font-poppins">
                       24/7
                     </div>
-                    <div className="text-sm text-gray-500 font-inter">
+                    <div className="text-xs sm:text-sm text-gray-500 font-inter">
                       Support
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-teal-600 font-poppins">
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-teal-600 font-poppins">
                       100%
                     </div>
-                    <div className="text-sm text-gray-500 font-inter">
+                    <div className="text-xs sm:text-sm text-gray-500 font-inter">
                       Verified
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600 font-poppins">
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-purple-600 font-poppins">
                       30min
                     </div>
-                    <div className="text-sm text-gray-500 font-inter">
+                    <div className="text-xs sm:text-sm text-gray-500 font-inter">
                       Response
                     </div>
                   </div>
@@ -405,18 +426,18 @@ function About() {
               className="relative"
             >
               {/* Vision Card with Animated Border */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl"></div>
+              <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl"></div>
               <div
-                className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 border-2 border-transparent bg-clip-padding shadow-xl"
+                className="relative bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-transparent bg-clip-padding shadow-xl"
                 style={{
                   background:
                     "linear-gradient(white, white) padding-box, linear-gradient(45deg, #3B82F6, #8B5CF6, #EC4899) border-box",
                 }}
               >
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4">
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -435,27 +456,27 @@ function About() {
                       />
                     </svg>
                   </div>
-                  <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl font-poppins">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 font-poppins">
                     Our Vision
                   </h2>
                 </div>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6 font-inter">
+                <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6 font-inter">
                   To become the world&apos;s most trusted platform for home
                   services, where quality, convenience, and customer
                   satisfaction converge to create exceptional experiences.
                 </p>
 
                 {/* Animated Progress Circles */}
-                <div className="flex items-center space-x-8 mt-8">
+                <div className="flex items-center justify-center sm:justify-start space-x-4 sm:space-x-6 lg:space-x-8 mt-6 sm:mt-8">
                   {[
                     { label: "Quality", progress: 95, color: "blue" },
                     { label: "Trust", progress: 98, color: "teal" },
                     { label: "Innovation", progress: 92, color: "purple" },
                   ].map((item, index) => (
                     <div key={index} className="text-center">
-                      <div className="relative w-16 h-16 mx-auto mb-2">
+                      <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-2">
                         <svg
-                          className="w-16 h-16 transform -rotate-90"
+                          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 transform -rotate-90"
                           viewBox="0 0 36 36"
                         >
                           <path
@@ -468,12 +489,14 @@ function About() {
                           />
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-xs font-semibold text-gray-700">
+                          <span className="text-[10px] sm:text-xs font-semibold text-gray-700">
                             {item.progress}%
                           </span>
                         </div>
                       </div>
-                      <div className="text-sm text-gray-600">{item.label}</div>
+                      <div className="text-xs sm:text-sm text-gray-600">
+                        {item.label}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -484,45 +507,45 @@ function About() {
       </section>
 
       {/* Stats Section with Enhanced Visual Appeal */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-0 left-1/4 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-2xl sm:blur-3xl animate-pulse"></div>
           <div
-            className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-to-tl from-teal-400/10 to-transparent rounded-full blur-3xl animate-pulse"
+            className="absolute bottom-0 right-1/4 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-gradient-to-tl from-teal-400/10 to-transparent rounded-full blur-2xl sm:blur-3xl animate-pulse"
             style={{ animationDelay: "1s" }}
           ></div>
         </div>
 
-        <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="relative px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-16 lg:mb-20"
           >
             {/* Section Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full mb-6">
-              <span className="text-blue-600 font-semibold text-sm font-inter">
+            <div className="inline-flex items-center px-3 py-2 sm:px-4 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full mb-4 sm:mb-6">
+              <span className="text-blue-600 font-semibold text-xs sm:text-sm font-inter">
                 📈 Our Impact
               </span>
             </div>
 
-            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6 font-poppins">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-poppins">
               Trusted by{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 font-playfair">
                 Thousands
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-inter">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-inter px-2 sm:px-0">
               These numbers represent the trust our customers place in us and
               the quality of service our professional partners deliver every
               single day across the globe.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {stats.map((stat, index) => (
               <StatCard key={index} stat={stat} delay={index * 0.15} />
             ))}
@@ -534,7 +557,7 @@ function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
             viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-6 mt-16"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mt-10 sm:mt-12 lg:mt-16"
           >
             {[
               {
@@ -552,14 +575,16 @@ function About() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-2xl px-6 py-4 shadow-md hover:shadow-lg transition-all duration-300"
+                className="flex items-center space-x-2 sm:space-x-3 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-xl sm:rounded-2xl px-3 py-3 sm:px-4 sm:py-4 md:px-6 shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <span className="text-2xl">{badge.icon}</span>
+                <span className="text-lg sm:text-xl md:text-2xl">
+                  {badge.icon}
+                </span>
                 <div>
-                  <div className="font-semibold text-gray-900 text-sm font-poppins">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm font-poppins">
                     {badge.title}
                   </div>
-                  <div className="text-gray-500 text-xs font-inter">
+                  <div className="text-gray-500 text-[10px] sm:text-xs font-inter">
                     {badge.subtitle}
                   </div>
                 </div>
@@ -570,25 +595,25 @@ function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4 font-poppins">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 font-poppins">
               Our Core Values
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto font-inter px-2 sm:px-0">
               These principles guide everything we do and shape how we serve our
               customers and support our professional partners.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {values.map((value, index) => (
               <ValueCard key={index} value={value} delay={index * 0.1} />
             ))}
@@ -597,25 +622,25 @@ function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-white">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4 font-poppins">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 font-poppins">
               Meet Our Team
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto font-inter px-2 sm:px-0">
               The passionate individuals behind our platform, working tirelessly
               to make home services better for everyone.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {teamMembers.map((member, index) => (
               <TeamMemberCard key={index} member={member} delay={index * 0.1} />
             ))}
@@ -627,15 +652,15 @@ function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-16 text-center"
+            className="mt-12 sm:mt-16 text-center"
           >
-            <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-3xl p-8 border-2 border-dashed border-blue-200 hover:border-blue-300 transition-colors duration-300">
+            <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border-2 border-dashed border-blue-200 hover:border-blue-300 transition-colors duration-300">
               <div className="max-w-4xl mx-auto">
-                <div className="bg-white rounded-2xl shadow-lg p-12 min-h-[400px] flex flex-col items-center justify-center">
+                <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-6 sm:p-8 md:p-12 min-h-[300px] sm:min-h-[400px] flex flex-col items-center justify-center">
                   {/* Camera Icon */}
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
                     <svg
-                      className="w-10 h-10 text-white"
+                      className="w-8 h-8 sm:w-10 sm:h-10 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -655,15 +680,15 @@ function About() {
                     </svg>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                     The Complete Zonomo Team
                   </h3>
-                  <p className="text-gray-600 text-lg mb-6 max-w-2xl">
+                  <p className="text-gray-600 text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 max-w-2xl px-2 sm:px-0">
                     Our entire team working together to revolutionize home
                     services. A picture that captures the spirit of
                     collaboration and innovation that drives us forward.
                   </p>
-                  <div className="text-blue-500 font-medium">
+                  <div className="text-blue-500 font-medium text-xs sm:text-sm">
                     [Team Photo Placeholder - Replace with actual team image]
                   </div>
                 </div>
@@ -674,28 +699,28 @@ function About() {
       </section>
 
       {/* Journey/Timeline Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
               Our Journey
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto px-2 sm:px-0">
               From a simple idea to a platform serving thousands of customers
               daily.
             </p>
           </motion.div>
 
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-teal-500 rounded-full"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 sm:w-1 h-full bg-gradient-to-b from-blue-500 to-teal-500 rounded-full"></div>
 
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               {[
                 {
                   year: "2022",
@@ -734,23 +759,25 @@ function About() {
                 >
                   <div
                     className={`w-1/2 ${
-                      index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
+                      index % 2 === 0
+                        ? "pr-4 sm:pr-6 lg:pr-8 text-right"
+                        : "pl-4 sm:pl-6 lg:pl-8 text-left"
                     }`}
                   >
-                    <div className="bg-white rounded-2xl p-6 shadow-lg">
-                      <span className="inline-block px-3 py-1 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full mb-4">
+                    <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg">
+                      <span className="inline-block px-2 py-1 sm:px-3 text-xs sm:text-sm font-semibold text-blue-600 bg-blue-100 rounded-full mb-3 sm:mb-4">
                         {milestone.year}
                       </span>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      <h3 className="text-sm sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                         {milestone.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
                         {milestone.description}
                       </p>
                     </div>
                   </div>
                   <div className="relative z-10">
-                    <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full border-4 border-white shadow-lg"></div>
+                    <div className="w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full border-2 sm:border-4 border-white shadow-lg"></div>
                   </div>
                   <div className="w-1/2"></div>
                 </motion.div>
@@ -761,8 +788,8 @@ function About() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-teal-500">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-600 to-teal-500">
+        <div className="px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -770,21 +797,21 @@ function About() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl font-bold text-white sm:text-4xl mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
               Ready to Experience the Difference?
             </h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-100 max-w-2xl mx-auto mb-6 sm:mb-8 px-2 sm:px-0">
               Join thousands of satisfied customers who trust us for their home
               service needs. Quality professionals are just a click away.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white rounded-xl hover:bg-gray-50 transition-colors duration-300 shadow-lg"
+              className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold text-blue-600 bg-white rounded-lg sm:rounded-xl hover:bg-gray-50 transition-colors duration-300 shadow-lg"
             >
               Get Started Today
               <svg
-                className="w-5 h-5 ml-2"
+                className="w-4 h-4 sm:w-5 sm:h-5 ml-2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

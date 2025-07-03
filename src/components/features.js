@@ -354,13 +354,13 @@ const StickyNavigation = ({ features, activeSection }) => {
   };
 
   return (
-    <div className="hidden lg:block sticky top-20 float-left w-80 mr-12">
-      <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-gray-200">
-        <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center">
+    <div className="hidden xl:block sticky top-20 float-left w-72 2xl:w-80 mr-8 2xl:mr-12">
+      <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 xl:p-6 shadow-2xl border border-gray-200">
+        <h3 className="text-base xl:text-lg font-bold text-gray-900 mb-4 xl:mb-6 flex items-center">
           <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
           AI Features
         </h3>
-        <nav className="space-y-4">
+        <nav className="space-y-3 xl:space-y-4">
           {features.map((feature, index) => {
             const sectionId = `feature-${index}`;
             const isActive = activeSection === sectionId;
@@ -377,13 +377,13 @@ const StickyNavigation = ({ features, activeSection }) => {
               >
                 <div className="flex items-start space-x-3">
                   <span
-                    className={`font-bold text-lg ${
+                    className={`font-bold text-base xl:text-lg ${
                       isActive ? "text-blue-600" : "text-gray-400"
                     }`}
                   >
                     {index + 1}.
                   </span>
-                  <span className="text-base leading-relaxed">
+                  <span className="text-sm xl:text-base leading-relaxed">
                     {feature.title}
                   </span>
                 </div>
@@ -401,55 +401,55 @@ const FeatureSection = ({ feature, index }) => {
   const sectionRef = useRef(null);
 
   return (
-    <div ref={sectionRef} className="mb-24" id={`feature-${index}`}>
+    <div ref={sectionRef} className="mb-16 sm:mb-20 lg:mb-24" id={`feature-${index}`}>
       {/* Feature Header */}
       <div
-        className={`bg-gradient-to-r ${feature.gradient} rounded-3xl p-12 mb-12 text-white relative overflow-hidden`}
+        className={`bg-gradient-to-r ${feature.gradient} rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 mb-8 sm:mb-10 lg:mb-12 text-white relative overflow-hidden`}
       >
-        <div className="absolute top-0 right-0 opacity-10 transform rotate-12 scale-150">
+        <div className="absolute top-0 right-0 opacity-5 sm:opacity-10 transform rotate-12 scale-100 sm:scale-150 -mr-8 sm:mr-0">
           {feature.icon}
         </div>
         <div className="relative z-10">
-          <div className="flex items-center mb-6">
-            <div className="bg-white/20 rounded-xl p-4 backdrop-blur-sm mr-6">
+          <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+            <div className="bg-white/20 rounded-lg sm:rounded-xl p-3 sm:p-4 backdrop-blur-sm mr-0 sm:mr-6 mb-4 sm:mb-0 self-start">
               {feature.icon}
             </div>
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-2">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
                 {feature.title}
               </h2>
-              <p className="text-xl opacity-90">{feature.subtitle}</p>
+              <p className="text-base sm:text-lg lg:text-xl opacity-90">{feature.subtitle}</p>
             </div>
           </div>
-          <p className="text-xl opacity-95 leading-relaxed max-w-4xl">
+          <p className="text-base sm:text-lg lg:text-xl opacity-95 leading-relaxed">
             {feature.description}
           </p>
         </div>
       </div>
 
       {/* How It Works Section */}
-      <div className="mb-16">
-        <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
-          <span className="bg-blue-100 rounded-lg p-3 mr-4">🔧</span>
-          How It Works
+      <div className="mb-12 sm:mb-14 lg:mb-16">
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
+          <span className="bg-blue-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">🔧</span>
+          <span>How It Works</span>
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {feature.howItWorks.map((step, stepIndex) => (
             <div
               key={stepIndex}
-              className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100 hover:shadow-xl transition-all duration-300"
             >
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-lg">
+              <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 font-bold text-base sm:text-lg">
                     {stepIndex + 1}
                   </span>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-3">
+                  <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
                     {step.title}
                   </h4>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -460,34 +460,34 @@ const FeatureSection = ({ feature, index }) => {
       </div>
 
       {/* Technology & Architecture Section */}
-      <div className="mb-16">
-        <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
-          <span className="bg-green-100 rounded-lg p-3 mr-4">⚙️</span>
-          Technical Implementation
+      <div className="mb-12 sm:mb-14 lg:mb-16">
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
+          <span className="bg-green-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">⚙️</span>
+          <span>Technical Implementation</span>
         </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
           <div>
-            <h4 className="text-2xl font-semibold text-gray-900 mb-6">
+            <h4 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">
               Core Technologies
             </h4>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {feature.technologies.map((tech, techIndex) => (
                 <div
                   key={techIndex}
-                  className="flex items-center space-x-4 bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300"
+                  className="flex items-center space-x-3 sm:space-x-4 bg-gray-50 rounded-lg p-3 sm:p-4 hover:bg-gray-100 transition-colors duration-300"
                 >
-                  <div className="w-3 h-3 bg-blue-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-gray-700 font-medium">{tech}</span>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full flex-shrink-0"></div>
+                  <span className="text-sm sm:text-base text-gray-700 font-medium">{tech}</span>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <h4 className="text-2xl font-semibold text-gray-900 mb-6">
+            <h4 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">
               System Architecture
             </h4>
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
-              <p className="text-gray-700 leading-relaxed text-lg">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 sm:p-6 border border-blue-100">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
                 {feature.architecture}
               </p>
             </div>
@@ -496,24 +496,24 @@ const FeatureSection = ({ feature, index }) => {
       </div>
 
       {/* Benefits Section */}
-      <div className="mb-16">
-        <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
-          <span className="bg-purple-100 rounded-lg p-3 mr-4">🎯</span>
-          Key Benefits & Impact
+      <div className="mb-12 sm:mb-14 lg:mb-16">
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
+          <span className="bg-purple-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">🎯</span>
+          <span>Key Benefits & Impact</span>
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {feature.benefits.map((benefit, benefitIndex) => (
             <div
               key={benefitIndex}
-              className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              <div className="flex items-start space-x-4">
-                <div className="text-4xl">{benefit.icon}</div>
+              <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="text-2xl sm:text-3xl lg:text-4xl">{benefit.icon}</div>
                 <div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                     {benefit.title}
                   </h4>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
@@ -524,30 +524,30 @@ const FeatureSection = ({ feature, index }) => {
       </div>
 
       {/* Performance Metrics Section */}
-      <div className="mb-16">
-        <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
-          <span className="bg-amber-100 rounded-lg p-3 mr-4">📊</span>
-          Performance Metrics & Analytics
+      <div className="mb-12 sm:mb-14 lg:mb-16">
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
+          <span className="bg-amber-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">📊</span>
+          <span>Performance Metrics & Analytics</span>
         </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10 lg:mb-12">
           {/* Primary Chart */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-              <div className="h-80">{feature.chart}</div>
+            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100">
+              <div className="h-64 sm:h-72 lg:h-80">{feature.chart}</div>
             </div>
           </div>
 
           {/* Stats */}
-          <div className="space-y-4">
+          <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4">
             {feature.stats.map((stat, statIndex) => (
               <div
                 key={statIndex}
-                className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 text-center border border-blue-100 hover:shadow-lg transition-all duration-300"
+                className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 sm:p-6 text-center border border-blue-100 hover:shadow-lg transition-all duration-300"
               >
-                <div className="text-4xl font-bold text-blue-600 mb-2">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-700 font-medium">{stat.label}</div>
+                <div className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -555,18 +555,18 @@ const FeatureSection = ({ feature, index }) => {
 
         {/* Additional Charts Section */}
         {feature.additionalCharts && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {feature.additionalCharts.map((chartData, chartIndex) => (
               <div
                 key={chartIndex}
-                className="bg-white rounded-xl shadow-lg p-6 border border-gray-100"
+                className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100"
               >
-                <div className="h-80">{chartData.chart}</div>
-                <div className="mt-4 text-center">
-                  <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                <div className="h-64 sm:h-72 lg:h-80">{chartData.chart}</div>
+                <div className="mt-3 sm:mt-4 text-center">
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-800 mb-1 sm:mb-2">
                     {chartData.title}
                   </h4>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-xs sm:text-sm text-gray-600">
                     {chartData.description}
                   </p>
                 </div>
@@ -578,12 +578,12 @@ const FeatureSection = ({ feature, index }) => {
 
       {/* Divider */}
       {index < 3 && (
-        <div className="flex items-center justify-center mt-20 mb-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent w-full max-w-lg"></div>
-          <div className="mx-6 p-3 bg-gray-100 rounded-full">
-            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+        <div className="flex items-center justify-center mt-16 sm:mt-18 lg:mt-20 mb-6 sm:mb-8">
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent w-full max-w-xs sm:max-w-lg"></div>
+          <div className="mx-4 sm:mx-6 p-2 sm:p-3 bg-gray-100 rounded-full">
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-400 rounded-full"></div>
           </div>
-          <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent w-full max-w-lg"></div>
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent w-full max-w-xs sm:max-w-lg"></div>
         </div>
       )}
     </div>
@@ -1520,24 +1520,24 @@ export default function AIFeatures() {
 
   return (
     <section
-      className="py-20 bg-white relative overflow-clip"
+      className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-clip"
       ref={containerRef}
     >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+      <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+      <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-48 h-48 sm:w-72 sm:h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
 
-      <div className="mx-auto px-6 relative z-10">
+      <div className="mx-auto px-4 sm:px-6 relative z-10">
         {/* Sticky Navigation */}
         <StickyNavigation features={features} activeSection={activeSection} />
 
         {/* Main Header */}
-        <div className="text-center mb-20 lg:ml-96">
-          <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text text-transparent mb-8 font-poppins">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20 xl:ml-80 2xl:ml-96">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text text-transparent mb-4 sm:mb-6 lg:mb-8 font-poppins">
             AI-Powered Platform Features
           </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-inter">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-inter px-4">
             Discover how our cutting-edge artificial intelligence transforms the
             home services industry, delivering unprecedented accuracy,
             efficiency, and customer satisfaction.
@@ -1545,7 +1545,7 @@ export default function AIFeatures() {
         </div>
 
         {/* Features Sections */}
-        <div className="lg:ml-96">
+        <div className="xl:ml-80 2xl:ml-96">
           {features.map((feature, index) => (
             <FeatureSection key={index} feature={feature} index={index} />
           ))}
@@ -1553,15 +1553,15 @@ export default function AIFeatures() {
       </div>
 
       {/* Bottom CTA */}
-      <div className="text-center my-40">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6 font-poppins">
+      <div className="text-center my-20 sm:my-32 lg:my-40 px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 font-poppins">
           Ready to Experience the Future of Home Services?
         </h2>
-        <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto font-inter">
+        <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto font-inter">
           Join thousands of satisfied customers who trust our AI-powered
           platform for all their home service needs.
         </p>
-        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-16 py-5 rounded-full text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300 font-poppins">
+        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 sm:px-12 lg:px-16 py-3 sm:py-4 lg:py-5 rounded-full text-base sm:text-lg lg:text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300 font-poppins">
           Get Started Today
         </button>
       </div>

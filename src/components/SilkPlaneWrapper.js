@@ -31,11 +31,11 @@ const SilkPlaneWrapper = (props) => {
         <Silk {...props} />
       </Suspense>
       {/* Text at the center */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center pointer-events-none px-4">
-        <h1 className="text-white text-lg md:text-xl font-bold mb-3 drop-shadow-lg tracking-tight leading-tight sm:whitespace-nowrap whitespace-normal max-w-full">
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center pointer-events-none px-3 sm:px-4 md:px-6">
+        <h1 className="font-poppins text-white text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-2 xs:mb-3 sm:mb-4 drop-shadow-lg tracking-tight leading-tight max-w-full px-2 sm:px-0">
           Your go-to place for everything from grooming to plumbing
         </h1>
-        <button className="pointer-events-auto bg-white/20 backdrop-blur-md text-white font-medium px-6 py-2 rounded-lg border border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-200 shadow-lg">
+        <button className="pointer-events-auto bg-white/20 backdrop-blur-md text-white font-medium text-xs xs:text-sm sm:text-base px-4 xs:px-5 sm:px-6 py-1.5 xs:py-2 sm:py-2.5 rounded-md xs:rounded-lg border border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-200 shadow-lg">
           Get Started
         </button>
       </div>
