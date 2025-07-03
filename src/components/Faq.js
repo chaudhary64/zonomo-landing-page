@@ -36,9 +36,9 @@ const faqData = [
   },
   {
     id: 6,
-    question: "What if I'm not satisfied with the service?",
+    question: "What if I&apos;m not satisfied with the service?",
     answer:
-      "Your satisfaction is our priority! If you're not happy with the service, you can report it through our app. We offer service guarantees, and if needed, we'll send another professional to redo the work at no extra cost.",
+      "Your satisfaction is our priority! If you&apos;re not happy with the service, you can report it through our app. We offer service guarantees, and if needed, we&apos;ll send another professional to redo the work at no extra cost.",
   },
 ];
 
