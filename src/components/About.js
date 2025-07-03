@@ -27,18 +27,41 @@ const TeamMemberCard = ({ member, delay = 0 }) => (
   </motion.div>
 );
 
-// Stats Counter Component
+// Stats Counter Component with Enhanced Animation
 const StatCard = ({ stat, delay = 0 }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.8 }}
     whileInView={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.6, delay }}
     viewport={{ once: true }}
-    className="text-center"
+    whileHover={{ scale: 1.05, y: -5 }}
+    className="text-center group"
   >
-    <div className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl p-6 mb-4">
-      <h3 className="text-4xl font-bold text-white mb-2">{stat.number}</h3>
-      <p className="text-blue-100 font-medium">{stat.label}</p>
+    <div className="relative bg-white rounded-3xl p-8 mb-4 shadow-lg border border-blue-100 group-hover:shadow-2xl transition-all duration-500">
+      {/* Animated Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-teal-500/5 rounded-3xl group-hover:from-blue-500/10 group-hover:to-teal-500/10 transition-all duration-500"></div>
+
+      {/* Floating Icon */}
+      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
+        <span className="text-white text-sm">📊</span>
+      </div>
+
+      <div className="relative">
+        <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+          {stat.number}
+        </h3>
+        <p className="text-gray-600 font-semibold text-lg">{stat.label}</p>
+
+        {/* Progress Line */}
+        <div className="mt-4 h-1 bg-gray-200 rounded-full overflow-hidden">
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "100%" }}
+            transition={{ duration: 1.5, delay: delay + 0.5 }}
+            className="h-full bg-gradient-to-r from-blue-500 to-teal-500 rounded-full"
+          />
+        </div>
+      </div>
     </div>
   </motion.div>
 );
@@ -204,10 +227,17 @@ function About() {
   ];
 
   return (
-    <div className="bg-white" ref={ref}>
-      {/* Hero Section */}
-      <section className="py-20 sm:py-24 lg:py-32">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div className="bg-white overflow-hidden" ref={ref}>
+      {/* Hero Section with Enhanced Visual Elements */}
+      <section className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+        {/* Background Decorations */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-teal-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-teal-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-100/30 to-teal-100/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
             style={{
@@ -215,45 +245,138 @@ function About() {
               y: headerY,
             }}
           >
+            {/* Floating Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-blue-200/50 mb-8 shadow-lg"
+            >
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+              <span className="text-sm font-medium text-gray-700">
+                Trusted by 50,000+ Customers
+              </span>
+            </motion.div>
+
             <h1 className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl xl:text-6xl font-pj">
               About{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500 animate-pulse">
                 Our Story
               </span>
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto">
-              We&apos;re revolutionizing the home services industry by connecting
-              homeowners with trusted professionals through cutting-edge
-              technology and unwavering commitment to quality.
-            </p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-6 text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto"
+            >
+              We&apos;re revolutionizing the home services industry by
+              connecting homeowners with trusted professionals through
+              cutting-edge technology and unwavering commitment to quality.
+            </motion.p>
+
+            {/* Interactive Floating Icons */}
+            <div className="flex justify-center space-x-8 mt-12">
+              {[
+                { icon: "🏠", label: "Home Services" },
+                { icon: "⚡", label: "Fast Response" },
+                { icon: "🛡️", label: "Trusted Pros" },
+                { icon: "⭐", label: "5-Star Quality" },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="flex flex-col items-center p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100 shadow-md hover:shadow-lg transition-all duration-300"
+                >
+                  <span className="text-2xl mb-2">{item.icon}</span>
+                  <span className="text-xs font-medium text-gray-600">
+                    {item.label}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission & Vision Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      {/* Mission & Vision Section with Enhanced Design */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50/30 relative">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234F46E5' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
+        </div>
+
+        <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              className="relative"
             >
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-6">
-                Our Mission
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                To make quality home services accessible, reliable, and
-                stress-free for everyone. We believe that maintaining your home
-                shouldn&apos;t be a hassle – it should be simple, transparent, and
-                delivered by professionals you can trust.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Whether you need AC repair, deep cleaning, healthcare services,
-                or personal care, we&apos;re here to connect you with vetted
-                professionals who take pride in their work.
-              </p>
+              {/* Mission Card with Glow Effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-teal-500/20 rounded-3xl blur-2xl"></div>
+              <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-blue-100 shadow-xl">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-500 rounded-xl flex items-center justify-center mr-4">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                  </div>
+                  <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                    Our Mission
+                  </h2>
+                </div>
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  To make quality home services accessible, reliable, and
+                  stress-free for everyone. We believe that maintaining your
+                  home shouldn&apos;t be a hassle – it should be simple,
+                  transparent, and delivered by professionals you can trust.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Whether you need AC repair, deep cleaning, healthcare
+                  services, or personal care, we&apos;re here to connect you
+                  with vetted professionals who take pride in their work.
+                </p>
+
+                {/* Mission Stats */}
+                <div className="flex items-center space-x-6 mt-8">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">24/7</div>
+                    <div className="text-sm text-gray-500">Support</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-teal-600">100%</div>
+                    <div className="text-sm text-gray-500">Verified</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-purple-600">
+                      30min
+                    </div>
+                    <div className="text-sm text-gray-500">Response</div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -261,51 +384,168 @@ function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-lg"
+              className="relative"
             >
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-6">
-                Our Vision
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                To become the world&apos;s most trusted platform for home services,
-                where quality, convenience, and customer satisfaction converge
-                to create exceptional experiences.
-              </p>
-              <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              {/* Vision Card with Animated Border */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl"></div>
+              <div
+                className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 border-2 border-transparent bg-clip-padding shadow-xl"
+                style={{
+                  background:
+                    "linear-gradient(white, white) padding-box, linear-gradient(45deg, #3B82F6, #8B5CF6, #EC4899) border-box",
+                }}
+              >
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                  </div>
+                  <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                    Our Vision
+                  </h2>
+                </div>
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  To become the world&apos;s most trusted platform for home
+                  services, where quality, convenience, and customer
+                  satisfaction converge to create exceptional experiences.
+                </p>
+
+                {/* Animated Progress Circles */}
+                <div className="flex items-center space-x-8 mt-8">
+                  {[
+                    { label: "Quality", progress: 95, color: "blue" },
+                    { label: "Trust", progress: 98, color: "teal" },
+                    { label: "Innovation", progress: 92, color: "purple" },
+                  ].map((item, index) => (
+                    <div key={index} className="text-center">
+                      <div className="relative w-16 h-16 mx-auto mb-2">
+                        <svg
+                          className="w-16 h-16 transform -rotate-90"
+                          viewBox="0 0 36 36"
+                        >
+                          <path
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeDasharray={`${item.progress}, 100`}
+                            className={`text-${item.color}-500`}
+                          />
+                        </svg>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="text-xs font-semibold text-gray-700">
+                            {item.progress}%
+                          </span>
+                        </div>
+                      </div>
+                      <div className="text-sm text-gray-600">{item.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      {/* Stats Section with Enhanced Visual Appeal */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+          <div
+            className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-to-tl from-teal-400/10 to-transparent rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
+        </div>
+
+        <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-              Our Impact in Numbers
+            {/* Section Badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full mb-6">
+              <span className="text-blue-600 font-semibold text-sm">
+                📈 Our Impact
+              </span>
+            </div>
+
+            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6">
+              Trusted by{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">
+                Thousands
+              </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               These numbers represent the trust our customers place in us and
               the quality of service our professional partners deliver every
-              day.
+              single day across the globe.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <StatCard key={index} stat={stat} delay={index * 0.1} />
+              <StatCard key={index} stat={stat} delay={index * 0.15} />
             ))}
           </div>
+
+          {/* Achievement Badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center gap-6 mt-16"
+          >
+            {[
+              {
+                icon: "🏆",
+                title: "Industry Leader",
+                subtitle: "2024 Excellence Award",
+              },
+              {
+                icon: "⭐",
+                title: "Top Rated",
+                subtitle: "Customer Choice 2024",
+              },
+              { icon: "🛡️", title: "Verified", subtitle: "Trusted Platform" },
+            ].map((badge, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05, y: -2 }}
+                className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-2xl px-6 py-4 shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <span className="text-2xl">{badge.icon}</span>
+                <div>
+                  <div className="font-semibold text-gray-900 text-sm">
+                    {badge.title}
+                  </div>
+                  <div className="text-gray-500 text-xs">{badge.subtitle}</div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -394,13 +634,14 @@ function About() {
                       />
                     </svg>
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     The Complete Zonomo Team
                   </h3>
                   <p className="text-gray-600 text-lg mb-6 max-w-2xl">
-                    Our entire team working together to revolutionize home services. 
-                    A picture that captures the spirit of collaboration and innovation that drives us forward.
+                    Our entire team working together to revolutionize home
+                    services. A picture that captures the spirit of
+                    collaboration and innovation that drives us forward.
                   </p>
                   <div className="text-blue-500 font-medium">
                     [Team Photo Placeholder - Replace with actual team image]
