@@ -104,10 +104,10 @@ function WhyChooseUs() {
             y: titleY,
           }}
         >
-          <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">
+          <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-poppins">
             Why Choose Us?
           </h2>
-          <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-8 font-pj">
+          <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-8 font-inter">
             Trusted professionals, guaranteed quality, and convenience at your
             doorstep
           </p>
@@ -165,10 +165,10 @@ function WhyChooseUs() {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">
+            <h3 className="mt-12 text-xl font-bold text-gray-900 font-poppins">
               24/7 Support
             </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
+            <p className="mt-5 text-base text-gray-600 font-inter">
               Round-the-clock customer support to help you with booking,
               scheduling, and any service-related queries. We&apos;re here
               whenever you need us.
@@ -285,11 +285,11 @@ function WhyChooseUs() {
               </text>
             </svg>
 
-            <h3 className="mt-8 text-xl font-bold text-gray-900 font-pj">
+            <h3 className="mt-8 text-xl font-bold text-gray-900 font-poppins">
               Smart AI Assistant
             </h3>
 
-            <p className="mt-5 text-base text-gray-600 font-pj">
+            <p className="mt-5 text-base text-gray-600 font-inter">
               Just say the word—our smart assistant books your service, confirms
               the details, and gets you to checkout. Fast. Easy. Voice-powered.
             </p>
@@ -347,10 +347,10 @@ function WhyChooseUs() {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">
+            <h3 className="mt-12 text-xl font-bold text-gray-900 font-poppins">
               Easy Booking
             </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
+            <p className="mt-5 text-base text-gray-600 font-inter">
               Simple 3-step booking process. Choose your service, select a
               professional, and schedule at your convenience. Book in minutes,
               not hours
@@ -412,10 +412,10 @@ function WhyChooseUs() {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">
+            <h3 className="mt-12 text-xl font-bold text-gray-900 font-poppins">
               Wide Service Range
             </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
+            <p className="mt-5 text-base text-gray-600 font-inter">
               From AC repairs and cleaning to healthcare and personal care
               services. All your home service needs covered under one platform.
             </p>
@@ -456,10 +456,10 @@ function WhyChooseUs() {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">
+            <h3 className="mt-12 text-xl font-bold text-gray-900 font-poppins">
               Verified Professionals
             </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
+            <p className="mt-5 text-base text-gray-600 font-inter">
               All service providers are thoroughly background-checked and
               verified. Read real reviews and ratings from previous customers
               before booking.
@@ -501,10 +501,10 @@ function WhyChooseUs() {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">
+            <h3 className="mt-12 text-xl font-bold text-gray-900 font-poppins">
               Guaranteed Satisfaction
             </h3>
-            <p className="mt-5 text-base text-gray-600 font-pj">
+            <p className="mt-5 text-base text-gray-600 font-inter">
               100% satisfaction guarantee on all services. If you&apos;re not
               happy with the service, we&apos;ll make it right or provide a full
               refund.

@@ -82,25 +82,25 @@ const FAQ = () => {
             style={{ animationDelay: "0.1s" }}
           >
             <span className="mr-2 animate-bounce">❓</span>
-            Frequently Asked Questions
+            <span className="font-inter">Frequently Asked Questions</span>
           </div>
 
           <h2
-            className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in"
+            className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in font-poppins"
             style={{ animationDelay: "0.2s" }}
           >
             Got Questions?
-            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent animate-gradient">
+            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent animate-gradient font-playfair">
               We&apos;ve Got Answers
             </span>
           </h2>
 
           <p
-            className="mt-6 text-lg leading-relaxed text-gray-600 transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in"
+            className="mt-6 text-lg leading-relaxed text-gray-600 transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in font-inter"
             style={{ animationDelay: "0.3s" }}
           >
-            Everything you need to know about Zonomo&apos;s services and how we make
-            urban services more accessible and convenient.
+            Everything you need to know about Zonomo&apos;s services and how we
+            make urban services more accessible and convenient.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ const FAQ = () => {
                   className="w-full px-6 py-6 text-left rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 group"
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-blue-800 transition-colors duration-300">
+                    <h3 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-blue-800 transition-colors duration-300 font-poppins">
                       {faq.question}
                     </h3>
                     <div
@@ -165,7 +165,7 @@ const FAQ = () => {
                         activeId === faq.id ? "animate-slide-in" : ""
                       }`}
                     >
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-gray-600 leading-relaxed font-inter">
                         {faq.answer}
                       </p>
                     </div>

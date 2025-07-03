@@ -17,11 +17,15 @@ const TeamMemberCard = ({ member, delay = 0 }) => (
     className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
   >
     <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-      <span className="text-white text-2xl font-bold">{member.initials}</span>
+      <span className="text-white text-2xl font-bold font-poppins">
+        {member.initials}
+      </span>
     </div>
-    <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-    <p className="text-blue-600 font-medium mb-3">{member.role}</p>
-    <p className="text-gray-600 text-sm leading-relaxed">
+    <h3 className="text-xl font-semibold text-gray-900 mb-2 font-poppins">
+      {member.name}
+    </h3>
+    <p className="text-blue-600 font-medium mb-3 font-inter">{member.role}</p>
+    <p className="text-gray-600 text-sm leading-relaxed font-inter">
       {member.description}
     </p>
   </motion.div>
@@ -47,10 +51,12 @@ const StatCard = ({ stat, delay = 0 }) => (
       </div>
 
       <div className="relative">
-        <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+        <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 mb-3 group-hover:scale-110 transition-transform duration-300 font-poppins">
           {stat.number}
         </h3>
-        <p className="text-gray-600 font-semibold text-lg">{stat.label}</p>
+        <p className="text-gray-600 font-semibold text-lg font-inter">
+          {stat.label}
+        </p>
 
         {/* Progress Line */}
         <div className="mt-4 h-1 bg-gray-200 rounded-full overflow-hidden">
@@ -77,10 +83,12 @@ const ValueCard = ({ value, delay = 0 }) => (
   >
     <div className="bg-blue-100 rounded-lg p-3 flex-shrink-0">{value.icon}</div>
     <div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+      <h3 className="text-xl font-semibold text-gray-900 mb-2 font-poppins">
         {value.title}
       </h3>
-      <p className="text-gray-600 leading-relaxed">{value.description}</p>
+      <p className="text-gray-600 leading-relaxed font-inter">
+        {value.description}
+      </p>
     </div>
   </motion.div>
 );
@@ -253,14 +261,14 @@ function About() {
               className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-blue-200/50 mb-8 shadow-lg"
             >
               <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-gray-700 font-inter">
                 Trusted by 50,000+ Customers
               </span>
             </motion.div>
 
-            <h1 className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl xl:text-6xl font-pj">
+            <h1 className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl xl:text-6xl font-poppins">
               About{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500 animate-pulse">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500 animate-pulse font-playfair">
                 Our Story
               </span>
             </h1>
@@ -269,7 +277,7 @@ function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-6 text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto"
+              className="mt-6 text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto font-inter"
             >
               We&apos;re revolutionizing the home services industry by
               connecting homeowners with trusted professionals through
@@ -293,7 +301,7 @@ function About() {
                   className="flex flex-col items-center p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100 shadow-md hover:shadow-lg transition-all duration-300"
                 >
                   <span className="text-2xl mb-2">{item.icon}</span>
-                  <span className="text-xs font-medium text-gray-600">
+                  <span className="text-xs font-medium text-gray-600 font-inter">
                     {item.label}
                   </span>
                 </motion.div>
@@ -343,17 +351,17 @@ function About() {
                       />
                     </svg>
                   </div>
-                  <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                  <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl font-poppins">
                     Our Mission
                   </h2>
                 </div>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                <p className="text-lg text-gray-600 leading-relaxed mb-6 font-inter">
                   To make quality home services accessible, reliable, and
                   stress-free for everyone. We believe that maintaining your
                   home shouldn&apos;t be a hassle – it should be simple,
                   transparent, and delivered by professionals you can trust.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed font-inter">
                   Whether you need AC repair, deep cleaning, healthcare
                   services, or personal care, we&apos;re here to connect you
                   with vetted professionals who take pride in their work.
@@ -362,18 +370,28 @@ function About() {
                 {/* Mission Stats */}
                 <div className="flex items-center space-x-6 mt-8">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">24/7</div>
-                    <div className="text-sm text-gray-500">Support</div>
+                    <div className="text-2xl font-bold text-blue-600 font-poppins">
+                      24/7
+                    </div>
+                    <div className="text-sm text-gray-500 font-inter">
+                      Support
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-teal-600">100%</div>
-                    <div className="text-sm text-gray-500">Verified</div>
+                    <div className="text-2xl font-bold text-teal-600 font-poppins">
+                      100%
+                    </div>
+                    <div className="text-sm text-gray-500 font-inter">
+                      Verified
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600">
+                    <div className="text-2xl font-bold text-purple-600 font-poppins">
                       30min
                     </div>
-                    <div className="text-sm text-gray-500">Response</div>
+                    <div className="text-sm text-gray-500 font-inter">
+                      Response
+                    </div>
                   </div>
                 </div>
               </div>
@@ -417,11 +435,11 @@ function About() {
                       />
                     </svg>
                   </div>
-                  <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                  <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl font-poppins">
                     Our Vision
                   </h2>
                 </div>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                <p className="text-lg text-gray-600 leading-relaxed mb-6 font-inter">
                   To become the world&apos;s most trusted platform for home
                   services, where quality, convenience, and customer
                   satisfaction converge to create exceptional experiences.
@@ -486,18 +504,18 @@ function About() {
           >
             {/* Section Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full mb-6">
-              <span className="text-blue-600 font-semibold text-sm">
+              <span className="text-blue-600 font-semibold text-sm font-inter">
                 📈 Our Impact
               </span>
             </div>
 
-            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6 font-poppins">
               Trusted by{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 font-playfair">
                 Thousands
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-inter">
               These numbers represent the trust our customers place in us and
               the quality of service our professional partners deliver every
               single day across the globe.
@@ -538,10 +556,12 @@ function About() {
               >
                 <span className="text-2xl">{badge.icon}</span>
                 <div>
-                  <div className="font-semibold text-gray-900 text-sm">
+                  <div className="font-semibold text-gray-900 text-sm font-poppins">
                     {badge.title}
                   </div>
-                  <div className="text-gray-500 text-xs">{badge.subtitle}</div>
+                  <div className="text-gray-500 text-xs font-inter">
+                    {badge.subtitle}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -559,10 +579,10 @@ function About() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4 font-poppins">
               Our Core Values
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter">
               These principles guide everything we do and shape how we serve our
               customers and support our professional partners.
             </p>
@@ -586,10 +606,10 @@ function About() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4 font-poppins">
               Meet Our Team
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter">
               The passionate individuals behind our platform, working tirelessly
               to make home services better for everyone.
             </p>

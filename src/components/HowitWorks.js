@@ -30,11 +30,11 @@ function HowitWorks() {
     <section className="py-10 bg-white sm:py-16 lg:py-20">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl font-poppins">
             Book Your Service in 3 Simple Steps
             {/* Prviosly => How it Works ? */}
           </h2>
-          <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">
+          <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600 font-inter">
             Getting professional services has never been easier. Book trusted
             professionals for all your home service needs in just three simple
             steps.
@@ -61,12 +61,12 @@ function HowitWorks() {
           <div className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
             <div>
               <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
-                <span className="text-xl font-semibold text-gray-700"> 1 </span>
+                <span className="text-xl font-semibold text-gray-700 font-poppins"> 1 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">
+              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-poppins">
                 Choose Your Service
               </h3>
-              <p className="mt-4 text-base text-gray-600">
+              <p className="mt-4 text-base text-gray-600 font-inter">
                 Browse through our wide range of home services - from AC repairs
                 and cleaning to healthcare and personal care. Select what you
                 need.
@@ -74,12 +74,12 @@ function HowitWorks() {
             </div>
             <div>
               <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
-                <span className="text-xl font-semibold text-gray-700"> 2 </span>
+                <span className="text-xl font-semibold text-gray-700 font-poppins"> 2 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">
+              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-poppins">
                 Book Trusted Professionals
               </h3>
-              <p className="mt-4 text-base text-gray-600">
+              <p className="mt-4 text-base text-gray-600 font-inter">
                 Get instant quotes from verified professionals near you. Compare
                 prices, read reviews, and book the best service provider for
                 your needs.
@@ -87,12 +87,12 @@ function HowitWorks() {
             </div>
             <div>
               <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
-                <span className="text-xl font-semibold text-gray-700"> 3 </span>
+                <span className="text-xl font-semibold text-gray-700 font-poppins"> 3 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">
+              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-poppins">
                 Enjoy Quality Service
               </h3>
-              <p className="mt-4 text-base text-gray-600">
+              <p className="mt-4 text-base text-gray-600 font-inter">
                 Relax while our professionals handle your service needs. Track
                 progress in real-time and enjoy hassle-free, quality service at
                 your doorstep.

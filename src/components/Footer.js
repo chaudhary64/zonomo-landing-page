@@ -13,46 +13,46 @@ export default function Footer() {
         {/* Logo + Company Section */}
         <div>
           <div className="flex items-center space-x-2 mb-4">
-            <div className="bg-black text-white text-xs font-bold px-2 py-1 rounded">
+            <div className="bg-black text-white text-xs font-bold px-2 py-1 rounded font-poppins">
               Z
             </div>
-            <span className="font-semibold text-lg">Zonomo</span>
+            <span className="font-semibold text-lg font-poppins">Zonomo</span>
           </div>
           <div>
-            <h3 className="font-semibold mb-2">Company</h3>
+            <h3 className="font-semibold mb-2 font-poppins">Company</h3>
             <ul className="space-y-1">
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-inter">
                   About us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-inter">
                   Investor Relations
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-inter">
                   Terms & conditions
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-inter">
                   Privacy policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-inter">
                   Anti-discrimination policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-inter">
                   ESG Impact
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline font-inter">
                   Careers
                 </a>
               </li>
@@ -62,20 +62,20 @@ export default function Footer() {
 
         {/* For Customers */}
         <div>
-          <h3 className="font-semibold mb-2">For customers</h3>
+          <h3 className="font-semibold mb-2 font-poppins">For customers</h3>
           <ul className="space-y-1">
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline font-inter">
                 UC reviews
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline font-inter">
                 Categories near you
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline font-inter">
                 Contact us
               </a>
             </li>
@@ -84,15 +84,15 @@ export default function Footer() {
 
         {/* For Professionals */}
         <div>
-          <h3 className="font-semibold mb-2">For professionals</h3>
-          <a href="#" className="hover:underline">
+          <h3 className="font-semibold mb-2 font-poppins">For professionals</h3>
+          <a href="#" className="hover:underline font-inter">
             Register as a professional
           </a>
         </div>
 
         {/* Social Links */}
         <div>
-          <h3 className="font-semibold mb-2">Social links</h3>
+          <h3 className="font-semibold mb-2 font-poppins">Social links</h3>
           <div className="flex space-x-3 mb-4">
             <a
               href="#"
@@ -143,8 +143,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-200 text-xs text-gray-500 py-4 px-6 text-center">
-        <p>* As on December 31, 2024</p>
-        <p>
+        <p className="font-inter">* As on December 31, 2024</p>
+        <p className="font-inter">
           © Copyright 2025 Zonomo Ltd. (formerly known as UrbanClap
           Technologies India Limited) All rights reserved. | CIN:
           U74140DL2014PTC274413

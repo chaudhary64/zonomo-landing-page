@@ -248,7 +248,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="inline-block"
           >
-            <span className="px-3 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">
+            <span className="px-3 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium font-inter">
               New Generation Platform
             </span>
           </motion.div>
@@ -257,11 +257,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight font-poppins"
           >
             Revolutionizing <br />
             <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
+              <span className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent font-playfair">
                 Urban Services
               </span>
             </span>
@@ -271,7 +271,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-gray-700 text-base sm:text-lg max-w-lg leading-relaxed"
+            className="text-gray-700 text-base sm:text-lg max-w-lg leading-relaxed font-inter"
           >
             From doorstep repairs to healthcare, professional services to
             personal care – all services on one intelligent platform. Connect
@@ -285,12 +285,12 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 pt-2"
           >
-            <button className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+            <button className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 font-poppins">
               <span className="relative z-10">Get Started</span>
               <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </button>
 
-            <button className="relative overflow-hidden group bg-white text-gray-800 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300">
+            <button className="relative overflow-hidden group bg-white text-gray-800 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 font-poppins">
               <span className="relative z-10">How It Works</span>
               <span className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </button>
@@ -353,7 +353,7 @@ export default function HeroSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-white font-medium text-sm">
+                <span className="text-white font-medium text-sm font-poppins">
                   Home Repairs
                 </span>
               </div>
@@ -374,7 +374,7 @@ export default function HeroSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 p-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-white font-medium text-sm">
+                <span className="text-white font-medium text-sm font-poppins">
                   Laundry Services
                 </span>
               </div>
@@ -395,7 +395,7 @@ export default function HeroSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 p-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-white font-medium text-sm">
+                <span className="text-white font-medium text-sm font-poppins">
                   Healthcare
                 </span>
               </div>
@@ -416,7 +416,7 @@ export default function HeroSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-white font-medium">
+                <span className="text-white font-medium font-poppins">
                   Doctor Home Visits
                 </span>
               </div>

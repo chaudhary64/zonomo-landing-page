@@ -1534,10 +1534,10 @@ export default function AIFeatures() {
 
         {/* Main Header */}
         <div className="text-center mb-20 lg:ml-96">
-          <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text text-transparent mb-8">
+          <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text text-transparent mb-8 font-poppins">
             AI-Powered Platform Features
           </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-inter">
             Discover how our cutting-edge artificial intelligence transforms the
             home services industry, delivering unprecedented accuracy,
             efficiency, and customer satisfaction.
@@ -1554,14 +1554,14 @@ export default function AIFeatures() {
 
       {/* Bottom CTA */}
       <div className="text-center my-40">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">
+        <h2 className="text-4xl font-bold text-gray-900 mb-6 font-poppins">
           Ready to Experience the Future of Home Services?
         </h2>
-        <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto font-inter">
           Join thousands of satisfied customers who trust our AI-powered
           platform for all their home service needs.
         </p>
-        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-16 py-5 rounded-full text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300">
+        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-16 py-5 rounded-full text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300 font-poppins">
           Get Started Today
         </button>
       </div>
