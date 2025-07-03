@@ -401,7 +401,11 @@ const FeatureSection = ({ feature, index }) => {
   const sectionRef = useRef(null);
 
   return (
-    <div ref={sectionRef} className="mb-16 sm:mb-20 lg:mb-24" id={`feature-${index}`}>
+    <div
+      ref={sectionRef}
+      className="mb-16 sm:mb-20 lg:mb-24"
+      id={`feature-${index}`}
+    >
       {/* Feature Header */}
       <div
         className={`bg-gradient-to-r ${feature.gradient} rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 mb-8 sm:mb-10 lg:mb-12 text-white relative overflow-hidden`}
@@ -418,7 +422,9 @@ const FeatureSection = ({ feature, index }) => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
                 {feature.title}
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl opacity-90">{feature.subtitle}</p>
+              <p className="text-base sm:text-lg lg:text-xl opacity-90">
+                {feature.subtitle}
+              </p>
             </div>
           </div>
           <p className="text-base sm:text-lg lg:text-xl opacity-95 leading-relaxed">
@@ -430,7 +436,9 @@ const FeatureSection = ({ feature, index }) => {
       {/* How It Works Section */}
       <div className="mb-12 sm:mb-14 lg:mb-16">
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
-          <span className="bg-blue-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">🔧</span>
+          <span className="bg-blue-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">
+            🔧
+          </span>
           <span>How It Works</span>
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
@@ -462,7 +470,9 @@ const FeatureSection = ({ feature, index }) => {
       {/* Technology & Architecture Section */}
       <div className="mb-12 sm:mb-14 lg:mb-16">
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
-          <span className="bg-green-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">⚙️</span>
+          <span className="bg-green-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">
+            ⚙️
+          </span>
           <span>Technical Implementation</span>
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
@@ -477,7 +487,9 @@ const FeatureSection = ({ feature, index }) => {
                   className="flex items-center space-x-3 sm:space-x-4 bg-gray-50 rounded-lg p-3 sm:p-4 hover:bg-gray-100 transition-colors duration-300"
                 >
                   <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-sm sm:text-base text-gray-700 font-medium">{tech}</span>
+                  <span className="text-sm sm:text-base text-gray-700 font-medium">
+                    {tech}
+                  </span>
                 </div>
               ))}
             </div>
@@ -498,7 +510,9 @@ const FeatureSection = ({ feature, index }) => {
       {/* Benefits Section */}
       <div className="mb-12 sm:mb-14 lg:mb-16">
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
-          <span className="bg-purple-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">🎯</span>
+          <span className="bg-purple-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">
+            🎯
+          </span>
           <span>Key Benefits & Impact</span>
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -508,7 +522,9 @@ const FeatureSection = ({ feature, index }) => {
               className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <div className="flex items-start space-x-3 sm:space-x-4">
-                <div className="text-2xl sm:text-3xl lg:text-4xl">{benefit.icon}</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl">
+                  {benefit.icon}
+                </div>
                 <div>
                   <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                     {benefit.title}
@@ -526,7 +542,9 @@ const FeatureSection = ({ feature, index }) => {
       {/* Performance Metrics Section */}
       <div className="mb-12 sm:mb-14 lg:mb-16">
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
-          <span className="bg-amber-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">📊</span>
+          <span className="bg-amber-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">
+            📊
+          </span>
           <span>Performance Metrics & Analytics</span>
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10 lg:mb-12">
@@ -547,7 +565,9 @@ const FeatureSection = ({ feature, index }) => {
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">
                   {stat.value}
                 </div>
-                <div className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">{stat.label}</div>
+                <div className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
