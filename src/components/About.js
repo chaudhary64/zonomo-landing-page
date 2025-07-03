@@ -251,7 +251,7 @@ function About() {
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Whether you need AC repair, deep cleaning, healthcare services,
-                or personal care, we're here to connect you with vetted
+                or personal care, we&apos;re here to connect you with vetted
                 professionals who take pride in their work.
               </p>
             </motion.div>
