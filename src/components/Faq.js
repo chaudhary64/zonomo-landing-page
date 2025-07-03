@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -54,18 +54,20 @@ const FAQ = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setVisibleItems(prev => new Set([...prev, entry.target.dataset.id]));
+            setVisibleItems(
+              (prev) => new Set([...prev, entry.target.dataset.id])
+            );
           }
         });
       },
       {
         threshold: 0.2,
-        rootMargin: "0px 0px -100px 0px"
+        rootMargin: "0px 0px -100px 0px",
       }
     );
 
-    const items = document.querySelectorAll('[data-faq-item]');
-    items.forEach(item => observer.observe(item));
+    const items = document.querySelectorAll("[data-faq-item]");
+    items.forEach((item) => observer.observe(item));
 
     return () => observer.disconnect();
   }, []);
@@ -75,30 +77,30 @@ const FAQ = () => {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div 
+          <div
             className="inline-flex items-center px-4 py-2 mb-6 text-sm font-medium bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in shadow-lg"
-            style={{ animationDelay: '0.1s' }}
+            style={{ animationDelay: "0.1s" }}
           >
             <span className="mr-2 animate-bounce">❓</span>
             Frequently Asked Questions
           </div>
 
-          <h2 
+          <h2
             className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in"
-            style={{ animationDelay: '0.2s' }}
+            style={{ animationDelay: "0.2s" }}
           >
             Got Questions?
             <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent animate-gradient">
-              We've Got Answers
+              We&apos;ve Got Answers
             </span>
           </h2>
 
-          <p 
+          <p
             className="mt-6 text-lg leading-relaxed text-gray-600 transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in"
-            style={{ animationDelay: '0.3s' }}
+            style={{ animationDelay: "0.3s" }}
           >
-            Everything you need to know about Zonomo's services and how we
-            make urban services more accessible and convenient.
+            Everything you need to know about Zonomo&apos;s services and how we make
+            urban services more accessible and convenient.
           </p>
         </div>
 
@@ -111,13 +113,17 @@ const FAQ = () => {
                 data-faq-item
                 data-id={faq.id}
                 className={`border border-gray-200 rounded-2xl shadow-sm transition-all duration-500 hover:shadow-xl hover:scale-[1.02] hover:border-blue-300 transform ${
-                  visibleItems.has(faq.id.toString()) 
-                    ? 'opacity-100 translate-y-0 rotate-0' 
-                    : 'opacity-0 translate-y-10 rotate-1'
-                } ${activeId === faq.id ? 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-300 shadow-lg' : 'bg-white'}`}
-                style={{ 
+                  visibleItems.has(faq.id.toString())
+                    ? "opacity-100 translate-y-0 rotate-0"
+                    : "opacity-0 translate-y-10 rotate-1"
+                } ${
+                  activeId === faq.id
+                    ? "bg-gradient-to-r from-blue-50 to-purple-50 border-blue-300 shadow-lg"
+                    : "bg-white"
+                }`}
+                style={{
                   transitionDelay: `${index * 0.08}s`,
-                  willChange: 'transform, opacity'
+                  willChange: "transform, opacity",
                 }}
               >
                 <button
@@ -130,29 +136,35 @@ const FAQ = () => {
                     </h3>
                     <div
                       className={`flex-shrink-0 p-2 rounded-full transition-all duration-400 ease-out ${
-                        activeId === faq.id 
-                          ? 'rotate-180 bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg scale-110' 
-                          : 'rotate-0 bg-gray-100 group-hover:bg-blue-100 group-hover:scale-105'
+                        activeId === faq.id
+                          ? "rotate-180 bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg scale-110"
+                          : "rotate-0 bg-gray-100 group-hover:bg-blue-100 group-hover:scale-105"
                       }`}
                     >
-                      <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${
-                        activeId === faq.id ? 'text-white' : 'text-gray-600 group-hover:text-blue-600'
-                      }`} />
+                      <ChevronDown
+                        className={`w-5 h-5 transition-colors duration-300 ${
+                          activeId === faq.id
+                            ? "text-white"
+                            : "text-gray-600 group-hover:text-blue-600"
+                        }`}
+                      />
                     </div>
                   </div>
                 </button>
 
                 <div
                   className={`overflow-hidden transition-all duration-400 ease-out ${
-                    activeId === faq.id 
-                      ? 'max-h-96 opacity-100 transform translate-y-0' 
-                      : 'max-h-0 opacity-0 transform -translate-y-4'
+                    activeId === faq.id
+                      ? "max-h-96 opacity-100 transform translate-y-0"
+                      : "max-h-0 opacity-0 transform -translate-y-4"
                   }`}
                 >
                   <div className="px-6 pb-6">
-                    <div className={`pt-4 border-t border-gray-200 transition-all duration-300 ${
-                      activeId === faq.id ? 'animate-slide-in' : ''
-                    }`}>
+                    <div
+                      className={`pt-4 border-t border-gray-200 transition-all duration-300 ${
+                        activeId === faq.id ? "animate-slide-in" : ""
+                      }`}
+                    >
                       <p className="text-gray-600 leading-relaxed">
                         {faq.answer}
                       </p>
@@ -248,7 +260,8 @@ const FAQ = () => {
         }
 
         @keyframes pulse {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 1;
           }
           50% {
