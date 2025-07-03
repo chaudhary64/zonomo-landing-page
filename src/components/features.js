@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -344,12 +344,64 @@ const NLPIcon = ({ className = "w-16 h-16" }) => (
   </svg>
 );
 
+// Sticky Navigation Component
+const StickyNavigation = ({ features, activeSection }) => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  return (
+    <div className="hidden lg:block sticky top-20 float-left w-80 mr-12">
+      <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-gray-200">
+        <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center">
+          <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+          AI Features
+        </h3>
+        <nav className="space-y-4">
+          {features.map((feature, index) => {
+            const sectionId = `feature-${index}`;
+            const isActive = activeSection === sectionId;
+
+            return (
+              <button
+                key={index}
+                onClick={() => scrollToSection(sectionId)}
+                className={`w-full text-left transition-all duration-300 ${
+                  isActive
+                    ? "text-blue-600 font-semibold"
+                    : "text-gray-700 hover:text-blue-500"
+                }`}
+              >
+                <div className="flex items-start space-x-3">
+                  <span
+                    className={`font-bold text-lg ${
+                      isActive ? "text-blue-600" : "text-gray-400"
+                    }`}
+                  >
+                    {index + 1}.
+                  </span>
+                  <span className="text-base leading-relaxed">
+                    {feature.title}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
+        </nav>
+      </div>
+    </div>
+  );
+};
+
 // Feature Section Component
 const FeatureSection = ({ feature, index }) => {
   const sectionRef = useRef(null);
 
   return (
-    <div ref={sectionRef} className="mb-24">
+    <div ref={sectionRef} className="mb-24" id={`feature-${index}`}>
       {/* Feature Header */}
       <div
         className={`bg-gradient-to-r ${feature.gradient} rounded-3xl p-12 mb-12 text-white relative overflow-hidden`}
@@ -540,6 +592,37 @@ const FeatureSection = ({ feature, index }) => {
 
 export default function AIFeatures() {
   const containerRef = useRef(null);
+  const [activeSection, setActiveSection] = useState("feature-0");
+
+  // Intersection Observer for tracking active section
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    // Observe all feature sections
+    const sections = document.querySelectorAll('[id^="feature-"]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   // Chart configurations
   const smartMatchingChart = (
@@ -1437,7 +1520,7 @@ export default function AIFeatures() {
 
   return (
     <section
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-20 bg-white relative overflow-clip"
       ref={containerRef}
     >
       {/* Background Elements */}
@@ -1445,9 +1528,12 @@ export default function AIFeatures() {
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
 
-      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+      <div className="mx-auto px-6 relative z-10">
+        {/* Sticky Navigation */}
+        <StickyNavigation features={features} activeSection={activeSection} />
+
         {/* Main Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 lg:ml-96">
           <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text text-transparent mb-8">
             AI-Powered Platform Features
           </h1>
@@ -1459,14 +1545,14 @@ export default function AIFeatures() {
         </div>
 
         {/* Features Sections */}
-        <div>
+        <div className="lg:ml-96">
           {features.map((feature, index) => (
             <FeatureSection key={index} feature={feature} index={index} />
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-24 mb-12">
+        <div className="text-center mt-24 mb-12 lg:ml-96">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             Ready to Experience the Future of Home Services?
           </h2>
