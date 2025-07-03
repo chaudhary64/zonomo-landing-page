@@ -222,7 +222,7 @@ function About() {
               </span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto">
-              We're revolutionizing the home services industry by connecting
+              We&apos;re revolutionizing the home services industry by connecting
               homeowners with trusted professionals through cutting-edge
               technology and unwavering commitment to quality.
             </p>
@@ -246,7 +246,7 @@ function About() {
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
                 To make quality home services accessible, reliable, and
                 stress-free for everyone. We believe that maintaining your home
-                shouldn't be a hassle – it should be simple, transparent, and
+                shouldn&apos;t be a hassle – it should be simple, transparent, and
                 delivered by professionals you can trust.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
@@ -267,7 +267,7 @@ function About() {
                 Our Vision
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                To become the world's most trusted platform for home services,
+                To become the world&apos;s most trusted platform for home services,
                 where quality, convenience, and customer satisfaction converge
                 to create exceptional experiences.
               </p>
@@ -440,7 +440,7 @@ function About() {
                   year: "2022",
                   title: "The Beginning",
                   description:
-                    "Founded with a vision to simplify home services and connect homeowners with trusted professionals.",
+                    "                    Founded with a vision to simplify home services and connect homeowners with trusted professionals.",
                 },
                 {
                   year: "2023",
