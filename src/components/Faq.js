@@ -1,7 +1,6 @@
-"use client";
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+"use client"
+import React, { useState, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 
 const faqData = [
   {
@@ -44,176 +43,226 @@ const faqData = [
 
 const FAQ = () => {
   const [activeId, setActiveId] = useState(null);
+  const [visibleItems, setVisibleItems] = useState(new Set());
 
   const toggleFAQ = (id) => {
     setActiveId(activeId === id ? null : id);
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleItems(prev => new Set([...prev, entry.target.dataset.id]));
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -100px 0px"
+      }
+    );
+
+    const items = document.querySelectorAll('[data-faq-item]');
+    items.forEach(item => observer.observe(item));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-16 bg-white sm:py-20 lg:py-24">
+    <section className="py-16 bg-gradient-to-br from-gray-50 to-white sm:py-20 lg:py-24 min-h-screen">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
-          className="max-w-3xl mx-auto text-center mb-16"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.25, delay: 0.05 }}
-            className="inline-flex items-center px-4 py-2 mb-6 text-sm font-medium bg-blue-100 text-blue-800 rounded-full"
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <div 
+            className="inline-flex items-center px-4 py-2 mb-6 text-sm font-medium bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in shadow-lg"
+            style={{ animationDelay: '0.1s' }}
           >
-            <span className="mr-2">❓</span>
+            <span className="mr-2 animate-bounce">❓</span>
             Frequently Asked Questions
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.1 }}
-            className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl"
+          <h2 
+            className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in"
+            style={{ animationDelay: '0.2s' }}
           >
             Got Questions?
-            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
-              We&apos;ve Got Answers
+            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent animate-gradient">
+              We've Got Answers
             </span>
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.15 }}
-            className="mt-6 text-lg leading-relaxed text-gray-600"
+          <p 
+            className="mt-6 text-lg leading-relaxed text-gray-600 transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in"
+            style={{ animationDelay: '0.3s' }}
           >
-            Everything you need to know about Zonomo&apos;s services and how we make
-            urban services more accessible and convenient.
-          </motion.p>
-        </motion.div>
+            Everything you need to know about Zonomo's services and how we
+            make urban services more accessible and convenient.
+          </p>
+        </div>
 
         {/* FAQ Items */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.2 }}
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           <div className="space-y-4">
             {faqData.map((faq, index) => (
-              <motion.div
+              <div
                 key={faq.id}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: index * 0.05 }}
-                className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300"
+                data-faq-item
+                data-id={faq.id}
+                className={`border border-gray-200 rounded-2xl shadow-sm transition-all duration-500 hover:shadow-xl hover:scale-[1.02] hover:border-blue-300 transform ${
+                  visibleItems.has(faq.id.toString()) 
+                    ? 'opacity-100 translate-y-0 rotate-0' 
+                    : 'opacity-0 translate-y-10 rotate-1'
+                } ${activeId === faq.id ? 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-300 shadow-lg' : 'bg-white'}`}
+                style={{ 
+                  transitionDelay: `${index * 0.08}s`,
+                  willChange: 'transform, opacity'
+                }}
               >
                 <button
                   onClick={() => toggleFAQ(faq.id)}
-                  className="w-full px-6 py-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-2xl"
+                  className="w-full px-6 py-6 text-left rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 group"
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                    <h3 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-blue-800 transition-colors duration-300">
                       {faq.question}
                     </h3>
-                    <motion.div
-                      animate={{ rotate: activeId === faq.id ? 180 : 0 }}
-                      transition={{ duration: 0.2, ease: "easeInOut" }}
-                      className="flex-shrink-0"
+                    <div
+                      className={`flex-shrink-0 p-2 rounded-full transition-all duration-400 ease-out ${
+                        activeId === faq.id 
+                          ? 'rotate-180 bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg scale-110' 
+                          : 'rotate-0 bg-gray-100 group-hover:bg-blue-100 group-hover:scale-105'
+                      }`}
                     >
-                      <ChevronDownIcon className="w-5 h-5 text-gray-500" />
-                    </motion.div>
+                      <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${
+                        activeId === faq.id ? 'text-white' : 'text-gray-600 group-hover:text-blue-600'
+                      }`} />
+                    </div>
                   </div>
                 </button>
 
-                <AnimatePresence>
-                  {activeId === faq.id && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.2, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-6">
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.15, delay: 0.05 }}
-                          className="pt-4 border-t border-gray-100"
-                        >
-                          <p className="text-gray-600 leading-relaxed">
-                            {faq.answer}
-                          </p>
-                        </motion.div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+                <div
+                  className={`overflow-hidden transition-all duration-400 ease-out ${
+                    activeId === faq.id 
+                      ? 'max-h-96 opacity-100 transform translate-y-0' 
+                      : 'max-h-0 opacity-0 transform -translate-y-4'
+                  }`}
+                >
+                  <div className="px-6 pb-6">
+                    <div className={`pt-4 border-t border-gray-200 transition-all duration-300 ${
+                      activeId === faq.id ? 'animate-slide-in' : ''
+                    }`}>
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-        </motion.div>
-
-        {/* Call to Action */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.25 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 md:p-12">
-            <motion.h3
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.25, delay: 0.3 }}
-              className="text-2xl md:text-3xl font-bold text-white mb-4"
-            >
-              Still have questions?
-            </motion.h3>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.25, delay: 0.35 }}
-              className="text-blue-100 mb-8 text-lg"
-            >
-              Our customer support team is here to help you 24/7
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.25, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 shadow-lg"
-              >
-                Contact Support
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
-              >
-                Live Chat
-              </motion.button>
-            </motion.div>
-          </div>
-        </motion.div> */}
+        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        @keyframes slide-in {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.5s ease-out forwards;
+        }
+
+        .animate-slide-in {
+          animation: slide-in 0.3s ease-out forwards;
+        }
+
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
+
+        /* Smooth scrolling for the entire page */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar with gradient */
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+          border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(45deg, #2563eb, #7c3aed);
+        }
+
+        /* Enhanced hover effects */
+        .group:hover .animate-bounce {
+          animation: bounce 1s infinite;
+        }
+
+        /* Pulse effect for active items */
+        .bg-gradient-to-r.from-blue-50 {
+          animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+
+        /* Micro animations */
+        @media (prefers-reduced-motion: no-preference) {
+          * {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          }
+        }
+      `}</style>
     </section>
   );
 };
