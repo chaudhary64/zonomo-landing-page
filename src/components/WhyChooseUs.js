@@ -56,9 +56,9 @@ function WhyChooseUs() {
   );
 
   // Bottom row animations with staggering - starting earlier
-  const bottomRow1Y = useTransform(scrollYProgress, [0.25, 0.55], [80, 0]);
-  const bottomRow1X = useTransform(scrollYProgress, [0.25, 0.55], [20, 0]);
-  const bottomRow1Scale = useTransform(scrollYProgress, [0.25, 0.55], [0.6, 1]);
+  const bottomRow1Y = useTransform(scrollYProgress, [0.25, 0.35], [80, 0]);
+  const bottomRow1X = useTransform(scrollYProgress, [0.25, 0.35], [20, 0]);
+  const bottomRow1Scale = useTransform(scrollYProgress, [0.25, 0.35], [0.6, 1]);
   const bottomRow1RotateY = useTransform(
     scrollYProgress,
     [0.25, 0.55],
@@ -70,27 +70,27 @@ function WhyChooseUs() {
     [0, 0, 1]
   );
 
-  const bottomRow2Y = useTransform(scrollYProgress, [0.3, 0.6], [80, 0]);
-  const bottomRow2X = useTransform(scrollYProgress, [0.3, 0.6], [20, 0]);
-  const bottomRow2Scale = useTransform(scrollYProgress, [0.3, 0.6], [0.6, 1]);
-  const bottomRow2RotateY = useTransform(scrollYProgress, [0.3, 0.6], [10, 0]);
+  const bottomRow2Y = useTransform(scrollYProgress, [0.3, 0.4], [80, 0]);
+  const bottomRow2X = useTransform(scrollYProgress, [0.3, 0.4], [20, 0]);
+  const bottomRow2Scale = useTransform(scrollYProgress, [0.3, 0.4], [0.6, 1]);
+  const bottomRow2RotateY = useTransform(scrollYProgress, [0.3, 0.4], [10, 0]);
   const bottomRow2Opacity = useTransform(
     scrollYProgress,
     [0.3, 0.4, 0.5],
     [0, 0, 1]
   );
 
-  const bottomRow3Y = useTransform(scrollYProgress, [0.35, 0.65], [80, 0]);
-  const bottomRow3X = useTransform(scrollYProgress, [0.35, 0.65], [20, 0]);
-  const bottomRow3Scale = useTransform(scrollYProgress, [0.35, 0.65], [0.6, 1]);
+  const bottomRow3Y = useTransform(scrollYProgress, [0.2, 0.2], [80, 0]);
+  const bottomRow3X = useTransform(scrollYProgress, [0.1, 0.2], [20, 0]);
+  const bottomRow3Scale = useTransform(scrollYProgress, [0.1, 0.5], [0.6, 1]);
   const bottomRow3RotateY = useTransform(
     scrollYProgress,
-    [0.35, 0.65],
+    [0.15, 0.65],
     [10, 0]
   );
   const bottomRow3Opacity = useTransform(
     scrollYProgress,
-    [0.35, 0.45, 0.55],
+    [0.15, 0.25, 0.25],
     [0, 0, 1]
   );
 
