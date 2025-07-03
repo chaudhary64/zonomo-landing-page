@@ -1550,20 +1550,20 @@ export default function AIFeatures() {
             <FeatureSection key={index} feature={feature} index={index} />
           ))}
         </div>
+      </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-24 mb-12 lg:ml-96">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Ready to Experience the Future of Home Services?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Join thousands of satisfied customers who trust our AI-powered
-            platform for all their home service needs.
-          </p>
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-16 py-5 rounded-full text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300">
-            Get Started Today
-          </button>
-        </div>
+      {/* Bottom CTA */}
+      <div className="text-center my-40">
+        <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          Ready to Experience the Future of Home Services?
+        </h2>
+        <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          Join thousands of satisfied customers who trust our AI-powered
+          platform for all their home service needs.
+        </p>
+        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-16 py-5 rounded-full text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300">
+          Get Started Today
+        </button>
       </div>
     </section>
   );
