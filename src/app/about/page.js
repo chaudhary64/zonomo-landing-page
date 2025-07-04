@@ -16,7 +16,7 @@ const TeamMemberCard = ({ member, delay = 0 }) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay }}
     viewport={{ once: true }}
-    className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow duration-300"
+    className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer"
   >
     <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center">
       <span className="text-white text-lg sm:text-xl md:text-2xl font-bold font-poppins">
@@ -43,7 +43,7 @@ const StatCard = ({ stat, delay = 0 }) => (
     transition={{ duration: 0.6, delay }}
     viewport={{ once: true }}
     whileHover={{ scale: 1.05, y: -5 }}
-    className="text-center group"
+    className="text-center group cursor-pointer"
   >
     <div className="relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 mb-3 sm:mb-4 shadow-lg border border-blue-100 group-hover:shadow-2xl transition-all duration-500">
       {/* Animated Background Gradient */}
@@ -321,7 +321,7 @@ function About() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                     whileHover={{ scale: 1.1, y: -5 }}
-                    className="flex flex-col items-center p-2 sm:p-3 md:p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-blue-100 shadow-md hover:shadow-lg transition-all duration-300 min-w-[70px] sm:min-w-[80px]"
+                    className="flex flex-col items-center p-2 sm:p-3 md:p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-blue-100 shadow-md hover:shadow-lg transition-all duration-300 min-w-[70px] sm:min-w-[80px] cursor-pointer"
                   >
                     <span className="text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2">
                       {item.icon}
@@ -522,7 +522,7 @@ function About() {
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center space-x-2 sm:space-x-3 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-xl sm:rounded-2xl px-3 py-3 sm:px-4 sm:py-4 md:px-6 shadow-md hover:shadow-lg transition-all duration-300"
+                  className="flex items-center space-x-2 sm:space-x-3 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-xl sm:rounded-2xl px-3 py-3 sm:px-4 sm:py-4 md:px-6 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
                 >
                   <span className="text-lg sm:text-xl md:text-2xl">
                     {badge.icon}
@@ -731,7 +731,7 @@ function About() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold text-blue-600 bg-white rounded-lg sm:rounded-xl hover:bg-gray-50 transition-colors duration-300 shadow-lg"
+                className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold text-blue-600 bg-white rounded-lg sm:rounded-xl hover:bg-gray-50 transition-colors duration-300 shadow-lg cursor-pointer"
               >
                 Get Started Today
                 <svg

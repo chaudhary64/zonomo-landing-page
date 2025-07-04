@@ -369,7 +369,7 @@ const StickyNavigation = ({ features, activeSection }) => {
               <button
                 key={index}
                 onClick={() => scrollToSection(sectionId)}
-                className={`w-full text-left transition-all duration-300 ${
+                className={`w-full text-left transition-all duration-300 cursor-pointer ${
                   isActive
                     ? "text-blue-600 font-semibold"
                     : "text-gray-700 hover:text-blue-500"
