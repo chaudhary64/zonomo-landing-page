@@ -251,9 +251,9 @@ function About() {
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-blue-50 via-white to-teal-50">
         {/* Background Decorations */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-br from-blue-400/20 to-teal-400/20 rounded-full blur-xl sm:blur-3xl"></div>
-          <div className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-tr from-teal-400/20 to-blue-400/20 rounded-full blur-xl sm:blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-blue-100/30 to-teal-100/30 rounded-full blur-xl sm:blur-3xl"></div>
+          {/* <div className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-br from-blue-400/20 to-teal-400/20 rounded-full blur-xl sm:blur-3xl"></div> */}
+          {/* <div className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-tr from-teal-400/20 to-blue-400/20 rounded-full blur-xl sm:blur-3xl"></div> */}
+          {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-blue-100/30 to-teal-100/30 rounded-full blur-xl sm:blur-3xl"></div> */}
         </div>
 
         <div className="relative px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
@@ -354,10 +354,10 @@ function About() {
               className="relative"
             >
               {/* Mission Card with Glow Effect */}
-              <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-blue-500/20 to-teal-500/20 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl"></div>
+              <div className="absolute -inset-2 sm:-inset-4 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl"></div>
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-xl">
                 <div className="flex items-center mb-4 sm:mb-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-400 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4">
                     <svg
                       className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                       fill="none"
@@ -423,83 +423,28 @@ function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative ml-auto w-[600px] h-[600px] max-w-2xl" // Added ml-auto and increased max-width
             >
-              {/* Vision Card with Animated Border */}
-              <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl"></div>
-              <div
-                className="relative bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-transparent bg-clip-padding shadow-xl"
-                style={{
-                  background:
-                    "linear-gradient(white, white) padding-box, linear-gradient(45deg, #3B82F6, #8B5CF6, #EC4899) border-box",
-                }}
-              >
-                <div className="flex items-center mb-4 sm:mb-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4">
-                    <svg
-                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      />
-                    </svg>
-                  </div>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 font-poppins">
-                    Our Vision
-                  </h2>
-                </div>
-                <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6 font-inter">
-                  To become the world&apos;s most trusted platform for home
-                  services, where quality, convenience, and customer
-                  satisfaction converge to create exceptional experiences.
-                </p>
+              {/* Simplified Video Container without border */}
+              <div className="relative bg-transparent rounded-xl sm:rounded-3xl overflow-hidden shadow-xl">
+                {/* AI Video Player - Larger size */}
+                <div className="aspect-w-16 aspect-h-9 w-full">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-[600px] object-cover rounded-2xl sm:rounded-3xl"
+                  >
+                    <source src="/images/missionvid.mp4" type="video/mp4" />
+                    <source src="/images/missionvid.mp4" type="video/webm" />
+                    Your browser does not support the video tag.
+                  </video>
 
-                {/* Animated Progress Circles */}
-                <div className="flex items-center justify-center sm:justify-start space-x-4 sm:space-x-6 lg:space-x-8 mt-6 sm:mt-8">
-                  {[
-                    { label: "Quality", progress: 95, color: "blue" },
-                    { label: "Trust", progress: 98, color: "teal" },
-                    { label: "Innovation", progress: 92, color: "purple" },
-                  ].map((item, index) => (
-                    <div key={index} className="text-center">
-                      <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-2">
-                        <svg
-                          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 transform -rotate-90"
-                          viewBox="0 0 36 36"
-                        >
-                          <path
-                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeDasharray={`${item.progress}, 100`}
-                            className={`text-${item.color}-500`}
-                          />
-                        </svg>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-[10px] sm:text-xs font-semibold text-gray-700">
-                            {item.progress}%
-                          </span>
-                        </div>
-                      </div>
-                      <div className="text-xs sm:text-sm text-gray-600">
-                        {item.label}
-                      </div>
-                    </div>
-                  ))}
+                  {/* Minimal play button indicator */}
+                  
                 </div>
+                
               </div>
             </motion.div>
           </div>
