@@ -23,22 +23,22 @@ export default function Nav() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
+              href="/features"
+              className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+            >
+              Features
+            </Link>
+            <Link
               href="/about"
               className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
             >
               About us
             </Link>
             <Link
-              href="/services"
+              href="/faq"
               className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
             >
-              Services
-            </Link>
-            <Link
-              href="/ai"
-              className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-            >
-              AI
+              FAQ
             </Link>
             <Link
               href="/contact"
@@ -99,6 +99,13 @@ export default function Nav() {
           <div className="md:hidden border-t border-gray-200 py-4">
             <div className="flex flex-col space-y-4">
               <Link
+                href="/features"
+                className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Features
+              </Link>
+              <Link
                 href="/about"
                 className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
                 onClick={() => setIsMenuOpen(false)}
@@ -106,18 +113,11 @@ export default function Nav() {
                 About us
               </Link>
               <Link
-                href="/services"
+                href="/faq"
                 className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
-              </Link>
-              <Link
-                href="/ai"
-                className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                AI
+                FAQ
               </Link>
               <Link
                 href="/contact"
