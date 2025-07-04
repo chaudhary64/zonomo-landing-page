@@ -358,7 +358,7 @@ const StickyNavigation = ({ features, activeSection }) => {
       <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 xl:p-6 shadow-2xl border border-gray-200">
         <h3 className="text-base xl:text-lg font-bold text-gray-900 mb-4 xl:mb-6 flex items-center">
           <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-          AI Features
+          What Sets Us Apart
         </h3>
         <nav className="space-y-3 xl:space-y-4">
           {features.map((feature, index) => {
@@ -1555,12 +1555,13 @@ export default function AIFeatures() {
         {/* Main Header */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20 xl:ml-80 2xl:ml-96">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text text-transparent mb-4 sm:mb-6 lg:mb-8 font-poppins">
-            AI-Powered Platform Features
+            What Sets Us Apart From The Competition
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-inter px-4">
-            Discover how our cutting-edge artificial intelligence transforms the
-            home services industry, delivering unprecedented accuracy,
-            efficiency, and customer satisfaction.
+            Experience the future of home services with our revolutionary
+            platform that combines advanced AI technology, unmatched service
+            quality, and customer-first innovation to deliver what no competitor
+            can match.
           </p>
         </div>
 
@@ -1570,20 +1571,6 @@ export default function AIFeatures() {
             <FeatureSection key={index} feature={feature} index={index} />
           ))}
         </div>
-      </div>
-
-      {/* Bottom CTA */}
-      <div className="text-center my-20 sm:my-32 lg:my-40 px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 font-poppins">
-          Ready to Experience the Future of Home Services?
-        </h2>
-        <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto font-inter">
-          Join thousands of satisfied customers who trust our AI-powered
-          platform for all their home service needs.
-        </p>
-        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 sm:px-12 lg:px-16 py-3 sm:py-4 lg:py-5 rounded-full text-base sm:text-lg lg:text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300 font-poppins">
-          Get Started Today
-        </button>
       </div>
     </section>
   );
