@@ -252,7 +252,7 @@ function About() {
       <Nav />
       <div className="bg-white overflow-hidden">
         {/* Hero Section with Enhanced Visual Elements */}
-        <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+        <section className="relative pt-8 pb-12 sm:pt-12 sm:pb-16 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24 bg-gradient-to-br from-blue-50 via-white to-teal-50">
           {/* Background Decorations */}
           <div className="absolute inset-0 overflow-hidden">
             {/* <div className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-br from-blue-400/20 to-teal-400/20 rounded-full blur-xl sm:blur-3xl"></div> */}
@@ -677,7 +677,7 @@ function About() {
                     year: "2022",
                     title: "The Beginning",
                     description:
-                      "                    Founded with a vision to simplify home services and connect homeowners with trusted professionals.",
+                      "Founded with a vision to simplify home services and connect homeowners with trusted professionals.",
                   },
                   {
                     year: "2023",
