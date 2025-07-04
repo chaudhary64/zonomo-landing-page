@@ -62,7 +62,7 @@ export default function ClientContactUs() {
             Get In <span className="text-blue-600">Touch</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter">
-            Ready to experience premium services? We're here to help you every
+            Ready to experience premium services? We&apos;re here to help you every
             step of the way.
           </p>
         </motion.div>
@@ -80,7 +80,7 @@ export default function ClientContactUs() {
                 Send us a message
               </h3>
               <p className="text-gray-600 font-inter">
-                Fill out the form below and we'll get back to you as soon as
+                Fill out the form below and we&apos;ll get back to you as soon as
                 possible.
               </p>
             </div>
@@ -96,7 +96,7 @@ export default function ClientContactUs() {
                   Message Sent!
                 </h4>
                 <p className="text-gray-600 font-inter">
-                  Thank you for reaching out. We'll get back to you soon.
+                  Thank you for reaching out. We&apos;ll get back to you soon.
                 </p>
               </motion.div>
             ) : (
