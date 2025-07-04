@@ -204,12 +204,12 @@ function Scene() {
       <pointLight position={[0, -10, 0]} intensity={0.1} color="#ffffff" />
       {/* Multiple floating objects - responsive positioning */}
       <FloatingParticles />
-      <FloatingTextIcon emoji="🧺" position={[-8, 2, -1]} size={1.2} />
-      <FloatingTextIcon emoji="🧼" position={[-4.5, 0, -1]} size={1} />
+      <FloatingTextIcon emoji="🧺" position={[-9, 2, -1]} size={1.2} />
+      <FloatingTextIcon emoji="🧼" position={[-4.5, 2, -1]} size={1} />
 
       <FloatingTextIcon emoji="🧹" position={[-2, 1, -2]} size={1.1} />
       <FloatingTextIcon emoji="🛁" position={[4.5, 0, -1]} size={0.9} />
-
+      <FloatingTextIcon emoji="🛍️" position={[-9, 2, -6]} size={1.1} />
       <OrbitControls
         enableZoom={false}
         autoRotate
@@ -234,13 +234,13 @@ export default function HeroSection() {
         </Canvas>
       </div>
 
-      <div className="relative z-10 w-full max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="relative z-10 w-full max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col justify-center space-y-6"
+          className="flex flex-col justify-center space-y-6 pl-4 sm:pl-8"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -295,135 +295,50 @@ export default function HeroSection() {
               <span className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </button>
           </motion.div>
-
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4"
-          >
-            {[
-              { label: "Active Users", value: "2.5M+", color: "text-blue-600" },
-              {
-                label: "Partner Stores",
-                value: "50K+",
-                color: "text-purple-600",
-              },
-              {
-                label: "Avg Delivery",
-                value: "15min",
-                color: "text-indigo-600",
-              },
-              { label: "Success Rate", value: "98%", color: "text-green-600" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -5 }}
-                className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-sm border border-gray-100"
-              >
-                <p className={`text-2xl font-bold ${item.color}`}>
-                  {item.value}
-                </p>
-                <p className="text-sm text-gray-500 mt-1">{item.label}</p>
-              </motion.div>
-            ))}
-          </motion.div> */}
         </motion.div>
 
-        {/* Right Image Grid */}
+        {/* Right Side - Large Video Container */}
         <motion.div
-          initial={{ opacity: 0, x: 50, rotate: 2 }}
-          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative"
         >
-          <div className="grid grid-cols-2 grid-rows-3 gap-3 h-[500px] sm:h-[550px]">
-            {/* Large Image - Top Left, spans 2 rows */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              className="relative row-span-2 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-slate-100 overflow-hidden group"
-            >
-              <motion.img
-                src="/images/ac-repairs.jpg"
-                alt="AC Repair Service"
-                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                initial={{ scale: 1.05 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.8 }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-white font-medium text-sm font-poppins">
-                  Home Repairs
-                </span>
-              </div>
-            </motion.div>
+          <div className="relative aspect-w-16 aspect-h-9 w-full h-[650px] min-h-[400px] rounded-2xl overflow-hidden border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-500 group bg-white/80 backdrop-blur-lg">
+  {/* Glowing ring behind on hover */}
+  <div className="absolute inset-0 z-0 rounded-2xl ring-1 ring-blue-500/20 group-hover:ring-2 group-hover:ring-blue-500/40 transition-all duration-500 pointer-events-none" />
 
-            {/* Small Top Right */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              className="relative bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg border border-slate-100 overflow-hidden group"
-            >
-              <motion.img
-                src="/images/laundry.jpg"
-                alt="Laundry Service"
-                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute bottom-0 left-0 p-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-white font-medium text-sm font-poppins">
-                  Laundry Services
-                </span>
-              </div>
-            </motion.div>
+  {/* Video Player */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="w-full h-full object-cover z-10 relative"
+    poster="/images/video-poster.jpg"
+  >
+    <source src="/images/landingvid.mp4" type="video/mp4" />
+    <source src="/images/landingvid.mp4" type="video/webm" />
+    Your browser does not support the video tag.
+  </video>
 
-            {/* Small Middle Right */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              className="relative bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg border border-slate-100 overflow-hidden group"
-            >
-              <motion.img
-                src="/images/medical-examination-service-2.jpg"
-                alt="Medical Service"
-                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute bottom-0 left-0 p-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-white font-medium text-sm font-poppins">
-                  Healthcare
-                </span>
-              </div>
-            </motion.div>
+  {/* Decorative Play Button (Optional) */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+    <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center ring-1 ring-white/30 shadow-md group-hover:scale-105 transition-transform duration-300">
+      <svg className="w-6 h-6 text-white opacity-80" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M6 4l12 6-12 6V4z" />
+      </svg>
+    </div>
+  </div>
 
-            {/* Bottom Full Width */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="relative col-span-2 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg border border-slate-100 overflow-hidden group"
-            >
-              <motion.img
-                src="/images/medical-examination-service-1.jpg"
-                alt="Medical Examination"
-                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-white font-medium font-poppins">
-                  Doctor Home Visits
-                </span>
-              </div>
-            </motion.div>
-          </div>
+  {/* Caption Overlay */}
+  <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+    {/* <h3 className="text-xl font-semibold mb-1 tracking-tight text-gray-200"> See Our Platform in Action</h3>
+    <p className="text-sm text-gray-100 opacity-90">How Zonomo connects customers with service professionals</p> */}
+  </div>
+</div>
 
-          {/* Floating elements */}
+          {/* Floating elements (kept from original) */}
           <motion.div
             animate={{
               y: [0, -10, 0],
