@@ -305,38 +305,42 @@ export default function HeroSection() {
           className="relative"
         >
           <div className="relative aspect-w-16 aspect-h-9 w-full h-[650px] min-h-[400px] rounded-2xl overflow-hidden border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-500 group bg-white/80 backdrop-blur-lg">
-  {/* Glowing ring behind on hover */}
-  <div className="absolute inset-0 z-0 rounded-2xl ring-1 ring-blue-500/20 group-hover:ring-2 group-hover:ring-blue-500/40 transition-all duration-500 pointer-events-none" />
+            {/* Glowing ring behind on hover */}
+            <div className="absolute inset-0 z-0 rounded-2xl ring-1 ring-blue-500/20 group-hover:ring-2 group-hover:ring-blue-500/40 transition-all duration-500 pointer-events-none" />
 
-  {/* Video Player */}
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="w-full h-full object-cover z-10 relative"
-    poster="/images/video-poster.jpg"
-  >
-    <source src="/images/landingvid.mp4" type="video/mp4" />
-    <source src="/images/landingvid.mp4" type="video/webm" />
-    Your browser does not support the video tag.
-  </video>
+            {/* Video Player */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover z-10 relative"
+              poster="/images/video-poster.jpg"
+            >
+              <source src="/images/landingvid.mp4" type="video/mp4" />
+              <source src="/images/landingvid.mp4" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
 
-  {/* Decorative Play Button (Optional) */}
-  <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-    <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center ring-1 ring-white/30 shadow-md group-hover:scale-105 transition-transform duration-300">
-      <svg className="w-6 h-6 text-white opacity-80" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M6 4l12 6-12 6V4z" />
-      </svg>
-    </div>
-  </div>
+            {/* Decorative Play Button (Optional) */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center ring-1 ring-white/30 shadow-md group-hover:scale-105 transition-transform duration-300">
+                <svg
+                  className="w-6 h-6 text-white opacity-80"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M6 4l12 6-12 6V4z" />
+                </svg>
+              </div>
+            </div>
 
-  {/* Caption Overlay */}
-  <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
-    {/* <h3 className="text-xl font-semibold mb-1 tracking-tight text-gray-200"> See Our Platform in Action</h3>
+            {/* Caption Overlay */}
+            <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+              {/* <h3 className="text-xl font-semibold mb-1 tracking-tight text-gray-200"> See Our Platform in Action</h3>
     <p className="text-sm text-gray-100 opacity-90">How Zonomo connects customers with service professionals</p> */}
-  </div>
-</div>
+            </div>
+          </div>
 
           {/* Floating elements (kept from original) */}
           <motion.div

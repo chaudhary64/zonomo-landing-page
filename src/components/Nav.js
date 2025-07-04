@@ -15,7 +15,9 @@ export default function Nav() {
             <div className="bg-black text-white text-xs font-bold px-2 py-1 rounded font-poppins">
               Z
             </div>
-            <span className="font-semibold text-xl text-gray-900 font-poppins">Zonomo</span>
+            <span className="font-semibold text-xl text-gray-900 font-poppins">
+              Zonomo
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
