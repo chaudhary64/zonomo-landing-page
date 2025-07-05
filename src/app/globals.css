@@ -56,3 +56,91 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
 }
+
+/* Add these additional styles to your global.css */
+
+.rotating-text-container {
+  position: relative;
+  display: inline-block;
+  min-height: 1.2em;
+}
+
+.rotating-word {
+  display: inline-block;
+  background: linear-gradient(
+    45deg,
+    #ff6b6b,
+    #4ecdc4,
+    #45b7d1,
+    #a29bfe,
+    #fd79a8,
+    #e17055
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: rotatingColorShift 4s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* Fallback for browsers that don't support background-clip */
+.rotating-word:not(.shimmer-text) {
+  color: #ff6b6b;
+}
+
+/* Ensure the parent doesn't override the gradient text */
+h1 .rotating-word {
+  color: transparent !important;
+}
+
+.rotating-word.animate-out {
+  transform: scale(1.1) translateY(20px) rotateX(45deg);
+  opacity: 0;
+  filter: blur(3px);
+}
+
+.rotating-word.animate-in {
+  transform: scale(1) translateY(0) rotateX(0deg);
+  opacity: 1;
+  filter: blur(0px);
+}
+
+.word-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.word-indicator.active {
+  background: linear-gradient(45deg, #ff6b6b, #45b7d1);
+  transform: scale(1.25);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Keyframe for rotating text colors */
+@keyframes rotatingColorShift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .rotating-word {
+    font-size: inherit;
+  }
+  
+  .word-indicator {
+    width: 6px;
+    height: 6px;
+  }
+}
