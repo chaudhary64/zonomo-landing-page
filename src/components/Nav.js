@@ -7,7 +7,7 @@ export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-white sticky top-0 z-50">
       <div className="mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -23,7 +23,14 @@ export default function Nav() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
-              href="/features"
+              href="/"
+              className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+            >
+              Home
+            </Link>
+
+            <Link
+              href="#features"
               className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
             >
               Features
@@ -34,14 +41,15 @@ export default function Nav() {
             >
               About us
             </Link>
+            
             <Link
-              href="/faq"
+              href="#faq"
               className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
             >
               FAQ
             </Link>
             <Link
-              href="/contact"
+              href="#contact"
               className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
             >
               Contact us

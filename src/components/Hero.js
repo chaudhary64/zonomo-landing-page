@@ -222,7 +222,7 @@ function Scene() {
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full min-h-[calc(100vh-4rem)] bg-white overflow-hidden flex items-center justify-center px-4 sm:px-8 pt-8 pb-12">
+    <div id = "home" className="relative w-full min-h-[calc(100vh-4rem)] bg-white overflow-hidden flex items-center justify-center px-4 sm:px-8 pt-8 pb-12">
       {/* Background Canvas */}
       <div className="absolute inset-0 z-0 opacity-80">
         <Canvas

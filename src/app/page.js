@@ -6,11 +6,11 @@ import SilkPlaneWrapper from "@/components/SilkPlaneWrapper";
 import HowitWorks from "./../components/HowitWorks";
 import WhyChooseUs from "./../components/WhyChooseUs";
 import FAQ from "@/components/Faq";
-import AIFeatures from "@/components/features";
+import AIFeatures from "@/components/features/page";
 import dynamic from "next/dynamic";
 
 // Dynamically import ContactUs with SSR disabled
-const ContactUs = dynamic(() => import("@/components/ContactUs"), {
+const ContactUs = dynamic(() => import("@/components/contact/page"), {
   ssr: false,
 });
 

@@ -33,6 +33,7 @@ p, span, div {
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 html.lenis, html.lenis body {

@@ -49,7 +49,7 @@ export default function ClientContactUs() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white " id = "contact">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
