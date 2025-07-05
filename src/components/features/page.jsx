@@ -354,7 +354,7 @@ const StickyNavigation = ({ features, activeSection }) => {
   };
 
   return (
-    <div className="hidden xl:block sticky top-20 float-left w-72 2xl:w-80 mr-8 2xl:mr-12">
+    <div className="hidden xl:block sticky top-20 float-left w-72 2xl:w-80 mr-8 2xl:mr-12" id = "features">
       <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 xl:p-6 shadow-2xl border border-gray-200">
         <h3 className="text-base xl:text-lg font-bold text-gray-900 mb-4 xl:mb-6 flex items-center">
           <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>

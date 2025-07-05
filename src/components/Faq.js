@@ -73,7 +73,7 @@ const FAQ = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-white sm:py-20 lg:py-24 min-h-screen">
+    <section id = "faq"className="py-16 bg-gradient-to-br from-gray-50 to-white sm:py-20 lg:py-24 min-h-screen">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
