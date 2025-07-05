@@ -21,7 +21,7 @@ export default function Nav() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             <Link
               href="/"
               className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
@@ -41,7 +41,7 @@ export default function Nav() {
             >
               About us
             </Link>
-            
+
             <Link
               href="#faq"
               className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
@@ -57,7 +57,7 @@ export default function Nav() {
           </div>
 
           {/* Auth Buttons - Desktop */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-3">
             <Link
               href="/login"
               className="text-gray-700 hover:text-black font-medium px-4 py-2 rounded-lg border border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-inter"
@@ -75,7 +75,7 @@ export default function Nav() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+            className="lg:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
           >
             <svg
               className="w-5 h-5"
@@ -104,7 +104,7 @@ export default function Nav() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
+          <div className="lg:hidden border-t border-gray-200 py-4">
             <div className="flex flex-col space-y-4">
               <Link
                 href="/features"
