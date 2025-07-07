@@ -19,8 +19,8 @@ export default function Home() {
     <>
       <Nav />
       <HeroSection />
-      <AIFeatures />
       <RoleCarousel />
+      <AIFeatures />
       <WhyChooseUs />
       <HowitWorks />
       <FAQ />
