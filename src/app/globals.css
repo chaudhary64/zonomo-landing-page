@@ -83,7 +83,7 @@ body {
   color: transparent;
   animation: rotatingColorShift 4s ease-in-out infinite;
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
@@ -137,6 +137,8 @@ h1 .rotating-word {
 @media (max-width: 768px) {
   .rotating-word {
     font-size: inherit;
+    animation: rotatingColorShift 1s ease-in-out infinite;
+
   }
   
   .word-indicator {
