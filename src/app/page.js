@@ -8,7 +8,7 @@ import WhyChooseUs from "./../components/WhyChooseUs";
 import FAQ from "@/components/Faq";
 import AIFeatures from "@/components/features/page";
 import dynamic from "next/dynamic";
-
+import RoleCarousel from "@/components/TwoSection";
 // Dynamically import ContactUs with SSR disabled
 const ContactUs = dynamic(() => import("@/components/contact/page"), {
   ssr: false,
@@ -20,6 +20,7 @@ export default function Home() {
       <Nav />
       <HeroSection />
       <AIFeatures />
+      <RoleCarousel />
       <WhyChooseUs />
       <HowitWorks />
       <FAQ />

@@ -371,8 +371,8 @@ const StickyNavigation = ({ features, activeSection }) => {
                 onClick={() => scrollToSection(sectionId)}
                 className={`w-full text-left transition-all duration-300 cursor-pointer ${
                   isActive
-                    ? "text-blue-600 font-semibold"
-                    : "text-gray-700 hover:text-blue-500"
+                    ? "text-blue-900 font-semibold"
+                    : "text-gray-700 hover:text-blue-900"
                 }`}
               >
                 <div className="flex items-start space-x-3">
@@ -468,7 +468,7 @@ const FeatureSection = ({ feature, index }) => {
       </div>
 
       {/* Technology & Architecture Section */}
-      <div className="mb-12 sm:mb-14 lg:mb-16">
+      {/* <div className="mb-12 sm:mb-14 lg:mb-16">
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
           <span className="bg-green-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">
             ⚙️
@@ -505,10 +505,10 @@ const FeatureSection = ({ feature, index }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Benefits Section */}
-      <div className="mb-12 sm:mb-14 lg:mb-16">
+      {/* <div className="mb-12 sm:mb-14 lg:mb-16">
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
           <span className="bg-purple-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">
             🎯
@@ -537,64 +537,10 @@ const FeatureSection = ({ feature, index }) => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Performance Metrics Section */}
-      <div className="mb-12 sm:mb-14 lg:mb-16">
-        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
-          <span className="bg-amber-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">
-            📊
-          </span>
-          <span>Performance Metrics & Analytics</span>
-        </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10 lg:mb-12">
-          {/* Primary Chart */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100">
-              <div className="h-64 sm:h-72 lg:h-80">{feature.chart}</div>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4">
-            {feature.stats.map((stat, statIndex) => (
-              <div
-                key={statIndex}
-                className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 sm:p-6 text-center border border-blue-100 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Additional Charts Section */}
-        {feature.additionalCharts && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-            {feature.additionalCharts.map((chartData, chartIndex) => (
-              <div
-                key={chartIndex}
-                className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100"
-              >
-                <div className="h-64 sm:h-72 lg:h-80">{chartData.chart}</div>
-                <div className="mt-3 sm:mt-4 text-center">
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-800 mb-1 sm:mb-2">
-                    {chartData.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-gray-600">
-                    {chartData.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      
 
       {/* Divider */}
       {index < 3 && (
