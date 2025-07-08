@@ -1,28 +1,32 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
-  const words = ['Revolutionizing', 'Transforming', 'Innovating', 'Modernizing'];
+  const words = [
+    "Revolutionizing",
+    "Transforming",
+    "Innovating",
+    "Modernizing",
+  ];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimating(true);
-      
+
       setTimeout(() => {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
         setIsAnimating(false);
       }, 300);
-      
     }, 2000);
 
     return () => clearInterval(interval);
   }, [words.length]);
 
   return (
-    <div className="relative bg-[#080505] min-h-[calc(100vh-4rem)]">
+    <div className="relative bg-[#080505] min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)]">
       {/* Desktop Image */}
       <div className="absolute inset-0 hidden lg:block">
         <img
@@ -34,11 +38,13 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative lg:absolute lg:top-1/2 lg:-translate-y-1/2 px-6">
+      <div className="absolute top-1/2 -translate-y-1/2 px-6">
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight font-poppins drop-shadow-xl">
           <span className="rotating-text-container">
-            <span 
-              className={`rotating-word ${isAnimating ? 'animate-out' : 'animate-in'}`}
+            <span
+              className={`rotating-word ${
+                isAnimating ? "animate-out" : "animate-in"
+              }`}
             >
               {words[currentWordIndex]}
             </span>
@@ -52,7 +58,6 @@ export default function HeroSection() {
         </h1>
 
         {/* Word Indicators */}
-        
 
         <p className="text-gray-200 text-lg sm:text-xl max-w-2xl leading-relaxed font-inter mt-6 mb-10 drop-shadow-md">
           From doorstep repairs to healthcare, professional services to personal
@@ -79,15 +84,6 @@ export default function HeroSection() {
             <span className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </button>
         </div>
-      </div>
-
-      {/* Mobile Image */}
-      <div className="mt-10 lg:hidden">
-        <img
-          className="object-cover w-full h-64 rounded-xl opacity-90"
-          src="/images/hero-img.jpg"
-          alt="Urban Services Hero"
-        />
       </div>
     </div>
   );
