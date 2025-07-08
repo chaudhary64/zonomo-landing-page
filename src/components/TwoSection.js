@@ -4,50 +4,50 @@ import { motion, AnimatePresence } from "framer-motion";
 const roleContent = [
   {
     role: "Homeowner",
-    title: "Premium Services for Customers",
+    title: "Trusted Home Services in One Place",
     description:
-      "Access our vetted network of 50,000+ professionals with guaranteed service quality and 24/7 support.",
+      "Discover a growing network of professionals offering reliable services, transparent pricing, and customer-first support — all in a few simple taps.",
     image:
       "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
-    cta: "Book Elite Services",
+    cta: "Explore Services",
     color: "from-blue-500/20 to-blue-700/20",
     textColor: "text-blue-400",
     stats: [
-      { value: "98%", label: "Satisfaction Rate" },
-      { value: "30min", label: "Average Response" },
-      { value: "50K+", label: "Verified Pros" },
+      { value: "Fast", label: "Booking Process" },
+      { value: "Flexible", label: "Scheduling Options" },
+      { value: "Secure", label: "AI Voice Command Bookings" },
     ],
   },
   {
     role: "Property Manager",
-    title: "List Your Services",
+    title: "Simplify Your Service Operations",
     description:
-      "Streamline operations with our enterprise-grade platform managing 1000+ properties nationwide.",
+      "Easily manage property-related services from one dashboard — built for efficiency, clarity, and control. Tailored for property managers and landlords.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
-    cta: "Optimize Your Portfolio",
+    cta: "Start Managing",
     color: "from-emerald-500/20 to-emerald-700/20",
     textColor: "text-emerald-400",
     stats: [
-      { value: "40%", label: "Cost Reduction" },
-      { value: "24/7", label: "Vendor Management" },
-      { value: "5-Star", label: "Tenant Ratings" },
+      { value: "All-in-One", label: "Service Dashboard" },
+      { value: "Custom", label: "Vendor Requests" },
+      { value: "Instant", label: "Status Tracking" },
     ],
   },
   {
     role: "Service Professional",
-    title: "6-Figure Earnings Potential",
+    title: "Grow Your Local Business",
     description:
-      "Join the elite 15% of professionals who earn $120K+/year through our premium client network.",
+      "Join a platform designed to help professionals find new customers, manage jobs efficiently, and build a credible online presence — all with no upfront cost.",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
-    cta: "Apply for Partnership",
+    cta: "Join the Network",
     color: "from-violet-500/20 to-violet-700/20",
     textColor: "text-violet-400",
     stats: [
-      { value: "5X", label: "More Bookings" },
-      { value: "$120K+", label: "Top Earners" },
-      { value: "0%", label: "Commission Fees" },
+      { value: "No Fees", label: "to Join" },
+      { value: "More", label: "Local Visibility" },
+      { value: "Tools", label: "to Manage Jobs" },
     ],
   },
 ];
@@ -67,7 +67,7 @@ export default function ResponsiveCarousel() {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
+    const interval = setInterval(nextSlide, 7000);
     return () => clearInterval(interval);
   }, [nextSlide]);
 

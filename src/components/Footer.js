@@ -65,8 +65,8 @@ export default function Footer() {
           <h3 className="font-semibold mb-2 font-poppins">For customers</h3>
           <ul className="space-y-1">
             <li>
-              <a href="#" className="hover:underline font-inter">
-                UC reviews
+              <a href="#hitw" className="hover:underline font-inter">
+                How it works
               </a>
             </li>
             <li>
