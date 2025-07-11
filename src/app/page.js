@@ -2,7 +2,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/Hero";
-import SilkPlaneWrapper from "@/components/SilkPlaneWrapper";
 import HowitWorks from "./../components/HowitWorks";
 import WhyChooseUs from "./../components/WhyChooseUs";
 import FAQ from "@/components/Faq";
@@ -24,7 +23,6 @@ export default function Home() {
       <WhyChooseUs />
       <HowitWorks />
       <FAQ />
-      {/* <SilkPlaneWrapper /> */}
       <ContactUs />
       <Footer />
     </>
