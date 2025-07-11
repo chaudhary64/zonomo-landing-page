@@ -1,6 +1,11 @@
-import { Inter, Poppins, JetBrains_Mono, Playfair_Display } from "next/font/google";
+import {
+  Inter,
+  Poppins,
+  JetBrains_Mono,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
-import SmoothScrollProvider from "../components/SmoothScrollProvider";
+import SmoothScrollProvider from "@/components/lenis/SmoothScrollProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,9 +44,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} antialiased`}
       >
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );
