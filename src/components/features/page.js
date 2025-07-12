@@ -400,33 +400,9 @@ const StickyNavigation = ({ features, activeSection }) => {
   );
 };
 
-
-
 // Feature Section Component
 const FeatureSection = ({ feature, index }) => {
-
-    const mediaMap = {
-    "Book Services By Command": {
-    type: "video",
-    src: "/videoes/phone.mp4",
-  },
-  "Trust & Reputation System": {
-    type: "images",
-    src: "/images/trust.jpg",
-  },
-  "Decentralized Service Marketplace": {
-    type: "image",
-    src: "/images/business.jpg",
-  },
-  "Revenue via Multi-Channel Streams": {
-    type: "video",
-    src: "/videoes/missionvid.mp4",
-  },
-
-  }
-
-  const media = mediaMap[feature.title];
-
+  // Always use gradient backgrounds for all features, no media backgrounds
   const sectionRef = useRef(null);
 
   return (
@@ -435,72 +411,32 @@ const FeatureSection = ({ feature, index }) => {
       className="mb-16 sm:mb-20 lg:mb-24"
       id={`feature-${index}`}
     >
-      {/* Feature Header */}
-<div
-  className={`relative rounded-2xl sm:rounded-3xl overflow-hidden mb-8 sm:mb-10 lg:mb-12 text-white ${
-    media ? "h-[400px] sm:h-[400px]" : "bg-gradient-to-r " + feature.gradient + " p-6 sm:p-8 lg:p-12"
-  }`}
->
-  {media ? (
-    <>
-      {/* Render media */}
-      {media.type === "video" ? (
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src={media.src} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      ) : (
-        <img
-          src={media.src}
-          alt={feature.title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      )}
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
-
-      {/* Content */}
-      <div className="relative z-10 p-6 sm:p-10 lg:p-16 max-w-3xl">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-          {feature.title}
-        </h2>
-        <p className="text-lg sm:text-xl opacity-90 mb-6">{feature.subtitle}</p>
-        <p className="text-base sm:text-lg opacity-95 leading-relaxed">{feature.description}</p>
-      </div>
-    </>
-  ) : (
-    // Default card for features without media
-    <>
-      <div className="absolute top-0 right-0 opacity-5 sm:opacity-10 transform rotate-12 scale-100 sm:scale-150 -mr-8 sm:mr-0">
-        {feature.icon}
-      </div>
-      <div className="relative z-10">
-        <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
-          <div className="bg-white/20 rounded-lg sm:rounded-xl p-3 sm:p-4 backdrop-blur-sm mr-0 sm:mr-6 mb-4 sm:mb-0 self-start">
-            {feature.icon}
-          </div>
-          <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
-              {feature.title}
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl opacity-90">{feature.subtitle}</p>
-          </div>
+      {/* Feature Header - always gradient background */}
+      <div
+        className={`relative rounded-2xl sm:rounded-3xl overflow-hidden mb-8 sm:mb-10 lg:mb-12 text-white bg-gradient-to-r ${feature.gradient} p-6 sm:p-8 lg:p-12`}
+      >
+        <div className="absolute top-0 right-0 opacity-5 sm:opacity-10 transform rotate-12 scale-100 sm:scale-150 -mr-8 sm:mr-0">
+          {feature.icon}
         </div>
-        <p className="text-base sm:text-lg lg:text-xl opacity-95 leading-relaxed">
-          {feature.description}
-        </p>
+        <div className="relative z-10">
+          <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+            <div className="bg-white/20 rounded-lg sm:rounded-xl p-3 sm:p-4 backdrop-blur-sm mr-0 sm:mr-6 mb-4 sm:mb-0 self-start">
+              {feature.icon}
+            </div>
+            <div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+                {feature.title}
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl opacity-90">
+                {feature.subtitle}
+              </p>
+            </div>
+          </div>
+          <p className="text-base sm:text-lg lg:text-xl opacity-95 leading-relaxed">
+            {feature.description}
+          </p>
+        </div>
       </div>
-    </>
-  )}
-</div>
-
 
       {/* How It Works Section */}
       <div className="mb-12 sm:mb-14 lg:mb-16">
@@ -535,7 +471,6 @@ const FeatureSection = ({ feature, index }) => {
           ))}
         </div>
       </div>
-
     </div>
   );
 };
@@ -574,7 +509,6 @@ export default function AIFeatures() {
     };
   }, []);
 
- 
   // Feature data
   const features = [
     {
@@ -608,72 +542,70 @@ export default function AIFeatures() {
       ],
     },
     {
-  title: "Trust & Reputation System",
-  subtitle: "Building Confidence Through Transparency & Verification",
-  description:
-    "Our platform prioritizes trust by ensuring every service provider is thoroughly verified and continuously evaluated. Ratings, reviews, identity checks, and performance metrics drive a reputation system that rewards consistency and quality, enhancing both user satisfaction and long-term engagement.",
-      
-    icon: <ShieldCheck className="w-12 h-12 text-white" />, // Choose any suitable icon
-  gradient: "from-yellow-600 to-yellow-800",
-  howItWorks: [
-    {
-      title: "Verified Identity & Credentials",
+      title: "Trust & Reputation System",
+      subtitle: "Building Confidence Through Transparency & Verification",
       description:
-        "All professionals undergo multi-step verification including ID checks, certifications, and background validation to ensure authenticity and reliability.",
+        "Our platform prioritizes trust by ensuring every service provider is thoroughly verified and continuously evaluated. Ratings, reviews, identity checks, and performance metrics drive a reputation system that rewards consistency and quality, enhancing both user satisfaction and long-term engagement.",
+
+      icon: <ShieldCheck className="w-12 h-12 text-white" />, // Choose any suitable icon
+      gradient: "from-yellow-600 to-yellow-800",
+      howItWorks: [
+        {
+          title: "Verified Identity & Credentials",
+          description:
+            "All professionals undergo multi-step verification including ID checks, certifications, and background validation to ensure authenticity and reliability.",
+        },
+        {
+          title: "Transparent Ratings & Reviews",
+          description:
+            "Each service interaction is rated and reviewed by customers. This real-time feedback is public and helps users make confident choices.",
+        },
+        {
+          title: "Reputation Score Engine",
+          description:
+            "An AI-driven score combines customer reviews, completion rates, response times, and complaint history to surface top-performing professionals.",
+        },
+        {
+          title: "Trust Badges & Guarantees",
+          description:
+            "Top-rated professionals earn badges for excellence. Customers are also protected through service guarantees and secure payment channels.",
+        },
+      ],
     },
-    {
-      title: "Transparent Ratings & Reviews",
-      description:
-        "Each service interaction is rated and reviewed by customers. This real-time feedback is public and helps users make confident choices.",
-    },
-    {
-      title: "Reputation Score Engine",
-      description:
-        "An AI-driven score combines customer reviews, completion rates, response times, and complaint history to surface top-performing professionals.",
-    },
-    {
-      title: "Trust Badges & Guarantees",
-      description:
-        "Top-rated professionals earn badges for excellence. Customers are also protected through service guarantees and secure payment channels.",
-    },
-  ],
-},
     {
       title: "Decentralized Service Marketplace",
-      subtitle: "Freedom to choose from verified professionals with transparent ratings and pricing",
+      subtitle:
+        "Freedom to choose from verified professionals with transparent ratings and pricing",
       description:
-      "Empowers verified professionals to operate independently with full control over their services, while maintaining platform-wide quality standards through automated checks and real-time feedback loops.",
+        "Empowers verified professionals to operate independently with full control over their services, while maintaining platform-wide quality standards through automated checks and real-time feedback loops.",
       icon: <PredictiveIcon className="w-12 h-12 text-white" />,
       gradient: "from-[#4a5759] to-[#5e503f]",
-      howItWorks:[
-          {
+      howItWorks: [
+        {
           title: "Behavioral Tracking",
           description:
             "Analyzes customer touchpoints including browsing patterns, booking behaviors, and preferences to build detailed profiles with 200+ data points.",
-          }
-      ]
+        },
+      ],
     },
     {
       title: "Revenue via Multi-Channel Streams",
       subtitle: "Loyalty-Driven Monetization and Scalable Profits",
-       description:
-    "Our platform generates revenue through diverse streams like subscriptions, featured placements, smart upselling, and AI-based personalization. Users enjoy fair pricing, reward programs, and transparency — while investors gain from layered monetization strategies.",
+      description:
+        "Our platform generates revenue through diverse streams like subscriptions, featured placements, smart upselling, and AI-based personalization. Users enjoy fair pricing, reward programs, and transparency — while investors gain from layered monetization strategies.",
       icon: <NLPIcon className="w-12 h-12 text-white" />,
       gradient: "from-amber-600 to-amber-800",
       howItWorks: [
-        
         {
           title: "Predictive Modeling",
           description:
             "Predicts future service needs, optimal booking times, price sensitivity, and churn risk using historical data with 95% accuracy.",
         },
       ],
-      
     },
   ];
 
   //LOGIC OF SHOWING 2 IMAGES 2 VIDEOS
-
 
   return (
     <section
