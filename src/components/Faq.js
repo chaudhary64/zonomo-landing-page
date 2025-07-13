@@ -44,9 +44,18 @@ const faqData = [
 const FAQ = () => {
   const [activeId, setActiveId] = useState(null);
   const [visibleItems, setVisibleItems] = useState(new Set());
+  const [collapsingId, setCollapsingId] = useState(null);
 
   const toggleFAQ = (id) => {
-    setActiveId(activeId === id ? null : id);
+    if (activeId === id) {
+      setCollapsingId(id);
+      setActiveId(null);
+      setTimeout(() => {
+        setCollapsingId(null);
+      }, 400); // match collapse animation duration
+    } else {
+      setActiveId(id);
+    }
   };
 
   useEffect(() => {
@@ -54,9 +63,13 @@ const FAQ = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setVisibleItems(
-              (prev) => new Set([...prev, entry.target.dataset.id])
-            );
+            setVisibleItems((prev) => {
+              const id = entry.target.dataset.id;
+              if (!prev.has(id)) {
+                return new Set([...prev, id]);
+              }
+              return prev;
+            });
           }
         });
       },
@@ -116,11 +129,11 @@ const FAQ = () => {
                 data-faq-item
                 data-id={faq.id}
                 className={`border border-gray-200 rounded-2xl shadow-sm transition-all duration-500 hover:shadow-xl hover:scale-[1.02] hover:border-blue-300 transform ${
-                  visibleItems.has(faq.id.toString())
+                  visibleItems.has(String(faq.id))
                     ? "opacity-100 translate-y-0 rotate-0"
                     : "opacity-0 translate-y-10 rotate-1"
                 } ${
-                  activeId === faq.id
+                  activeId === faq.id || collapsingId === faq.id
                     ? "bg-gradient-to-r from-blue-50 to-purple-50 border-blue-300 shadow-lg"
                     : "bg-white"
                 }`}
