@@ -231,8 +231,9 @@ function WhyChooseUs() {
             </h3>
 
             <p className="mt-5 text-base text-gray-600 font-inter">
-              We don't lock you into fixed packages. Zonomo allows transparent
-              and competitive pricing, so you only pay for what you need.
+              We don&apos;t lock you into fixed packages. Zonomo allows
+              transparent and competitive pricing, so you only pay for what you
+              need.
             </p>
           </motion.div>
 
