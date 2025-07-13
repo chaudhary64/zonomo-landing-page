@@ -2,7 +2,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/Hero";
-import HowitWorks from "./../components/HowitWorks";
+import Booking from "../components/Booking";
 import WhyChooseUs from "./../components/WhyChooseUs";
 import FAQ from "@/components/Faq";
 import AIFeatures from "@/components/features/page";
@@ -21,7 +21,7 @@ export default function Home() {
       <RoleCarousel />
       <AIFeatures />
       <WhyChooseUs />
-      <HowitWorks />
+      <Booking />
       <FAQ />
       <ContactUs />
       <Footer />
