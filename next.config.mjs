@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["images.unsplash.com"],
+    domains: ["images.unsplash.com", "raw.githubusercontent.com"],
   },
   transpilePackages: ["three", "@react-three/fiber", "@react-three/drei"],
   // Turbopack configuration (stable)
