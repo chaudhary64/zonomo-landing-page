@@ -145,9 +145,8 @@ export default function Footer() {
       <div className="border-t border-gray-200 text-xs text-gray-500 py-4 px-6 text-center">
         <p className="font-inter">* As on December 31, 2024</p>
         <p className="font-inter">
-          © Copyright 2025 Zonomo Ltd. (formerly known as UrbanClap
-          Technologies India Limited) All rights reserved. | CIN:
-          U74140DL2014PTC274413
+          © Copyright 2025 Zonomo Ltd. All rights reserved. | CIN:
+          XXXXXXXXXXXXXXXXXXXXX
         </p>
       </div>
     </footer>
