@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Star, Shield } from 'lucide-react';
-
+import  Link  from 'next/link';
 export default function ServiceSlider() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -13,58 +13,69 @@ export default function ServiceSlider() {
     const services = [
         {
             id: 1,
+            slug: "plumbing-service",
             image: "/images/plumber.jpg",
             title: "Plumbing Services",
             description: "Professional plumbing repairs, installations, and emergency services available 24/7 for all your needs.",
             price: "₹399",
             rating: 4.8,
             verified: true,
-            
+            link: "/services/electrician-services"
         },
         {
             id: 2,
+            slug: "healthcare-service",
             image: "/images/medical-examination-service-1.jpg",
             title: "Healthcare Services",
             description: "Comprehensive healthcare services with certified medical professionals and modern equipment.",
             price: "₹299",
             rating: 4.9,
-            verified: true
+            verified: true,
+            link: "/services/electrician-services"
         },
         {
             id: 3,
+            slug: "cleaning-service",
             image: "/images/vacuum-cleaning.jpg",
             title: "Cleaning Services",
             description: "Professional home and office cleaning services with eco-friendly products and equipment.",
             price: "₹499",
             rating: 4.5,
-            verified: true
+            verified: true,
+            link: "/services/electrician-services"
         },
         {
             id: 4,
+            slug: "AC-service",
             image: "/images/ac-repairs.jpg",
             title: "AC Repair Services",
             description: "Fast and reliable air conditioning repair and maintenance services for all brands and models.",
             price: "₹399",
             rating: 4.6,
-            verified: true
+            verified: true,
+            link: "/services/electrician-services"
         },
         {
             id: 5,
+            slug: "electrician-service",
             image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=200&fit=crop",
             title: "Electrician Services",
             description: "Licensed electricians for all electrical needs, installations, and safety inspections.",
             price: "₹400",
             rating: 4.8,
-            verified: true
+            verified: true,
+            link: "/services/electrician-services"
         },
         {
             id: 6,
+            slug: "pet-service",
             image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=200&fit=crop",
             title: "Pet Care Services",
             description: "Loving pet care services including grooming, walking, sitting, and veterinary consultations.",
             price: "₹499",
             rating: 4.7,
-            verified: true
+            verified: true,
+            link: "/services/electrician-services"
         }
     ];
 
@@ -202,6 +213,7 @@ export default function ServiceSlider() {
                                 key={service.id} 
                                 className="flex-none w-full md:w-72 cursor-pointer"
                             >
+                                <Link href={service.link}>
                                 <div className="h-full p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
                                     <div className="relative h-40">
                                         <img 
@@ -246,8 +258,12 @@ export default function ServiceSlider() {
                                             {service.description}
                                         </p>
                                     </div>
+                                    
                                 </div>
+                                </Link>
+                                
                             </div>
+
                         ))}
                     </div>
                 </div>
