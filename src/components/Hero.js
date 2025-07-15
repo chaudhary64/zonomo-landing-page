@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function HeroSection() {
   const words = [
@@ -29,10 +30,12 @@ export default function HeroSection() {
     <div className="relative bg-[#080505] min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)]">
       {/* Desktop Image */}
       <div className="absolute inset-0 hidden lg:block">
-        <img
+        <Image
           className="object-cover object-right-bottom w-full h-full opacity-80"
           src="/images/hero-img.jpg"
           alt="Urban Services Hero"
+          fill
+          priority
         />
         <div className="absolute inset-0" />
       </div>

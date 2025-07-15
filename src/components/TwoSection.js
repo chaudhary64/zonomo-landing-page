@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const roleContent = [
   {
@@ -125,12 +126,13 @@ export default function ResponsiveCarousel() {
                 }}
                 className="absolute inset-0 w-full h-full"
               >
-                <img
-                  src={currentContent.image}
-                  alt={currentContent.role}
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                />
+                  <Image
+                    src={currentContent.image}
+                    alt={currentContent.role}
+                    className="w-full h-full object-cover"
+                    fill
+                    loading="eager"
+                  />
               </motion.div>
             </AnimatePresence>
           </div>

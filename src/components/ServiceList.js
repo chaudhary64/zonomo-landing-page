@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight, Star, Shield } from 'lucide-react';
 import  Link  from 'next/link';
 export default function ServiceSlider() {
@@ -216,10 +217,11 @@ export default function ServiceSlider() {
                                 <Link href={service.link}>
                                 <div className="h-full p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
                                     <div className="relative h-40">
-                                        <img 
-                                            className="rounded-md h-full w-full object-cover" 
-                                            src={service.image} 
+                                        <Image
+                                            className="rounded-md h-full w-full object-cover"
+                                            src={service.image}
                                             alt={service.title}
+                                            fill
                                             loading="lazy"
                                             decoding="async"
                                         />
