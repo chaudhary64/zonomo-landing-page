@@ -1,5 +1,6 @@
 "use client";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 export default function PlayStore({ onClose }) {
     return (
@@ -42,21 +43,36 @@ export default function PlayStore({ onClose }) {
         
                 <div className="flex items-center gap-4 mt-6">
                     <button aria-label="googlePlayBtn" className="active:scale-95 transition-all" type="button">
-                        <img className="md:w-44 w-28"
+                        <Image
+                            className="md:w-44 w-28"
                             src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/appDownload/googlePlayBtn.svg"
-                            alt="Get on Google Play" />
+                            alt="Get on Google Play"
+                            width={176}
+                            height={56}
+                            priority={true}
+                        />
                     </button>
                     <button aria-label="appleStoreBtn" className="active:scale-95 transition-all" type="button">
-                        <img className="md:w-44 w-28"
+                        <Image
+                            className="md:w-44 w-28"
                             src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/appDownload/appleStoreBtn.svg"
-                            alt="Download on App Store" />
+                            alt="Download on App Store"
+                            width={176}
+                            height={56}
+                            priority={true}
+                        />
                     </button>
                 </div>
             </div>
         
-            <img className="max-w-[375px] pt-10 md:p-0"
+            <Image
+                className="max-w-[375px] pt-10 md:p-0"
                 src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/appDownload/excitedWomenImage.png"
-                alt="Happy customer using Zonomo app" />
+                alt="Happy customer using Zonomo app"
+                width={375}
+                height={375}
+                priority={true}
+            />
         </div>
     );
 };

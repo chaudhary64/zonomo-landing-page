@@ -1,6 +1,6 @@
 "use client";
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import PlayStore from "@/components/playStore";
 
 export default function ServiceSection({
@@ -55,11 +55,11 @@ export default function ServiceSection({
     return () => clearTimeout(timer);
   }, []);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide(
       (prev) => (prev + 1) % Math.ceil(services.length / servicesPerSlide)
     );
-  };
+  }, [services.length, servicesPerSlide]);
 
   const prevSlide = () => {
     setCurrentSlide(
@@ -74,7 +74,7 @@ export default function ServiceSection({
       const interval = setInterval(nextSlide, 5000);
       return () => clearInterval(interval);
     }
-  }, [isAutoPlaying, currentSlide, servicesPerSlide]);
+  }, [isAutoPlaying, currentSlide, servicesPerSlide, nextSlide]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -308,7 +308,7 @@ export default function ServiceSection({
                 <div className="bg-white/5 p-4 rounded-lg">
                   <h4 className="font-semibold mb-3 flex items-center gap-2">
                     {pricingIncluded[0]?.icon}
-                    What's Included
+                    What&apos;s Included
                   </h4>
                   <ul className="space-y-2 text-sm text-gray-700">
                     {pricingIncluded.map((item) => (

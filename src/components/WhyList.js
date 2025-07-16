@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 
 const ZonomoBenefits = () => {
   const [visibleCards, setVisibleCards] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
 
-  const benefits = [
+  const benefits = useMemo(() => [
     {
       id: 1,
       icon: "💰",
@@ -55,7 +55,7 @@ const ZonomoBenefits = () => {
       color: "from-indigo-400 to-indigo-600",
       delay: 1000
     }
-  ];
+  ], []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -81,7 +81,7 @@ const ZonomoBenefits = () => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [benefits]);
 
   return (
     <div id="benefits-section" className="bg-black py-20 relative overflow-hidden">

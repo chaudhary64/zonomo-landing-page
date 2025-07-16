@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import {
   Check,
   Eye,
@@ -117,12 +118,13 @@ const ProductCard = ({ product, translate }) => {
       }}
     >
       <div className="block group-hover/product:shadow-2xl">
-        <img
+        <Image
           src={product.image}
-          height="600"
-          width="600"
+          height={600}
+          width={600}
           className="object-cover object-left-top absolute h-full w-full inset-0 rounded-lg"
           alt={product.title}
+          priority={true}
         />
       </div>
       <div className="absolute inset-0 bg-black/60 rounded-lg opacity-0 group-hover/product:opacity-100 transition-opacity duration-300" />
@@ -148,8 +150,8 @@ const Header = () => {
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 text-neutral-200">
         We connect you with skilled professionals for all your home and personal
-        service needs. From cleaning to repairs, beauty to fitness - we've got
-        you covered with trusted experts.
+        service needs. From cleaning to repairs, beauty to fitness - we&apos;ve
+        got you covered with trusted experts.
       </p>
     </div>
   );
