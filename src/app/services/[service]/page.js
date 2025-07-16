@@ -434,7 +434,206 @@ const plumbingServicesData = {
 
 // Healthcare Section Data
 const healthcareServicesData = {
-  // ...existing code...
+  // Services
+  services: [
+    {
+      icon: <HeartPulse className="w-6 h-6" />,
+      title: "Doctor Consultation",
+      description:
+        "Book appointments with certified doctors for general health checkups, illness, and preventive care.",
+      benefits: [
+        "Qualified professionals",
+        "Personalized advice",
+        "Convenient scheduling",
+      ],
+      price: "₹299 - ₹799",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Home Sample Collection",
+      description:
+        "Get blood, urine, and other lab samples collected at your doorstep by trained technicians.",
+      benefits: ["Hygienic process", "Certified labs", "Quick results"],
+      price: "₹199 - ₹499",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "Nursing Care",
+      description:
+        "Professional nursing services for post-surgery care, injections, wound dressing, and elderly support.",
+      benefits: [
+        "Experienced nurses",
+        "Compassionate care",
+        "24/7 availability",
+      ],
+      price: "₹499 - ₹1499",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Calendar className="w-6 h-6" />,
+      title: "Health Checkup Packages",
+      description:
+        "Comprehensive health checkup packages for all age groups, including blood tests, ECG, and more.",
+      benefits: ["Early detection", "Affordable packages", "Detailed reports"],
+      price: "₹999 - ₹2999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <ThumbsUp className="w-6 h-6" />,
+      title: "Physiotherapy at Home",
+      description:
+        "Personalized physiotherapy sessions for pain relief, injury recovery, and mobility improvement.",
+      benefits: [
+        "Certified therapists",
+        "Modern techniques",
+        "Flexible timings",
+      ],
+      price: "₹399 - ₹999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Battery className="w-6 h-6" />,
+      title: "Medical Equipment Rental",
+      description:
+        "Rent wheelchairs, oxygen concentrators, and other medical equipment for home use.",
+      benefits: ["Quality equipment", "Sanitized & safe", "Doorstep delivery"],
+      price: "₹299 - ₹1999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+  ],
+  // Features
+  features: [
+    {
+      icon: <BadgeCheck className="w-5 h-5" />,
+      text: "Certified Healthcare Professionals",
+    },
+    { icon: <Clock className="w-5 h-5" />, text: "Timely Appointments" },
+    {
+      icon: <ThumbsUp className="w-5 h-5" />,
+      text: "Trusted & Verified Staff",
+    },
+    { icon: <DollarSign className="w-5 h-5" />, text: "Transparent Pricing" },
+  ],
+  // Benefits
+  benefits: [
+    {
+      title: "Convenience at Home",
+      description:
+        "Access quality healthcare services without leaving your home, saving time and effort.",
+      icon: <Home className="w-8 h-8" />,
+    },
+    {
+      title: "Qualified Experts",
+      description:
+        "All services are provided by certified and experienced healthcare professionals.",
+      icon: <BadgeCheck className="w-8 h-8" />,
+    },
+    {
+      title: "Comprehensive Care",
+      description:
+        "From diagnosis to recovery, we offer a wide range of healthcare solutions for every need.",
+      icon: <HeartPulse className="w-8 h-8" />,
+    },
+    {
+      title: "Safety & Hygiene",
+      description:
+        "Strict protocols for hygiene and safety are followed for every service.",
+      icon: <Shield className="w-8 h-8" />,
+    },
+  ],
+  // Hero Section
+  heroImage:
+    "https://images.unsplash.com/photo-1685997179880-6449203a053e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  heroTitle: (
+    <>
+      Quality Healthcare Services{" "}
+      <span className="text-blue-500">At Your Doorstep</span>
+    </>
+  ),
+  heroSubtitle:
+    "Comprehensive home healthcare solutions by trusted professionals for your family's well-being",
+  ctaButtons: [
+    {
+      text: "Book a Doctor",
+      icon: <Phone className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+      },
+    },
+    {
+      text: "Schedule Lab Test",
+      icon: <Calendar className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm",
+      },
+    },
+  ],
+  // Pricing Section
+  pricingTitle: "Affordable Healthcare Packages",
+  pricingSubtitle:
+    "Transparent pricing for all services – no hidden charges, clear estimates provided",
+  pricingRange: "₹199 – ₹2999*",
+  pricingNote: "*Final pricing depends on service type and requirements",
+  pricingIncluded: [
+    {
+      icon: <CheckCircle className="w-5 h-5 text-green-700" />,
+      text: "Qualified healthcare professionals",
+    },
+    { text: "Certified labs and equipment" },
+    { text: "Clean and safe procedures" },
+  ],
+  pricingGuarantee: [
+    {
+      icon: <Shield className="w-5 h-5 text-blue-700" />,
+      text: "Service warranty & support",
+    },
+    { text: "Verified and insured staff" },
+    { text: "Compliance with health standards" },
+  ],
+  pricingButton: (
+    <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
+      <Home className="w-5 h-5" />
+      Get Your Free Health Assessment
+    </button>
+  ),
+  // CTA Section
+  ctaSectionTitle: "Need Healthcare Services at Home?",
+  ctaSectionSubtitle:
+    "Our expert team is ready to provide quality care and support for you and your loved ones.",
+  ctaSectionButtons: [
+    {
+      text: "Call Now: +91 98765 43212",
+      icon: <Phone className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
+    {
+      text: "Book Online",
+      icon: <Calendar className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
+  ],
+  ctaSectionBadges: [
+    { icon: <BadgeCheck className="w-4 h-4" />, text: "Certified Staff" },
+    { icon: <Clock className="w-4 h-4" />, text: "On-Time Service" },
+    { icon: <Star className="w-4 h-4" />, text: "Top Rated" },
+    { icon: <CheckCircle className="w-4 h-4" />, text: "100% Satisfaction" },
+  ],
+  servicesSectionTitle: "Comprehensive Healthcare Services",
+  servicesSectionDescription:
+    "Expert medical and wellness solutions for your family at home",
+  benefitsSectionTitle: "Why Choose Our Healthcare Services?",
+  benefitsSectionDescription:
+    "We deliver quality, safety, and compassion for every patient",
 };
 
 // Cleaning Section Data
