@@ -1,5 +1,6 @@
 "use client"
 import Promotion from './../../../components/promotion';
+import PlayStore from './../../../components/playStore';
 import { useState, useEffect } from "react"
 import {
   Zap,
@@ -158,7 +159,7 @@ export default function ElectricalServicesPage() {
     {/* Content Container */}
     {promo && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-amber-50 pacity-50">
-          <Promotion onClose={() => setPromo(false)} />
+          <PlayStore onClose={() => setPromo(false)} />
         </div>
       )}
     <div className="container mx-auto px-6 py-24 relative z-10">
@@ -167,7 +168,7 @@ export default function ElectricalServicesPage() {
           <Zap className="w-10 h-10" strokeWidth={1.5} />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-          Professional Electrical Services <span className="text-blue-300">You Can Trust</span>
+          Professional Electrical Services <span className="text-blue-500">You Can Trust</span>
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-white leading-relaxed">
           Complete residential electrical solutions from certified professionals ensuring safety, reliability, and efficiency
@@ -321,7 +322,6 @@ export default function ElectricalServicesPage() {
           </div>
         </div>
       </section>
-
       {/* Pricing Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
