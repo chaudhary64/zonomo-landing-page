@@ -1,13 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 // Team Member Card Component
 const TeamMemberCard = ({ member, delay = 0 }) => (
@@ -76,28 +69,45 @@ const StatCard = ({ stat, delay = 0 }) => (
   </motion.div>
 );
 
-// Value Card Component
-const ValueCard = ({ value, delay = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, x: -50 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.6, delay }}
-    viewport={{ once: true }}
-    className="flex items-start space-x-3 sm:space-x-4"
-  >
-    <div className="bg-blue-100 rounded-lg p-2 sm:p-3 flex-shrink-0">
-      {value.icon}
-    </div>
-    <div>
-      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2 font-poppins">
-        {value.title}
-      </h3>
-      <p className="text-gray-600 leading-relaxed text-sm sm:text-base font-inter">
-        {value.description}
-      </p>
-    </div>
-  </motion.div>
-);
+// Team data
+const teamMembers = [
+  {
+    name: "Sarah Johnson",
+    role: "CEO & Founder",
+    initials: "SJ",
+    description:
+      "Visionary leader with 15+ years in the service industry, passionate about connecting quality professionals with homeowners.",
+  },
+  {
+    name: "Michael Chen",
+    role: "CTO",
+    initials: "MC",
+    description:
+      "Tech innovator focused on building seamless platforms that make booking home services effortless and reliable.",
+  },
+  {
+    name: "Emily Rodriguez",
+    role: "Head of Operations",
+    initials: "ER",
+    description:
+      "Operations expert ensuring every service provider meets our high standards of quality and professionalism.",
+  },
+  {
+    name: "David Thompson",
+    role: "Customer Success Manager",
+    initials: "DT",
+    description:
+      "Dedicated to ensuring every customer has an exceptional experience from booking to service completion.",
+  },
+];
+
+// Stats data
+const stats = [
+  { number: "50K+", label: "Happy Customers" },
+  { number: "5K+", label: "Trusted Professionals" },
+  { number: "100+", label: "Cities Served" },
+  { number: "4.9★", label: "Average Rating" },
+];
 
 function About() {
   const headerRef = useRef(null);
@@ -117,139 +127,8 @@ function About() {
   const iconsOpacity = useTransform(headerScrollProgress, [0, 1], [0, 1]);
   const iconsScale = useTransform(headerScrollProgress, [0, 1], [0.8, 1]);
 
-  // Team data
-  const teamMembers = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO & Founder",
-      initials: "SJ",
-      description:
-        "Visionary leader with 15+ years in the service industry, passionate about connecting quality professionals with homeowners.",
-    },
-    {
-      name: "Michael Chen",
-      role: "CTO",
-      initials: "MC",
-      description:
-        "Tech innovator focused on building seamless platforms that make booking home services effortless and reliable.",
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Head of Operations",
-      initials: "ER",
-      description:
-        "Operations expert ensuring every service provider meets our high standards of quality and professionalism.",
-    },
-    {
-      name: "David Thompson",
-      role: "Customer Success Manager",
-      initials: "DT",
-      description:
-        "Dedicated to ensuring every customer has an exceptional experience from booking to service completion.",
-    },
-  ];
-
-  // Stats data
-  const stats = [
-    { number: "50K+", label: "Happy Customers" },
-    { number: "5K+", label: "Trusted Professionals" },
-    { number: "100+", label: "Cities Served" },
-    { number: "4.9★", label: "Average Rating" },
-  ];
-
-  // Company values
-  const values = [
-    {
-      title: "Quality First",
-      description:
-        "We rigorously vet every professional to ensure you receive top-quality service every time.",
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Reliability",
-      description:
-        "Count on us for dependable service providers who show up on time and get the job done right.",
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Transparency",
-      description:
-        "Clear pricing, honest reviews, and open communication throughout your service experience.",
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-          />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Innovation",
-      description:
-        "Leveraging cutting-edge technology to make home services more accessible and convenient.",
-      icon: (
-        <svg
-          className="w-6 h-6 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-          />
-        </svg>
-      ),
-    },
-  ];
-
   return (
     <>
-      <Nav />
       <div className="bg-white overflow-hidden">
         {/* Hero Section with Enhanced Visual Elements */}
         <section className="relative pt-8 pb-12 sm:pt-12 sm:pb-16 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24 bg-gradient-to-br from-blue-50 via-white to-teal-50">
@@ -662,7 +541,6 @@ function About() {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 }

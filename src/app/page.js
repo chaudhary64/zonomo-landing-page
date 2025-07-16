@@ -1,6 +1,4 @@
 "use client";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 import HeroSection from "@/components/Hero";
 import Booking from "../components/Booking";
 import WhyChooseUs from "./../components/WhyChooseUs";
@@ -17,7 +15,6 @@ const ContactUs = dynamic(() => import("@/components/contact/page"), {
 export default function Home() {
   return (
     <>
-      <Nav />
       <HeroSection />
       <RoleCarousel />
       <ServiceSlider />
@@ -26,7 +23,6 @@ export default function Home() {
       <Booking />
       <FAQ />
       <ContactUs />
-      <Footer />
     </>
   );
 }
