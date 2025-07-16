@@ -1,6 +1,13 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import { Check, Eye, Clock, MessageSquare, TrendingUp, CreditCard } from "lucide-react";
+import {
+  Check,
+  Eye,
+  Clock,
+  MessageSquare,
+  TrendingUp,
+  CreditCard,
+} from "lucide-react";
 
 const services = [
   {
@@ -8,84 +15,96 @@ const services = [
     title: "Home Cleaning",
     description: "Professional deep cleaning services for your home",
     icon: "🧼",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
   },
   {
     id: 2,
     title: "Electrical Services",
     description: "Licensed electricians for all your electrical needs",
     icon: "🔌",
-    image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=300&fit=crop",
   },
   {
     id: 3,
     title: "Plumbing",
     description: "Expert plumbers for repairs and installations",
     icon: "🚰",
-    image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400&h=300&fit=crop",
   },
   {
     id: 4,
     title: "Carpentry",
     description: "Skilled carpenters for furniture and repairs",
     icon: "🛠️",
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
   },
   {
     id: 5,
     title: "Painting Services",
     description: "Professional painters for interior and exterior",
     icon: "🖌️",
-    image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=400&h=300&fit=crop",
   },
   {
     id: 6,
     title: "Packers & Movers",
     description: "Reliable moving and packing services",
     icon: "🧳",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
   },
   {
     id: 7,
     title: "Pet Grooming",
     description: "Professional pet care and grooming services",
     icon: "🐶",
-    image: "https://images.unsplash.com/photo-1560807707-8cc77767d783?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1560807707-8cc77767d783?w=400&h=300&fit=crop",
   },
   {
     id: 8,
     title: "Fitness Training",
     description: "Personal trainers and yoga instructors",
     icon: "🧘",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
   },
   {
     id: 9,
     title: "Healthcare",
     description: "Elderly care and nursing services",
     icon: "👨‍⚕️",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
   },
   {
     id: 10,
     title: "Appliance Repair",
     description: "Expert technicians for home appliances",
     icon: "🔧",
-    image: "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=400&h=300&fit=crop",
   },
   {
     id: 11,
     title: "Gardening",
     description: "Landscaping and garden maintenance",
     icon: "🌱",
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
   },
   {
     id: 12,
     title: "Beauty Services",
     description: "Professional beauty and wellness treatments",
     icon: "💄",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJlYXV0eXxlbnwwfHwwfHx8MA%3D%3D",
+    image:
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJlYXV0eXxlbnwwfHwwfHx8MA%3D%3D",
   },
 ];
 
@@ -124,11 +143,13 @@ const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold text-white">
-        Connect & Grow with <br /> <span className = "underline decoration-white/50">Zonomo</span> 
+        Connect & Grow with <br />{" "}
+        <span className="underline decoration-white/50">Zonomo</span>
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 text-neutral-200">
-        We connect you with skilled professionals for all your home and personal service needs.
-        From cleaning to repairs, beauty to fitness - we've got you covered with trusted experts.
+        We connect you with skilled professionals for all your home and personal
+        service needs. From cleaning to repairs, beauty to fitness - we've got
+        you covered with trusted experts.
       </p>
     </div>
   );
@@ -152,7 +173,7 @@ const HeroParallax = ({ products }) => {
   useEffect(() => {
     const handleScroll = () => {
       if (isScrolling) return;
-      
+
       const newScrollY = window.scrollY;
 
       if (!allServicesViewed && newScrollY < scrollThreshold) {
@@ -164,7 +185,7 @@ const HeroParallax = ({ products }) => {
         setShowScrollPrompt(false);
         window.scrollTo({
           top: scrollThreshold,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       } else {
         setScrollY(newScrollY);
@@ -179,18 +200,18 @@ const HeroParallax = ({ products }) => {
         setIsScrolling(true);
         window.scrollTo({
           top: scrollThreshold + 1,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
         setTimeout(() => setIsScrolling(false), 1000);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("wheel", handleWheel);
     };
   }, [allServicesViewed, isScrolling, scrollThreshold]);
 
@@ -203,13 +224,16 @@ const HeroParallax = ({ products }) => {
       className="h-[300vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
-      
+
       {/* First Row */}
-      <div 
+      <div
         className="flex flex-row-reverse space-x-reverse space-x-20 mb-20"
         style={{
-          transform: `translateX(${parallaxOffset}px) rotateX(${Math.max(15 - scrollY * 0.02, 0)}deg) rotateZ(${Math.max(20 - scrollY * 0.03, 0)}deg)`,
-          opacity: Math.min(0.2 + scrollY * 0.001, 1)
+          transform: `translateX(${parallaxOffset}px) rotateX(${Math.max(
+            15 - scrollY * 0.02,
+            0
+          )}deg) rotateZ(${Math.max(20 - scrollY * 0.03, 0)}deg)`,
+          opacity: Math.min(0.2 + scrollY * 0.001, 1),
         }}
       >
         {firstRow.map((product) => (
@@ -220,13 +244,16 @@ const HeroParallax = ({ products }) => {
           />
         ))}
       </div>
-      
+
       {/* Second Row */}
-      <div 
+      <div
         className="flex flex-row mb-20 space-x-20"
         style={{
-          transform: `translateX(${parallaxOffsetReverse}px) rotateX(${Math.max(15 - scrollY * 0.02, 0)}deg) rotateZ(${Math.max(20 - scrollY * 0.03, 0)}deg)`,
-          opacity: Math.min(0.2 + scrollY * 0.001, 1)
+          transform: `translateX(${parallaxOffsetReverse}px) rotateX(${Math.max(
+            15 - scrollY * 0.02,
+            0
+          )}deg) rotateZ(${Math.max(20 - scrollY * 0.03, 0)}deg)`,
+          opacity: Math.min(0.2 + scrollY * 0.001, 1),
         }}
       >
         {secondRow.map((product) => (
@@ -237,13 +264,16 @@ const HeroParallax = ({ products }) => {
           />
         ))}
       </div>
-      
+
       {/* Third Row */}
-      <div 
+      <div
         className="flex flex-row-reverse space-x-reverse space-x-20"
         style={{
-          transform: `translateX(${parallaxOffset}px) rotateX(${Math.max(15 - scrollY * 0.02, 0)}deg) rotateZ(${Math.max(20 - scrollY * 0.03, 0)}deg)`,
-          opacity: Math.min(0.2 + scrollY * 0.001, 1)
+          transform: `translateX(${parallaxOffset}px) rotateX(${Math.max(
+            15 - scrollY * 0.02,
+            0
+          )}deg) rotateZ(${Math.max(20 - scrollY * 0.03, 0)}deg)`,
+          opacity: Math.min(0.2 + scrollY * 0.001, 1),
         }}
       >
         {thirdRow.map((product) => (
@@ -254,7 +284,7 @@ const HeroParallax = ({ products }) => {
           />
         ))}
       </div>
-      
+
       {/* Scroll indicator */}
       {showScrollPrompt && (
         <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-6 py-3 rounded-full text-sm flex items-center gap-2 z-50 backdrop-blur-sm border border-white/20">
@@ -262,7 +292,7 @@ const HeroParallax = ({ products }) => {
           <div className="animate-bounce">↓</div>
         </div>
       )}
-      
+
       {/* Continue prompt */}
       {allServicesViewed && scrollY <= scrollThreshold + 100 && (
         <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-3 rounded-full text-sm flex items-center gap-2 z-50 backdrop-blur-sm">
@@ -278,14 +308,16 @@ export default function ServicesHero() {
   return (
     <div className="bg-black min-h-screen">
       <HeroParallax products={services} />
-      
+
       {/* Customer CTA Section */}
 
       {/* Service Providers Section */}
       <div className="bg-black text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Service Providers Get</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              What Service Providers Get
+            </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Joining Zonomo comes with exclusive benefits for professionals
             </p>
@@ -301,7 +333,8 @@ export default function ServicesHero() {
                 <h3 className="text-xl font-semibold">No Agency Cuts</h3>
               </div>
               <p className="text-gray-300">
-                Work independently and keep what you earn — no middlemen taking commissions.
+                Work independently and keep what you earn — no middlemen taking
+                commissions.
               </p>
             </div>
 
@@ -314,7 +347,8 @@ export default function ServicesHero() {
                 <h3 className="text-xl font-semibold">More Visibility</h3>
               </div>
               <p className="text-gray-300">
-                Get discovered by high-intent users looking for your service in real-time.
+                Get discovered by high-intent users looking for your service in
+                real-time.
               </p>
             </div>
 
@@ -327,7 +361,8 @@ export default function ServicesHero() {
                 <h3 className="text-xl font-semibold">Flexible Scheduling</h3>
               </div>
               <p className="text-gray-300">
-                Work on your own terms — choose your working hours and availability.
+                Work on your own terms — choose your working hours and
+                availability.
               </p>
             </div>
 
@@ -340,7 +375,8 @@ export default function ServicesHero() {
                 <h3 className="text-xl font-semibold">Direct Communication</h3>
               </div>
               <p className="text-gray-300">
-                Chat with clients, accept or reject requests, and build long-term relationships.
+                Chat with clients, accept or reject requests, and build
+                long-term relationships.
               </p>
             </div>
 
@@ -353,7 +389,8 @@ export default function ServicesHero() {
                 <h3 className="text-xl font-semibold">Growth Support</h3>
               </div>
               <p className="text-gray-300">
-                Get access to reviews, ratings, and tools to help grow your reputation.
+                Get access to reviews, ratings, and tools to help grow your
+                reputation.
               </p>
             </div>
 
@@ -373,13 +410,14 @@ export default function ServicesHero() {
 
           {/* Provider CTA */}
           <div className="bg-black text-white p-20 text-center">
-        <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-        <p className="text-xl text-neutral-300 mb-8">Book your service today and experience professional quality</p>
-        <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg text-white font-semibold transition-colors">
-          Book Now
-        </button>
-      </div>
-
+            <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
+            <p className="text-xl text-neutral-300 mb-8">
+              Book your service today and experience professional quality
+            </p>
+            <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg text-white font-semibold transition-colors">
+              Book Now
+            </button>
+          </div>
         </div>
       </div>
     </div>
