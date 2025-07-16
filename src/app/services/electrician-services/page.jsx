@@ -1,6 +1,7 @@
 "use client"
-import Promotion from './../../../components/promotion';
+// import Promotion from './../../../components/promotion';
 import PlayStore from './../../../components/playStore';
+import Nav from './../../../components/Nav';
 import { useState, useEffect } from "react"
 import {
   Zap,
@@ -145,6 +146,8 @@ export default function ElectricalServicesPage() {
   ]
 
   return (
+    <>
+    <Nav/>
 <div className="min-h-screen bg-gray-50">
   {/* Hero Section */}
   <section className="relative text-white overflow-hidden">
@@ -435,5 +438,6 @@ export default function ElectricalServicesPage() {
 {/* <Promotion/> */}
       
     </div>
+    </>
   )
 }
