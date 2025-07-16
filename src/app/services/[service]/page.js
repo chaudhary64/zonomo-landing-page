@@ -434,72 +434,69 @@ const plumbingServicesData = {
 
 // Healthcare Section Data
 const healthcareServicesData = {
+  // ...existing code...
+};
+
+// Cleaning Section Data
+const cleaningServicesData = {
   // Services
   services: [
     {
-      icon: <HeartPulse className="w-6 h-6" />,
-      title: "Doctor Consultation",
+      icon: <Wrench className="w-6 h-6" />,
+      title: "Home Deep Cleaning",
       description:
-        "Book appointments with certified doctors for general health checkups, illness, and preventive care.",
+        "Thorough cleaning of your entire home, including floors, walls, bathrooms, and kitchen for a spotless living space.",
       benefits: [
-        "Qualified professionals",
-        "Personalized advice",
-        "Convenient scheduling",
+        "Sanitized environment",
+        "Removes tough stains",
+        "Fresh & hygienic home",
       ],
-      price: "₹299 - ₹799",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Home Sample Collection",
-      description:
-        "Get blood, urine, and other lab samples collected at your doorstep by trained technicians.",
-      benefits: ["Hygienic process", "Certified labs", "Quick results"],
-      price: "₹199 - ₹499",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
-    },
-    {
-      icon: <Star className="w-6 h-6" />,
-      title: "Nursing Care",
-      description:
-        "Professional nursing services for post-surgery care, injections, wound dressing, and elderly support.",
-      benefits: [
-        "Experienced nurses",
-        "Compassionate care",
-        "24/7 availability",
-      ],
-      price: "₹499 - ₹1499",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
-    },
-    {
-      icon: <Calendar className="w-6 h-6" />,
-      title: "Health Checkup Packages",
-      description:
-        "Comprehensive health checkup packages for all age groups, including blood tests, ECG, and more.",
-      benefits: ["Early detection", "Affordable packages", "Detailed reports"],
       price: "₹999 - ₹2999",
       benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
-      icon: <ThumbsUp className="w-6 h-6" />,
-      title: "Physiotherapy at Home",
+      icon: <Settings className="w-6 h-6" />,
+      title: "Sofa & Carpet Cleaning",
       description:
-        "Personalized physiotherapy sessions for pain relief, injury recovery, and mobility improvement.",
-      benefits: [
-        "Certified therapists",
-        "Modern techniques",
-        "Flexible timings",
-      ],
+        "Professional cleaning and shampooing of sofas, carpets, and upholstery to remove dust, stains, and allergens.",
+      benefits: ["Allergen removal", "Restores appearance", "Odor free"],
+      price: "₹499 - ₹1999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "Bathroom Cleaning",
+      description:
+        "Intensive cleaning and disinfection of bathrooms, tiles, fittings, and fixtures for a sparkling clean look.",
+      benefits: ["Kills germs", "Removes limescale", "Odor control"],
       price: "₹399 - ₹999",
       benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <Battery className="w-6 h-6" />,
-      title: "Medical Equipment Rental",
+      title: "Kitchen Cleaning",
       description:
-        "Rent wheelchairs, oxygen concentrators, and other medical equipment for home use.",
-      benefits: ["Quality equipment", "Sanitized & safe", "Doorstep delivery"],
-      price: "₹299 - ₹1999",
+        "Degreasing and deep cleaning of kitchen surfaces, cabinets, appliances, and chimneys for a hygienic cooking space.",
+      benefits: ["Grease removal", "Hygienic surfaces", "Pest prevention"],
+      price: "₹499 - ₹1499",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Office & Commercial Cleaning",
+      description:
+        "Comprehensive cleaning solutions for offices, shops, and commercial spaces to maintain a professional environment.",
+      benefits: ["Healthy workspace", "Professional look", "Flexible timing"],
+      price: "₹1499 - ₹4999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "Move-in/Move-out Cleaning",
+      description:
+        "Specialized cleaning for tenants and homeowners before moving in or after moving out for a fresh start.",
+      benefits: ["Ready-to-move", "Deposit safety", "Stress-free move"],
+      price: "₹999 - ₹2999",
       benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
   ],
@@ -507,56 +504,56 @@ const healthcareServicesData = {
   features: [
     {
       icon: <BadgeCheck className="w-5 h-5" />,
-      text: "Certified Healthcare Professionals",
+      text: "Trained & Verified Cleaners",
     },
-    { icon: <Clock className="w-5 h-5" />, text: "Timely Appointments" },
+    { icon: <Clock className="w-5 h-5" />, text: "On-Time Service" },
     {
       icon: <ThumbsUp className="w-5 h-5" />,
-      text: "Trusted & Verified Staff",
+      text: "Satisfaction Guarantee",
     },
     { icon: <DollarSign className="w-5 h-5" />, text: "Transparent Pricing" },
   ],
   // Benefits
   benefits: [
     {
-      title: "Convenience at Home",
+      title: "Hygienic Living",
       description:
-        "Access quality healthcare services without leaving your home, saving time and effort.",
-      icon: <Home className="w-8 h-8" />,
-    },
-    {
-      title: "Qualified Experts",
-      description:
-        "All services are provided by certified and experienced healthcare professionals.",
-      icon: <BadgeCheck className="w-8 h-8" />,
-    },
-    {
-      title: "Comprehensive Care",
-      description:
-        "From diagnosis to recovery, we offer a wide range of healthcare solutions for every need.",
-      icon: <HeartPulse className="w-8 h-8" />,
-    },
-    {
-      title: "Safety & Hygiene",
-      description:
-        "Strict protocols for hygiene and safety are followed for every service.",
+        "We use safe and effective cleaning agents to ensure a healthy and germ-free environment.",
       icon: <Shield className="w-8 h-8" />,
+    },
+    {
+      title: "Attention to Detail",
+      description:
+        "Our team covers every nook and corner, leaving your space spotless and fresh.",
+      icon: <Star className="w-8 h-8" />,
+    },
+    {
+      title: "Eco-Friendly Solutions",
+      description:
+        "We offer green cleaning options that are safe for your family and the environment.",
+      icon: <Zap className="w-8 h-8" />,
+    },
+    {
+      title: "Flexible Scheduling",
+      description:
+        "Book cleaning services at your convenience, including weekends and holidays.",
+      icon: <Clock className="w-8 h-8" />,
     },
   ],
   // Hero Section
   heroImage:
-    "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1593174260957-b4eba7b3820c?q=80&w=1207&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   heroTitle: (
     <>
-      Quality Healthcare Services{" "}
-      <span className="text-blue-500">At Your Doorstep</span>
+      Professional Cleaning Services{" "}
+      <span className="text-blue-500">For Every Space</span>
     </>
   ),
   heroSubtitle:
-    "Comprehensive home healthcare solutions by trusted professionals for your family's well-being",
+    "Complete home and office cleaning solutions by trained professionals for a spotless, healthy environment",
   ctaButtons: [
     {
-      text: "Book a Doctor",
+      text: "Book Cleaning",
       icon: <Phone className="w-5 h-5" />,
       props: {
         className:
@@ -564,7 +561,7 @@ const healthcareServicesData = {
       },
     },
     {
-      text: "Schedule Lab Test",
+      text: "Get Free Estimate",
       icon: <Calendar className="w-5 h-5" />,
       props: {
         className:
@@ -573,40 +570,40 @@ const healthcareServicesData = {
     },
   ],
   // Pricing Section
-  pricingTitle: "Affordable Healthcare Packages",
+  pricingTitle: "Transparent Cleaning Packages",
   pricingSubtitle:
-    "Transparent pricing for all services – no hidden charges, clear estimates provided",
-  pricingRange: "₹199 – ₹2999*",
-  pricingNote: "*Final pricing depends on service type and requirements",
+    "No hidden charges – get a clear estimate before we start cleaning",
+  pricingRange: "₹399 – ₹4999*",
+  pricingNote: "*Final pricing depends on area size and service type",
   pricingIncluded: [
     {
       icon: <CheckCircle className="w-5 h-5 text-green-700" />,
-      text: "Qualified healthcare professionals",
+      text: "Trained cleaning staff",
     },
-    { text: "Certified labs and equipment" },
-    { text: "Clean and safe procedures" },
+    { text: "Safe and effective cleaning agents" },
+    { text: "All equipment and tools included" },
   ],
   pricingGuarantee: [
     {
       icon: <Shield className="w-5 h-5 text-blue-700" />,
-      text: "Service warranty & support",
+      text: "Satisfaction guarantee",
     },
-    { text: "Verified and insured staff" },
-    { text: "Compliance with health standards" },
+    { text: "Verified and insured cleaners" },
+    { text: "Compliance with safety standards" },
   ],
   pricingButton: (
     <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
       <Home className="w-5 h-5" />
-      Get Your Free Health Assessment
+      Get Your Free Cleaning Assessment
     </button>
   ),
   // CTA Section
-  ctaSectionTitle: "Need Healthcare Services at Home?",
+  ctaSectionTitle: "Want a Spotless Home or Office?",
   ctaSectionSubtitle:
-    "Our expert team is ready to provide quality care and support for you and your loved ones.",
+    "Our expert cleaning team is ready to transform your space. Book now for a sparkling clean experience!",
   ctaSectionButtons: [
     {
-      text: "Call Now: +91 98765 43212",
+      text: "Call Now: +91 98765 43213",
       icon: <Phone className="w-5 h-5" />,
       props: {
         className:
@@ -623,17 +620,17 @@ const healthcareServicesData = {
     },
   ],
   ctaSectionBadges: [
-    { icon: <BadgeCheck className="w-4 h-4" />, text: "Certified Staff" },
+    { icon: <BadgeCheck className="w-4 h-4" />, text: "Verified Cleaners" },
     { icon: <Clock className="w-4 h-4" />, text: "On-Time Service" },
     { icon: <Star className="w-4 h-4" />, text: "Top Rated" },
     { icon: <CheckCircle className="w-4 h-4" />, text: "100% Satisfaction" },
   ],
-  servicesSectionTitle: "Comprehensive Healthcare Services",
+  servicesSectionTitle: "Comprehensive Cleaning Services",
   servicesSectionDescription:
-    "Expert medical and wellness solutions for your family at home",
-  benefitsSectionTitle: "Why Choose Our Healthcare Services?",
+    "Expert cleaning solutions for homes, offices, and commercial spaces",
+  benefitsSectionTitle: "Why Choose Our Cleaning Services?",
   benefitsSectionDescription:
-    "We deliver quality, safety, and compassion for every patient",
+    "We deliver quality, reliability, and a sparkling clean every time",
 };
 
 const data = (id) => {
@@ -644,6 +641,8 @@ const data = (id) => {
       return plumbingServicesData;
     case "healthcare-services":
       return healthcareServicesData;
+    case "cleaning-services":
+      return cleaningServicesData;
     default:
       return electricianServicesData; // Default to electrician services if no match
   }
