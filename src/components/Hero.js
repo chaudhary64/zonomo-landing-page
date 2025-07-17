@@ -27,7 +27,7 @@ export default function HeroSection() {
   }, [words.length]);
 
   return (
-    <div className="relative bg-[#080505] min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)]">
+    <div className="relative bg-[#080505] min-h-[calc(100vh-3.5rem)]">
       {/* Desktop Image */}
       <div className="absolute inset-0 hidden lg:block">
         <Image
