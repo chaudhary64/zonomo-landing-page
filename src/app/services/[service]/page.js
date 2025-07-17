@@ -1,5 +1,6 @@
 "use client";
 import {
+  // Cleaning Services Icons
   Zap,
   CheckCircle,
   Clock,
@@ -11,13 +12,31 @@ import {
   BadgeCheck,
   ThumbsUp,
   DollarSign,
-  Lightbulb,
-  Settings,
   Wrench,
   Battery,
-  HeartPulse,
+  
+  // AC Repair Services Icons
+  Tool,
+  UserCheck,
+  AlertCircle,
+  Briefcase,
   AlertTriangle,
-} from "lucide-react";
+  
+  // Pet Services Icons
+  PawPrint,
+  Bone,
+  ShoppingBag,
+  Dog,
+  HeartPulse,
+  Lightbulb,
+  Heart,
+  Smile,
+  Leaf,
+  List,
+  
+  // Additional Utility Icons
+  Settings // Reused across services
+} from 'lucide-react';
 import ServiceSection from "@/components/service/ServiceSection";
 import { useParams } from "next/navigation";
 
@@ -142,7 +161,7 @@ const electricianServicesData = {
   ],
   // Hero Section
   heroImage:
-    "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "/images/electric.jpg",
   heroTitle: (
     <>
       Professional Electrical Services{" "}
@@ -342,7 +361,7 @@ const plumbingServicesData = {
   ],
   // Hero Section
   heroImage:
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1169&auto=format&fit=crop",
+    "/images/plumber.jpg",
   heroTitle: (
     <>
       Reliable Plumbing Services{" "}
@@ -545,7 +564,7 @@ const healthcareServicesData = {
   ],
   // Hero Section
   heroImage:
-    "https://images.unsplash.com/photo-1685997179880-6449203a053e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "/images/healthCare.jpg",
   heroTitle: (
     <>
       Quality Healthcare Services{" "}
@@ -576,7 +595,7 @@ const healthcareServicesData = {
   pricingTitle: "Affordable Healthcare Packages",
   pricingSubtitle:
     "Transparent pricing for all services – no hidden charges, clear estimates provided",
-  pricingRange: "₹199 – ₹2999*",
+  pricingRange: "₹199 – ₹1599*",
   pricingNote: "*Final pricing depends on service type and requirements",
   pricingIncluded: [
     {
@@ -741,7 +760,7 @@ const cleaningServicesData = {
   ],
   // Hero Section
   heroImage:
-    "https://images.unsplash.com/photo-1593174260957-b4eba7b3820c?q=80&w=1207&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "/images/cleaning.jpg",
   heroTitle: (
     <>
       Professional Cleaning Services{" "}
@@ -832,6 +851,393 @@ const cleaningServicesData = {
     "We deliver quality, reliability, and a sparkling clean every time",
 };
 
+// AC- SERVICE CONTENT
+const acRepairServicesData = {
+  // Services
+  services: [
+    {
+      icon: <Settings className="w-6 h-6" />,
+      title: "AC General Service",
+      description:
+        "Comprehensive maintenance including cleaning, gas check, and performance optimization for your air conditioner.",
+      benefits: [
+        "Improved cooling efficiency",
+        "Reduced electricity bills",
+        "Extended AC lifespan",
+      ],
+      price: "₹599 - ₹1499",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Wrench className="w-6 h-6" />,
+      title: "AC Gas Charging",
+      description:
+        "Professional refrigerant gas refilling with leak testing to restore optimal cooling performance.",
+      benefits: ["Restores cooling power", "Eco-friendly gases", "Leak detection"],
+      price: "₹999 - ₹2999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "AC Repair",
+      description:
+        "Expert troubleshooting and repair for all AC issues including water leakage, strange noises, and cooling problems.",
+      benefits: ["Same-day service", "Genuine parts", "Warranty on repairs"],
+      price: "₹799 - ₹3999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "AC Installation",
+      description:
+        "Professional installation of new AC units with proper mounting, piping, and electrical connections.",
+      benefits: ["Safe installation", "Optimal placement", "Free consultation"],
+      price: "₹1499 - ₹4999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Battery className="w-6 h-6" />,
+      title: "AC Deep Cleaning",
+      description:
+        "Thorough cleaning of indoor and outdoor units including coils, filters, and drainage system.",
+      benefits: ["Hygienic air quality", "Prevents odors", "Removes bacteria"],
+      price: "₹899 - ₹1999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "Annual Maintenance Contract",
+      description:
+        "Year-round protection with scheduled services, priority support, and discounted repairs.",
+      benefits: ["Multiple visits", "20% discount", "Emergency support"],
+      price: "₹2999 - ₹7999/year",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+  ],
+  // Features
+  features: [
+    {
+      icon: <BadgeCheck className="w-5 h-5" />,
+      text: "Certified AC Technicians",
+    },
+    { icon: <Clock className="w-5 h-5" />, text: "90-Minute Response Time" },
+    {
+      icon: <ThumbsUp className="w-5 h-5" />,
+      text: "90-Day Service Warranty",
+    },
+    { icon: <DollarSign className="w-5 h-5" />, text: "No Hidden Charges" },
+  ],
+  // Benefits
+  benefits: [
+    {
+      title: "Expert Technicians",
+      description:
+        "Our team consists of manufacturer-trained professionals with 5+ years of experience.",
+      icon: <UserCheck className="w-8 h-8" />,
+    },
+    {
+      title: "Genuine Parts",
+      description:
+        "We use only OEM-approved spare parts with warranty for all repairs.",
+      icon: <Shield className="w-8 h-8" />,
+    },
+    {
+      title: "Advanced Equipment",
+      description:
+        "Latest tools and digital gauges for precise diagnosis and servicing.",
+      icon: <Briefcase className="w-8 h-8" />,
+    },
+    {
+      title: "24/7 Emergency",
+      description:
+        "Round-the-clock service for urgent AC breakdowns and repairs.",
+      icon: <AlertCircle className="w-8 h-8" />,
+    },
+  ],
+  // Hero Section
+  heroImage:
+    "/images/ac-repairs.jpg",
+  heroTitle: (
+    <>
+      Professional <span className="text-blue-500">AC Repair</span> & Maintenance
+    </>
+  ),
+  heroSubtitle:
+    "Expert solutions for all air conditioner problems - servicing, gas charging, repairs and installation",
+  ctaButtons: [
+    {
+      text: "Call AC Expert",
+      icon: <Phone className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+      },
+    },
+    {
+      text: "Schedule Service",
+      icon: <Calendar className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm",
+      },
+    },
+  ],
+  // Pricing Section
+  pricingTitle: "Transparent AC Service Pricing",
+  pricingSubtitle:
+    "Fair and competitive rates for all types of air conditioner services",
+  pricingRange: "₹299 – ₹999*",
+  pricingNote: "*Final pricing depends on AC tonnage and service type",
+  pricingIncluded: [
+    {
+      icon: <CheckCircle className="w-5 h-5 text-green-700" />,
+      text: "Trained AC technicians",
+    },
+    { text: "Original equipment parts" },
+    { text: "Complete diagnostic check" },
+  ],
+  pricingGuarantee: [
+    {
+      icon: <Shield className="w-5 h-5 text-blue-700" />,
+      text: "90-day service warranty",
+    },
+    { text: "7-day follow-up support" },
+    { text: "No repair-no charge policy" },
+  ],
+  pricingButton: (
+    <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
+      <Home className="w-5 h-5" />
+      Get Free AC Inspection
+    </button>
+  ),
+  // CTA Section
+  ctaSectionTitle: "AC Not Cooling Properly?",
+  ctaSectionSubtitle:
+    "Our certified AC technicians can diagnose and fix any air conditioner issue quickly and effectively",
+  ctaSectionButtons: [
+    {
+      text: "Emergency Repair: +91 98765 43210",
+      icon: <Phone className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
+    {
+      text: "Book Preventive Maintenance",
+      icon: <Calendar className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
+  ],
+  ctaSectionBadges: [
+    { icon: <BadgeCheck className="w-4 h-4" />, text: "BEE Certified" },
+    { icon: <Clock className="w-4 h-4" />, text: "Same-Day Service" },
+    { icon: <Star className="w-4 h-4" />, text: "4.9/5 Ratings" },
+    { icon: <CheckCircle className="w-4 h-4" />, text: "Warranty Backed" },
+  ],
+  servicesSectionTitle: "Complete AC Solutions",
+  servicesSectionDescription:
+    "From routine maintenance to complex repairs - we handle all air conditioner needs",
+  benefitsSectionTitle: "Why Choose Our AC Services?",
+  benefitsSectionDescription:
+    "Expert care for your cooling systems with guaranteed satisfaction",
+};
+
+// PET-SERVICE
+const petServicesData = {
+  // Services
+  services: [
+    {
+      icon: <PawPrint className="w-6 h-6" />,
+      title: "Pet Grooming",
+      description: "Professional bathing, haircut, nail trimming, and styling to keep your pet clean and healthy.",
+      benefits: [
+        "Reduces shedding & matting",
+        "Prevents skin infections",
+        "Professional styling"
+      ],
+      price: "₹799 - ₹2999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <HeartPulse className="w-6 h-6" />,
+      title: "Veterinary Care",
+      description: "Complete health checkups, vaccinations, and treatment by certified veterinarians.",
+      benefits: [
+        "Vaccination programs",
+        "Disease diagnosis",
+        "Post-op care"
+      ],
+      price: "₹399 - ₹2999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <Home className="w-6 h-6" />,
+      title: "Pet Boarding",
+      description: "Safe and comfortable overnight stays with daily walks, playtime, and personalized care.",
+      benefits: [
+        "24/7 supervision",
+        "Regular exercise",
+        "Medication administration"
+      ],
+      price: "₹999/day",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <Bone className="w-6 h-6" />,
+      title: "Pet Training",
+      description: "Obedience training and behavior correction by certified trainers for dogs of all ages.",
+      benefits: [
+        "Basic commands",
+        "Leash training",
+        "Behavioral issues"
+      ],
+      price: "₹1499/session",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <ShoppingBag className="w-6 h-6" />,
+      title: "Pet Supplies Delivery",
+      description: "Monthly subscription for food, treats, toys, and other essentials delivered to your door.",
+      benefits: [
+        "Curated packages",
+        "Auto-shipping",
+        "Discounts on bulk orders"
+      ],
+      price: "₹1499/month",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <Dog className="w-6 h-6" />,
+      title: "Dog Walking",
+      description: "Daily exercise sessions with trained walkers who follow your pet's routine.",
+      benefits: [
+        "GPS tracked walks",
+        "Photo updates",
+        "Puppy socialization"
+      ],
+      price: "₹199/walk",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    }
+  ],
+
+  // Features
+  features: [
+    { icon: <BadgeCheck className="w-5 h-5" />, text: "Certified Professionals" },
+    { icon: <Clock className="w-5 h-5" />, text: "Flexible Scheduling" },
+    { icon: <Shield className="w-5 h-5" />, text: "Insured Services" },
+    { icon: <Heart className="w-5 h-5" />, text: "Pet First Aid Trained" }
+  ],
+
+  // Benefits
+  benefits: [
+    {
+      title: "Stress-Free Experience",
+      description: "We use positive reinforcement techniques to ensure pets feel comfortable.",
+      icon: <Smile className="w-8 h-8" />
+    },
+    {
+      title: "Customized Care",
+      description: "Services tailored to your pet's breed, age, and special needs.",
+      icon: <Settings className="w-8 h-8" />
+    },
+    {
+      title: "Emergency Support",
+      description: "24/7 availability for urgent pet care needs.",
+      icon: <AlertCircle className="w-8 h-8" />
+    },
+    {
+      title: "Eco-Friendly Products",
+      description: "Only use organic, pet-safe shampoos and cleaning supplies.",
+      icon: <Leaf className="w-8 h-8" />
+    }
+  ],
+
+  // Hero Section
+  heroImage: "https://images.unsplash.com/photo-1529472119196-cb724127a98e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nc3xlbnwwfHwwfHx8MA%3D%3D",
+  heroTitle: <>Premium Care for Your <span className="text-blue-500">Furry Friends</span></>,
+  heroSubtitle: "Complete pet care services from grooming to veterinary care - because they're family",
+  
+  ctaButtons: [
+    {
+      text: "Book Service",
+      icon: <Phone className="w-5 h-5" />,
+      props: {
+        className: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+      }
+    },
+    {
+      text: "View Packages",
+      icon: <List className="w-5 h-5" />,
+      props: {
+        className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
+      }
+    }
+  ],
+
+  // Pricing Section
+  pricingTitle: "Transparent Pet Care Pricing",
+  pricingSubtitle: "No hidden fees - just quality care for your companion",
+  pricingRange: "₹299 - 999*",
+  pricingNote: "*Prices vary based on pet size and service requirements",
+  
+  pricingIncluded: [
+    { icon: <CheckCircle className="w-5 h-5 text-green-700" />, text: "Certified professionals" },
+    { text: "Pet-friendly facilities" },
+    { text: "Sanitized equipment" }
+  ],
+  
+  pricingGuarantee: [
+    { icon: <Shield className="w-5 h-5 text-blue-700" />, text: "100% satisfaction guarantee" },
+    { text: "Service insurance" },
+    { text: "Free follow-up consultation" }
+  ],
+  
+  pricingButton: (
+    <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
+      <PawPrint className="w-5 h-5" />
+      Get Customized Plan
+    </button>
+  ),
+
+  // CTA Section
+  ctaSectionTitle: "Ready to Pamper Your Pet?",
+  ctaSectionSubtitle: "Join hundreds of pet parents who trust us with their furry family members",
+  
+  ctaSectionButtons: [
+    {
+      text: "Call: +91 98765 43210",
+      icon: <Phone className="w-5 h-5" />,
+      props: {
+        className: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+      }
+    },
+    {
+      text: "Emergency Vet",
+      icon: <AlertTriangle className="w-5 h-5" />,
+      props: {
+        className: "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
+      }
+    }
+  ],
+  
+  ctaSectionBadges: [
+    { icon: <BadgeCheck className="w-4 h-4" />, text: "Certified" },
+    { icon: <Heart className="w-4 h-4" />, text: "Pet-Loved" },
+    { icon: <Star className="w-4 h-4" />, text: "4.8/5 Ratings" },
+    { icon: <Shield className="w-4 h-4" />, text: "Insured" }
+  ],
+
+  servicesSectionTitle: "Our Pet Care Services",
+  servicesSectionDescription: "Comprehensive solutions for all your pet's needs",
+  
+  benefitsSectionTitle: "Why Pet Parents Choose Us",
+  benefitsSectionDescription: "We treat your pets like our own"
+};
+
 const data = (id) => {
   switch (id) {
     case "electrician-services":
@@ -842,8 +1248,12 @@ const data = (id) => {
       return healthcareServicesData;
     case "cleaning-services":
       return cleaningServicesData;
+    case "ac-services":
+      return acRepairServicesData;
+    case "pet-services":
+      return petServicesData;
     default:
-      return electricianServicesData; // Default to electrician services if no match
+      return petServicesData; // Default to electrician services if no match
   }
 };
 

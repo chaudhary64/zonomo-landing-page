@@ -84,7 +84,7 @@ export default function ServiceSlider() {
       price: "₹499",
       rating: 4.7,
       verified: true,
-      link: "/services/electrician-services",
+      link: "/services/pet-services",
     },
   ];
 
@@ -126,7 +126,7 @@ export default function ServiceSlider() {
     if (isAutoPlaying) {
       const interval = setInterval(() => {
         setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-      }, 3000);
+      }, 5000);
       return () => {
         clearInterval(interval);
         cancelAnimationFrame(animationRef.current);
@@ -247,9 +247,9 @@ export default function ServiceSlider() {
                         <h3 className="text-gray-900 text-lg font-semibold line-clamp-1">
                           {service.title}
                         </h3>
-                        <span className="text-gray-700 text-lg font-bold whitespace-nowrap">
+                        {/* <span className="text-gray-700 text-lg font-bold whitespace-nowrap">
                           {service.price}
-                        </span>
+                        </span> */}
                       </div>
 
                       <div className="flex items-center gap-2 mb-2">

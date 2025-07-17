@@ -1,7 +1,8 @@
 "use client";
-"use client";
 import React, { useState, useEffect, useCallback } from "react";
 import PlayStore from "@/components/playStore";
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function ServiceSection({
   services = [],
@@ -48,12 +49,20 @@ export default function ServiceSection({
     return () => window.removeEventListener("resize", updateServicesPerSlide);
   }, []);
 
-  useEffect(() => {
+useEffect(() => {
+  // Check if promo has already been shown
+  const promoShown = localStorage.getItem('promoShown');
+  
+  if (!promoShown) {
     const timer = setTimeout(() => {
       setPromo(true);
+      // Set flag in localStorage
+      localStorage.setItem('promoShown', 'true');
     }, 4000);
+
     return () => clearTimeout(timer);
-  }, []);
+  }
+}, []);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide(
@@ -71,7 +80,7 @@ export default function ServiceSection({
 
   useEffect(() => {
     if (isAutoPlaying) {
-      const interval = setInterval(nextSlide, 5000);
+      const interval = setInterval(nextSlide, 6000);
       return () => clearInterval(interval);
     }
   }, [isAutoPlaying, currentSlide, servicesPerSlide, nextSlide]);
@@ -82,7 +91,7 @@ export default function ServiceSection({
       <section className="relative text-white overflow-hidden">
         {/* Background Image with Blur */}
         <div
-          className="absolute inset-0 bg-cover bg-center z-0"
+          className="absolute inset-0 bg-cover bg-center z-0 "
           style={{ backgroundImage: `url('${heroImage}')` }}
         />
         {/* PlayStore Promo (always mounted, visibility toggled) */}
@@ -104,7 +113,7 @@ export default function ServiceSection({
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               {heroTitle}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white leading-relaxed">
+            <p className="text-xl md:text-2xl mb-8 text-white leading-relaxed font-medium">
               {heroSubtitle}
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -186,9 +195,7 @@ export default function ServiceSection({
                                 <div className="bg-blue-100 p-3 rounded-lg text-blue-600">
                                   {service.icon}
                                 </div>
-                                <span className="bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">
-                                  {service.price}
-                                </span>
+                               
                               </div>
                               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                                 {service.title}
@@ -228,14 +235,16 @@ export default function ServiceSection({
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white shadow-md rounded-full p-3 hover:bg-gray-50 transition-all duration-200 hover:scale-110 z-10 border border-gray-200"
               aria-label="Previous services"
             >
-              {ctaSectionBadges && ctaSectionBadges[1]?.icon}
+              <FaArrowLeft />
+
             </button>
             <button
               onClick={nextSlide}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white shadow-md rounded-full p-3 hover:bg-gray-50 transition-all duration-200 hover:scale-110 z-10 border border-gray-200"
               aria-label="Next services"
             >
-              {ctaSectionBadges && ctaSectionBadges[2]?.icon}
+              <FaArrowRightLong />
+
             </button>
             {/* Indicators */}
             <div className="flex justify-center mt-8 space-x-2">
@@ -258,39 +267,7 @@ export default function ServiceSection({
         </div>
       </section>
       {/* Benefits Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              {benefitsSectionTitle}
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {benefitsSectionDescription}
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit) => (
-              <div
-                key={
-                  typeof benefit.title === "string"
-                    ? benefit.title
-                    : JSON.stringify(benefit)
-                }
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 text-blue-600">
-                  {benefit.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* Pricing Section remains unchanged */}
+      
       {/* ...existing code... */}
 
       {/* Pricing Section */}
