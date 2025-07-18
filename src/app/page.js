@@ -3,14 +3,8 @@ import HeroSection from "@/components/Hero";
 import Booking from "../components/Booking";
 import WhyChooseUs from "./../components/WhyChooseUs";
 import FAQ from "@/components/Faq";
-import AIFeatures from "@/components/features/page";
-import dynamic from "next/dynamic";
 import RoleCarousel from "@/components/TwoSection";
 import ServiceSlider from "./../components/ServiceList";
-// Dynamically import ContactUs with SSR disabled
-const ContactUs = dynamic(() => import("@/components/contact/page"), {
-  ssr: false,
-});
 
 export default function Home() {
   return (
@@ -18,11 +12,9 @@ export default function Home() {
       <HeroSection />
       <RoleCarousel />
       <ServiceSlider />
-      {/* <AIFeatures /> */}
       <WhyChooseUs />
       <Booking />
       <FAQ />
-      <ContactUs />
     </>
   );
 }
