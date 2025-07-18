@@ -5,6 +5,7 @@ import WhyChooseUs from "./../components/WhyChooseUs";
 import FAQ from "@/components/Faq";
 import RoleCarousel from "@/components/TwoSection";
 import ServiceSlider from "./../components/ServiceList";
+import Coming_Soon from "@/components/Coming_Soon";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <WhyChooseUs />
       <Booking />
       <FAQ />
+      <Coming_Soon />
     </>
   );
 }
