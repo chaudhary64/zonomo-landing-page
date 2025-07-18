@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import Image from "next/image"; 
+import  Link  from 'next/link';
 
 export default function HeroSection() {
   const words = [
@@ -71,22 +72,12 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 pt-2">
-          <button className="relative overflow-hidden cursor-pointer group bg-gradient-to-r from-purple-600 to-indigo-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold font-poppins border border-purple-700 hover:border-indigo-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
-            <span className="relative z-10">Get Started</span>
-
-            {/* Animated Shine Effect */}
-            <span
-              className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent
-    opacity-0 group-hover:opacity-100
-    transform -translate-x-full group-hover:translate-x-0
-    transition-all duration-700 ease-in-out rotate-12 group-hover:rotate-0 pointer-events-none"
-            ></span>
-          </button>
-
-          <button className="relative overflow-hidden group bg-white text-gray-800 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 font-poppins cursor-pointer">
-            <span className="relative z-10">How It Works</span>
-            <span className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          </button>
+          <Link href = "#hitw"> 
+            <button className="relative overflow-hidden group bg-white text-gray-800 px-6 py-3 hover:bg-gray-500 sm:px-8 sm:py-4 rounded-xl font-semibold border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 font-poppins cursor-pointer">
+              <span className="relative z-10">How It Works</span>
+              <span className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
