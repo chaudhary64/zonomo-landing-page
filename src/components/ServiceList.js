@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function ServiceSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [loader, setLoader] = useState(false);
   const sliderRef = useRef(null);
   const animationRef = useRef(null);
   const touchStartX = useRef(0);
@@ -87,6 +88,20 @@ export default function ServiceSlider() {
       link: "/services/pet-services",
     },
   ];
+
+  //Loader 
+  useEffect(()=>{
+    const show = localStorage.getItem('loader');
+    if(!show){
+       const timer = setTimeout(() => {
+        setLoader(true);
+      }, 2000);
+      
+      localStorage.setItem('loader', 'true');
+      return () => clearTimeout(timer);
+    }
+   
+  },[])
 
   const cardsPerView = Math.min(4, services.length);
   const maxIndex = services.length - cardsPerView;
@@ -225,6 +240,7 @@ export default function ServiceSlider() {
                 className="flex-none w-full md:w-72 cursor-pointer"
               >
                 <Link href={service.link}>
+                    
                   <div className="h-full p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="relative h-40">
                       <Image

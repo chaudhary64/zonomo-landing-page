@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-
+import PointerHighlight from "./ui/pointer-highlight";
 import React, { useRef } from "react";
 import {
   motion,
@@ -106,8 +106,10 @@ function WhyChooseUs() {
             y: titleY,
           }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900 font-poppins">
-            Why Choose Us?
+          <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900 font-poppins w-full flex justify-center">
+            <PointerHighlight containerClassName="flex justify-center">
+              <span className="inline-block text-center">Why Choose Us</span>
+            </PointerHighlight>
           </h2>
           <p className="mt-4 text-sm sm:text-base leading-7 text-gray-600 sm:mt-8 font-inter">
             Pure marketplace, full control, and AI-powered matching for your

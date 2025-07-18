@@ -1,6 +1,9 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
+import ServiceProvidersSection from "./../../components/parallex";
+import CalltoAction from "./../../components/CTA";
 import Image from "next/image";
+import LampDemo  from "./../../components/CTA";
 import {
   Check,
   Eye,
@@ -149,9 +152,9 @@ const Header = () => {
         <span className="underline decoration-white/50">Zonomo</span>
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 text-neutral-200">
-        We connect you with skilled professionals for all your home and personal
-        service needs. From cleaning to repairs, beauty to fitness - we&apos;ve
-        got you covered with trusted experts.
+        Maximize Your Earnings with Zonomo – Keep 100% of Your Profits, Gain
+        More Clients, and Grow Your Business on Your Terms. No Middlemen, Just
+        More Opportunities and Faster Payments. Join Today!
       </p>
     </div>
   );
@@ -296,132 +299,22 @@ const HeroParallax = ({ products }) => {
       )}
 
       {/* Continue prompt */}
-      {allServicesViewed && scrollY <= scrollThreshold + 100 && (
-        <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-3 rounded-full text-sm flex items-center gap-2 z-50 backdrop-blur-sm">
-          <span>You can now scroll down to continue</span>
-          <div className="animate-bounce">↓</div>
-        </div>
-      )}
     </div>
   );
 };
 
 export default function ServicesHero() {
   return (
-    <div className="bg-black min-h-screen">
-      <HeroParallax products={services} />
+    <>
+      <div className="bg-black min-h-screen ">
+        <HeroParallax products={services} />
 
-      {/* Customer CTA Section */}
+        {/* Customer CTA Section */}
 
-      {/* Service Providers Section */}
-      <div className="bg-black text-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What Service Providers Get
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Joining Zonomo comes with exclusive benefits for professionals
-            </p>
-          </div>
+        <ServiceProvidersSection />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Benefit 1 */}
-            <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-white transition-colors">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-500/20 p-2 rounded-lg">
-                  <Check className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-xl font-semibold">No Agency Cuts</h3>
-              </div>
-              <p className="text-gray-300">
-                Work independently and keep what you earn — no middlemen taking
-                commissions.
-              </p>
-            </div>
-
-            {/* Benefit 2 */}
-            <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-500/20 p-2 rounded-lg">
-                  <Eye className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-xl font-semibold">More Visibility</h3>
-              </div>
-              <p className="text-gray-300">
-                Get discovered by high-intent users looking for your service in
-                real-time.
-              </p>
-            </div>
-
-            {/* Benefit 3 */}
-            <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-500/20 p-2 rounded-lg">
-                  <Clock className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-xl font-semibold">Flexible Scheduling</h3>
-              </div>
-              <p className="text-gray-300">
-                Work on your own terms — choose your working hours and
-                availability.
-              </p>
-            </div>
-
-            {/* Benefit 4 */}
-            <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-500/20 p-2 rounded-lg">
-                  <MessageSquare className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-xl font-semibold">Direct Communication</h3>
-              </div>
-              <p className="text-gray-300">
-                Chat with clients, accept or reject requests, and build
-                long-term relationships.
-              </p>
-            </div>
-
-            {/* Benefit 5 */}
-            <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-500/20 p-2 rounded-lg">
-                  <TrendingUp className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-xl font-semibold">Growth Support</h3>
-              </div>
-              <p className="text-gray-300">
-                Get access to reviews, ratings, and tools to help grow your
-                reputation.
-              </p>
-            </div>
-
-            {/* Benefit 6 */}
-            <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-500/20 p-2 rounded-lg">
-                  <CreditCard className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-xl font-semibold">Fast Payments</h3>
-              </div>
-              <p className="text-gray-300">
-                Receive payments quickly and securely after each job.
-              </p>
-            </div>
-          </div>
-
-          {/* Provider CTA */}
-          <div className="bg-black text-white p-20 text-center">
-            <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-xl text-neutral-300 mb-8">
-              Book your service today and experience professional quality
-            </p>
-            <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg text-white font-semibold transition-colors">
-              Book Now
-            </button>
-          </div>
-        </div>
+        <LampDemo />
       </div>
-    </div>
+    </>
   );
 }

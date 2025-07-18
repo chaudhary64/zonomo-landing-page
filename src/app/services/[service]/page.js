@@ -33,6 +33,7 @@ import {
   Smile,
   Leaf,
   List,
+  Download,
   
   // Additional Utility Icons
   Settings // Reused across services
@@ -172,8 +173,8 @@ const electricianServicesData = {
     "Complete residential electrical solutions from certified professionals ensuring safety, reliability, and efficiency",
   ctaButtons: [
     {
-      text: "Request a Callback",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
       props: {
         className:
           "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
@@ -210,23 +211,18 @@ const electricianServicesData = {
     { text: "Licensed and insured professionals" },
     { text: "Compliance with safety standards" },
   ],
-  pricingButton: (
-    <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
-      <Home className="w-5 h-5" />
-      Get Your Free Home Electrical Assessment
-    </button>
-  ),
+ 
   // CTA Section
   ctaSectionTitle: "Ready to Upgrade Your Home's Electrical System?",
   ctaSectionSubtitle:
     "Don't compromise on safety or quality. Our certified electricians are ready to help with any electrical need.",
   ctaSectionButtons: [
     {
-      text: "Call Now: +91 98765 43210",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
       props: {
         className:
-          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+          "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
       },
     },
     {
@@ -372,11 +368,11 @@ const plumbingServicesData = {
     "Complete residential plumbing solutions by trusted professionals for leak-free, worry-free living",
   ctaButtons: [
     {
-      text: "Request a Plumber",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
       props: {
         className:
-          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+          "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
       },
     },
     {
@@ -409,23 +405,18 @@ const plumbingServicesData = {
     { text: "Verified and insured plumbers" },
     { text: "Compliance with safety standards" },
   ],
-  pricingButton: (
-    <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
-      <Home className="w-5 h-5" />
-      Get Your Free Plumbing Assessment
-    </button>
-  ),
+  
   // CTA Section
   ctaSectionTitle: "Need a Plumber You Can Trust?",
   ctaSectionSubtitle:
     "Our expert plumbers are ready to solve any plumbing issue, big or small.",
   ctaSectionButtons: [
     {
-      text: "Call Now: +91 98765 43211",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
       props: {
         className:
-          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+          "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
       },
     },
     {
@@ -575,15 +566,15 @@ const healthcareServicesData = {
     "Comprehensive home healthcare solutions by trusted professionals for your family's well-being",
   ctaButtons: [
     {
-      text: "Book a Doctor",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
       props: {
         className:
-          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+          "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
       },
     },
     {
-      text: "Schedule Lab Test",
+      text: "Book Online",
       icon: <Calendar className="w-5 h-5" />,
       props: {
         className:
@@ -613,23 +604,18 @@ const healthcareServicesData = {
     { text: "Verified and insured staff" },
     { text: "Compliance with health standards" },
   ],
-  pricingButton: (
-    <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
-      <Home className="w-5 h-5" />
-      Get Your Free Health Assessment
-    </button>
-  ),
+ 
   // CTA Section
   ctaSectionTitle: "Need Healthcare Services at Home?",
   ctaSectionSubtitle:
     "Our expert team is ready to provide quality care and support for you and your loved ones.",
   ctaSectionButtons: [
     {
-      text: "Call Now: +91 98765 43212",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
       props: {
         className:
-          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+          "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
       },
     },
     {
@@ -771,15 +757,15 @@ const cleaningServicesData = {
     "Complete home and office cleaning solutions by trained professionals for a spotless, healthy environment",
   ctaButtons: [
     {
-      text: "Book Cleaning",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
       props: {
         className:
           "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
       },
     },
     {
-      text: "Get Free Estimate",
+      text: "Book Online",
       icon: <Calendar className="w-5 h-5" />,
       props: {
         className:
@@ -791,7 +777,7 @@ const cleaningServicesData = {
   pricingTitle: "Transparent Cleaning Packages",
   pricingSubtitle:
     "No hidden charges – get a clear estimate before we start cleaning",
-  pricingRange: "₹399 – ₹4999*",
+  pricingRange: "₹399 – ₹1999*",
   pricingNote: "*Final pricing depends on area size and service type",
   pricingIncluded: [
     {
@@ -809,23 +795,18 @@ const cleaningServicesData = {
     { text: "Verified and insured cleaners" },
     { text: "Compliance with safety standards" },
   ],
-  pricingButton: (
-    <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
-      <Home className="w-5 h-5" />
-      Get Your Free Cleaning Assessment
-    </button>
-  ),
+  
   // CTA Section
   ctaSectionTitle: "Want a Spotless Home or Office?",
   ctaSectionSubtitle:
     "Our expert cleaning team is ready to transform your space. Book now for a sparkling clean experience!",
   ctaSectionButtons: [
     {
-      text: "Call Now: +91 98765 43213",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
       props: {
         className:
-          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+          "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
       },
     },
     {
@@ -966,11 +947,11 @@ const acRepairServicesData = {
     "Expert solutions for all air conditioner problems - servicing, gas charging, repairs and installation",
   ctaButtons: [
     {
-      text: "Call AC Expert",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download",
+      icon: <Download className="w-5 h-5" />,
       props: {
         className:
-          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+          "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
       },
     },
     {
@@ -1004,20 +985,15 @@ const acRepairServicesData = {
     { text: "7-day follow-up support" },
     { text: "No repair-no charge policy" },
   ],
-  pricingButton: (
-    <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
-      <Home className="w-5 h-5" />
-      Get Free AC Inspection
-    </button>
-  ),
+  
   // CTA Section
   ctaSectionTitle: "AC Not Cooling Properly?",
   ctaSectionSubtitle:
     "Our certified AC technicians can diagnose and fix any air conditioner issue quickly and effectively",
   ctaSectionButtons: [
     {
-      text: "Emergency Repair: +91 98765 43210",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
       props: {
         className:
           "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
@@ -1209,10 +1185,10 @@ const petServicesData = {
   
   ctaSectionButtons: [
     {
-      text: "Call: +91 98765 43210",
-      icon: <Phone className="w-5 h-5" />,
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
       props: {
-        className: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+        className: "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
       }
     },
     {
