@@ -62,11 +62,12 @@ export default function HeroSection() {
 
         {/* Word Indicators */}
 
-        <p className="text-gray-200 text-lg sm:text-xl max-w-2xl leading-relaxed font-inter mt-6 mb-10 drop-shadow-md">
+        <p className="text-gray-100 text-xl sm:text-2xl max-w-2xl leading-relaxed font-inter mt-6 mb-2 drop-shadow-md font-semibold">
+          Verified professionals. Instant quotes. AI-powered matching.
+        </p>
+        <p className="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed font-inter mb-10 drop-shadow-md">
           From doorstep repairs to healthcare, professional services to personal
-          care – all services on one intelligent platform. Connect with verified
-          professionals, get instant quotes, and experience seamless service
-          delivery.
+          care – all services on one intelligent platform.
         </p>
 
         <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 pt-2">
