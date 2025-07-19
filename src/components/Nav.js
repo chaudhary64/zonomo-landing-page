@@ -27,7 +27,6 @@ export default function Nav() {
             alt="Loading..."
             className="w-32 h-32 mb-6 "
           />
-          
         </div>
       )}
       <nav className="bg-white sticky top-0 z-50">
@@ -78,21 +77,21 @@ export default function Nav() {
               >
                 Services
               </Link>
+              <Link
+                href="/pricing"
+                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+              >
+                Pricing
+              </Link>
             </div>
 
             {/* Auth Buttons - Desktop */}
-            <div className="hidden lg:flex items-center space-x-3">
+            <div className="hidden lg:flex items-center">
               <Link
-                href="/login"
-                className="text-gray-700 hover:text-black font-medium px-3 py-1 rounded-lg border border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-inter min-h-[2.25rem] min-w-[5.5rem] flex items-center justify-center"
-              >
-                Login
-              </Link>
-              <Link
-                href="/signup"
+                href="https://zonomo-draft-eight.vercel.app/"
                 className="bg-black text-white font-medium px-3 py-1.5 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-poppins min-h-[2.25rem] min-w-[5.5rem] flex items-center justify-center"
               >
-                Sign Up
+                Get Started
               </Link>
             </div>
 
@@ -131,7 +130,14 @@ export default function Nav() {
             <div className="lg:hidden border-t border-gray-200 py-4">
               <div className="flex flex-col space-y-4">
                 <Link
-                  href="/features"
+                  href="/"
+                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="#features"
                   className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -145,7 +151,7 @@ export default function Nav() {
                   About us
                 </Link>
                 <Link
-                  href="/faq"
+                  href="#faq"
                   className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -161,20 +167,20 @@ export default function Nav() {
                 >
                   Services
                 </Link>
+                <Link
+                  href="/pricing"
+                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Pricing
+                </Link>
                 <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                   <Link
-                    href="/login"
-                    className="text-gray-700 hover:text-black font-medium py-2 px-2 rounded-lg border border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 text-center font-inter min-h-[2.25rem] min-w-[5.5rem] flex items-center justify-center"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    href="/signup"
+                    href="https://zonomo-draft-eight.vercel.app/"
                     className="bg-black text-white font-medium px-3 py-1.5 rounded-lg hover:bg-gray-800 transition-colors duration-200 text-center font-poppins min-h-[2.25rem] min-w-[5.5rem] flex items-center justify-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Sign Up
+                    Get Started
                   </Link>
                 </div>
               </div>
