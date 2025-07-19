@@ -50,25 +50,11 @@ export default function Nav() {
               >
                 Home
               </Link>
-
               <Link
                 href="#features"
                 className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
               >
                 Features
-              </Link>
-              <Link
-                href="/about"
-                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-              >
-                About us
-              </Link>
-
-              <Link
-                href="#faq"
-                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-              >
-                FAQ
               </Link>
               <Link
                 onClick={handleServicesClick}
@@ -82,6 +68,18 @@ export default function Nav() {
                 className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
               >
                 Pricing
+              </Link>
+              <Link
+                href="/about"
+                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+              >
+                About us
+              </Link>
+              <Link
+                href="#faq"
+                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+              >
+                FAQ
               </Link>
             </div>
 
@@ -144,20 +142,6 @@ export default function Nav() {
                   Features
                 </Link>
                 <Link
-                  href="/about"
-                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About us
-                </Link>
-                <Link
-                  href="#faq"
-                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  FAQ
-                </Link>
-                <Link
                   href="/service-pro"
                   className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
                   onClick={(e) => {
@@ -173,6 +157,20 @@ export default function Nav() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Pricing
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About us
+                </Link>
+                <Link
+                  href="#faq"
+                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  FAQ
                 </Link>
                 <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                   <Link
