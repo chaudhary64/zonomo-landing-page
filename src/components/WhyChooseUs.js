@@ -55,11 +55,13 @@ const WhyChooseUs = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setShowVideo(true);
             if (videoRef.current) {
-              videoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
+              videoRef.current
+                .play()
+                .catch((e) => console.log("Autoplay prevented:", e));
             }
           } else {
             setShowVideo(false);
@@ -86,7 +88,11 @@ const WhyChooseUs = () => {
   return (
     <>
       {/* Video Background */}
-      <div className={`fixed inset-0 z-[-1] transition-opacity duration-500 ${showVideo ? 'opacity-100' : 'opacity-0'}`}>
+      <div
+        className={`fixed inset-0 z-[-1] transition-opacity duration-500 ${
+          showVideo ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <video
           ref={videoRef}
           autoPlay
@@ -100,8 +106,8 @@ const WhyChooseUs = () => {
         </video>
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
-      
-      <section 
+
+      <section
         ref={sectionRef}
         className="my-6 sm:my-8 md:my-12 lg:my-16 xl:my-20 relative grid grid-cols-2 max-lg:my-3 max-lg:px-2 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:gap-4"
       >
