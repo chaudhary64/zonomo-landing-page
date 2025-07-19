@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { MacbookScroll } from './../../components/ui/macbook-scroll';
 
 // Team Member Card Component
 const TeamMemberCard = ({ member, delay = 0 }) => (
@@ -331,6 +332,9 @@ function About() {
           </div>
         </section>
 
+          <MacbookScroll/>
+        
+
         {/* Stats Section with Enhanced Visual Appeal */}
         <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
           {/* Animated Background Elements */}
@@ -419,127 +423,8 @@ function About() {
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="py-12 sm:py-16 bg-white">
-          <div className="px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 font-poppins">
-                Meet Our Team
-              </h2>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto font-inter px-2 sm:px-0">
-                The passionate individuals behind our platform, working
-                tirelessly to make home services better for everyone.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-              {teamMembers.map((member, index) => (
-                <TeamMemberCard
-                  key={index}
-                  member={member}
-                  delay={index * 0.1}
-                />
-              ))}
-            </div>
-
-            {/* Team Photo Placeholder */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="mt-12 sm:mt-16 text-center"
-            >
-              <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border-2 border-dashed border-blue-200 hover:border-blue-300 transition-colors duration-300">
-                <div className="max-w-4xl mx-auto">
-                  <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-6 sm:p-8 md:p-12 min-h-[300px] sm:min-h-[400px] flex flex-col items-center justify-center">
-                    {/* Camera Icon */}
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                      <svg
-                        className="w-8 h-8 sm:w-10 sm:h-10 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                    </div>
-
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
-                      The Complete Zonomo Team
-                    </h3>
-                    <p className="text-gray-600 text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 max-w-2xl px-2 sm:px-0">
-                      Our entire team working together to revolutionize home
-                      services. A picture that captures the spirit of
-                      collaboration and innovation that drives us forward.
-                    </p>
-                    <div className="text-blue-500 font-medium text-xs sm:text-sm">
-                      [Team Photo Placeholder - Replace with actual team image]
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
-        <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-600 to-teal-500">
-          <div className="px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
-                Ready to Experience the Difference?
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-100 max-w-2xl mx-auto mb-6 sm:mb-8 px-2 sm:px-0">
-                Join thousands of satisfied customers who trust us for their
-                home service needs. Quality professionals are just a click away.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold text-blue-600 bg-white rounded-lg sm:rounded-xl hover:bg-gray-50 transition-colors duration-300 shadow-lg cursor-pointer"
-              >
-                Get Started Today
-                <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </motion.button>
-            </motion.div>
-          </div>
-        </section>
+        
+        
       </div>
     </>
   );
