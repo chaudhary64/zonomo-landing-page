@@ -1,286 +1,82 @@
 "use client";
+import React from "react";
 
-import Image from "next/image";
-import PointerHighlight from "./ui/pointer-highlight";
-import React, { useRef } from "react";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+const cardData = [
+  {
+    title: "Choose Your Own Service Provider",
+    description:
+      "Empower yourself with full visibility and control: browse a curated list of background verified professionals, compare their profiles, read honest customer reviews, and handpick the exact technician who meets your needs and budget.",
+  },
+  {
+    title: "Flexible Pricing",
+    description:
+      "Say goodbye to rigid packages and hidden fees. With Zonomo, you see transparent, competitive quotes from multiple providers—so you pay only for the work you request, whether it's a quick wiring fix or a full home deep clean.",
+  },
+  {
+    title: "AI-Powered Matching",
+    description:
+      "Our smart engine analyzes your location, service history, provider ratings and availability to instantly recommend the top three experts for your job—cutting search time and ensuring you get the right skillset at the right hour",
+  },
+  {
+    title: "Chat Support",
+    description:
+      "Need help choosing a service or tracking your request? Tap into our 24/7 in-app chat to connect with a real Zonomo support agent—get instant answers on pricing, provider details, booking changes, or any tech issue.",
+  },
+  {
+    title: "No Agency Lock-ins",
+    description:
+      "Unlike other platforms that assign you an arbitrary technician, Zonomo is a pure peer to peer marketplace. There are no middlemen or hidden markups—just a direct relationship between you and vetted professionals, every time.",
+  },
+  {
+    title: "Exclusive Offers for New Users",
+    description:
+      "Kickstart your Zonomo experience with special launch-only discounts, referral credits and loyalty points on your first few bookings. Enjoy up to 20% off select services—and unlock ongoing perks as you keep using the app.",
+  },
+];
 
-function WhyChooseUs() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("Current x:", latest);
-  });
-
-  // Transform scroll progress into animation values
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.7, 1], [0, 1, 1, 0]);
-  const titleY = useTransform(scrollYProgress, [0, 0.2], [50, 0]);
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [0, 0, 1]);
-
-  // Top row animations with staggering - starting earlier
-  const topRow1Y = useTransform(scrollYProgress, [0.05, 0.3], [-40, 0]);
-  const topRow1X = useTransform(scrollYProgress, [0.05, 0.3], [-20, 0]);
-  const topRow1Scale = useTransform(scrollYProgress, [0.05, 0.3], [0.7, 1]);
-  const topRow1RotateY = useTransform(scrollYProgress, [0.05, 0.3], [-10, 0]);
-  const topRow1Opacity = useTransform(
-    scrollYProgress,
-    [0.05, 0.15, 0.25],
-    [0, 0, 1]
-  );
-
-  const topRow2Y = useTransform(scrollYProgress, [0.1, 0.35], [-40, 0]);
-  const topRow2X = useTransform(scrollYProgress, [0.1, 0.35], [-20, 0]);
-  const topRow2Scale = useTransform(scrollYProgress, [0.1, 0.35], [0.7, 1]);
-  const topRow2RotateY = useTransform(scrollYProgress, [0.1, 0.35], [-10, 0]);
-  const topRow2Opacity = useTransform(
-    scrollYProgress,
-    [0.1, 0.2, 0.3],
-    [0, 0, 1]
-  );
-
-  const topRow3Y = useTransform(scrollYProgress, [0.15, 0.4], [-40, 0]);
-  const topRow3X = useTransform(scrollYProgress, [0.15, 0.4], [-20, 0]);
-  const topRow3Scale = useTransform(scrollYProgress, [0.15, 0.4], [0.7, 1]);
-  const topRow3RotateY = useTransform(scrollYProgress, [0.15, 0.4], [-10, 0]);
-  const topRow3Opacity = useTransform(
-    scrollYProgress,
-    [0.15, 0.25, 0.35],
-    [0, 0, 1]
-  );
-
-  // Bottom row animations with staggering - starting earlier
-  const bottomRow1Y = useTransform(scrollYProgress, [0.25, 0.35], [80, 0]);
-  const bottomRow1X = useTransform(scrollYProgress, [0.25, 0.35], [20, 0]);
-  const bottomRow1Scale = useTransform(scrollYProgress, [0.25, 0.35], [0.6, 1]);
-  const bottomRow1RotateY = useTransform(
-    scrollYProgress,
-    [0.25, 0.55],
-    [10, 0]
-  );
-  const bottomRow1Opacity = useTransform(
-    scrollYProgress,
-    [0.25, 0.35, 0.45],
-    [0, 0, 1]
-  );
-
-  const bottomRow2Y = useTransform(scrollYProgress, [0.3, 0.4], [80, 0]);
-  const bottomRow2X = useTransform(scrollYProgress, [0.3, 0.4], [20, 0]);
-  const bottomRow2Scale = useTransform(scrollYProgress, [0.3, 0.4], [0.6, 1]);
-  const bottomRow2RotateY = useTransform(scrollYProgress, [0.3, 0.4], [10, 0]);
-  const bottomRow2Opacity = useTransform(
-    scrollYProgress,
-    [0.3, 0.4, 0.5],
-    [0, 0, 1]
-  );
-
-  const bottomRow3Y = useTransform(scrollYProgress, [0.2, 0.2], [80, 0]);
-  const bottomRow3X = useTransform(scrollYProgress, [0.1, 0.2], [20, 0]);
-  const bottomRow3Scale = useTransform(scrollYProgress, [0.1, 0.5], [0.6, 1]);
-  const bottomRow3RotateY = useTransform(
-    scrollYProgress,
-    [0.15, 0.65],
-    [10, 0]
-  );
-  const bottomRow3Opacity = useTransform(
-    scrollYProgress,
-    [0.15, 0.25, 0.25],
-    [0, 0, 1]
-  );
-
+const Card = ({ title, description }, ref) => {
   return (
-    <section className="py-10 bg-white sm:py-16 lg:py-20" ref={ref}>
-      <div className="px-2 sm:px-4 mx-auto max-w-7xl lg:px-8">
-        <motion.div
-          className="text-center"
-          style={{
-            opacity: titleOpacity,
-            y: titleY,
-          }}
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900 font-poppins w-full flex justify-center">
-            <PointerHighlight containerClassName="flex justify-center">
-              <span className="inline-block text-center">Why Choose Us</span>
-            </PointerHighlight>
-          </h2>
-          <p className="mt-4 text-sm sm:text-base leading-7 text-gray-600 sm:mt-8 font-inter">
-            Pure marketplace, full control, and AI-powered matching for your
-            perfect service experience
-          </p>
-        </motion.div>
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 sm:gap-x-8 md:gap-x-0 mt-10 sm:mt-16 xl:mt-24"
-          style={{
-            perspective: "1000px",
-            opacity: opacity,
-          }}
-        >
-          {/* Top Row */}
-          <motion.div
-            className="flex flex-col items-center justify-center p-6 sm:p-8 lg:p-10 text-center"
-            style={{
-              opacity: topRow1Opacity,
-              y: topRow1Y,
-              x: topRow1X,
-              scale: topRow1Scale,
-              rotateY: topRow1RotateY,
-            }}
-          >
-            <div
-              className="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] bg-contain bg-no-repeat bg-center"
-              style={{ backgroundImage: "url(/images/service-provider.png)" }}
-              role="img"
-              aria-label="Professional service provider illustration"
-            />
-            <h3 className="mt-8 sm:mt-10 text-lg sm:text-xl font-bold text-gray-900 font-poppins text-center">
-              Choose Your Own Service Provider
-            </h3>
-            <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-600 font-inter text-center">
-              Unlike traditional platforms, you stay in control. Browse and pick
-              from a list of verified professionals based on ratings, reviews,
-              and expertise.
-            </p>
-          </motion.div>
+    <div
+      ref={ref}
+      style={{
+        lineHeight: 1,
+      }}
+      className="mt-[45vh] p-8 max-w-md border-2 border-purple-400 bg-white shadow-lg rounded-lg max-lg:mt-6 max-lg:p-4 max-lg:max-w-full"
+    >
+      <h2 className="text-2xl font-semibold text-purple-800 mb-2 max-lg:text-xl max-lg:mb-1 font-poppins">
+        {title}
+      </h2>
+      <p className="text-lg text-gray-700 max-lg:text-base font-inter">
+        {description}
+      </p>
+    </div>
+  );
+};
 
-          <motion.div
-            className="flex flex-col items-center justify-center p-6 sm:p-8 lg:p-10 text-center md:border-l md:border-gray-200"
-            style={{
-              opacity: topRow2Opacity,
-              y: topRow2Y,
-              x: topRow2X,
-              scale: topRow2Scale,
-              rotateY: topRow2RotateY,
-            }}
-          >
-            <div
-              className="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] bg-contain bg-no-repeat bg-center"
-              style={{ backgroundImage: "url(/images/pricing.png)" }}
-              role="img"
-              aria-label="Flexible pricing icon"
-            />
-            <h3 className="mt-8 sm:mt-10 text-lg sm:text-xl font-bold text-gray-900 font-poppins text-center">
-              Flexible Pricing
-            </h3>
-            <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-600 font-inter text-center">
-              We don&apos;t lock you into fixed packages. Zonomo allows
-              transparent and competitive pricing, so you only pay for what you
-              need.
-            </p>
-          </motion.div>
+const WhyChooseUs = () => {
+  return (
+    <section className="my-6 sm:my-8 md:my-12 lg:my-16 xl:my-20 relative grid grid-cols-2 max-lg:my-3 max-lg:px-2 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:gap-4">
+      {/* Left Part */}
+      <div className="h-fit w-fit sticky top-1/4 px-10 justify-self-center flex flex-col items-center justify-center text-8xl font-bold uppercase text-black border-l-4 border-purple-500 max-lg:static max-lg:border-l-0 max-lg:border-b-4 max-lg:text-3xl max-lg:w-full max-lg:py-3 max-lg:px-0">
+        <span className="font-playfair">Why</span>
+        <span className="font-playfair">Choose</span>
+        <span className="font-playfair">Us</span>
+      </div>
 
-          <motion.div
-            className="flex flex-col items-center justify-center p-6 sm:p-8 lg:p-10 text-center md:border-l md:border-gray-200"
-            style={{
-              opacity: topRow3Opacity,
-              y: topRow3Y,
-              x: topRow3X,
-              scale: topRow3Scale,
-              rotateY: topRow3RotateY,
-            }}
-          >
-            <div
-              className="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] bg-contain bg-no-repeat bg-center"
-              style={{ backgroundImage: "url(/images/matchmaking.png)" }}
-              role="img"
-              aria-label="AI-powered matching graphic"
+      {/* Right Part */}
+      <div className="max-lg:w-full max-lg:flex max-lg:justify-center">
+        <div className="flex flex-wrap justify-center xl:justify-start max-lg:flex-col max-lg:items-center max-lg:gap-3">
+          {cardData.map((card, index) => (
+            <Card
+              key={index}
+              title={card.title}
+              description={card.description}
             />
-            <h3 className="mt-8 sm:mt-10 text-lg sm:text-xl font-bold text-gray-900 font-poppins text-center">
-              AI-Powered Matching
-            </h3>
-            <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-600 font-inter text-center">
-              Powered by smart AI algorithms, Zonomo helps you find the right
-              professional, at the right time, for the right job — boosting
-              reliability and satisfaction.
-            </p>
-          </motion.div>
-          {/* Bottom Row */}
-          <motion.div
-            className="flex flex-col items-center justify-center p-6 sm:p-8 lg:p-10 text-center md:border-t md:border-gray-200"
-            style={{
-              opacity: bottomRow1Opacity,
-              y: bottomRow1Y,
-              x: bottomRow1X,
-              scale: bottomRow1Scale,
-              rotateY: bottomRow1RotateY,
-            }}
-          >
-            <div
-              className="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] bg-contain bg-no-repeat bg-center"
-              style={{ backgroundImage: "url(/images/support.png)" }}
-              role="img"
-              aria-label="Chat support icon"
-            />
-            <h3 className="mt-8 sm:mt-10 text-lg sm:text-xl font-bold text-gray-900 font-poppins text-center">
-              Chat Support
-            </h3>
-            <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-600 font-inter text-center">
-              Get instant help through our chat support system. Connect with our
-              team for assistance with bookings, service queries, and technical
-              support anytime.
-            </p>
-          </motion.div>
-          <motion.div
-            className="flex flex-col items-center justify-center p-6 sm:p-8 lg:p-10 text-center md:border-l md:border-gray-200 md:border-t"
-            style={{
-              opacity: bottomRow2Opacity,
-              y: bottomRow2Y,
-              x: bottomRow2X,
-              scale: bottomRow2Scale,
-              rotateY: bottomRow2RotateY,
-            }}
-          >
-            <div
-              className="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] bg-contain bg-no-repeat bg-center"
-              style={{ backgroundImage: "url(/images/agency.png)" }}
-              role="img"
-              aria-label="No agency lock-ins symbol"
-            />
-            <h3 className="mt-8 sm:mt-10 text-lg sm:text-xl font-bold text-gray-900 font-poppins text-center">
-              No Agency Lock-ins
-            </h3>
-            <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-600 font-inter text-center">
-              Zonomo is a pure marketplace. No middlemen, no bias. Connect
-              directly with service providers and enjoy transparent transactions
-              without agency interference.
-            </p>
-          </motion.div>
-          <motion.div
-            className="flex flex-col items-center justify-center p-6 sm:p-8 lg:p-10 text-center md:border-l md:border-gray-200 md:border-t"
-            style={{
-              opacity: bottomRow3Opacity,
-              y: bottomRow3Y,
-              x: bottomRow3X,
-              scale: bottomRow3Scale,
-              rotateY: bottomRow3RotateY,
-            }}
-          >
-            <div
-              className="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] bg-contain bg-no-repeat bg-center"
-              style={{ backgroundImage: "url(/images/offer.png)" }}
-              role="img"
-              aria-label="Exclusive offers for new users badge"
-            />
-            <h3 className="mt-8 sm:mt-10 text-lg sm:text-xl font-bold text-gray-900 font-poppins text-center">
-              Exclusive Offers for New Users
-            </h3>
-            <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-600 font-inter text-center">
-              Enjoy special discounts and loyalty rewards as a new user. Get the
-              best deals on your first bookings and unlock ongoing benefits with
-              our reward system.
-            </p>
-          </motion.div>
-        </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
-}
+};
 
 export default WhyChooseUs;
