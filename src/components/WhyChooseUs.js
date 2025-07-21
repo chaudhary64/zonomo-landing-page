@@ -99,9 +99,9 @@ const WhyChooseUs = () => {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover blur-[2px] "
+          className="w-full h-full object-cover  "
         >
-          <source src="/videoes/bgVideo2.mp4" type="video/mp4" />
+          <source src="/videoes/bgVideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/30"></div>
