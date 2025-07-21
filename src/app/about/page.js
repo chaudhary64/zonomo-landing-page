@@ -1,7 +1,9 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MacbookScroll } from './../../components/ui/macbook-scroll';
+import { MacbookScroll } from "./../../components/ui/macbook-scroll";
+import Teams from './../../components/Team';
+import TypewriterEffectSmoothDemo from './../../components/typerAbt';
 
 // Team Member Card Component
 const TeamMemberCard = ({ member, delay = 0 }) => (
@@ -175,9 +177,11 @@ function About() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto font-inter px-2 sm:px-0"
               >
-                We&apos;re revolutionizing the home services industry by
-                connecting homeowners with trusted professionals through
-                cutting-edge technology and unwavering commitment to quality.
+                Zonomo is India’s trusted home service marketplace connecting
+                users with verified professionals for electrician, plumbing,
+                cleaning, fitness, and elderly care services. With zero
+                middlemen and transparent pricing, we make home services fast,
+                reliable, and affordable
               </motion.p>
 
               {/* Interactive Floating Icons */}
@@ -332,99 +336,9 @@ function About() {
           </div>
         </section>
 
-          <MacbookScroll/>
-        
-
         {/* Stats Section with Enhanced Visual Appeal */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
-          {/* Animated Background Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-0 left-1/4 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-2xl sm:blur-3xl animate-pulse"></div>
-            <div
-              className="absolute bottom-0 right-1/4 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-gradient-to-tl from-teal-400/10 to-transparent rounded-full blur-2xl sm:blur-3xl animate-pulse"
-              style={{ animationDelay: "1s" }}
-            ></div>
-          </div>
-
-          <div className="relative px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-12 sm:mb-16 lg:mb-20"
-            >
-              {/* Section Badge */}
-              <div className="inline-flex items-center px-3 py-2 sm:px-4 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full mb-4 sm:mb-6">
-                <span className="text-blue-600 font-semibold text-xs sm:text-sm font-inter">
-                  📈 Our Impact
-                </span>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-poppins">
-                Trusted by{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 font-playfair">
-                  Thousands
-                </span>
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-inter px-2 sm:px-0">
-                These numbers represent the trust our customers place in us and
-                the quality of service our professional partners deliver every
-                single day across the globe.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-              {stats.map((stat, index) => (
-                <StatCard key={index} stat={stat} delay={index * 0.15} />
-              ))}
-            </div>
-
-            {/* Achievement Badges */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              viewport={{ once: true }}
-              className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mt-10 sm:mt-12 lg:mt-16"
-            >
-              {[
-                {
-                  icon: "🏆",
-                  title: "Industry Leader",
-                  subtitle: "2024 Excellence Award",
-                },
-                {
-                  icon: "⭐",
-                  title: "Top Rated",
-                  subtitle: "Customer Choice 2024",
-                },
-                { icon: "🛡️", title: "Verified", subtitle: "Trusted Platform" },
-              ].map((badge, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center space-x-2 sm:space-x-3 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-xl sm:rounded-2xl px-3 py-3 sm:px-4 sm:py-4 md:px-6 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
-                >
-                  <span className="text-lg sm:text-xl md:text-2xl">
-                    {badge.icon}
-                  </span>
-                  <div>
-                    <div className="font-semibold text-gray-900 text-xs sm:text-sm font-poppins">
-                      {badge.title}
-                    </div>
-                    <div className="text-gray-500 text-[10px] sm:text-xs font-inter">
-                      {badge.subtitle}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        
-        
+        <TypewriterEffectSmoothDemo/>
+        <Teams/>
       </div>
     </>
   );
