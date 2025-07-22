@@ -7,7 +7,7 @@ import RoleCarousel from "@/components/TwoSection";
 import ServiceSlider from "./../components/ServiceList";
 import Coming_Soon from "@/components/Coming_Soon";
 import AIFeatures from "@/components/features/page";
-import { MacbookScroll } from './../components/ui/macbook-scroll';
+// import { MacbookScroll } from './../components/ui/macbook-scroll';
 export default function Home() {
   return (
     <>
@@ -17,9 +17,9 @@ export default function Home() {
       <ServiceSlider />
       <WhyChooseUs />
       <Booking />
-      <MacbookScroll/>
+      {/* <MacbookScroll/> */}
       <FAQ />
-      {/* <Coming_Soon /> */}
+      <Coming_Soon />
     </>
   );
 }
