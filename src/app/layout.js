@@ -41,12 +41,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="relative">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap"
-        />
-      </head>
+      <head />
       <body
         className={`
           ${inter.variable}

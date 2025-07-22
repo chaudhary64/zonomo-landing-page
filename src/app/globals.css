@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Special Gothic Expanded One';
+  src: url('/fonts/SpecialGothicExpandedOne-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Font Classes */
 .font-inter {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -18,7 +26,7 @@
 }
 
 .font-special-gothic {
-  font-family: "Special Gothic Expanded One", sans-serif;
+  font-family: 'Special Gothic Expanded One', sans-serif;
 }
 
 /* Improved typography */
