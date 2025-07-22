@@ -146,3 +146,19 @@ h1 .rotating-word {
     height: 6px;
   }
 }
+
+.scroll-section {
+  scroll-snap-align: start;
+  scroll-margin-top: 20px;
+}
+
+/* For smoother scrolling experience */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: For full-page snap scrolling */
+/* html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+} */

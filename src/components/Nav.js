@@ -63,12 +63,7 @@ export default function Nav() {
               >
                 Services
               </Link>
-              <Link
-                href="/pricing"
-                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-              >
-                Pricing
-              </Link>
+              
               <Link
                 href="/about"
                 className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"

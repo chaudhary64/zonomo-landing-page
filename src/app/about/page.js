@@ -4,112 +4,68 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { MacbookScroll } from "./../../components/ui/macbook-scroll";
 import Teams from './../../components/Team';
 import TypewriterEffectSmoothDemo from './../../components/typerAbt';
+import StickyScrollRevealDemo from './../../components/FeatAbt';
+import { StickyScroll } from './../../components/ui/sticky-scroll-reveal';
 
-// Team Member Card Component
-const TeamMemberCard = ({ member, delay = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay }}
-    viewport={{ once: true }}
-    className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-  >
-    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-      <span className="text-white text-lg sm:text-xl md:text-2xl font-bold font-poppins">
-        {member.initials}
-      </span>
-    </div>
-    <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-gray-900 mb-1 sm:mb-2 font-poppins">
-      {member.name}
-    </h3>
-    <p className="text-blue-600 font-medium mb-2 sm:mb-3 text-xs sm:text-sm md:text-base font-inter">
-      {member.role}
-    </p>
-    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed font-inter">
-      {member.description}
-    </p>
-  </motion.div>
-);
-
-// Stats Counter Component with Enhanced Animation
-const StatCard = ({ stat, delay = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.6, delay }}
-    viewport={{ once: true }}
-    whileHover={{ scale: 1.05, y: -5 }}
-    className="text-center group cursor-pointer"
-  >
-    <div className="relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 mb-3 sm:mb-4 shadow-lg border border-blue-100 group-hover:shadow-2xl transition-all duration-500">
-      {/* Animated Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-teal-500/5 rounded-2xl sm:rounded-3xl group-hover:from-blue-500/10 group-hover:to-teal-500/10 transition-all duration-500"></div>
-
-      {/* Floating Icon */}
-      <div className="absolute -top-2 sm:-top-4 left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
-        <span className="text-white text-xs sm:text-sm">📊</span>
+// Content for the sticky scrol
+const stickyScrollContent = [
+  {
+    title: "Pre-Launch Traction",
+    description: "We’ve already pre-listed 1000+ early customers and onboarded 200+ verified service professionals across categories like electricians, cleaners, yoga trainers, and elder care who are background-checked and highly rated by previous customers.",
+    content: (
+      <div className="flex h-full w-full items-center justify-center text-white">
+        <img
+          src="https://images.unsplash.com/photo-1551603635-c4cbd9424fce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fHNjaGVkdWxlfGVufDB8fDB8fHww"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
       </div>
-
-      <div className="relative">
-        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300 font-poppins">
-          {stat.number}
-        </h3>
-        <p className="text-gray-600 font-semibold text-sm sm:text-base lg:text-lg font-inter">
-          {stat.label}
-        </p>
-
-        {/* Progress Line */}
-        <div className="mt-3 sm:mt-4 h-1 bg-gray-200 rounded-full overflow-hidden">
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: "100%" }}
-            transition={{ duration: 1.5, delay: delay + 0.5 }}
-            className="h-full bg-gradient-to-r from-blue-500 to-teal-500 rounded-full"
-          />
-        </div>
+    ),
+  },
+  {
+    title: "Mobile App Launch – August 2025",
+    description: "No hidden fees, no surprise charges. Following MVP release, we’ll launch our mobile app to make Zonomo even more accessible and convenient for all users.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center text-white">
+         <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqKaGbDE6g6ISHUBdae4HWFW5lehCGY8GOOg&s"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
       </div>
-    </div>
-  </motion.div>
-);
-
-// Team data
-const teamMembers = [
-  {
-    name: "Sarah Johnson",
-    role: "CEO & Founder",
-    initials: "SJ",
-    description:
-      "Visionary leader with 15+ years in the service industry, passionate about connecting quality professionals with homeowners.",
+      
+    ),
   },
   {
-    name: "Michael Chen",
-    role: "CTO",
-    initials: "MC",
-    description:
-      "Tech innovator focused on building seamless platforms that make booking home services effortless and reliable.",
+    title: "Expanding to Tier-2 Cities",
+    description: "Emergency repairs can't wait. Our network of professionals ensures rapid response times with most urgent requests handled within 30 minutes, keeping your home running smoothly.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center text-white">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1697730421382-bc8dd92f83ba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fGNpdGllcyUyMGluZGlhfGVufDB8fDB8fHww"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
+      </div>
+    ),
   },
   {
-    name: "Emily Rodriguez",
-    role: "Head of Operations",
-    initials: "ER",
-    description:
-      "Operations expert ensuring every service provider meets our high standards of quality and professionalism.",
+    title: "AI Upgrade + Smart Scheduling",
+    description: "Our intelligent service-matching and scheduling system will continue evolving, making it faster and easier to find the right professional in real-time.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center text-white">
+        <img
+          src="https://images.unsplash.com/photo-1662468353771-b177773cc281?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHVwZGF0ZXxlbnwwfHwwfHx8MA%3D%3D"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
+      </div>
+    ),
   },
-  {
-    name: "David Thompson",
-    role: "Customer Success Manager",
-    initials: "DT",
-    description:
-      "Dedicated to ensuring every customer has an exceptional experience from booking to service completion.",
-  },
-];
-
-// Stats data
-const stats = [
-  { number: "50K+", label: "Happy Customers" },
-  { number: "5K+", label: "Trusted Professionals" },
-  { number: "100+", label: "Cities Served" },
-  { number: "4.9★", label: "Average Rating" },
 ];
 
 function About() {
@@ -135,12 +91,6 @@ function About() {
       <div className="bg-white overflow-hidden">
         {/* Hero Section with Enhanced Visual Elements */}
         <section className="relative pt-8 pb-12 sm:pt-12 sm:pb-16 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24 bg-gradient-to-br from-blue-50 via-white to-teal-50">
-          {/* Background Decorations */}
-          <div className="absolute inset-0 overflow-hidden">
-            {/* <div className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-br from-blue-400/20 to-teal-400/20 rounded-full blur-xl sm:blur-3xl"></div> */}
-            {/* <div className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-tr from-teal-400/20 to-blue-400/20 rounded-full blur-xl sm:blur-3xl"></div> */}
-            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-blue-100/30 to-teal-100/30 rounded-full blur-xl sm:blur-3xl"></div> */}
-          </div>
 
           <div className="relative px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
             <motion.div
@@ -177,7 +127,7 @@ function About() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto font-inter px-2 sm:px-0"
               >
-                Zonomo is India’s trusted home service marketplace connecting
+                Zonomo is India's trusted home service marketplace connecting
                 users with verified professionals for electrician, plumbing,
                 cleaning, fitness, and elderly care services. With zero
                 middlemen and transparent pricing, we make home services fast,
@@ -311,7 +261,7 @@ function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="relative ml-auto w-[600px] h-[600px] max-w-2xl" // Added ml-auto and increased max-width
+                className="relative ml-auto w-[600px] h-[600px] max-w-2xl"
               >
                 {/* Simplified Video Container without border */}
                 <div className="relative bg-transparent rounded-xl sm:rounded-3xl overflow-hidden shadow-xl">
@@ -336,10 +286,42 @@ function About() {
           </div>
         </section>
 
+        {/* Sticky Scroll Section */}
+        <section className="relative">
+          {/* Section Header */}
+          <div className="relative px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8 py-16 text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-poppins mb-4"
+            >
+              What's Next for{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500">
+                Zonomo?
+              </span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-lg text-gray-600 max-w-3xl mx-auto font-inter"
+            >
+              Discover what makes us India's most trusted home service platform
+            </motion.p>
+          </div>
+          
+          <StickyScroll content={stickyScrollContent} />
+        </section>
+
         {/* Stats Section with Enhanced Visual Appeal */}
         <TypewriterEffectSmoothDemo/>
+        
         <Teams/>
       </div>
+      
     </>
   );
 }
