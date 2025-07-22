@@ -6,6 +6,12 @@ import Link from "next/link";
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   const handleServicesClick = (e) => {
     // Only show loader for Services link
     if (e.currentTarget.href.includes("/service-pro")) {
@@ -20,7 +26,7 @@ export default function Nav() {
 
   return (
     <>
-      {showLoader && (
+      {hasMounted && showLoader && (
         <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
           <img
             src="/images/Circles-menu-3.gif"
@@ -31,67 +37,68 @@ export default function Nav() {
       )}
       <nav className="bg-white sticky top-0 z-50">
         <div className="mx-auto px-4">
-          <div className="flex items-center justify-between h-14">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="bg-black text-white text-xs font-bold px-2 py-0.5 rounded font-poppins">
-                Z
-              </div>
-              <span className="font-semibold text-lg text-gray-900 font-poppins">
-                Zonomo
-              </span>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden xl:grid grid-cols-3 items-center h-14">
+            {/* Left Side Links */}
+            <div className="flex items-center space-x-4 justify-start">
               <Link
                 href="/"
-                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
               >
                 Home
               </Link>
               <Link
+                href="/about"
+                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
+              >
+                About us
+              </Link>
+            </div>
+            {/* Center Logo */}
+            <div className="flex justify-center">
+              <Link href="/" className="flex items-center space-x-2">
+                <span className="font-special-gothic font-extrabold text-lg lg:text-xl text-gray-900 tracking-wider uppercase">
+                  Zonomo
+                </span>
+              </Link>
+            </div>
+            {/* Right Side Links */}
+            <div className="flex items-center space-x-4 justify-end">
+              <Link
+                onClick={handleServicesClick}
+                href="/service-pro"
+                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
+              >
+                Services
+              </Link>
+              <Link
                 href="#features"
-                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
               >
                 Features
               </Link>
               <Link
-                onClick={handleServicesClick}
-                href="/service-pro"
-                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-              >
-                Services
-              </Link>
-              
-              <Link
-                href="/about"
-                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-              >
-                About us
-              </Link>
-              <Link
-                href="#faq"
-                className="text-gray-700 hover:text-black font-medium px-3 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-              >
-                FAQ
-              </Link>
-            </div>
-
-            {/* Auth Buttons - Desktop */}
-            <div className="hidden lg:flex items-center">
-              <Link
                 href="https://zonomo-draft-eight.vercel.app/"
-                className="bg-black text-white font-medium px-3 py-1.5 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-poppins min-h-[2.25rem] min-w-[5.5rem] flex items-center justify-center"
+                className="shrink-0 bg-black text-white font-bold px-7 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2.5rem] min-w-[6rem] flex items-center justify-center text-sm lg:text-base font-special-gothic shadow tracking-wider"
+                style={{ letterSpacing: "0.04em" }}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Get Started
               </Link>
             </div>
-
+          </div>
+          {/* Mobile Nav: unchanged */}
+          <div className="flex items-center justify-between h-14 xl:hidden">
+            {/* Logo for mobile */}
+            <Link href="/" className="flex items-center space-x-2">
+              <span className="font-special-gothic font-extrabold text-base text-gray-900 tracking-wider uppercase">
+                Zonomo
+              </span>
+            </Link>
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+              className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
             >
               <svg
                 className="w-5 h-5"
@@ -117,28 +124,30 @@ export default function Nav() {
               </svg>
             </button>
           </div>
-
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden border-t border-gray-200 py-4">
+            <div className="xl:hidden border-t border-gray-200 py-4">
               <div className="flex flex-col space-y-4">
+                {/* Home */}
                 <Link
                   href="/"
-                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
                 </Link>
+                {/* About us */}
                 <Link
-                  href="#features"
-                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                  href="/about"
+                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Features
+                  About us
                 </Link>
+                {/* Services */}
                 <Link
                   href="/service-pro"
-                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
                   onClick={(e) => {
                     handleServicesClick(e);
                     setIsMenuOpen(false);
@@ -146,31 +155,30 @@ export default function Nav() {
                 >
                   Services
                 </Link>
+                {/* Features */}
                 <Link
-                  href="/pricing"
-                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                  href="#features"
+                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Pricing
+                  Features
                 </Link>
-                <Link
-                  href="/about"
-                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About us
-                </Link>
+                {/* FAQ */}
                 <Link
                   href="#faq"
-                  className="text-gray-700 hover:text-black font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-all duration-200 font-inter"
+                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   FAQ
                 </Link>
+                {/* Get Started Button */}
                 <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                   <Link
                     href="https://zonomo-draft-eight.vercel.app/"
-                    className="bg-black text-white font-medium px-3 py-1.5 rounded-lg hover:bg-gray-800 transition-colors duration-200 text-center font-poppins min-h-[2.25rem] min-w-[5.5rem] flex items-center justify-center"
+                    className="shrink-0 bg-black text-white font-bold px-7 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2.5rem] min-w-[6rem] flex items-center justify-center text-sm font-special-gothic shadow tracking-wider"
+                    style={{ letterSpacing: "0.04em" }}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Get Started
@@ -184,11 +192,3 @@ export default function Nav() {
     </>
   );
 }
-
-/*
-{loader && <div className="flex flex-col items-center justify-center h-screen px-4">
-                          <img src="/images/Hourglass.gif" alt="Loading..." className="w-32 h-32 mb-6" />
-                          <p className="text-lg font-semibold text-gray-600">Hold Tight, opening your services</p>
-                        </div>}
-
-*/
