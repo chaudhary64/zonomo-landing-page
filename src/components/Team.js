@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 const Teams = () => {
   return (
     <section className="py-12 bg-white sm:py-16 lg:py-20">
@@ -12,10 +13,13 @@ const Teams = () => {
 
         <div className="grid max-w-6xl grid-cols-1 px-20 mx-auto mt-12 text-center sm:px-0 sm:grid-cols-2 md:mt-20 gap-x-8 md:grid-cols-4 gap-y-12 lg:gap-x-16 xl:gap-x-20">
           <div>
-            <img
+            <Image
               className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
               src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-1.png"
-              alt=""
+              alt="Shantanu Sharma - Founder"
+              width={176}
+              height={176}
+              unoptimized
             />
             <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">
               Shantanu Sharma - Founder
@@ -27,10 +31,13 @@ const Teams = () => {
           </div>
 
           <div>
-            <img
+            <Image
               className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
               src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-2.png"
-              alt=""
+              alt="Sparsh Saria – Chief Financial Officer (CFO)"
+              width={176}
+              height={176}
+              unoptimized
             />
             <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">
               Sparsh Saria – Chief Financial Officer (CFO)
@@ -42,10 +49,13 @@ const Teams = () => {
           </div>
 
           <div>
-            <img
+            <Image
               className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
               src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-3.png"
-              alt=""
+              alt="Ishanvi Verma – Tech Co-Founder"
+              width={176}
+              height={176}
+              unoptimized
             />
             <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">
               Ishanvi Verma – Tech Co-Founder
@@ -57,10 +67,13 @@ professionals.
           </div>
 
           <div>
-            <img
+            <Image
               className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
               src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-4.png"
-              alt=""
+              alt="Rakshith Dasari – Tech Co-Founder"
+              width={176}
+              height={176}
+              unoptimized
             />
             <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">
               Rakshith Dasari – Tech Co-Founder

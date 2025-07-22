@@ -59,13 +59,14 @@ export const StickyScroll = ({
       { threshold: 0.5 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSection = sectionRef.current;
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
     };
   }, []);
@@ -79,7 +80,8 @@ export const StickyScroll = ({
           return index;
         }
         return acc;
-      }, 0
+      },
+      0
     );
     setActiveCard(closestBreakpointIndex);
   });
@@ -89,23 +91,29 @@ export const StickyScroll = ({
     "#000000", // black
     "#171717", // neutral-900
   ];
-  const linearGradients = [
-    "linear-gradient(to bottom right, #06b6d4, #10b981)",
-    "linear-gradient(to bottom right, #ec4899, #6366f1)",
-    "linear-gradient(to bottom right, #f97316, #eab308)",
-  ];
+  const linearGradients = React.useMemo(
+    () => [
+      "linear-gradient(to bottom right, #06b6d4, #10b981)",
+      "linear-gradient(to bottom right, #ec4899, #6366f1)",
+      "linear-gradient(to bottom right, #f97316, #eab308)",
+    ],
+    []
+  );
 
-  const [backgroundGradient, setBackgroundGradient] = useState(linearGradients[0]);
+  const [backgroundGradient, setBackgroundGradient] = useState(
+    linearGradients[0]
+  );
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard]);
+  }, [activeCard, linearGradients]);
 
   return (
     <section ref={sectionRef} className="scroll-section">
       <motion.div
         animate={{
-          backgroundColor: backgroundColors[activeCard % backgroundColors.length],
+          backgroundColor:
+            backgroundColors[activeCard % backgroundColors.length],
         }}
         className="relative flex h-[30rem] justify-center space-x-10 overflow-y-auto rounded-md p-10"
         ref={containerRef}

@@ -1,68 +1,80 @@
 "use client";
 import React, { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MacbookScroll } from "./../../components/ui/macbook-scroll";
-import Teams from './../../components/Team';
-import TypewriterEffectSmoothDemo from './../../components/typerAbt';
-import StickyScrollRevealDemo from './../../components/FeatAbt';
-import { StickyScroll } from './../../components/ui/sticky-scroll-reveal';
+import Teams from "./../../components/Team";
+import TypewriterEffectSmoothDemo from "./../../components/typerAbt";
+import StickyScrollRevealDemo from "./../../components/FeatAbt";
+import { StickyScroll } from "./../../components/ui/sticky-scroll-reveal";
 
 // Content for the sticky scrol
 const stickyScrollContent = [
   {
     title: "Pre-Launch Traction",
-    description: "We’ve already pre-listed 1000+ early customers and onboarded 200+ verified service professionals across categories like electricians, cleaners, yoga trainers, and elder care who are background-checked and highly rated by previous customers.",
+    description:
+      "We’ve already pre-listed 1000+ early customers and onboarded 200+ verified service professionals across categories like electricians, cleaners, yoga trainers, and elder care who are background-checked and highly rated by previous customers.",
     content: (
       <div className="flex h-full w-full items-center justify-center text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1551603635-c4cbd9424fce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fHNjaGVkdWxlfGVufDB8fDB8fHww"
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo" />
+          alt="linear board demo"
+          priority={true}
+        />
       </div>
     ),
   },
   {
     title: "Mobile App Launch – August 2025",
-    description: "No hidden fees, no surprise charges. Following MVP release, we’ll launch our mobile app to make Zonomo even more accessible and convenient for all users.",
+    description:
+      "No hidden fees, no surprise charges. Following MVP release, we’ll launch our mobile app to make Zonomo even more accessible and convenient for all users.",
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
-         <img
+        <Image
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqKaGbDE6g6ISHUBdae4HWFW5lehCGY8GOOg&s"
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo" />
+          alt="linear board demo"
+          priority={true}
+        />
       </div>
-      
     ),
   },
   {
     title: "Expanding to Tier-2 Cities",
-    description: "Emergency repairs can't wait. Our network of professionals ensures rapid response times with most urgent requests handled within 30 minutes, keeping your home running smoothly.",
+    description:
+      "Emergency repairs can't wait. Our network of professionals ensures rapid response times with most urgent requests handled within 30 minutes, keeping your home running smoothly.",
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
-        <img
+        <Image
           src="https://plus.unsplash.com/premium_photo-1697730421382-bc8dd92f83ba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fGNpdGllcyUyMGluZGlhfGVufDB8fDB8fHww"
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo" />
+          alt="linear board demo"
+          priority={true}
+        />
       </div>
     ),
   },
   {
     title: "AI Upgrade + Smart Scheduling",
-    description: "Our intelligent service-matching and scheduling system will continue evolving, making it faster and easier to find the right professional in real-time.",
+    description:
+      "Our intelligent service-matching and scheduling system will continue evolving, making it faster and easier to find the right professional in real-time.",
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1662468353771-b177773cc281?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHVwZGF0ZXxlbnwwfHwwfHx8MA%3D%3D"
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo" />
+          alt="linear board demo"
+          priority={true}
+        />
       </div>
     ),
   },
@@ -91,7 +103,6 @@ function About() {
       <div className="bg-white overflow-hidden">
         {/* Hero Section with Enhanced Visual Elements */}
         <section className="relative pt-8 pb-12 sm:pt-12 sm:pb-16 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24 bg-gradient-to-br from-blue-50 via-white to-teal-50">
-
           <div className="relative px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
             <motion.div
               ref={headerRef}
@@ -127,11 +138,11 @@ function About() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto font-inter px-2 sm:px-0"
               >
-                Zonomo is India's trusted home service marketplace connecting
-                users with verified professionals for electrician, plumbing,
-                cleaning, fitness, and elderly care services. With zero
-                middlemen and transparent pricing, we make home services fast,
-                reliable, and affordable
+                Zonomo is India&apos;s trusted home service marketplace
+                connecting users with verified professionals for electrician,
+                plumbing, cleaning, fitness, and elderly care services. With
+                zero middlemen and transparent pricing, we make home services
+                fast, reliable, and affordable
               </motion.p>
 
               {/* Interactive Floating Icons */}
@@ -297,7 +308,7 @@ function About() {
               viewport={{ once: true }}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-poppins mb-4"
             >
-              What's Next for{" "}
+              What&apos;s Next for{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500">
                 Zonomo?
               </span>
@@ -309,19 +320,19 @@ function About() {
               viewport={{ once: true }}
               className="text-lg text-gray-600 max-w-3xl mx-auto font-inter"
             >
-              Discover what makes us India's most trusted home service platform
+              Discover what makes us India&apos;s most trusted home service
+              platform
             </motion.p>
           </div>
-          
+
           <StickyScroll content={stickyScrollContent} />
         </section>
 
         {/* Stats Section with Enhanced Visual Appeal */}
-        <TypewriterEffectSmoothDemo/>
-        
-        <Teams/>
+        <TypewriterEffectSmoothDemo />
+
+        <Teams />
       </div>
-      
     </>
   );
 }

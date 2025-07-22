@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Nav() {
@@ -28,10 +29,13 @@ export default function Nav() {
     <>
       {hasMounted && showLoader && (
         <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
-          <img
+          <Image
             src="/images/Circles-menu-3.gif"
             alt="Loading..."
-            className="w-32 h-32 mb-6 "
+            width={128}
+            height={128}
+            className="w-32 h-32 mb-6"
+            priority
           />
         </div>
       )}

@@ -11,6 +11,8 @@ import {
 } from "@heroicons/react/20/solid";
 import PointerHighlight from "./ui/pointer-highlight";
 
+import Image from "next/image";
+
 const features = [
   {
     name: "Middleman Model – Zero Ownership, Full Control",
@@ -84,7 +86,6 @@ export default function Feat_Sec() {
                 zero-ownership model. It connects users and professionals
                 directly, offers doorstep services on demand, and supports both
                 sides with a dual-platform interface—no hiring fees
-                
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
@@ -103,18 +104,18 @@ export default function Feat_Sec() {
             </div>
           </div>
 
-          <img
+          <Image
             alt="Product screenshot"
             src="https://images.unsplash.com/photo-1556742208-999815fca738?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTJ8fHNob3BwaW5nfGVufDB8fDB8fHww"
             width={2432}
             height={1442}
             className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+            unoptimized
           />
         </div>
       </div>
     </div>
   );
 }
-
 
 // https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png
