@@ -14,22 +14,10 @@ import {
   RadialLinearScale,
   Filler,
 } from "chart.js";
-import {
-  Line,
-  Doughnut,
-  Bar,
-  Radar,
-  Scatter,
-  PolarArea,
-} from "react-chartjs-2";
 import { ShieldCheck } from "lucide-react";
 
 // Register ChartJS components
 ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
   Title,
   Tooltip,
   Legend,
@@ -364,7 +352,7 @@ const StickyNavigation = ({ features, activeSection }) => {
           <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
           What Sets Us Apart
         </h3>
-        <nav className="space-y-3 xl:space-y-4">
+        <nav className="space-y-2 xl:space-y-3">
           {features.map((feature, index) => {
             const sectionId = `feature-${index}`;
             const isActive = activeSection === sectionId;
@@ -400,6 +388,89 @@ const StickyNavigation = ({ features, activeSection }) => {
   );
 };
 
+// Features data
+const features = [
+  {
+    title: "Middleman Model – Zero Ownership, Full Contro",
+    subheading:
+      "Directly connect with skilled professionals—no agencies, no middlemen. Full transparency and control for every service.",
+    icon: <AIBrainIcon className="w-12 h-12 text-white" />,
+    gradient: "from-indigo-800 to-blue-500",
+    description: `Zonomo operates as a tech-enabled aggregator platform that connects customers directly with skilled professionals, without owning or operating any service agencies. This asset-light model significantly reduces operational costs and infrastructure overhead, enabling scalable growth. It also offers professionals greater independence and flexibility, while users benefit from lower pricing and more service choices—driving a win-win ecosystem.`,
+  },
+  {
+    title: " Any Service. Anytime. Anywhere",
+    subheading:
+      "Access any service, anytime, anywhere. Trusted professionals brought to your doorstep—no matter your location.",
+    icon: <ShieldCheck className="w-12 h-12 text-white" />,
+    gradient: "from-yellow-600 to-orange-500",
+    description: `Whether it’s electrical repair, house cleaning, grooming, appliance servicing, plumbing, or even at-home healthcare, Zonomo brings a wide spectrum of services to users’ doorsteps. The platform is designed to be location-agnostic, ensuring availability in metro cities, suburbs, and soon even tier-2 and tier-3 areas—anytime, any day. It’s a truly one-stop solution for all household and personal service needs.`,
+  },
+  {
+    title: "Decentralized Service Marketplace",
+    subheading:
+      "Empowering professionals to operate independently. Platform-driven quality and reliability for every user.",
+    icon: <MLIcon className="w-12 h-12 text-white" />,
+    gradient: "from-[#4a5759] to-[#43aa8b]",
+    description: `Zonomo leverages intelligent algorithms that assess user preferences, location, time availability, provider skill ratings, past service quality, and job type to auto-match users with the best-fit professionals. This reduces booking friction, saves time, and improves service satisfaction. The AI continuously learns and evolves with usage patterns to offer even better matching over time.`,
+  },
+  {
+    title: "Dual Platform – Users & Service Professionals",
+    subheading:
+      "Distinct dashboards for users and pros. Book, manage, and track services or jobs with total transparency.",
+    icon: <NLPIcon className="w-12 h-12 text-white" />,
+    gradient: "from-amber-600 to-pink-500",
+    description: `Zonomo provides two distinct, purpose-built dashboards—one for users and one for professionals.
+1. User Dashboard: Book services, view upcoming bookings, track service status, chat with providers, rate services, and manage payments.
+2. Professional Dashboard: Accept/decline jobs, set pricing, manage availability, receive payments, monitor reviews, and track performance.
+This two-sided architecture ensures a seamless experience on both ends.`,
+  },
+  {
+    title: "Zero Hiring Costs for Professionals",
+    subheading:
+      "No commissions, entry fees, or hidden costs. Professionals join, earn, and grow their business freely.",
+    icon: <ShieldCheck className="w-12 h-12 text-white" />,
+    gradient: "from-green-600 to-lime-500",
+    description: `Unlike traditional agencies that charge commission, entry fees, or franchise royalties, Zonomo allows skilled
+ individuals or freelancers to register and offer their services completely free of cost. This encourages
+ greater participation, especially from underemployed yet talented individuals, giving them instant market
+ access, control over pricing, and the ability to grow their business independently`,
+  },
+  {
+    title: "End-to-End Chat & Negotiation System",
+    subheading:
+      "Chat directly with providers to clarify, negotiate, and finalize bookings—all within the app, instantly.",
+    icon: <PredictiveIcon className="w-12 h-12 text-white" />,
+    gradient: "from-purple-600 to-fuchsia-500",
+    description: `Zonomo provides an in-app chat feature allowing real-time communication between customers and service
+ providers. Users can clarify service details, negotiate prices, request modifications, and even schedule tasks
+ —all without needing external apps or calls. This direct interaction eliminates miscommunication, improves
+ satisfaction, and helps finalize service terms efficiently`,
+  },
+  {
+    title: "Verified & Rated Professionals",
+    subheading:
+      "All professionals are KYC-verified and rated by real users. Book confidently with transparency and trust.",
+    icon: <ShieldCheck className="w-12 h-12 text-white" />,
+    gradient: "from-cyan-600 to-sky-500",
+    description: `Every professional on Zonomo undergoes a thorough KYC and background verification process. Alongside, a
+ transparent rating and review system helps maintain accountability and trust. Users can confidently book
+ services by reviewing past customer feedback, response times, and overall service quality—fostering a safer,
+ more reliable experience`,
+  },
+  {
+    title: "Fast Booking & On-Time Service",
+    subheading:
+      "Book in minutes and get prompt, on-time service. Real-time updates and punctuality—always our promise.",
+    icon: <MLIcon className="w-12 h-12 text-white" />,
+    gradient: "from-red-600 to-orange-400",
+    description: ` Zonomo is built for speed. Users can find, compare, and book professionals within minutes through an
+ intuitive booking process. Real-time availability updates ensure bookings are accepted instantly, with service
+ initiation typically occurring within hours. Promptness and punctuality are core metrics tracked to ensure
+ consistent on-time delivery`,
+  },
+];
+
 // Feature Section Component
 const FeatureSection = ({ feature, index }) => {
   // Always use gradient backgrounds for all features, no media backgrounds
@@ -427,49 +498,19 @@ const FeatureSection = ({ feature, index }) => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
                 {feature.title}
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl opacity-90">
-                {feature.subtitle}
-              </p>
+              {/* subtitle removed */}
             </div>
           </div>
           <p className="text-base sm:text-lg lg:text-xl opacity-95 leading-relaxed">
-            {feature.description}
+            {feature.subheading}
           </p>
         </div>
       </div>
-
-      {/* How It Works Section */}
-      <div className="mb-12 sm:mb-14 lg:mb-16">
-        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center">
-          <span className="bg-blue-100 rounded-lg p-2 sm:p-3 mb-3 sm:mb-0 sm:mr-4 self-start">
-            🔧
-          </span>
-          <span>How It Works</span>
-        </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-          {feature.howItWorks.map((step, stepIndex) => (
-            <div
-              key={stepIndex}
-              className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100 hover:shadow-xl transition-all duration-300"
-            >
-              <div className="flex items-start space-x-3 sm:space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-base sm:text-lg">
-                    {stepIndex + 1}
-                  </span>
-                </div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
-                    {step.title}
-                  </h4>
-                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Only show the description here, no 'How It Works' section */}
+      <div className="mb-12 sm:mb-14 lg:mb-16 px-6 sm:px-8 lg:px-12">
+        <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+          {feature.description}
+        </p>
       </div>
     </div>
   );
@@ -508,104 +549,6 @@ export default function AIFeatures() {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
-
-  // Feature data
-  const features = [
-    {
-      title: "Book Services By Command",
-      subtitle: "Book Services in seconds with AI",
-      description:
-        "With just a simple voice command, our AI understands what you need, finds the right service, slots according to you and books it for you — no forms, no hassle.",
-      icon: <AIBrainIcon className="w-12 h-12 text-white" />,
-      gradient: "from-indigo-800 to-gray-500",
-      howItWorks: [
-        {
-          title: "Discover Services",
-          description:
-            "Users browse or ask the AI Assistant to help find the service they need — like plumbing, cleaning, or appliance repair. The assistant understands both voice and typed input.",
-        },
-        {
-          title: "Tell the AI to Book",
-          description:
-            "Once the user says something like 'Book an electrician for tomorrow at 10AM,' the AI Assistant captures the full request using voice recognition and natural language understanding.",
-        },
-        {
-          title: "Get Smart Suggestions",
-          description:
-            "Based on your request, AI shows a short list of the best-matched professionals — including ratings, availability, and estimated pricing — for review and confirmation.",
-        },
-        {
-          title: "Seamless Confirmation & Payment",
-          description:
-            "Once you confirm the professional, you're smoothly guided to the checkout screen for payment and final scheduling — all in one frictionless voice-first flow.",
-        },
-      ],
-    },
-    {
-      title: "Trust & Reputation System",
-      subtitle: "Building Confidence Through Transparency & Verification",
-      description:
-        "Our platform prioritizes trust by ensuring every service provider is thoroughly verified and continuously evaluated. Ratings, reviews, identity checks, and performance metrics drive a reputation system that rewards consistency and quality, enhancing both user satisfaction and long-term engagement.",
-
-      icon: <ShieldCheck className="w-12 h-12 text-white" />, // Choose any suitable icon
-      gradient: "from-yellow-600 to-yellow-800",
-      howItWorks: [
-        {
-          title: "Verified Identity & Credentials",
-          description:
-            "All professionals undergo multi-step verification including ID checks, certifications, and background validation to ensure authenticity and reliability.",
-        },
-        {
-          title: "Transparent Ratings & Reviews",
-          description:
-            "Each service interaction is rated and reviewed by customers. This real-time feedback is public and helps users make confident choices.",
-        },
-        {
-          title: "Reputation Score Engine",
-          description:
-            "An AI-driven score combines customer reviews, completion rates, response times, and complaint history to surface top-performing professionals.",
-        },
-        {
-          title: "Trust Badges & Guarantees",
-          description:
-            "Top-rated professionals earn badges for excellence. Customers are also protected through service guarantees and secure payment channels.",
-        },
-      ],
-    },
-    {
-      title: "Decentralized Service Marketplace",
-      subtitle:
-        "Freedom to choose from verified professionals with transparent ratings and pricing",
-      description:
-        "Empowers verified professionals to operate independently with full control over their services, while maintaining platform-wide quality standards through automated checks and real-time feedback loops.",
-      icon: <PredictiveIcon className="w-12 h-12 text-white" />,
-      gradient: "from-[#4a5759] to-[#5e503f]",
-      howItWorks: [
-        {
-          title: "Behavioral Tracking",
-          description:
-            "Analyzes customer touchpoints including browsing patterns, booking behaviors, and preferences to build detailed profiles with 200+ data points.",
-        },
-      ],
-    },
-    {
-      title: "Revenue via Multi-Channel Streams",
-      subtitle: "Loyalty-Driven Monetization and Scalable Profits",
-      description:
-        "Our platform generates revenue through diverse streams like subscriptions, featured placements, smart upselling, and AI-based personalization. Users enjoy fair pricing, reward programs, and transparency — while investors gain from layered monetization strategies.",
-      icon: <NLPIcon className="w-12 h-12 text-white" />,
-      gradient: "from-amber-600 to-amber-800",
-      howItWorks: [
-        {
-          title: "Predictive Modeling",
-          description:
-            "Predicts future service needs, optimal booking times, price sensitivity, and churn risk using historical data with 95% accuracy.",
-        },
-      ],
-    },
-  ];
-
-  //LOGIC OF SHOWING 2 IMAGES 2 VIDEOS
 
   return (
     <section
