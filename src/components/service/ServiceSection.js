@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
-import PlayStore from "@/components/playStore";
+import PlayStore from "@/components/modal/playStore";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -49,20 +49,20 @@ export default function ServiceSection({
     return () => window.removeEventListener("resize", updateServicesPerSlide);
   }, []);
 
-useEffect(() => {
-  // Check if promo has already been shown
-  const promoShown = localStorage.getItem('promoShown');
-  
-  if (!promoShown) {
-    const timer = setTimeout(() => {
-      setPromo(true);
-      // Set flag in localStorage
-      localStorage.setItem('promoShown', 'true');
-    }, 4000);
+  useEffect(() => {
+    // Check if promo has already been shown
+    const promoShown = localStorage.getItem("promoShown");
 
-    return () => clearTimeout(timer);
-  }
-}, []);
+    if (!promoShown) {
+      const timer = setTimeout(() => {
+        setPromo(true);
+        // Set flag in localStorage
+        localStorage.setItem("promoShown", "true");
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide(
@@ -195,7 +195,6 @@ useEffect(() => {
                                 <div className="bg-blue-100 p-3 rounded-lg text-blue-600">
                                   {service.icon}
                                 </div>
-                               
                               </div>
                               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                                 {service.title}
@@ -236,7 +235,6 @@ useEffect(() => {
               aria-label="Previous services"
             >
               <FaArrowLeft />
-
             </button>
             <button
               onClick={nextSlide}
@@ -244,7 +242,6 @@ useEffect(() => {
               aria-label="Next services"
             >
               <FaArrowRightLong />
-
             </button>
             {/* Indicators */}
             <div className="flex justify-center mt-8 space-x-2">
@@ -267,7 +264,7 @@ useEffect(() => {
         </div>
       </section>
       {/* Benefits Section */}
-      
+
       {/* ...existing code... */}
 
       {/* Pricing Section */}
