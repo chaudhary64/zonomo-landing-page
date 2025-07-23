@@ -1,9 +1,6 @@
-import { useState, useEffect, useCallback, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function ResponsiveCarousel() {
-  // const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white px-3 py-20 mb-4">
@@ -20,7 +17,7 @@ export default function ResponsiveCarousel() {
             loop
             autoPlay
             muted
-            className="w-full h-full object-cover rounded-xl"
+            className="w-full h-full object-cover"
           />
         </motion.div>
       </div>
