@@ -560,22 +560,21 @@ export default function AIFeatures() {
       <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
       <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-48 h-48 sm:w-72 sm:h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
 
+      {/* Main Header */}
+      <div className="w-[90%] mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text text-transparent mb-4 sm:mb-6 lg:mb-8 font-poppins">
+          What Sets Us Apart From The Competition
+        </h1>
+        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-inter px-4">
+          Experience the future of home services with our revolutionary platform
+          that combines advanced AI technology, unmatched service quality, and
+          customer-first innovation to deliver what no competitor can match.
+        </p>
+      </div>
+
       <div className="mx-auto px-4 sm:px-6 relative z-10">
         {/* Sticky Navigation */}
         <StickyNavigation features={features} activeSection={activeSection} />
-
-        {/* Main Header */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20 xl:ml-80 2xl:ml-96">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text text-transparent mb-4 sm:mb-6 lg:mb-8 font-poppins">
-            What Sets Us Apart From The Competition
-          </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-inter px-4">
-            Experience the future of home services with our revolutionary
-            platform that combines advanced AI technology, unmatched service
-            quality, and customer-first innovation to deliver what no competitor
-            can match.
-          </p>
-        </div>
 
         {/* Features Sections */}
         <div className="xl:ml-80 2xl:ml-96">
