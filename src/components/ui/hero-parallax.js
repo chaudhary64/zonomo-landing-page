@@ -1,4 +1,3 @@
-
 "use client";
 import React from "react";
 import Image from "next/image";
@@ -42,9 +41,9 @@ export const HeroParallax = ({ products }) => {
   );
   return (
     <div
-      id ="service-pro-main"
+      id="service-pro-main"
       ref={ref}
-      className="h-[400vh] py-40 overflow-hidden bg-black antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="min-h-[400vh] py-40 overflow-hidden bg-black antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -116,14 +115,14 @@ export const ProductCard = ({ product, translate }) => {
       className="group/product h-96 w-[30rem] relative shrink-0"
     >
       <a href={product.link} className="block group-hover/product:shadow-2xl ">
-            <Image
-              src={product.thumbnail}
-              height={600}
-              width={600}
-              className="cursor-pointer object-cover object-left-top absolute h-full w-full inset-0"
-              alt={product.title}
-              unoptimized
-            />
+        <Image
+          src={product.thumbnail}
+          height={600}
+          width={600}
+          className="cursor-pointer object-cover object-left-top absolute h-full w-full inset-0"
+          alt={product.title}
+          unoptimized
+        />
       </a>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-neutral-100 pointer-events-none"></div>
       <h2 className="absolute bottom-8 left-4 text-white text-2xl font-bold">

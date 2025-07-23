@@ -476,10 +476,13 @@ const FeatureSection = ({ feature, index }) => {
   // Always use gradient backgrounds for all features, no media backgrounds
   const sectionRef = useRef(null);
 
+  // Determine if this is the last feature
+  const isLast = index === features.length - 1;
+
   return (
     <div
       ref={sectionRef}
-      className="mb-16 sm:mb-20 lg:mb-24"
+      className={`${!isLast ? "mb-16 sm:mb-20 lg:mb-24" : ""}`}
       id={`feature-${index}`}
     >
       {/* Feature Header - always gradient background */}
@@ -506,8 +509,11 @@ const FeatureSection = ({ feature, index }) => {
           </p>
         </div>
       </div>
-      {/* Only show the description here, no 'How It Works' section */}
-      <div className="mb-12 sm:mb-14 lg:mb-16 px-6 sm:px-8 lg:px-12">
+      <div
+        className={`${
+          !isLast ? "mb-16 sm:mb-20 lg:mb-24" : ""
+        } px-6 sm:px-8 lg:px-12`}
+      >
         <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
           {feature.description}
         </p>
@@ -552,7 +558,7 @@ export default function AIFeatures() {
 
   return (
     <section
-      className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-clip"
+      className="mt-12 md:mt-16 lg:mt-24 bg-white relative overflow-clip"
       ref={containerRef}
     >
       {/* Background Elements */}

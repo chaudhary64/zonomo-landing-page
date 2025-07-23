@@ -15,7 +15,7 @@ export default function Home() {
       <HeroSection />
       <AIFeatures />
       {/* Video */}
-      <section className="min-h-screen flex items-center justify-center bg-white px-3 py-20 mb-4">
+      <section className="min-h-screen flex items-center justify-center bg-white px-3 my-12 md:my-16 lg:my-24">
         <div className="relative max-w-5xl w-full rounded-xl overflow-hidden shadow-xl ">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
