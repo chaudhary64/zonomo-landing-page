@@ -1,6 +1,3 @@
-"use client";
-import React from "react";
-import { useState, useRef, useEffect } from "react";
 const cardData = [
   {
     title: "Choose Your Own Service Provider",
@@ -34,107 +31,38 @@ const cardData = [
   },
 ];
 
-const Card = ({ title, description }) => {
-  return (
-    <div className="mt-[45vh] p-8 max-w-md bg-white/90 backdrop-blur-sm shadow-lg rounded-3xl max-lg:mt-6 max-lg:p-4 max-lg:max-w-full">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-2 max-lg:text-xl max-lg:mb-1 font-poppins">
-        {title}
-      </h2>
-      <p className="text-lg text-gray-700 max-lg:text-base font-inter">
-        {description}
-      </p>
+const Card = ({ title, description }) => (
+  <div className="mt-[45vh] p-8 max-w-md bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-700/90 border border-zinc-600 shadow-2xl rounded-3xl max-lg:mt-6 max-lg:p-4 max-lg:max-w-full transition-transform hover:scale-105 hover:border-cyan-400">
+    <h2 className="text-2xl font-semibold text-cyan-300 mb-2 max-lg:text-xl max-lg:mb-1 font-poppins drop-shadow">
+      {title}
+    </h2>
+    <p className="text-lg text-zinc-200 max-lg:text-base font-inter">
+      {description}
+    </p>
+  </div>
+);
+
+const WhyChooseUs = () => (
+  <section className="relative min-h-screen w-full bg-black">
+    <div className="relative z-10 py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 grid grid-cols-2 max-lg:py-3 max-lg:px-2 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:gap-4">
+      <div className="h-fit w-fit sticky top-1/4 px-10 justify-self-center flex flex-col items-center justify-center text-8xl font-bold uppercase text-cyan-200 border-l-4 border-cyan-400 max-lg:static max-lg:border-l-0 max-lg:border-b-4 max-lg:text-3xl max-lg:w-full max-lg:py-3 max-lg:px-0 drop-shadow">
+        <span className="font-playfair">Why</span>
+        <span className="font-playfair">Choose</span>
+        <span className="font-playfair">Us</span>
+      </div>
+      <div className="max-lg:w-full max-lg:flex max-lg:justify-center">
+        <div className="flex flex-wrap justify-center xl:justify-start max-lg:flex-col max-lg:items-center max-lg:gap-3">
+          {cardData.map((card, index) => (
+            <Card
+              key={index}
+              title={card.title}
+              description={card.description}
+            />
+          ))}
+        </div>
+      </div>
     </div>
-  );
-};
-
-const WhyChooseUs = () => {
-  const [showVideo, setShowVideo] = useState(false);
-  const sectionRef = useRef(null);
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShowVideo(true);
-            if (videoRef.current) {
-              videoRef.current
-                .play()
-                .catch((e) => console.log("Autoplay prevented:", e));
-            }
-          } else {
-            setShowVideo(false);
-            if (videoRef.current) {
-              videoRef.current.pause();
-            }
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const currentSection = sectionRef.current;
-    if (currentSection) {
-      observer.observe(currentSection);
-    }
-
-    return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection);
-      }
-    };
-  }, []);
-
-  return (
-    <section className="relative min-h-screen w-full bg-black border">
-      {/* Video Background */}
-      <div
-        className={`fixed inset-0 z-[-1] transition-opacity duration-500 ${
-          showVideo ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/videos/bgVideo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="absolute inset-0 bg-black/30"></div>
-      </div>
-
-      {/* Main Content */}
-      <div
-        ref={sectionRef}
-        className="relative z-10 my-6 sm:my-8 md:my-12 lg:my-16 xl:my-20 grid grid-cols-2 max-lg:my-3 max-lg:px-2 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:gap-4"
-      >
-        {/* Left Title */}
-        <div className="h-fit w-fit sticky top-1/4 px-10 justify-self-center flex flex-col items-center justify-center text-8xl font-bold uppercase text-white border-l-4 border-white max-lg:static max-lg:border-l-0 max-lg:border-b-4 max-lg:text-3xl max-lg:w-full max-lg:py-3 max-lg:px-0">
-          <span className="font-playfair">Why</span>
-          <span className="font-playfair">Choose</span>
-          <span className="font-playfair">Us</span>
-        </div>
-
-        {/* Right Cards */}
-        <div className="max-lg:w-full max-lg:flex max-lg:justify-center">
-          <div className="flex flex-wrap justify-center xl:justify-start max-lg:flex-col max-lg:items-center max-lg:gap-3">
-            {cardData.map((card, index) => (
-              <Card
-                key={index}
-                title={card.title}
-                description={card.description}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+  </section>
+);
 
 export default WhyChooseUs;
