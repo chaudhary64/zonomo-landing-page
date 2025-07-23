@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
-import PlayStore from "@/components/modal/playStore";
+import PlayStore from "@/components/modal/PlayStore";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
 const cardData = [
   {
     title: "Choose Your Own Service Provider",
