@@ -4,7 +4,7 @@ import Booking from "@/components/Booking";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Coming_Soon from "@/components/Coming_Soon";
 import HeroParallaxDemo from "@/components/HeroParallaxDemo";
-import ServiceProvidersSection from "@/components/parallex";
+import Benefits from "@/components/Benefits";
 import { motion } from "framer-motion";
 import FAQ from "@/components/faq/Faq";
 
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       </section>
       <HeroParallaxDemo />
-      <ServiceProvidersSection />
+      <Benefits />
       <WhyChooseUs />
       <Booking />
       <FAQ />
