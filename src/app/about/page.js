@@ -300,7 +300,7 @@ function About() {
                       playsInline
                       className="w-full h-[600px] object-cover rounded-2xl sm:rounded-3xl"
                     >
-                      <source src="/videoes/missionvid.mp4" type="video/mp4" />
+                      <source src="/videos/missionvid.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
 
