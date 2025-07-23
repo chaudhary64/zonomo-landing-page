@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform, useSpring } from "motion/react";
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
+    <div className="max-w-7xl relative mx-auto py-20 md:py-36 px-4 w-full left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
         Connect & Grow <br /> With Zonomo
       </h1>
@@ -79,7 +79,7 @@ export const HeroParallax = ({ products }) => {
     springConfig
   );
   const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
+    useTransform(scrollYProgress, [0, 0.2], [0.5, 1]),
     springConfig
   );
   const rotateZ = useSpring(
@@ -94,7 +94,7 @@ export const HeroParallax = ({ products }) => {
     <div
       id="service-pro-main"
       ref={ref}
-      className="py-40 overflow-hidden bg-black antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="py-36 overflow-hidden bg-black antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -104,7 +104,6 @@ export const HeroParallax = ({ products }) => {
           translateY,
           opacity,
         }}
-        className=""
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-5 mb-10">
           {firstRow.map((product) => (

@@ -22,7 +22,7 @@ export default function ServiceProvidersSection() {
     if (autoSwitchRef.current) clearInterval(autoSwitchRef.current);
     autoSwitchRef.current = setInterval(() => {
       setShowProvider((prev) => !prev);
-    }, 7000); // 7 seconds
+    }, 15000); // 10 seconds
     return () => clearInterval(autoSwitchRef.current);
   }, []);
 
@@ -33,7 +33,7 @@ export default function ServiceProvidersSection() {
       clearInterval(autoSwitchRef.current);
       autoSwitchRef.current = setInterval(() => {
         setShowProvider((prev) => !prev);
-      }, 7000);
+      }, 15000);
     }
   };
   const providerData = {
