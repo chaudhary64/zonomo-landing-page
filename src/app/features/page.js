@@ -558,7 +558,7 @@ export default function AIFeatures() {
 
   return (
     <section
-      className="mt-12 md:mt-16 lg:mt-24 bg-white relative overflow-clip"
+      className="my-12 md:my-16 lg:my-24 relative overflow-x-clip"
       ref={containerRef}
     >
       {/* Background Elements */}

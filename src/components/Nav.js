@@ -74,7 +74,7 @@ export default function Nav() {
                 Services
               </Link>
               <Link
-                href="#features"
+                href="/features"
                 className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
               >
                 Features
