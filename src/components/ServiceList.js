@@ -87,6 +87,32 @@ export default function ServiceSlider() {
       verified: true,
       link: "/services/pet-services",
     },
+     {
+      id: 7,
+      slug: "makeup Service",
+      image:
+        "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=200&fit=crop",
+      title: "Facial Services",
+      description:
+        "Relaxing and rejuvenating facial treatments using premium skincare products.",
+      price: "₹399",
+      rating: 4.7,
+      verified: true,
+      link: "/services/makeup-services",
+    },
+    {
+      id: 8,
+      slug: "Take Care Service",
+      image:
+        "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=200&fit=crop",
+      title: "Take Care Services",
+      description:
+        "Comprehensive care services for elderly and disabled individuals, including companionship and assistance with daily activities.",
+      price: "₹399",
+      rating: 4.7,
+      verified: true,
+      link: "/services/taker-services",
+    },
   ];
 
   //Loader 

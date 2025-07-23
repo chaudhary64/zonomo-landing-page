@@ -1,42 +1,72 @@
 "use client";
 import {
-  // Cleaning Services Icons
-  Zap,
-  CheckCircle,
-  Clock,
-  Shield,
-  Phone,
-  Calendar,
-  Star,
-  Home,
-  BadgeCheck,
-  ThumbsUp,
-  DollarSign,
+  // Service Type Icons
+  Sparkles,       // Bridal Makeup
+  PartyPopper,    // Party Makeup
+  Briefcase,      // Professional Makeup
+  Camera,         // Photoshoot Makeup
+  Smile,          // Natural Makeup
+  Palette,        // Creative Makeup
+
+  // Feature Icons
+  Droplet,        // Hydrating Formulas
+  Shield,         // Hypoallergenic/Sanitation
+  Clock,          // Long-Lasting
+  Flower,         // Cruelty-Free
+  Leaf,           // Organic/Natural
+  Gift,           // Free Touch-Up Kit
+  Settings,       // Customization
+
+  // Benefit Icons
+  Heart,          // Gentle Care
+
+  // CTA Button Icons
+  Calendar,       // Book Appointment
+  Image,          // View Portfolio
+  Video,          // Virtual Consultation
+  Phone,          // Call Now
+  MessageSquare,  // Chat Consultation
+
+  // Badge/Trust Icons
+  Award,          // Certified MUAs
+  Star,           // Ratings
+  Gem,            // Luxury Brands
+  ThumbsUp,       // Customer Satisfaction
+  BadgeCheck,     // Verified Professionals
+
+  // Pricing Section
+  DollarSign,     // Price/Value
+  Tag,            // Discounts
+  Zap,            // Quick Service
+
+  // Additional Makeup Specific
+  Lightbulb,
   Wrench,
   Battery,
-  
+  HeartPulse,
+  AlertTriangle,
+  Download,
+  Home,
+  User,
+  ShoppingCart,
+  Brain,
+  BedDouble,
   // AC Repair Services Icons
   Tool,
   UserCheck,
   AlertCircle,
-  Briefcase,
-  AlertTriangle,
+  Dumbbell,
+  UserCog,
   
   // Pet Services Icons
   PawPrint,
   Bone,
   ShoppingBag,
   Dog,
-  HeartPulse,
-  Lightbulb,
-  Heart,
-  Smile,
-  Leaf,
   List,
-  Download,
+  CheckCircle,
+  ShieldCheck,
   
-  // Additional Utility Icons
-  Settings // Reused across services
 } from 'lucide-react';
 import ServiceSection from "@/components/service/ServiceSection";
 import { useParams } from "next/navigation";
@@ -662,8 +692,8 @@ const cleaningServicesData = {
       icon: <Settings className="w-6 h-6" />,
       title: "Sofa & Carpet Cleaning",
       description:
-        "Professional cleaning and shampooing of sofas, carpets, and upholstery to remove dust, stains, and allergens.",
-      benefits: ["Allergen removal", "Restores appearance", "Odor free"],
+        "Professional cleaning and shampooing of sofas, carpets, and upholstery to remove dust, stains, and Shields.",
+      benefits: ["Shield removal", "Restores appearance", "Odor free"],
       price: "₹499 - ₹1999",
       benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
@@ -1214,6 +1244,389 @@ const petServicesData = {
   benefitsSectionDescription: "We treat your pets like our own"
 };
 
+const facialMakeupData = {
+  // Services
+  services: [
+    {
+      icon: <Sparkles className="w-6 h-6" />,
+      title: "Bridal Makeup",
+      description: "Luxurious bridal makeup for your special day with long-lasting, photo-friendly formulas.",
+      benefits: [
+        "HD camera-ready finish",
+        "12+ hours wear",
+        "Custom color matching"
+      ],
+      price: "₹5,999 - ₹15,999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+    },
+    {
+      icon: <PartyPopper className="w-6 h-6" />,
+      title: "Party Makeup",
+      description: "Glamorous looks for special occasions with customizable intensity levels.",
+      benefits: [
+        "Trending styles",
+        "Skin prep included",
+        "False lash application"
+      ],
+      price: "₹2,999 - ₹7,999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+    },
+    {
+      icon: <Briefcase className="w-6 h-6" />,
+      title: "Professional Makeup",
+      description: "Corporate-appropriate makeup that enhances your natural features.",
+      benefits: [
+        "Subtle enhancement",
+        "Oil-control formulas",
+        "Quick application"
+      ],
+      price: "₹1,999 - ₹4,999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+    },
+    {
+      icon: <Camera className="w-6 h-6" />,
+      title: "Photoshoot Makeup",
+      description: "Specialized makeup designed for studio lighting and camera work.",
+      benefits: [
+        "Light-adaptive formulas",
+        "Contour enhancement",
+        "Multiple look changes"
+      ],
+      price: "₹3,999/session",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+    },
+    {
+      icon: <Smile className="w-6 h-6" />,
+      title: "Natural Makeup",
+      description: "Enhance your features with a 'no-makeup' makeup look.",
+      benefits: [
+        "Skin-like finish",
+        "Breathable formulas",
+        "Quick application"
+      ],
+      price: "₹1,499 - ₹3,999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+    },
+    {
+      icon: <Palette className="w-6 h-6" />,
+      title: "Creative Makeup",
+      description: "Artistic and avant-garde looks for fashion shows or special events.",
+      benefits: [
+        "Custom designs",
+        "Special effects",
+        "High-pigment products"
+      ],
+      price: "₹4,999 - ₹12,999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+    }
+  ],
+
+  // Features
+  features: [
+    { icon: <Droplet className="w-5 h-5" />, text: "Hydrating Formulas" },
+    { icon: <Shield className="w-5 h-5" />, text: "HypoShieldic" },
+    { icon: <Clock className="w-5 h-5" />, text: "Long-Lasting" },
+    { icon: <Flower className="w-5 h-5" />, text: "Cruelty-Free Products" }
+  ],
+
+  // Benefits
+  benefits: [
+    {
+      title: "Skin Prep Included",
+      description: "Every service includes professional cleansing, toning and moisturizing",
+      icon: <Leaf className="w-8 h-8" />
+    },
+    {
+      title: "Custom Color Matching",
+      description: "We analyze your skin tone to create perfect foundation matches",
+      icon: <Droplet className="w-8 h-8" />
+    },
+    {
+      title: "Sanitized Tools",
+      description: "All brushes and tools are sterilized between clients",
+      icon: <Shield className="w-8 h-8" />
+    },
+    {
+      title: "Touch-Up Kit",
+      description: "Receive a mini touch-up kit with your bridal/event makeup",
+      icon: <Gift className="w-8 h-8" />
+    }
+  ],
+
+  // Hero Section
+  heroImage: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFrZXVwfGVufDB8fDB8fHww",
+  heroTitle: <>Professional <span className="text-pink-500">Facial Makeup</span> Services</>,
+  heroSubtitle: "Enhance your natural beauty with our expert makeup artists",
+  
+  ctaButtons: [
+    {
+      text: "Book Appointment",
+      icon: <Calendar className="w-5 h-5" />,
+      props: {
+        className: "bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+      }
+    },
+    {
+      text: "View Portfolio",
+      icon: <Image className="w-5 h-5" />,
+      props: {
+        className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
+      }
+    }
+  ],
+
+  // Pricing Section
+  pricingTitle: "Transparent Makeup Pricing",
+  pricingSubtitle: "Premium products and techniques at competitive prices",
+  pricingRange: "₹199 - 2999*",
+  pricingNote: "*Prices vary based on complexity and products used",
+  
+  pricingIncluded: [
+    { icon: <CheckCircle className="w-5 h-5 text-pink-700" />, text: "Luxury brand products" },
+    { text: "Skin preparation" },
+    { text: "Color consultation" }
+  ],
+  
+  pricingGuarantee: [
+    { icon: <Shield className="w-5 h-5 text-pink-700" />, text: "Satisfaction guarantee" },
+    { text: "Sanitized tools" },
+    { text: "Touch-up tips" }
+  ],
+  
+  pricingButton: (
+    <button className="bg-white text-pink-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
+      <Sparkles className="w-5 h-5" />
+      Get Personalized Quote
+    </button>
+  ),
+
+  // CTA Section
+  ctaSectionTitle: "Ready for Your Makeup Transformation?",
+  ctaSectionSubtitle: "Join thousands of clients who trust us for their special occasions",
+  
+  ctaSectionButtons: [
+    {
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
+      props: {
+        className: "cursor-pointer bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+      }
+    },
+    {
+      text: "Book Online",
+      icon: <Video className="w-5 h-5" />,
+      props: {
+        className: "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
+      }
+    }
+  ],
+  
+  ctaSectionBadges: [
+    { icon: <Award className="w-4 h-4" />, text: "Certified MUAs" },
+    { icon: <Star className="w-4 h-4" />, text: "4.9/5 Ratings" },
+    { icon: <Shield className="w-4 h-4" />, text: "Hygienic" },
+    { icon: <Gem className="w-4 h-4" />, text: "Luxury Brands" }
+  ],
+
+  servicesSectionTitle: "Our Makeup Services",
+  servicesSectionDescription: "From natural day looks to full glam transformations",
+  
+  benefitsSectionTitle: "Why Choose Our Makeup Artists",
+  benefitsSectionDescription: "We enhance your natural beauty with professional techniques"
+};
+
+const careServicesData = {
+  // Services
+  services: [
+    {
+      icon: <Heart className="w-6 h-6" />,
+      title: "Home Nursing",
+      description: "Skilled nursing care at home including medication management, wound care, and vital monitoring.",
+      benefits: [
+        "Certified nurses",
+        "Post-hospital care",
+        "24/7 availability"
+      ],
+      price: "₹999 - ₹3999/day",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <User className="w-6 h-6" />,
+      title: "Companion Services",
+      description: "Trained companions for emotional support, light housekeeping, and daily assistance.",
+      benefits: [
+        "Friendly companionship",
+        "Daily routines assistance",
+        "Mental well-being support"
+      ],
+      price: "₹499 - ₹1999/day",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <ShoppingCart className="w-6 h-6" />,
+      title: "Grocery & Errands",
+      description: "Help with grocery shopping, pharmacy pick-ups, and essential errands.",
+      benefits: [
+        "Safe transportation",
+        "Scheduled deliveries",
+        "Caregiver assistance"
+      ],
+      price: "₹299 - ₹799/visit",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <Brain className="w-6 h-6" />,
+      title: "Memory Care",
+      description: "Support services tailored for individuals with Alzheimer's or dementia.",
+      benefits: [
+        "Cognitive exercises",
+        "Routine supervision",
+        "Safe environment"
+      ],
+      price: "₹1499/session",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <BedDouble className="w-6 h-6" />,
+      title: "Overnight Care",
+      description: "Comforting overnight presence for safety, assistance, and peace of mind.",
+      benefits: [
+        "Nighttime monitoring",
+        "Mobility support",
+        "Emergency response"
+      ],
+      price: "₹1999/night",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <Dumbbell className="w-6 h-6" />,
+      title: "Physiotherapy",
+      description: "In-home physical therapy to promote strength, balance, and mobility.",
+      benefits: [
+        "Personalized programs",
+        "Post-surgery rehab",
+        "Fall prevention"
+      ],
+      price: "₹999/session",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    }
+  ],
+
+  // Features
+  features: [
+    { icon: <BadgeCheck className="w-5 h-5" />, text: "Verified Caregivers" },
+    { icon: <Clock className="w-5 h-5" />, text: "Flexible Scheduling" },
+    { icon: <Shield className="w-5 h-5" />, text: "Insured Services" },
+    { icon: <Smile className="w-5 h-5" />, text: "Empathetic Support" }
+  ],
+
+  // Benefits
+  benefits: [
+    {
+      title: "Personalized Attention",
+      description: "Each care plan is tailored to individual needs and medical history.",
+      icon: <UserCog className="w-8 h-8" />
+    },
+    {
+      title: "Trusted & Background-Checked Staff",
+      description: "Every caregiver undergoes thorough vetting and verification.",
+      icon: <ShieldCheck className="w-8 h-8" />
+    },
+    {
+      title: "Emergency Support",
+      description: "Immediate response for medical emergencies, 24/7.",
+      icon: <AlertCircle className="w-8 h-8" />
+    },
+    {
+      title: "Family Involvement",
+      description: "Transparent updates and active involvement for peace of mind.",
+      icon: <User className="w-8 h-8" />
+    }
+  ],
+
+  // Hero Section
+  heroImage: "/images/Care.jpg",
+  heroTitle: <>Compassionate Care for <span className="text-blue-500">Your Loved Ones</span></>,
+  heroSubtitle: "Reliable at-home support and healthcare services for seniors and individuals with special needs",
+
+  ctaButtons: [
+    {
+      text: "Schedule Care",
+      icon: <Phone className="w-5 h-5" />,
+      props: {
+        className: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+      }
+    },
+    {
+      text: "View Services",
+      icon: <List className="w-5 h-5" />,
+      props: {
+        className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
+      }
+    }
+  ],
+
+  // Pricing Section
+  pricingTitle: "Transparent Elderly Care Pricing",
+  pricingSubtitle: "Affordable care, tailored to your family's needs",
+  pricingRange: "₹299 - ₹3999*",
+  pricingNote: "*Rates vary based on level of care and duration",
+
+  pricingIncluded: [
+    { icon: <CheckCircle className="w-5 h-5 text-green-700" />, text: "Certified caregivers" },
+    { text: "In-home assistance" },
+    { text: "Flexible plans" }
+  ],
+
+  pricingGuarantee: [
+    { icon: <Shield className="w-5 h-5 text-blue-700" />, text: "Safety guaranteed" },
+    { text: "Emergency support ready" },
+    { text: "Regular feedback & check-ins" }
+  ],
+
+  pricingButton: (
+    <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
+      <Bone className="w-5 h-5" />
+      Get Custom Care Plan
+    </button>
+  ),
+
+  // CTA Section
+  ctaSectionTitle: "Need Help for a Loved One?",
+  ctaSectionSubtitle: "Join families who trust us to provide safe, loving care",
+
+  ctaSectionButtons: [
+    {
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
+      props: {
+        className: "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+      }
+    },
+    {
+      text: "Speak to Care Advisor",
+      icon: <AlertTriangle className="w-5 h-5" />,
+      props: {
+        className: "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
+      }
+    }
+  ],
+
+  ctaSectionBadges: [
+    { icon: <BadgeCheck className="w-4 h-4" />, text: "Trusted by 10k+ families" },
+    { icon: <Heart className="w-4 h-4" />, text: "Empathy-driven" },
+    { icon: <Star className="w-4 h-4" />, text: "Rated 4.9/5" },
+    { icon: <Shield className="w-4 h-4" />, text: "Fully Insured" }
+  ],
+
+  servicesSectionTitle: "Our Elderly Care Services",
+  servicesSectionDescription: "Comfort, dignity, and independence through expert care",
+
+  benefitsSectionTitle: "Why Families Choose Us",
+  benefitsSectionDescription: "Dedicated to enhancing the lives of those who need it most"
+};
+
+
 const data = (id) => {
   switch (id) {
     case "electrician-services":
@@ -1228,8 +1641,12 @@ const data = (id) => {
       return acRepairServicesData;
     case "pet-services":
       return petServicesData;
+    case "makeup-services":
+      return facialMakeupData;
+    case "taker-services":
+      return careServicesData;
     default:
-      return petServicesData; // Default to electrician services if no match
+      return careServicesData; // Default to electrician services if no match
   }
 };
 
