@@ -2,10 +2,8 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MacbookScroll } from "./../../components/ui/macbook-scroll";
 import Teams from "./../../components/Team";
 import TypewriterEffectSmoothDemo from "./../../components/typerAbt";
-import StickyScrollRevealDemo from "./../../components/FeatAbt";
 import { StickyScroll } from "./../../components/ui/sticky-scroll-reveal";
 
 // Content for the sticky scrol
@@ -16,13 +14,12 @@ const stickyScrollContent = [
       "We’ve already pre-listed 1000+ early customers and onboarded 200+ verified service professionals across categories like electricians, cleaners, yoga trainers, and elder care who are background-checked and highly rated by previous customers.",
     content: (
       <div className="flex h-full w-full items-center justify-center text-white">
-        <Image
+        <img
           src="https://images.unsplash.com/photo-1551603635-c4cbd9424fce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fHNjaGVkdWxlfGVufDB8fDB8fHww"
           width={300}
           height={300}
           className="h-full w-full object-cover"
           alt="linear board demo"
-          priority={true}
         />
       </div>
     ),
@@ -33,13 +30,13 @@ const stickyScrollContent = [
       "No hidden fees, no surprise charges. Following MVP release, we’ll launch our mobile app to make Zonomo even more accessible and convenient for all users.",
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
-        <Image
+        <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqKaGbDE6g6ISHUBdae4HWFW5lehCGY8GOOg&s"
           width={300}
           height={300}
           className="h-full w-full object-cover"
           alt="linear board demo"
-          priority={true}
+          
         />
       </div>
     ),
@@ -50,13 +47,13 @@ const stickyScrollContent = [
       "Emergency repairs can't wait. Our network of professionals ensures rapid response times with most urgent requests handled within 30 minutes, keeping your home running smoothly.",
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
-        <Image
+        <img
           src="https://plus.unsplash.com/premium_photo-1697730421382-bc8dd92f83ba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fGNpdGllcyUyMGluZGlhfGVufDB8fDB8fHww"
           width={300}
           height={300}
           className="h-full w-full object-cover"
           alt="linear board demo"
-          priority={true}
+          
         />
       </div>
     ),
@@ -67,13 +64,13 @@ const stickyScrollContent = [
       "Our intelligent service-matching and scheduling system will continue evolving, making it faster and easier to find the right professional in real-time.",
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
-        <Image
+        <img
           src="https://images.unsplash.com/photo-1662468353771-b177773cc281?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHVwZGF0ZXxlbnwwfHwwfHx8MA%3D%3D"
           width={300}
           height={300}
           className="h-full w-full object-cover"
           alt="linear board demo"
-          priority={true}
+         
         />
       </div>
     ),
