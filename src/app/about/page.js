@@ -2,7 +2,6 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Teams from "./../../components/Team";
 import TypewriterEffectSmoothDemo from "./../../components/typerAbt";
 import { StickyScroll } from "./../../components/ui/sticky-scroll-reveal";
 
@@ -14,12 +13,13 @@ const stickyScrollContent = [
       "We’ve already pre-listed 1000+ early customers and onboarded 200+ verified service professionals across categories like electricians, cleaners, yoga trainers, and elder care who are background-checked and highly rated by previous customers.",
     content: (
       <div className="flex h-full w-full items-center justify-center text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1551603635-c4cbd9424fce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fHNjaGVkdWxlfGVufDB8fDB8fHww"
           width={300}
           height={300}
           className="h-full w-full object-cover"
           alt="linear board demo"
+          unoptimized
         />
       </div>
     ),
@@ -30,13 +30,13 @@ const stickyScrollContent = [
       "No hidden fees, no surprise charges. Following MVP release, we’ll launch our mobile app to make Zonomo even more accessible and convenient for all users.",
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
-        <img
+        <Image
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqKaGbDE6g6ISHUBdae4HWFW5lehCGY8GOOg&s"
           width={300}
           height={300}
           className="h-full w-full object-cover"
           alt="linear board demo"
-          
+          unoptimized
         />
       </div>
     ),
@@ -47,13 +47,13 @@ const stickyScrollContent = [
       "Emergency repairs can't wait. Our network of professionals ensures rapid response times with most urgent requests handled within 30 minutes, keeping your home running smoothly.",
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
-        <img
+        <Image
           src="https://plus.unsplash.com/premium_photo-1697730421382-bc8dd92f83ba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fGNpdGllcyUyMGluZGlhfGVufDB8fDB8fHww"
           width={300}
           height={300}
           className="h-full w-full object-cover"
           alt="linear board demo"
-          
+          unoptimized
         />
       </div>
     ),
@@ -64,13 +64,13 @@ const stickyScrollContent = [
       "Our intelligent service-matching and scheduling system will continue evolving, making it faster and easier to find the right professional in real-time.",
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1662468353771-b177773cc281?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHVwZGF0ZXxlbnwwfHwwfHx8MA%3D%3D"
           width={300}
           height={300}
           className="h-full w-full object-cover"
           alt="linear board demo"
-         
+          unoptimized
         />
       </div>
     ),
@@ -328,7 +328,245 @@ function About() {
         {/* Stats Section with Enhanced Visual Appeal */}
         <TypewriterEffectSmoothDemo />
 
-        <Teams />
+        {/* Team Section */}
+        <section className="py-12 bg-white sm:py-16 lg:py-20">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">
+                Meet the Founding Team
+              </h2>
+            </div>
+
+            <div className="grid max-w-6xl grid-cols-1 px-20 mx-auto mt-12 text-center sm:px-0 sm:grid-cols-2 md:mt-20 gap-x-8 md:grid-cols-4 gap-y-12 lg:gap-x-16 xl:gap-x-20">
+              <div>
+                <Image
+                  className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
+                  src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-1.png"
+                  alt="Shantanu Sharma - Founder"
+                  width={176}
+                  height={176}
+                  unoptimized
+                />
+                <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">
+                  Shantanu Sharma - Founder
+                </p>
+                <p className="mt-2 text-base font-normal text-gray-600 font-pj">
+                  Visionary behind Zonomo, driving the mission to simplify and
+                  democratize home services across India.
+                </p>
+              </div>
+
+              <div>
+                <Image
+                  className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
+                  src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-2.png"
+                  alt="Sparsh Saria – Chief Financial Officer (CFO)"
+                  width={176}
+                  height={176}
+                  unoptimized
+                />
+                <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">
+                  Sparsh Saria – Chief Financial Officer (CFO)
+                </p>
+                <p className="mt-2 text-base font-normal text-gray-600 font-pj">
+                  Leads Zonomo’s financial planning and strategy, ensuring
+                  sustainable growth and cost-efficiency.
+                </p>
+              </div>
+
+              <div>
+                <Image
+                  className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
+                  src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-3.png"
+                  alt="Ishanvi Verma – Tech Co-Founder"
+                  width={176}
+                  height={176}
+                  unoptimized
+                />
+                <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">
+                  Ishanvi Verma – Tech Co-Founder
+                </p>
+                <p className="mt-2 text-base font-normal text-gray-600 font-pj">
+                  Heads user experience and system design, creating smooth and
+                  reliable booking flows for customers and professionals.
+                </p>
+              </div>
+
+              <div>
+                <Image
+                  className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
+                  src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-4.png"
+                  alt="Rakshith Dasari – Tech Co-Founder"
+                  width={176}
+                  height={176}
+                  unoptimized
+                />
+                <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">
+                  Rakshith Dasari – Tech Co-Founder
+                </p>
+                <p className="mt-2 text-base font-normal text-gray-600 font-pj">
+                  Architect of Zonomo’s platform infrastructure, focused on
+                  building a scalable and secure service marketplace.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 sm:mt-16">
+              <svg
+                className="w-auto h-4 mx-auto text-gray-300"
+                viewBox="0 0 172 16"
+                fill="none"
+                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 11 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 46 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 81 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 116 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 151 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 18 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 53 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 88 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 123 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 158 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 25 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 60 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 95 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 130 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 165 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 32 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 67 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 102 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 137 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 172 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 39 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 74 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 109 1)"
+                />
+                <line
+                  y1="-0.5"
+                  x2="18.0278"
+                  y2="-0.5"
+                  transform="matrix(-0.5547 0.83205 0.83205 0.5547 144 1)"
+                />
+              </svg>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

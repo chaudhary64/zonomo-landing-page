@@ -1368,7 +1368,7 @@ const facialMakeupData = {
     },
     {
       text: "View Portfolio",
-      icon: <Image className="w-5 h-5" />,
+      icon: <Image className="w-5 h-5" alt="Portfolio" />,
       props: {
         className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
       }
