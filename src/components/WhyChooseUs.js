@@ -32,7 +32,7 @@ const cardData = [
 ];
 
 const Card = ({ title, description }) => (
-  <div className="mt-[45vh] p-8 max-w-md bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-700/90 border border-zinc-600 shadow-2xl rounded-3xl max-lg:mt-6 max-lg:p-4 max-lg:max-w-full transition-transform hover:scale-105 hover:border-cyan-400">
+  <div className="mt-[45vh] p-8 max-w-md bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-700/90 border border-zinc-600 shadow-2xl rounded-3xl max-lg:mt-6 max-lg:p-4 max-lg:max-w-full transition-transform hover:scale-105 hover:border-cyan-400 cursor-pointer">
     <h2 className="text-2xl font-semibold text-cyan-300 mb-2 max-lg:text-xl max-lg:mb-1 font-poppins drop-shadow">
       {title}
     </h2>
