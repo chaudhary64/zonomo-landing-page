@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {useState, useRef, useEffect} from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 const cardData = [
   {
@@ -125,7 +125,11 @@ const WhyChooseUs = () => {
         <div className="max-lg:w-full max-lg:flex max-lg:justify-center">
           <div className="flex flex-wrap justify-center xl:justify-start max-lg:flex-col max-lg:items-center max-lg:gap-3">
             {cardData.map((card, index) => (
-              <Card key={index} title={card.title} description={card.description} />
+              <Card
+                key={index}
+                title={card.title}
+                description={card.description}
+              />
             ))}
           </div>
         </div>

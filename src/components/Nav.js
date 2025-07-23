@@ -28,7 +28,7 @@ export default function Nav() {
   return (
     <>
       {hasMounted && showLoader && (
-        <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
+        <aside className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
           <Image
             src="/images/Circles-menu-3.gif"
             alt="Loading..."
@@ -37,7 +37,7 @@ export default function Nav() {
             className="w-32 h-32 mb-6"
             priority
           />
-        </div>
+        </aside>
       )}
       <nav className="bg-white sticky top-0 z-50">
         <div className="mx-auto px-4">
@@ -68,7 +68,6 @@ export default function Nav() {
             {/* Right Side Links */}
             <div className="flex items-center space-x-4 justify-end">
               <Link
-                
                 href="#service-pro-main"
                 className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
               >

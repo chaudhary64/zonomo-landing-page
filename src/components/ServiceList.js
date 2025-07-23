@@ -87,7 +87,7 @@ export default function ServiceSlider() {
       verified: true,
       link: "/services/pet-services",
     },
-     {
+    {
       id: 7,
       slug: "makeup Service",
       image:
@@ -115,19 +115,18 @@ export default function ServiceSlider() {
     },
   ];
 
-  //Loader 
-  useEffect(()=>{
-    const show = localStorage.getItem('loader');
-    if(!show){
-       const timer = setTimeout(() => {
+  //Loader
+  useEffect(() => {
+    const show = localStorage.getItem("loader");
+    if (!show) {
+      const timer = setTimeout(() => {
         setLoader(true);
       }, 2000);
-      
-      localStorage.setItem('loader', 'true');
+
+      localStorage.setItem("loader", "true");
       return () => clearTimeout(timer);
     }
-   
-  },[])
+  }, []);
 
   const cardsPerView = Math.min(4, services.length);
   const maxIndex = services.length - cardsPerView;
@@ -266,7 +265,6 @@ export default function ServiceSlider() {
                 className="flex-none w-full md:w-72 cursor-pointer"
               >
                 <Link href={service.link}>
-                    
                   <div className="h-full p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="relative h-40">
                       <Image
