@@ -1,46 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState } from "react";
 import Link from "next/link";
 import Coming__Soon from "@/components/modal/Coming__Soon";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showLoader, setShowLoader] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
   const [isAppear, setAppear] = useState(false);
-
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  const handleServicesClick = (e) => {
-    // Only show loader for Services link
-    if (e.currentTarget.href.includes("/service-pro")) {
-      e.preventDefault();
-      setShowLoader(true);
-      // Navigate after showing loader
-      setTimeout(() => {
-        window.location.href = "/service-pro";
-      }, 1000); // Match this duration with your GIF length
-    }
-  };
 
   return (
     <>
-      {hasMounted && showLoader && (
-        <aside className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
-          <Image
-            src="/images/Circles-menu-3.gif"
-            alt="Loading..."
-            width={128}
-            height={128}
-            className="w-32 h-32 mb-6"
-            priority
-          />
-        </aside>
-      )}
       <nav className="bg-white sticky top-0 z-50">
         <div className="mx-auto px-4">
           <div className="hidden xl:grid grid-cols-3 items-center h-14">
@@ -151,10 +120,7 @@ export default function Nav() {
                 <Link
                   href="/service-pro"
                   className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
-                  onClick={(e) => {
-                    handleServicesClick(e);
-                    setIsMenuOpen(false);
-                  }}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Services
                 </Link>
