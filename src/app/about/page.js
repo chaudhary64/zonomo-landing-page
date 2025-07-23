@@ -2,7 +2,6 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import TypewriterEffectSmoothDemo from "./../../components/typerAbt";
 import { StickyScroll } from "./../../components/ui/sticky-scroll-reveal";
 
 // Content for the sticky scrol
@@ -94,6 +93,25 @@ function About() {
   const iconsY = useTransform(headerScrollProgress, [0, 1], [80, 0]);
   const iconsOpacity = useTransform(headerScrollProgress, [0, 1], [0, 1]);
   const iconsScale = useTransform(headerScrollProgress, [0, 1], [0.8, 1]);
+
+  const words = [
+    {
+      text: "Proudly",
+    },
+    {
+      text: "Startup",
+    },
+    {
+      text: "India",
+    },
+    {
+      text: "Certified",
+    },
+    {
+      text: "Platform. ",
+      className: "text-blue-500 dark:text-blue-500",
+    },
+  ];
 
   return (
     <>
@@ -326,7 +344,23 @@ function About() {
         </section>
 
         {/* Stats Section with Enhanced Visual Appeal */}
-        <TypewriterEffectSmoothDemo />
+        <div className="flex flex-col items-center justify-center min-h-[40rem]  ">
+          <p className="text-black dark:text-black text-xs sm:text-base  ">
+            recognized for innovation and impact in service-tech
+          </p>
+          <TypewriterEffectSmooth words={words} />
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
+            <Link href="/">
+              <button className="cursor-pointer w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
+                Explore
+              </button>
+            </Link>
+
+            <button className="w-40 cursor-pointer  h-10 rounded-xl bg-white text-black border border-black hover:bg-blue-300 text-sm">
+              Download
+            </button>
+          </div>
+        </div>
 
         {/* Team Section */}
         <section className="py-12 bg-white sm:py-16 lg:py-20">
