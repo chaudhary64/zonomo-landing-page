@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Coming_Soon = () => {
   return (
-    <div className="flex flex-col items-center justify-center text-center pb-20 px-4 sm:pb-32">
+    <section className="flex flex-col items-center justify-center text-center pb-20 px-4 sm:pb-32">
       <div className="bg-indigo-100 border border-indigo-300 rounded-2xl p-8 shadow-xl w-full max-w-3xl sm:p-16">
         <h1 className="text-4xl font-extrabold text-indigo-700 mb-6 sm:text-5xl md:text-6xl sm:mb-8">
           We&rsquo;ll be live soon!
@@ -32,7 +32,7 @@ const Coming_Soon = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
