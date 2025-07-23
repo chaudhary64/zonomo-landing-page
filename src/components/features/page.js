@@ -407,7 +407,7 @@ const features = [
     description: `Whether it’s electrical repair, house cleaning, grooming, appliance servicing, plumbing, or even at-home healthcare, Zonomo brings a wide spectrum of services to users’ doorsteps. The platform is designed to be location-agnostic, ensuring availability in metro cities, suburbs, and soon even tier-2 and tier-3 areas—anytime, any day. It’s a truly one-stop solution for all household and personal service needs.`,
   },
   {
-    title: "Decentralized Service Marketplace",
+    title: "AI-Powered Matching System",
     subheading:
       "Empowering professionals to operate independently. Platform-driven quality and reliability for every user.",
     icon: <MLIcon className="w-12 h-12 text-white" />,
