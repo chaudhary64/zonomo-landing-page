@@ -176,16 +176,13 @@ export default function Nav() {
                 </Link>
                 {/* Get Started Button */}
                 <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
-                  <Link
-                    href="https://zonomo-draft-eight.vercel.app/"
-                    className="shrink-0 bg-black text-white font-bold px-7 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2.5rem] min-w-[6rem] flex items-center justify-center text-sm font-special-gothic shadow tracking-wider"
+                  <button
+                    onClick={() => setAppear((prev) => !prev)}
+                    className="shrink-0 bg-black text-white font-bold px-7 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2.5rem] min-w-[6rem] flex items-center justify-center text-sm lg:text-base font-special-gothic shadow tracking-wider cursor-pointer"
                     style={{ letterSpacing: "0.04em" }}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsMenuOpen(false)}
                   >
                     Get Started
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
