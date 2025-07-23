@@ -7,10 +7,10 @@ import { motion, useScroll, useTransform, useSpring } from "motion/react";
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-36 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
+      <h1 className="text-2xl md:text-7xl text-white font-special-gothic">
         Connect & Grow <br /> With Zonomo
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-500">
+      <p className="max-w-2xl text-base md:text-xl mt-8 text-neutral-400 font-poppins">
         Maximize Your Earnings with Zonomo – Keep 100% of Your Profits, Gain
         More Clients, and Grow Your Business on Your Terms. No Middlemen, Just
         More Opportunities and Faster Payments. Join Today!

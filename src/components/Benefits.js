@@ -186,7 +186,7 @@ export default function ServiceProvidersSection() {
           <AnimatePresence mode="wait" initial={false}>
             <motion.h2
               key={activeData.heading}
-              className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+              className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-special-gothic"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -198,7 +198,7 @@ export default function ServiceProvidersSection() {
           <AnimatePresence mode="wait" initial={false}>
             <motion.p
               key={activeData.description}
-              className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-inter"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -258,10 +258,10 @@ export default function ServiceProvidersSection() {
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-2xl font-bold mb-3 text-white">
+                        <h3 className="text-2xl font-bold mb-3 text-white font-poppins">
                           {benefit.title}
                         </h3>
-                        <p className="text-lg leading-relaxed text-gray-200">
+                        <p className="text-lg leading-relaxed text-gray-200 font-inter">
                           {benefit.description}
                         </p>
                       </div>
