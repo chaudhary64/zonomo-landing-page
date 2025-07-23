@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Coming__Soon from "@/components/modal/Coming__Soon";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const [isAppear, setAppear] = useState(false);
 
   useEffect(() => {
     setHasMounted(true);
@@ -79,15 +81,13 @@ export default function Nav() {
               >
                 Features
               </Link>
-              <Link
-                href="https://zonomo-draft-eight.vercel.app/"
-                className="shrink-0 bg-black text-white font-bold px-7 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2.5rem] min-w-[6rem] flex items-center justify-center text-sm lg:text-base font-special-gothic shadow tracking-wider"
+              <button
+                onClick={() => setAppear((prev) => !prev)}
+                className="shrink-0 bg-black text-white font-bold px-7 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2.5rem] min-w-[6rem] flex items-center justify-center text-sm lg:text-base font-special-gothic shadow tracking-wider cursor-pointer"
                 style={{ letterSpacing: "0.04em" }}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Get Started
-              </Link>
+              </button>
             </div>
           </div>
           {/* Mobile Nav: unchanged */}
@@ -192,6 +192,8 @@ export default function Nav() {
           )}
         </div>
       </nav>
+
+      <Coming__Soon isAppear={isAppear} setAppear={setAppear} />
     </>
   );
 }
