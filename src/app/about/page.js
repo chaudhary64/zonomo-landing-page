@@ -4,6 +4,9 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { StickyScroll } from "./../../components/ui/sticky-scroll-reveal";
 
+import { TypewriterEffectSmooth } from "../../components/ui/typewritter-effect";
+import Link from "next/link";
+
 // Content for the sticky scrol
 const stickyScrollContent = [
   {
