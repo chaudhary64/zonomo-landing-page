@@ -19,7 +19,6 @@ export default function ResponsiveCarousel() {
             src="/videoes/zonomo.mp4" // Replace with your video path
             loop
             autoPlay
-            controls
             muted
             className="w-full h-full object-cover rounded-xl"
           />
