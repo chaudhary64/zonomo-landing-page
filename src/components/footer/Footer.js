@@ -14,10 +14,10 @@ export default function Footer() {
         <div>
           <div className="flex items-center space-x-2 mb-4">
             
-            <span className="font-special-gothic font-extrabold text-lg lg:text-xl text-gray-900 tracking-wider uppercase">Zonomo</span>
+            <span className="font-SpaceGrotesk font-extrabold text-lg lg:text-xl text-gray-900 tracking-wider uppercase">Zonomo</span>
           </div>
           <div>
-            <h3 className="font-semibold mb-2 font-poppins">Company</h3>
+            <h3 className="font-semibold mb-2 font-inter">Company</h3>
             <ul className="space-y-1">
               <li>
                 <a href="#" className="hover:underline font-inter">
@@ -60,7 +60,7 @@ export default function Footer() {
 
         {/* For Customers */}
         <div>
-          <h3 className="font-semibold mb-2 font-poppins">For customers</h3>
+          <h3 className="font-semibold mb-2 font-inter">For customers</h3>
           <ul className="space-y-1">
             <li>
               <a href="#hitw" className="hover:underline font-inter">
@@ -82,7 +82,7 @@ export default function Footer() {
 
         {/* For Professionals */}
         <div>
-          <h3 className="font-semibold mb-2 font-poppins">For professionals</h3>
+          <h3 className="font-semibold mb-2 font-inter">For professionals</h3>
           <a href="#" className="hover:underline font-inter">
             Register as a professional
           </a>
@@ -90,7 +90,7 @@ export default function Footer() {
 
         {/* Social Links */}
         <div>
-          <h3 className="font-semibold mb-2 font-poppins">Social links</h3>
+          <h3 className="font-semibold mb-2 font-inter">Social links</h3>
           <div className="flex space-x-3 mb-4">
             <a
               href="#"

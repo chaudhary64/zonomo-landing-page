@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Special Gothic Expanded One';
-  src: url('/fonts/SpecialGothicExpandedOne-Regular.woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'SpaceGrotesk-VariableFont_wght';
+  src: url('/fonts/SpaceGrotesk-VariableFont_wght.woff2') format('woff2');
   font-style: normal;
   font-display: swap;
 }
@@ -13,20 +12,8 @@
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.font-poppins {
-  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-.font-mono {
-  font-family: var(--font-jetbrains-mono), Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-.font-playfair {
-  font-family: var(--font-playfair), Georgia, "Times New Roman", Times, serif;
-}
-
-.font-special-gothic {
-  font-family: 'Special Gothic Expanded One', sans-serif;
+.font-SpaceGrotesk {
+  font-family: 'SpaceGrotesk-VariableFont_wght', sans-serif;
 }
 
 /* Improved typography */
@@ -36,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.025em;
@@ -50,7 +37,7 @@ div {
 
 /* Accent text (gradients, highlights) */
 .text-accent {
-  font-family: var(--font-playfair), Georgia, "Times New Roman", Times, serif;
+  font-family: var(--font-inter), Georgia, "Times New Roman", Times, serif;
 }
 
 html {

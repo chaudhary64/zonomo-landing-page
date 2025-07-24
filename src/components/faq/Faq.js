@@ -102,11 +102,11 @@ const FAQ = () => {
           </div>
 
           <h2
-            className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in font-poppins"
+            className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in font-inter"
             style={{ animationDelay: "0.2s" }}
           >
             Got Questions?
-            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent animate-gradient font-playfair">
+            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent animate-gradient font-inter">
               We&apos;ve Got Answers
             </span>
           </h2>
@@ -147,7 +147,7 @@ const FAQ = () => {
                   className="w-full px-6 py-6 text-left rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 group cursor-pointer"
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-blue-800 transition-colors duration-300 font-poppins">
+                    <h3 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-blue-800 transition-colors duration-300 font-inter">
                       {faq.question}
                     </h3>
                     <div

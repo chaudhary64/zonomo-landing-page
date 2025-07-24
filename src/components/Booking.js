@@ -30,7 +30,7 @@ function Booking() {
     <section id="hitw" className="py-10 bg-white sm:py-16 lg:py-20 mb-0">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl font-poppins">
+          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl font-inter">
             Book Your Service in 5 Simple Steps
           </h2>
           <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600 font-inter">
@@ -62,11 +62,11 @@ function Booking() {
             {/* Step 1 */}
             <div>
               <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
-                <span className="text-xl font-semibold text-gray-700 font-poppins">
+                <span className="text-xl font-semibold text-gray-700 font-inter">
                   1
                 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-poppins">
+              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-inter">
                 Choose a Service
               </h3>
               <p className="mt-4 text-base text-gray-600 font-inter">
@@ -77,11 +77,11 @@ function Booking() {
             {/* Step 2 */}
             <div>
               <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
-                <span className="text-xl font-semibold text-gray-700 font-poppins">
+                <span className="text-xl font-semibold text-gray-700 font-inter">
                   2
                 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-poppins">
+              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-inter">
                 Pick Your Professional
               </h3>
               <p className="mt-4 text-base text-gray-600 font-inter">
@@ -92,11 +92,11 @@ function Booking() {
             {/* Step 3 */}
             <div>
               <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
-                <span className="text-xl font-semibold text-gray-700 font-poppins">
+                <span className="text-xl font-semibold text-gray-700 font-inter">
                   3
                 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-poppins">
+              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-inter">
                 Schedule a Visit
               </h3>
               <p className="mt-4 text-base text-gray-600 font-inter">
@@ -107,11 +107,11 @@ function Booking() {
             {/* Step 4 */}
             <div>
               <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
-                <span className="text-xl font-semibold text-gray-700 font-poppins">
+                <span className="text-xl font-semibold text-gray-700 font-inter">
                   4
                 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-poppins">
+              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-inter">
                 Get the Job Done
               </h3>
               <p className="mt-4 text-base text-gray-600 font-inter">
@@ -122,11 +122,11 @@ function Booking() {
             {/* Step 5 */}
             <div>
               <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
-                <span className="text-xl font-semibold text-gray-700 font-poppins">
+                <span className="text-xl font-semibold text-gray-700 font-inter">
                   5
                 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-poppins">
+              <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10 font-inter">
                 Pay & Rate the Service
               </h3>
               <p className="mt-4 text-base text-gray-600 font-inter">

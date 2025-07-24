@@ -12,18 +12,18 @@ export default function Nav() {
     <>
       <nav className="bg-white sticky top-0 z-50">
         <div className="mx-auto px-4">
-          <div className="hidden xl:grid grid-cols-3 items-center h-14">
+          <div className="py-1 hidden xl:grid grid-cols-3 items-center">
             {/* Left Side Links */}
             <div className="flex items-center space-x-4 justify-start">
               <Link
                 href="/"
-                className="text-gray-800 hover:text-black hover:bg-violet-400 font-normal px-4 py-2 rounded-xl transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black hover:bg-gray-200 font-bold px-4 py-2 rounded-xl transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black font-bold px-4 py-2 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
               >
                 About us
               </Link>
@@ -31,7 +31,7 @@ export default function Nav() {
             {/* Center Logo */}
             <div className="flex justify-center">
               <Link href="/" className="flex items-center space-x-2">
-                <span className="font-special-gothic font-extrabold text-lg lg:text-xl text-gray-900 tracking-wider uppercase">
+                <span className="font-SpaceGrotesk font-black text-lg lg:text-2xl text-gray-900 tracking-wider uppercase">
                   Zonomo
                 </span>
               </Link>
@@ -40,19 +40,19 @@ export default function Nav() {
             <div className="flex items-center space-x-4 justify-end">
               <Link
                 href="#service-pro-main"
-                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black font-bold px-4 py-2 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
               >
                 Services
               </Link>
               <Link
                 href="/features"
-                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black font-bold px-4 py-2 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
               >
                 Features
               </Link>
               <button
                 onClick={() => setAppear((prev) => !prev)}
-                className="shrink-0 bg-black text-white font-semibold px-7 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2.5rem] min-w-[6rem] flex items-center justify-center text-sm lg:text-base font-special-gothic cursor-pointer"
+                className="shrink-0 bg-black text-white font-semibold px-4.5 py-1.5 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2rem] min-w-[4.5rem] flex items-center justify-center text-xs lg:text-sm font-SpaceGrotesk cursor-pointer"
                 style={{ letterSpacing: "0.05em" }}
               >
                 Get Started
@@ -63,14 +63,14 @@ export default function Nav() {
           <div className="flex items-center justify-between h-14 xl:hidden">
             {/* Logo for mobile */}
             <Link href="/" className="flex items-center space-x-2">
-              <span className="font-special-gothic font-extrabold text-base text-gray-900 tracking-wider uppercase">
+              <span className="font-SpaceGrotesk font-extrabold text-base text-gray-900 tracking-wider uppercase">
                 Zonomo
               </span>
             </Link>
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-violet-400 transition-colors duration-200"
+              className="p-2 rounded-lg text-black hover:text-gray-950 hover:bg-violet-400 transition-colors duration-200 cursor-pointer"
             >
               <svg
                 className="w-5 h-5"
@@ -103,7 +103,7 @@ export default function Nav() {
                 {/* Home */}
                 <Link
                   href="/"
-                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
@@ -111,7 +111,7 @@ export default function Nav() {
                 {/* About us */}
                 <Link
                   href="/about"
-                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About us
@@ -119,7 +119,7 @@ export default function Nav() {
                 {/* Services */}
                 <Link
                   href="/service-pro"
-                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Services
@@ -127,7 +127,7 @@ export default function Nav() {
                 {/* Features */}
                 <Link
                   href="#features"
-                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Features
@@ -135,7 +135,7 @@ export default function Nav() {
                 {/* FAQ */}
                 <Link
                   href="#faq"
-                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   FAQ
@@ -144,7 +144,7 @@ export default function Nav() {
                 <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                   <button
                     onClick={() => setAppear((prev) => !prev)}
-                    className="shrink-0 bg-black text-white font-bold px-7 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2.5rem] min-w-[6rem] flex items-center justify-center text-sm lg:text-base font-special-gothic shadow tracking-wider cursor-pointer"
+                    className="shrink-0 bg-black text-white font-bold px-4 py-1.5 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2rem] min-w-[4.5rem] flex items-center justify-center text-xs lg:text-sm font-SpaceGrotesk shadow tracking-wider cursor-pointer"
                     style={{ letterSpacing: "0.04em" }}
                   >
                     Get Started

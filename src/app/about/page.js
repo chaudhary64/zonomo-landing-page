@@ -143,7 +143,7 @@ function About() {
                 </span>
               </motion.div>
 
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 font-poppins">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 font-inter">
                 About{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500 animate-pulse font-playfair">
                   Our Story
@@ -239,7 +239,7 @@ function About() {
                         />
                       </svg>
                     </div>
-                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 font-poppins">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 font-inter">
                       Our Mission
                     </h2>
                   </div>
@@ -258,7 +258,7 @@ function About() {
                   {/* Mission Stats */}
                   <div className="flex items-center justify-center sm:justify-start space-x-4 sm:space-x-6 mt-6 sm:mt-8">
                     <div className="text-center">
-                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 font-poppins">
+                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 font-inter">
                         24/7
                       </div>
                       <div className="text-xs sm:text-sm text-gray-500 font-inter">
@@ -266,7 +266,7 @@ function About() {
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-teal-600 font-poppins">
+                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-teal-600 font-inter">
                         100%
                       </div>
                       <div className="text-xs sm:text-sm text-gray-500 font-inter">
@@ -274,7 +274,7 @@ function About() {
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-purple-600 font-poppins">
+                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-purple-600 font-inter">
                         30min
                       </div>
                       <div className="text-xs sm:text-sm text-gray-500 font-inter">
@@ -324,7 +324,7 @@ function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-poppins mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-inter mb-4"
             >
               What&apos;s Next for{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500">
