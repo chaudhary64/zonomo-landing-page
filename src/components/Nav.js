@@ -31,7 +31,7 @@ export default function Nav() {
             {/* Center Logo */}
             <div className="flex justify-center">
               <Link href="/" className="flex items-center space-x-2">
-                <span className="font-SpaceGrotesk font-black text-lg lg:text-2xl text-gray-900 tracking-wider uppercase">
+                <span className="font-SpecialGothic text-lg lg:text-xl text-gray-900 tracking-wider uppercase">
                   Zonomo
                 </span>
               </Link>

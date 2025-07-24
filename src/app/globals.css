@@ -7,6 +7,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'SpecialGothicExpandedOne-Regular';
+  src: url('/fonts/SpecialGothicExpandedOne-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Font Classes */
 .font-inter {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -14,6 +21,10 @@
 
 .font-SpaceGrotesk {
   font-family: 'SpaceGrotesk-VariableFont_wght', sans-serif;
+}
+
+.font-SpecialGothic {
+  font-family: 'SpecialGothicExpandedOne-Regular', sans-serif;
 }
 
 /* Improved typography */
