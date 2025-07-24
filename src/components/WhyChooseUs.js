@@ -42,7 +42,7 @@ const Card = ({ title, description }) => (
       transitionProperty: "border-color, box-shadow, background, transform",
     }}
   >
-    <h2 className="text-2xl font-semibold text-cyan-300 mb-2 max-lg:text-xl max-lg:mb-1 font-poppins drop-shadow">
+    <h2 className="text-2xl font-semibold text-violet-400 mb-2 max-lg:text-xl max-lg:mb-1 font-poppins drop-shadow">
       {title}
     </h2>
     <p className="text-lg text-zinc-200 max-lg:text-base font-inter">
@@ -54,7 +54,7 @@ const Card = ({ title, description }) => (
 const WhyChooseUs = () => (
   <section className="relative min-h-screen w-full bg-black">
     <div className="relative z-10 py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 grid grid-cols-2 max-lg:py-3 max-lg:px-2 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:gap-4">
-      <div className="h-fit w-fit sticky top-1/4 px-10 justify-self-center flex flex-col items-center justify-center text-8xl font-bold uppercase text-cyan-200 border-l-4 border-cyan-400 max-lg:static max-lg:border-l-0 max-lg:border-b-4 max-lg:text-3xl max-lg:w-full max-lg:py-3 max-lg:px-0 drop-shadow">
+      <div className="h-fit w-fit sticky top-1/4 px-10 justify-self-center flex flex-col items-center justify-center text-8xl font-bold uppercase text-violet-500 border-l-4 border-cyan-400 max-lg:static max-lg:border-l-0 max-lg:border-b-4 max-lg:text-3xl max-lg:w-full max-lg:py-3 max-lg:px-0 drop-shadow">
         <span className="font-playfair">Why</span>
         <span className="font-playfair">Choose</span>
         <span className="font-playfair">Us</span>

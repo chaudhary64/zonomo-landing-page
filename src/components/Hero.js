@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image"; 
-import  Link  from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   const words = [
@@ -44,7 +44,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="absolute top-1/2 -translate-y-1/2 px-6">
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight font-poppins drop-shadow-xl">
-          <span className="rotating-text-container">
+          <span className="rotating-text-container text-purple-600">
             <span
               className={`rotating-word ${
                 isAnimating ? "animate-out" : "animate-in"
@@ -72,7 +72,7 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 pt-2">
-          <Link href = "#hitw"> 
+          <Link href="#hitw">
             <button className="relative overflow-hidden group bg-white text-gray-800 px-6 py-3 hover:bg-gray-500 sm:px-8 sm:py-4 rounded-xl font-semibold border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 font-poppins cursor-pointer">
               <span className="relative z-10">How It Works</span>
               <span className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>

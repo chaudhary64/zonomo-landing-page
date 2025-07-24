@@ -90,33 +90,10 @@ body {
 
 .rotating-word {
   display: inline-block;
-  background: linear-gradient(45deg,
-      #ff6b6b,
-      #4ecdc4,
-      #45b7d1,
-      #a29bfe,
-      #fd79a8,
-      #e17055);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: rotatingColorShift 4s ease-in-out infinite;
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-}
-
-/* Fallback for browsers that don't support background-clip */
-.rotating-word:not(.shimmer-text) {
-  color: #ff6b6b;
-}
-
-/* Ensure the parent doesn't override the gradient text */
-h1 .rotating-word {
-  color: transparent !important;
 }
 
 .rotating-word.animate-out {
@@ -145,35 +122,10 @@ h1 .rotating-word {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Keyframe for rotating text colors */
-@keyframes rotatingColorShift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  25% {
-    background-position: 100% 50%;
-  }
-
-  50% {
-    background-position: 100% 100%;
-  }
-
-  75% {
-    background-position: 0% 100%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .rotating-word {
     font-size: inherit;
-    animation: rotatingColorShift 1s ease-in-out infinite;
-
   }
 
   .word-indicator {
