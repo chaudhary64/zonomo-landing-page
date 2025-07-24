@@ -17,13 +17,13 @@ export default function Nav() {
             <div className="flex items-center space-x-4 justify-start">
               <Link
                 href="/"
-                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black hover:bg-violet-400 font-normal px-4 py-2 rounded-xl transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
               >
                 About us
               </Link>
@@ -40,20 +40,20 @@ export default function Nav() {
             <div className="flex items-center space-x-4 justify-end">
               <Link
                 href="#service-pro-main"
-                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
               >
                 Services
               </Link>
               <Link
                 href="/features"
-                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black font-normal px-4 py-2 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm lg:text-base tracking-wide"
               >
                 Features
               </Link>
               <button
                 onClick={() => setAppear((prev) => !prev)}
-                className="shrink-0 bg-black text-white font-bold px-7 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2.5rem] min-w-[6rem] flex items-center justify-center text-sm lg:text-base font-special-gothic shadow tracking-wider cursor-pointer"
-                style={{ letterSpacing: "0.04em" }}
+                className="shrink-0 bg-black text-white font-semibold px-7 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2.5rem] min-w-[6rem] flex items-center justify-center text-sm lg:text-base font-special-gothic cursor-pointer"
+                style={{ letterSpacing: "0.05em" }}
               >
                 Get Started
               </button>
@@ -70,7 +70,7 @@ export default function Nav() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+              className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-violet-400 transition-colors duration-200"
             >
               <svg
                 className="w-5 h-5"
@@ -103,7 +103,7 @@ export default function Nav() {
                 {/* Home */}
                 <Link
                   href="/"
-                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
@@ -111,7 +111,7 @@ export default function Nav() {
                 {/* About us */}
                 <Link
                   href="/about"
-                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About us
@@ -119,7 +119,7 @@ export default function Nav() {
                 {/* Services */}
                 <Link
                   href="/service-pro"
-                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Services
@@ -127,7 +127,7 @@ export default function Nav() {
                 {/* Features */}
                 <Link
                   href="#features"
-                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Features
@@ -135,7 +135,7 @@ export default function Nav() {
                 {/* FAQ */}
                 <Link
                   href="#faq"
-                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-gray-100 transition-all duration-200 font-special-gothic text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-normal py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-special-gothic text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   FAQ

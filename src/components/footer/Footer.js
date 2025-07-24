@@ -13,10 +13,8 @@ export default function Footer() {
         {/* Logo + Company Section */}
         <div>
           <div className="flex items-center space-x-2 mb-4">
-            <div className="bg-black text-white text-xs font-bold px-2 py-1 rounded font-poppins">
-              Z
-            </div>
-            <span className="font-semibold text-lg font-poppins">Zonomo</span>
+            
+            <span className="font-special-gothic font-extrabold text-lg lg:text-xl text-gray-900 tracking-wider uppercase">Zonomo</span>
           </div>
           <div>
             <h3 className="font-semibold mb-2 font-poppins">Company</h3>

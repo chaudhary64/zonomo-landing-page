@@ -39,7 +39,7 @@ export const ProductCard = ({ product, translate }) => {
           src={product.thumbnail}
           height={600}
           width={600}
-          className="cursor-pointer object-cover object-left-top absolute h-full w-full inset-0 grayscale-50 group-hover/product:grayscale-0"
+          className="cursor-pointer object-cover object-left-top absolute h-full w-full inset-0 group-hover/product:grayscale-0"
           alt={product.title}
           unoptimized
         />
