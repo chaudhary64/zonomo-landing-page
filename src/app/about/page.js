@@ -145,9 +145,7 @@ function About() {
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 font-inter">
                 About{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500 animate-pulse font-playfair">
-                  Our Story
-                </span>
+                <span className="text-purple-600 font-inter">Our Story</span>
               </h1>
 
               <motion.p
@@ -254,34 +252,6 @@ function About() {
                     services, or personal care, we&apos;re here to connect you
                     with vetted professionals who take pride in their work.
                   </p>
-
-                  {/* Mission Stats */}
-                  <div className="flex items-center justify-center sm:justify-start space-x-4 sm:space-x-6 mt-6 sm:mt-8">
-                    <div className="text-center">
-                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 font-inter">
-                        24/7
-                      </div>
-                      <div className="text-xs sm:text-sm text-gray-500 font-inter">
-                        Support
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-teal-600 font-inter">
-                        100%
-                      </div>
-                      <div className="text-xs sm:text-sm text-gray-500 font-inter">
-                        Verified
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-purple-600 font-inter">
-                        30min
-                      </div>
-                      <div className="text-xs sm:text-sm text-gray-500 font-inter">
-                        Response
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </motion.div>
 
@@ -306,8 +276,6 @@ function About() {
                       <source src="/videos/missionvid.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-
-                    {/* Minimal play button indicator */}
                   </div>
                 </div>
               </motion.div>
@@ -326,10 +294,7 @@ function About() {
               viewport={{ once: true }}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-inter mb-4"
             >
-              What&apos;s Next for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500">
-                Zonomo?
-              </span>
+              What&apos;s Next for <span>Zonomo?</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}

@@ -13,8 +13,9 @@ export default function Footer() {
         {/* Logo + Company Section */}
         <div>
           <div className="flex items-center space-x-2 mb-4">
-            
-            <span className="font-SpaceGrotesk font-extrabold text-lg lg:text-xl text-gray-900 tracking-wider uppercase">Zonomo</span>
+            <span className="font-SpaceGrotesk font-black text-lg lg:text-xl text-gray-900 tracking-wider uppercase">
+              Zonomo
+            </span>
           </div>
           <div>
             <h3 className="font-semibold mb-2 font-inter">Company</h3>
@@ -94,19 +95,19 @@ export default function Footer() {
           <div className="flex space-x-3 mb-4">
             <a
               href="#"
-              className="text-gray-700 hover:text-blue-500 transition-colors"
+              className="text-gray-700 hover:text-blue-700 transition-colors"
             >
               <FaTwitter className="h-6 w-6" />
             </a>
             <a
               href="#"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-gray-700 hover:text-blue-700 transition-colors"
             >
               <FaFacebookF className="h-6 w-6" />
             </a>
             <a
               href="#"
-              className="text-gray-700 hover:text-pink-500 transition-colors"
+              className="text-gray-700 hover:text-blue-700 transition-colors"
             >
               <FaInstagram className="h-6 w-6" />
             </a>
@@ -122,18 +123,16 @@ export default function Footer() {
               <Image
                 src="/badges/ios-donwload.webp"
                 alt="App Store"
-                className="h-7"
-                width={120}
-                height={28}
+                width={135}
+                height={30}
               />
             </a>
             <a href="#">
               <Image
                 src="/badges/android-download.webp"
                 alt="Google Play"
-                className="h-7"
-                width={120}
-                height={28}
+                width={135}
+                height={30}
               />
             </a>
           </div>
