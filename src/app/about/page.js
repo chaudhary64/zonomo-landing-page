@@ -16,7 +16,7 @@ const stickyScrollContent = [
     content: (
       <div className="flex h-full w-full items-center justify-center text-white">
         <Image
-          src="https://images.unsplash.com/photo-1551603635-c4cbd9424fce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fHNjaGVkdWxlfGVufDB8fDB8fHww"
+          src="/images/Pre-Launch.jpg"
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -33,7 +33,7 @@ const stickyScrollContent = [
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
         <Image
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqKaGbDE6g6ISHUBdae4HWFW5lehCGY8GOOg&s"
+          src="/images/Mobile-App-Launch.jpg"
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -50,7 +50,7 @@ const stickyScrollContent = [
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
         <Image
-          src="https://plus.unsplash.com/premium_photo-1697730421382-bc8dd92f83ba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fGNpdGllcyUyMGluZGlhfGVufDB8fDB8fHww"
+          src="/images/Expanding.jpg"
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -67,7 +67,7 @@ const stickyScrollContent = [
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
         <Image
-          src="https://images.unsplash.com/photo-1662468353771-b177773cc281?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHVwZGF0ZXxlbnwwfHwwfHx8MA%3D%3D"
+          src="/images/AI-Upgrade.jpg"
           width={300}
           height={300}
           className="h-full w-full object-cover"
