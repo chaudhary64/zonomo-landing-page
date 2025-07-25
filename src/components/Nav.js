@@ -17,20 +17,20 @@ export default function Nav() {
             <div className="flex items-center space-x-4 justify-start">
               <Link
                 href="/"
-                className="text-gray-800 hover:text-black hover:bg-gray-200 font-bold px-4 py-2 rounded-xl transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black hover:bg-violet-400 font-bold px-4 py-2 rounded-xl transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="text-gray-800 hover:text-black font-bold px-4 py-2 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black font-bold px-4 py-2 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
               >
                 About us
               </Link>
             </div>
             {/* Center Logo */}
             <div className="flex justify-center">
-              <Link href="/" className="flex items-center space-x-2">
+              <Link href="https://www.linkedin.com/company/zonomo" target="_blank"  className="flex items-center space-x-2">
                 <span className="font-SpecialGothic text-lg lg:text-xl text-gray-900 tracking-wider uppercase">
                   Zonomo
                 </span>
@@ -40,13 +40,13 @@ export default function Nav() {
             <div className="flex items-center space-x-4 justify-end">
               <Link
                 href="#service-pro-main"
-                className="text-gray-800 hover:text-black font-bold px-4 py-2 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black font-bold px-4 py-2 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
               >
                 Services
               </Link>
               <Link
                 href="/features"
-                className="text-gray-800 hover:text-black font-bold px-4 py-2 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
+                className="text-gray-800 hover:text-black font-bold px-4 py-2 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm lg:text-base tracking-wide"
               >
                 Features
               </Link>
@@ -103,7 +103,7 @@ export default function Nav() {
                 {/* Home */}
                 <Link
                   href="/"
-                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
@@ -111,7 +111,7 @@ export default function Nav() {
                 {/* About us */}
                 <Link
                   href="/about"
-                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About us
@@ -119,7 +119,7 @@ export default function Nav() {
                 {/* Services */}
                 <Link
                   href="/service-pro"
-                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Services
@@ -127,7 +127,7 @@ export default function Nav() {
                 {/* Features */}
                 <Link
                   href="#features"
-                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Features
@@ -135,7 +135,7 @@ export default function Nav() {
                 {/* FAQ */}
                 <Link
                   href="#faq"
-                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
+                  className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   FAQ
