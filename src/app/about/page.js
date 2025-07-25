@@ -265,15 +265,15 @@ function About() {
                 {/* Simplified Video Container without border */}
                 <div className="relative bg-transparent rounded-xl sm:rounded-3xl overflow-hidden shadow-xl">
                   {/* AI Video Player - Larger size */}
-                  <div className="aspect-w-16 aspect-h-9 w-full">
+                  <div className="aspect-w-18 aspect-h-9 w-full">
                     <video
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className="w-full h-[600px] object-cover rounded-2xl sm:rounded-3xl"
+                      className="w-full h-[600px] object-cover rounded-xl sm:rounded-3xl"
                     >
-                      <source src="/videos/missionvid.mp4" type="video/mp4" />
+                      <source src="/videos/bgabt.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
