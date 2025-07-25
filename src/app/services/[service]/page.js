@@ -1,49 +1,50 @@
 "use client";
 import {
   // Service Type Icons
-  Sparkles,       // Bridal Makeup
-  PartyPopper,    // Party Makeup
-  Briefcase,      // Professional Makeup
-  Camera,         // Photoshoot Makeup
-  Smile,          // Natural Makeup
-  Palette,        // Creative Makeup
+  Sparkles, // Bridal Makeup
+  PartyPopper, // Party Makeup
+  Briefcase, // Professional Makeup
+  Camera, // Photoshoot Makeup
+  Smile, // Natural Makeup
+  Palette, // Creative Makeup
   Truck,
-  MapPin ,
-  Box ,
+  MapPin,
+  Map,
+  Box,
   Building,
-  PackageSearch ,
-  PackageOpen ,
-  Calculator ,
+  PackageSearch,
+  PackageOpen,
+  Calculator,
   // Feature Icons
-  Droplet,        // Hydrating Formulas
-  Shield,         // Hypoallergenic/Sanitation
-  Clock,          // Long-Lasting
-  Flower,         // Cruelty-Free
-  Leaf,           // Organic/Natural
-  Gift,           // Free Touch-Up Kit
-  Settings,       // Customization
+  Droplet, // Hydrating Formulas
+  Shield, // Hypoallergenic/Sanitation
+  Clock, // Long-Lasting
+  Flower, // Cruelty-Free
+  Leaf, // Organic/Natural
+  Gift, // Free Touch-Up Kit
+  Settings, // Customization
 
   // Benefit Icons
-  Heart,          // Gentle Care
+  Heart, // Gentle Care
 
   // CTA Button Icons
-  Calendar,       // Book Appointment
-  Image,          // View Portfolio
-  Video,          // Virtual Consultation
-  Phone,          // Call Now
-  MessageSquare,  // Chat Consultation
+  Calendar, // Book Appointment
+  Image, // View Portfolio
+  Video, // Virtual Consultation
+  Phone, // Call Now
+  MessageSquare, // Chat Consultation
 
   // Badge/Trust Icons
-  Award,          // Certified MUAs
-  Star,           // Ratings
-  Gem,            // Luxury Brands
-  ThumbsUp,       // Customer Satisfaction
-  BadgeCheck,     // Verified Professionals
+  Award, // Certified MUAs
+  Star, // Ratings
+  Gem, // Luxury Brands
+  ThumbsUp, // Customer Satisfaction
+  BadgeCheck, // Verified Professionals
 
   // Pricing Section
-  DollarSign,     // Price/Value
-  Tag,            // Discounts
-  Zap,            // Quick Service
+  DollarSign, // Price/Value
+  Tag, // Discounts
+  Zap, // Quick Service
 
   // Additional Makeup Specific
   Lightbulb,
@@ -68,8 +69,8 @@ import {
   LayoutTemplate,
   Table2,
   ClipboardList,
-   Monitor,
-   Ruler, 
+  Monitor,
+  Ruler,
   // Pet Services Icons
   PawPrint,
   Bone,
@@ -78,8 +79,7 @@ import {
   List,
   CheckCircle,
   ShieldCheck,
-  
-} from 'lucide-react';
+} from "lucide-react";
 import ServiceSection from "@/components/service/ServiceSection";
 import { useParams } from "next/navigation";
 
@@ -203,8 +203,7 @@ const electricianServicesData = {
     },
   ],
   // Hero Section
-  heroImage:
-    "/images/electric.jpg",
+  heroImage: "/images/electric.jpg",
   heroTitle: (
     <>
       Professional Electrical Services{" "}
@@ -253,7 +252,7 @@ const electricianServicesData = {
     { text: "Licensed and insured professionals" },
     { text: "Compliance with safety standards" },
   ],
- 
+
   // CTA Section
   ctaSectionTitle: "Ready to Upgrade Your Home's Electrical System?",
   ctaSectionSubtitle:
@@ -398,8 +397,7 @@ const plumbingServicesData = {
     },
   ],
   // Hero Section
-  heroImage:
-    "/images/plumber.jpg",
+  heroImage: "/images/plumber.jpg",
   heroTitle: (
     <>
       Reliable Plumbing Services{" "}
@@ -447,7 +445,7 @@ const plumbingServicesData = {
     { text: "Verified and insured plumbers" },
     { text: "Compliance with safety standards" },
   ],
-  
+
   // CTA Section
   ctaSectionTitle: "Need a Plumber You Can Trust?",
   ctaSectionSubtitle:
@@ -596,8 +594,7 @@ const healthcareServicesData = {
     },
   ],
   // Hero Section
-  heroImage:
-    "/images/healthCare.jpg",
+  heroImage: "/images/healthCare.jpg",
   heroTitle: (
     <>
       Quality Healthcare Services{" "}
@@ -646,7 +643,7 @@ const healthcareServicesData = {
     { text: "Verified and insured staff" },
     { text: "Compliance with health standards" },
   ],
- 
+
   // CTA Section
   ctaSectionTitle: "Need Healthcare Services at Home?",
   ctaSectionSubtitle:
@@ -787,8 +784,7 @@ const cleaningServicesData = {
     },
   ],
   // Hero Section
-  heroImage:
-    "/images/cleaning.jpg",
+  heroImage: "/images/cleaning.jpg",
   heroTitle: (
     <>
       Professional Cleaning Services{" "}
@@ -837,7 +833,7 @@ const cleaningServicesData = {
     { text: "Verified and insured cleaners" },
     { text: "Compliance with safety standards" },
   ],
-  
+
   // CTA Section
   ctaSectionTitle: "Want a Spotless Home or Office?",
   ctaSectionSubtitle:
@@ -896,7 +892,11 @@ const acRepairServicesData = {
       title: "AC Gas Charging",
       description:
         "Professional refrigerant gas refilling with leak testing to restore optimal cooling performance.",
-      benefits: ["Restores cooling power", "Eco-friendly gases", "Leak detection"],
+      benefits: [
+        "Restores cooling power",
+        "Eco-friendly gases",
+        "Leak detection",
+      ],
       price: "₹999 - ₹2999",
       benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
@@ -978,11 +978,11 @@ const acRepairServicesData = {
     },
   ],
   // Hero Section
-  heroImage:
-    "/images/ac-repairs.jpg",
+  heroImage: "/images/ac-repairs.jpg",
   heroTitle: (
     <>
-      Professional <span className="text-blue-500">AC Repair</span> & Maintenance
+      Professional <span className="text-blue-500">AC Repair</span> &
+      Maintenance
     </>
   ),
   heroSubtitle:
@@ -1027,7 +1027,7 @@ const acRepairServicesData = {
     { text: "7-day follow-up support" },
     { text: "No repair-no charge policy" },
   ],
-  
+
   // CTA Section
   ctaSectionTitle: "AC Not Cooling Properly?",
   ctaSectionSubtitle:
@@ -1071,129 +1071,136 @@ const petServicesData = {
     {
       icon: <PawPrint className="w-6 h-6" />,
       title: "Pet Grooming",
-      description: "Professional bathing, haircut, nail trimming, and styling to keep your pet clean and healthy.",
+      description:
+        "Professional bathing, haircut, nail trimming, and styling to keep your pet clean and healthy.",
       benefits: [
         "Reduces shedding & matting",
         "Prevents skin infections",
-        "Professional styling"
+        "Professional styling",
       ],
       price: "₹799 - ₹2999",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <HeartPulse className="w-6 h-6" />,
       title: "Veterinary Care",
-      description: "Complete health checkups, vaccinations, and treatment by certified veterinarians.",
-      benefits: [
-        "Vaccination programs",
-        "Disease diagnosis",
-        "Post-op care"
-      ],
+      description:
+        "Complete health checkups, vaccinations, and treatment by certified veterinarians.",
+      benefits: ["Vaccination programs", "Disease diagnosis", "Post-op care"],
       price: "₹399 - ₹2999",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <Home className="w-6 h-6" />,
       title: "Pet Boarding",
-      description: "Safe and comfortable overnight stays with daily walks, playtime, and personalized care.",
+      description:
+        "Safe and comfortable overnight stays with daily walks, playtime, and personalized care.",
       benefits: [
         "24/7 supervision",
         "Regular exercise",
-        "Medication administration"
+        "Medication administration",
       ],
       price: "₹999/day",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <Bone className="w-6 h-6" />,
       title: "Pet Training",
-      description: "Obedience training and behavior correction by certified trainers for dogs of all ages.",
-      benefits: [
-        "Basic commands",
-        "Leash training",
-        "Behavioral issues"
-      ],
+      description:
+        "Obedience training and behavior correction by certified trainers for dogs of all ages.",
+      benefits: ["Basic commands", "Leash training", "Behavioral issues"],
       price: "₹1499/session",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <ShoppingBag className="w-6 h-6" />,
       title: "Pet Supplies Delivery",
-      description: "Monthly subscription for food, treats, toys, and other essentials delivered to your door.",
+      description:
+        "Monthly subscription for food, treats, toys, and other essentials delivered to your door.",
       benefits: [
         "Curated packages",
         "Auto-shipping",
-        "Discounts on bulk orders"
+        "Discounts on bulk orders",
       ],
       price: "₹1499/month",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <Dog className="w-6 h-6" />,
       title: "Dog Walking",
-      description: "Daily exercise sessions with trained walkers who follow your pet's routine.",
-      benefits: [
-        "GPS tracked walks",
-        "Photo updates",
-        "Puppy socialization"
-      ],
+      description:
+        "Daily exercise sessions with trained walkers who follow your pet's routine.",
+      benefits: ["GPS tracked walks", "Photo updates", "Puppy socialization"],
       price: "₹199/walk",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
-    }
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
   ],
 
   // Features
   features: [
-    { icon: <BadgeCheck className="w-5 h-5" />, text: "Certified Professionals" },
+    {
+      icon: <BadgeCheck className="w-5 h-5" />,
+      text: "Certified Professionals",
+    },
     { icon: <Clock className="w-5 h-5" />, text: "Flexible Scheduling" },
     { icon: <Shield className="w-5 h-5" />, text: "Insured Services" },
-    { icon: <Heart className="w-5 h-5" />, text: "Pet First Aid Trained" }
+    { icon: <Heart className="w-5 h-5" />, text: "Pet First Aid Trained" },
   ],
 
   // Benefits
   benefits: [
     {
       title: "Stress-Free Experience",
-      description: "We use positive reinforcement techniques to ensure pets feel comfortable.",
-      icon: <Smile className="w-8 h-8" />
+      description:
+        "We use positive reinforcement techniques to ensure pets feel comfortable.",
+      icon: <Smile className="w-8 h-8" />,
     },
     {
       title: "Customized Care",
-      description: "Services tailored to your pet's breed, age, and special needs.",
-      icon: <Settings className="w-8 h-8" />
+      description:
+        "Services tailored to your pet's breed, age, and special needs.",
+      icon: <Settings className="w-8 h-8" />,
     },
     {
       title: "Emergency Support",
       description: "24/7 availability for urgent pet care needs.",
-      icon: <AlertCircle className="w-8 h-8" />
+      icon: <AlertCircle className="w-8 h-8" />,
     },
     {
       title: "Eco-Friendly Products",
       description: "Only use organic, pet-safe shampoos and cleaning supplies.",
-      icon: <Leaf className="w-8 h-8" />
-    }
+      icon: <Leaf className="w-8 h-8" />,
+    },
   ],
 
   // Hero Section
-  heroImage: "https://images.unsplash.com/photo-1529472119196-cb724127a98e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nc3xlbnwwfHwwfHx8MA%3D%3D",
-  heroTitle: <>Premium Care for Your <span className="text-blue-500">Furry Friends</span></>,
-  heroSubtitle: "Complete pet care services from grooming to veterinary care - because they're family",
-  
+  heroImage:
+    "https://images.unsplash.com/photo-1529472119196-cb724127a98e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nc3xlbnwwfHwwfHx8MA%3D%3D",
+  heroTitle: (
+    <>
+      Premium Care for Your <span className="text-blue-500">Furry Friends</span>
+    </>
+  ),
+  heroSubtitle:
+    "Complete pet care services from grooming to veterinary care - because they're family",
+
   ctaButtons: [
     {
       text: "Book Service",
       icon: <Phone className="w-5 h-5" />,
       props: {
-        className: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
-      }
+        className:
+          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+      },
     },
     {
       text: "View Packages",
       icon: <List className="w-5 h-5" />,
       props: {
-        className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
-      }
-    }
+        className:
+          "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm",
+      },
+    },
   ],
 
   // Pricing Section
@@ -1201,19 +1208,25 @@ const petServicesData = {
   pricingSubtitle: "No hidden fees - just quality care for your companion",
   pricingRange: "₹299 - 999*",
   pricingNote: "*Prices vary based on pet size and service requirements",
-  
+
   pricingIncluded: [
-    { icon: <CheckCircle className="w-5 h-5 text-green-700" />, text: "Certified professionals" },
+    {
+      icon: <CheckCircle className="w-5 h-5 text-green-700" />,
+      text: "Certified professionals",
+    },
     { text: "Pet-friendly facilities" },
-    { text: "Sanitized equipment" }
+    { text: "Sanitized equipment" },
   ],
-  
+
   pricingGuarantee: [
-    { icon: <Shield className="w-5 h-5 text-blue-700" />, text: "100% satisfaction guarantee" },
+    {
+      icon: <Shield className="w-5 h-5 text-blue-700" />,
+      text: "100% satisfaction guarantee",
+    },
     { text: "Service insurance" },
-    { text: "Free follow-up consultation" }
+    { text: "Free follow-up consultation" },
   ],
-  
+
   pricingButton: (
     <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
       <PawPrint className="w-5 h-5" />
@@ -1223,37 +1236,41 @@ const petServicesData = {
 
   // CTA Section
   ctaSectionTitle: "Ready to Pamper Your Pet?",
-  ctaSectionSubtitle: "Join hundreds of pet parents who trust us with their furry family members",
-  
+  ctaSectionSubtitle:
+    "Join hundreds of pet parents who trust us with their furry family members",
+
   ctaSectionButtons: [
     {
       text: "Download App",
       icon: <Download className="w-5 h-5" />,
       props: {
-        className: "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
-      }
+        className:
+          "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+      },
     },
     {
       text: "Emergency Vet",
       icon: <AlertTriangle className="w-5 h-5" />,
       props: {
-        className: "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
-      }
-    }
+        className:
+          "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
   ],
-  
+
   ctaSectionBadges: [
     { icon: <BadgeCheck className="w-4 h-4" />, text: "Certified" },
     { icon: <Heart className="w-4 h-4" />, text: "Pet-Loved" },
     { icon: <Star className="w-4 h-4" />, text: "4.8/5 Ratings" },
-    { icon: <Shield className="w-4 h-4" />, text: "Insured" }
+    { icon: <Shield className="w-4 h-4" />, text: "Insured" },
   ],
 
   servicesSectionTitle: "Our Pet Care Services",
-  servicesSectionDescription: "Comprehensive solutions for all your pet's needs",
-  
+  servicesSectionDescription:
+    "Comprehensive solutions for all your pet's needs",
+
   benefitsSectionTitle: "Why Pet Parents Choose Us",
-  benefitsSectionDescription: "We treat your pets like our own"
+  benefitsSectionDescription: "We treat your pets like our own",
 };
 
 const facialMakeupData = {
@@ -1262,50 +1279,54 @@ const facialMakeupData = {
     {
       icon: <Sparkles className="w-6 h-6" />,
       title: "Bridal Makeup",
-      description: "Luxurious bridal makeup for your special day with long-lasting, photo-friendly formulas.",
+      description:
+        "Luxurious bridal makeup for your special day with long-lasting, photo-friendly formulas.",
       benefits: [
         "HD camera-ready finish",
         "12+ hours wear",
-        "Custom color matching"
+        "Custom color matching",
       ],
       price: "₹5,999 - ₹15,999",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />,
     },
     {
       icon: <PartyPopper className="w-6 h-6" />,
       title: "Party Makeup",
-      description: "Glamorous looks for special occasions with customizable intensity levels.",
+      description:
+        "Glamorous looks for special occasions with customizable intensity levels.",
       benefits: [
         "Trending styles",
         "Skin prep included",
-        "False lash application"
+        "False lash application",
       ],
       price: "₹2,999 - ₹7,999",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />,
     },
     {
       icon: <Briefcase className="w-6 h-6" />,
       title: "Professional Makeup",
-      description: "Corporate-appropriate makeup that enhances your natural features.",
+      description:
+        "Corporate-appropriate makeup that enhances your natural features.",
       benefits: [
         "Subtle enhancement",
         "Oil-control formulas",
-        "Quick application"
+        "Quick application",
       ],
       price: "₹1,999 - ₹4,999",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />,
     },
     {
       icon: <Camera className="w-6 h-6" />,
       title: "Photoshoot Makeup",
-      description: "Specialized makeup designed for studio lighting and camera work.",
+      description:
+        "Specialized makeup designed for studio lighting and camera work.",
       benefits: [
         "Light-adaptive formulas",
         "Contour enhancement",
-        "Multiple look changes"
+        "Multiple look changes",
       ],
       price: "₹3,999/session",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />,
     },
     {
       icon: <Smile className="w-6 h-6" />,
@@ -1314,23 +1335,20 @@ const facialMakeupData = {
       benefits: [
         "Skin-like finish",
         "Breathable formulas",
-        "Quick application"
+        "Quick application",
       ],
       price: "₹1,499 - ₹3,999",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />,
     },
     {
       icon: <Palette className="w-6 h-6" />,
       title: "Creative Makeup",
-      description: "Artistic and avant-garde looks for fashion shows or special events.",
-      benefits: [
-        "Custom designs",
-        "Special effects",
-        "High-pigment products"
-      ],
+      description:
+        "Artistic and avant-garde looks for fashion shows or special events.",
+      benefits: ["Custom designs", "Special effects", "High-pigment products"],
       price: "₹4,999 - ₹12,999",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />
-    }
+      benefitIcon: <CheckCircle className="w-4 h-4 text-pink-500" />,
+    },
   ],
 
   // Features
@@ -1338,53 +1356,62 @@ const facialMakeupData = {
     { icon: <Droplet className="w-5 h-5" />, text: "Hydrating Formulas" },
     { icon: <Shield className="w-5 h-5" />, text: "HypoShieldic" },
     { icon: <Clock className="w-5 h-5" />, text: "Long-Lasting" },
-    { icon: <Flower className="w-5 h-5" />, text: "Cruelty-Free Products" }
+    { icon: <Flower className="w-5 h-5" />, text: "Cruelty-Free Products" },
   ],
 
   // Benefits
   benefits: [
     {
       title: "Skin Prep Included",
-      description: "Every service includes professional cleansing, toning and moisturizing",
-      icon: <Leaf className="w-8 h-8" />
+      description:
+        "Every service includes professional cleansing, toning and moisturizing",
+      icon: <Leaf className="w-8 h-8" />,
     },
     {
       title: "Custom Color Matching",
-      description: "We analyze your skin tone to create perfect foundation matches",
-      icon: <Droplet className="w-8 h-8" />
+      description:
+        "We analyze your skin tone to create perfect foundation matches",
+      icon: <Droplet className="w-8 h-8" />,
     },
     {
       title: "Sanitized UserCogs",
       description: "All brushes and UserCogs are sterilized between clients",
-      icon: <Shield className="w-8 h-8" />
+      icon: <Shield className="w-8 h-8" />,
     },
     {
       title: "Touch-Up Kit",
       description: "Receive a mini touch-up kit with your bridal/event makeup",
-      icon: <Gift className="w-8 h-8" />
-    }
+      icon: <Gift className="w-8 h-8" />,
+    },
   ],
 
   // Hero Section
-  heroImage: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFrZXVwfGVufDB8fDB8fHww",
-  heroTitle: <>Professional <span className="text-pink-500">Facial Makeup</span> Services</>,
+  heroImage:
+    "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFrZXVwfGVufDB8fDB8fHww",
+  heroTitle: (
+    <>
+      Professional <span className="text-pink-500">Facial Makeup</span> Services
+    </>
+  ),
   heroSubtitle: "Enhance your natural beauty with our expert makeup artists",
-  
+
   ctaButtons: [
     {
       text: "Book Appointment",
       icon: <Calendar className="w-5 h-5" />,
       props: {
-        className: "bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
-      }
+        className:
+          "bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+      },
     },
     {
       text: "View Portfolio",
       icon: <Image className="w-5 h-5" alt="Portfolio" />,
       props: {
-        className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
-      }
-    }
+        className:
+          "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm",
+      },
+    },
   ],
 
   // Pricing Section
@@ -1392,19 +1419,25 @@ const facialMakeupData = {
   pricingSubtitle: "Premium products and techniques at competitive prices",
   pricingRange: "₹199 - 2999*",
   pricingNote: "*Prices vary based on complexity and products used",
-  
+
   pricingIncluded: [
-    { icon: <CheckCircle className="w-5 h-5 text-pink-700" />, text: "Luxury brand products" },
+    {
+      icon: <CheckCircle className="w-5 h-5 text-pink-700" />,
+      text: "Luxury brand products",
+    },
     { text: "Skin preparation" },
-    { text: "Color consultation" }
+    { text: "Color consultation" },
   ],
-  
+
   pricingGuarantee: [
-    { icon: <Shield className="w-5 h-5 text-pink-700" />, text: "Satisfaction guarantee" },
+    {
+      icon: <Shield className="w-5 h-5 text-pink-700" />,
+      text: "Satisfaction guarantee",
+    },
     { text: "Sanitized UserCogs" },
-    { text: "Touch-up tips" }
+    { text: "Touch-up tips" },
   ],
-  
+
   pricingButton: (
     <button className="bg-white text-pink-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
       <Sparkles className="w-5 h-5" />
@@ -1414,37 +1447,42 @@ const facialMakeupData = {
 
   // CTA Section
   ctaSectionTitle: "Ready for Your Makeup Transformation?",
-  ctaSectionSubtitle: "Join thousands of clients who trust us for their special occasions",
-  
+  ctaSectionSubtitle:
+    "Join thousands of clients who trust us for their special occasions",
+
   ctaSectionButtons: [
     {
       text: "Download App",
       icon: <Download className="w-5 h-5" />,
       props: {
-        className: "cursor-pointer bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
-      }
+        className:
+          "cursor-pointer bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+      },
     },
     {
       text: "Book Online",
       icon: <Video className="w-5 h-5" />,
       props: {
-        className: "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
-      }
-    }
+        className:
+          "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
   ],
-  
+
   ctaSectionBadges: [
     { icon: <Award className="w-4 h-4" />, text: "Certified MUAs" },
     { icon: <Star className="w-4 h-4" />, text: "4.9/5 Ratings" },
     { icon: <Shield className="w-4 h-4" />, text: "Hygienic" },
-    { icon: <Gem className="w-4 h-4" />, text: "Luxury Brands" }
+    { icon: <Gem className="w-4 h-4" />, text: "Luxury Brands" },
   ],
 
   servicesSectionTitle: "Our Makeup Services",
-  servicesSectionDescription: "From natural day looks to full glam transformations",
-  
+  servicesSectionDescription:
+    "From natural day looks to full glam transformations",
+
   benefitsSectionTitle: "Why Choose Our Makeup Artists",
-  benefitsSectionDescription: "We enhance your natural beauty with professional techniques"
+  benefitsSectionDescription:
+    "We enhance your natural beauty with professional techniques",
 };
 
 const careServicesData = {
@@ -1453,75 +1491,77 @@ const careServicesData = {
     {
       icon: <Heart className="w-6 h-6" />,
       title: "Home Nursing",
-      description: "Skilled nursing care at home including medication management, wound care, and vital monitoring.",
-      benefits: [
-        "Certified nurses",
-        "Post-hospital care",
-        "24/7 availability"
-      ],
+      description:
+        "Skilled nursing care at home including medication management, wound care, and vital monitoring.",
+      benefits: ["Certified nurses", "Post-hospital care", "24/7 availability"],
       price: "₹999 - ₹3999/day",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <User className="w-6 h-6" />,
       title: "Companion Services",
-      description: "Trained companions for emotional support, light housekeeping, and daily assistance.",
+      description:
+        "Trained companions for emotional support, light housekeeping, and daily assistance.",
       benefits: [
         "Friendly companionship",
         "Daily routines assistance",
-        "Mental well-being support"
+        "Mental well-being support",
       ],
       price: "₹499 - ₹1999/day",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <ShoppingCart className="w-6 h-6" />,
       title: "Grocery & Errands",
-      description: "Help with grocery shopping, pharmacy pick-ups, and essential errands.",
+      description:
+        "Help with grocery shopping, pharmacy pick-ups, and essential errands.",
       benefits: [
         "Safe transportation",
         "Scheduled deliveries",
-        "Caregiver assistance"
+        "Caregiver assistance",
       ],
       price: "₹299 - ₹799/visit",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <Brain className="w-6 h-6" />,
       title: "Memory Care",
-      description: "Support services tailored for individuals with Alzheimer's or dementia.",
+      description:
+        "Support services tailored for individuals with Alzheimer's or dementia.",
       benefits: [
         "Cognitive exercises",
         "Routine supervision",
-        "Safe environment"
+        "Safe environment",
       ],
       price: "₹1499/session",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <BedDouble className="w-6 h-6" />,
       title: "Overnight Care",
-      description: "Comforting overnight presence for safety, assistance, and peace of mind.",
+      description:
+        "Comforting overnight presence for safety, assistance, and peace of mind.",
       benefits: [
         "Nighttime monitoring",
         "Mobility support",
-        "Emergency response"
+        "Emergency response",
       ],
       price: "₹1999/night",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <Dumbbell className="w-6 h-6" />,
       title: "Physiotherapy",
-      description: "In-home physical therapy to promote strength, balance, and mobility.",
+      description:
+        "In-home physical therapy to promote strength, balance, and mobility.",
       benefits: [
         "Personalized programs",
         "Post-surgery rehab",
-        "Fall prevention"
+        "Fall prevention",
       ],
       price: "₹999/session",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
-    }
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
   ],
 
   // Features
@@ -1529,53 +1569,64 @@ const careServicesData = {
     { icon: <BadgeCheck className="w-5 h-5" />, text: "Verified Caregivers" },
     { icon: <Clock className="w-5 h-5" />, text: "Flexible Scheduling" },
     { icon: <Shield className="w-5 h-5" />, text: "Insured Services" },
-    { icon: <Smile className="w-5 h-5" />, text: "Empathetic Support" }
+    { icon: <Smile className="w-5 h-5" />, text: "Empathetic Support" },
   ],
 
   // Benefits
   benefits: [
     {
       title: "Personalized Attention",
-      description: "Each care plan is tailored to individual needs and medical history.",
-      icon: <UserCog className="w-8 h-8" />
+      description:
+        "Each care plan is tailored to individual needs and medical history.",
+      icon: <UserCog className="w-8 h-8" />,
     },
     {
       title: "Trusted & Background-Checked Staff",
-      description: "Every caregiver undergoes thorough vetting and verification.",
-      icon: <ShieldCheck className="w-8 h-8" />
+      description:
+        "Every caregiver undergoes thorough vetting and verification.",
+      icon: <ShieldCheck className="w-8 h-8" />,
     },
     {
       title: "Emergency Support",
       description: "Immediate response for medical emergencies, 24/7.",
-      icon: <AlertCircle className="w-8 h-8" />
+      icon: <AlertCircle className="w-8 h-8" />,
     },
     {
       title: "Family Involvement",
-      description: "Transparent updates and active involvement for peace of mind.",
-      icon: <User className="w-8 h-8" />
-    }
+      description:
+        "Transparent updates and active involvement for peace of mind.",
+      icon: <User className="w-8 h-8" />,
+    },
   ],
 
   // Hero Section
   heroImage: "/images/Care.jpg",
-  heroTitle: <>Compassionate Care for <span className="text-blue-500">Your Loved Ones</span></>,
-  heroSubtitle: "Reliable at-home support and healthcare services for seniors and individuals with special needs",
+  heroTitle: (
+    <>
+      Compassionate Care for{" "}
+      <span className="text-blue-500">Your Loved Ones</span>
+    </>
+  ),
+  heroSubtitle:
+    "Reliable at-home support and healthcare services for seniors and individuals with special needs",
 
   ctaButtons: [
     {
       text: "Schedule Care",
       icon: <Phone className="w-5 h-5" />,
       props: {
-        className: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
-      }
+        className:
+          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+      },
     },
     {
       text: "View Services",
       icon: <List className="w-5 h-5" />,
       props: {
-        className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
-      }
-    }
+        className:
+          "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm",
+      },
+    },
   ],
 
   // Pricing Section
@@ -1585,15 +1636,21 @@ const careServicesData = {
   pricingNote: "*Rates vary based on level of care and duration",
 
   pricingIncluded: [
-    { icon: <CheckCircle className="w-5 h-5 text-green-700" />, text: "Certified caregivers" },
+    {
+      icon: <CheckCircle className="w-5 h-5 text-green-700" />,
+      text: "Certified caregivers",
+    },
     { text: "In-home assistance" },
-    { text: "Flexible plans" }
+    { text: "Flexible plans" },
   ],
 
   pricingGuarantee: [
-    { icon: <Shield className="w-5 h-5 text-blue-700" />, text: "Safety guaranteed" },
+    {
+      icon: <Shield className="w-5 h-5 text-blue-700" />,
+      text: "Safety guaranteed",
+    },
     { text: "Emergency support ready" },
-    { text: "Regular feedback & check-ins" }
+    { text: "Regular feedback & check-ins" },
   ],
 
   pricingButton: (
@@ -1612,30 +1669,37 @@ const careServicesData = {
       text: "Download App",
       icon: <Download className="w-5 h-5" />,
       props: {
-        className: "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
-      }
+        className:
+          "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+      },
     },
     {
       text: "Speak to Care Advisor",
       icon: <AlertTriangle className="w-5 h-5" />,
       props: {
-        className: "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
-      }
-    }
+        className:
+          "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
   ],
 
   ctaSectionBadges: [
-    { icon: <BadgeCheck className="w-4 h-4" />, text: "Trusted by 10k+ families" },
+    {
+      icon: <BadgeCheck className="w-4 h-4" />,
+      text: "Trusted by 10k+ families",
+    },
     { icon: <Heart className="w-4 h-4" />, text: "Empathy-driven" },
     { icon: <Star className="w-4 h-4" />, text: "Rated 4.9/5" },
-    { icon: <Shield className="w-4 h-4" />, text: "Fully Insured" }
+    { icon: <Shield className="w-4 h-4" />, text: "Fully Insured" },
   ],
 
   servicesSectionTitle: "Our Elderly Care Services",
-  servicesSectionDescription: "Comfort, dignity, and independence through expert care",
+  servicesSectionDescription:
+    "Comfort, dignity, and independence through expert care",
 
   benefitsSectionTitle: "Why Families Choose Us",
-  benefitsSectionDescription: "Dedicated to enhancing the lives of those who need it most"
+  benefitsSectionDescription:
+    "Dedicated to enhancing the lives of those who need it most",
 };
 
 const carpentryServicesData = {
@@ -1644,129 +1708,141 @@ const carpentryServicesData = {
     {
       icon: <Hammer className="w-6 h-6" />,
       title: "Furniture Repair",
-      description: "Expert restoration of damaged furniture including chairs, tables, cabinets, and antique pieces.",
+      description:
+        "Expert restoration of damaged furniture including chairs, tables, cabinets, and antique pieces.",
       benefits: [
         "Color matching",
         "Structural reinforcement",
-        "Vintage restoration"
+        "Vintage restoration",
       ],
       price: "₹499 - ₹4999/item",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <SquareStack className="w-6 h-6" />,
       title: "Custom Furniture",
-      description: "Handcrafted bespoke furniture tailored to your specifications and space requirements.",
+      description:
+        "Handcrafted bespoke furniture tailored to your specifications and space requirements.",
       benefits: [
         "Design consultation",
         "Premium materials",
-        "Precision joinery"
+        "Precision joinery",
       ],
       price: "₹2999 - ₹29999/piece",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <DoorOpen className="w-6 h-6" />,
       title: "Door Installation",
-      description: "Professional fitting of interior/exterior doors including adjustments and hardware installation.",
-      benefits: [
-        "Perfect alignment",
-        "Weatherproofing",
-        "Security checks"
-      ],
+      description:
+        "Professional fitting of interior/exterior doors including adjustments and hardware installation.",
+      benefits: ["Perfect alignment", "Weatherproofing", "Security checks"],
       price: "₹999 - ₹5999/door",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <LayoutTemplate className="w-6 h-6" />,
       title: "Shelving Units",
-      description: "Custom built-in or freestanding shelves for optimal storage solutions.",
+      description:
+        "Custom built-in or freestanding shelves for optimal storage solutions.",
       benefits: [
         "Space optimization",
         "Weight capacity planning",
-        "Finish matching"
+        "Finish matching",
       ],
       price: "₹1299 - ₹9999/unit",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <Table2 className="w-6 h-6" />,
       title: "Kitchen Cabinetry",
-      description: "Custom kitchen storage solutions including cabinets, pantries, and islands.",
-      benefits: [
-        "Ergonomic design",
-        "Soft-close hinges",
-        "Modular options"
-      ],
+      description:
+        "Custom kitchen storage solutions including cabinets, pantries, and islands.",
+      benefits: ["Ergonomic design", "Soft-close hinges", "Modular options"],
       price: "₹5999 - ₹49999/set",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <BedDouble className="w-6 h-6" />,
       title: "Bed Frame Crafting",
-      description: "Solid wood bed frames built to last with customized dimensions and storage options.",
+      description:
+        "Solid wood bed frames built to last with customized dimensions and storage options.",
       benefits: [
         "Load tested",
         "Dust-proof designs",
-        "Anti-squeak construction"
+        "Anti-squeak construction",
       ],
       price: "₹3999 - ₹24999/frame",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
-    }
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
   ],
 
   // Features
   features: [
     { icon: <Ruler className="w-5 h-5" />, text: "Precision Measurements" },
     { icon: <Clock className="w-5 h-5" />, text: "On-Time Completion" },
-    { icon: <Shield className="w-5 h-5" />, text: "5-Year Craftsmanship Warranty" },
-    { icon: <Leaf className="w-5 h-5" />, text: "Eco-Friendly Materials" }
+    {
+      icon: <Shield className="w-5 h-5" />,
+      text: "5-Year Craftsmanship Warranty",
+    },
+    { icon: <Leaf className="w-5 h-5" />, text: "Eco-Friendly Materials" },
   ],
 
   // Benefits
   benefits: [
     {
       title: "Material Guidance",
-      description: "Expert advice on selecting the right wood type and finishes for your project.",
-      icon: <ClipboardList className="w-8 h-8" />
+      description:
+        "Expert advice on selecting the right wood type and finishes for your project.",
+      icon: <ClipboardList className="w-8 h-8" />,
     },
     {
       title: "Dust-Free Workspace",
-      description: "Contained work areas with daily cleanup to minimize disruption.",
-      icon: <Monitor className="w-8 h-8" />
+      description:
+        "Contained work areas with daily cleanup to minimize disruption.",
+      icon: <Monitor className="w-8 h-8" />,
     },
     {
       title: "3D Design Preview",
-      description: "Visualize your custom pieces with digital mockups before construction.",
-      icon: <Monitor className="w-8 h-8" />
+      description:
+        "Visualize your custom pieces with digital mockups before construction.",
+      icon: <Monitor className="w-8 h-8" />,
     },
     {
       title: "Aftercare Support",
-      description: "Free maintenance advice and minor adjustments post-installation.",
-      icon: <UserCog className="w-8 h-8" />
-    }
+      description:
+        "Free maintenance advice and minor adjustments post-installation.",
+      icon: <UserCog className="w-8 h-8" />,
+    },
   ],
 
   // Hero Section
   heroImage: "/images/wood.jpg",
-  heroTitle: <>Precision <span className="text-violet-600">Woodcraft</span> for Your Home</>,
-  heroSubtitle: "Custom carpentry solutions blending functionality with artisan craftsmanship",
+  heroTitle: (
+    <>
+      Precision <span className="text-violet-600">Woodcraft</span> for Your Home
+    </>
+  ),
+  heroSubtitle:
+    "Custom carpentry solutions blending functionality with artisan craftsmanship",
 
   ctaButtons: [
     {
       text: "Download",
       icon: <Download className="w-5 h-5" />,
       props: {
-        className: "bg-violet-600 cursor-pointer hover:bg-amber-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
-      }
+        className:
+          "bg-violet-600 cursor-pointer hover:bg-amber-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+      },
     },
     {
       text: "Explore",
-      icon: <Image className="w-5 h-5" />,
+      icon: <Image className="w-5 h-5" alt="Explore" />,
       props: {
-        className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
-      }
-    }
+        className:
+          "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm",
+      },
+    },
   ],
 
   // Pricing Section
@@ -1776,15 +1852,21 @@ const carpentryServicesData = {
   pricingNote: "*Project-based pricing depending on materials and complexity",
 
   pricingIncluded: [
-    { icon: <CheckCircle className="w-5 h-5 text-green-700" />, text: "Detailed estimates" },
+    {
+      icon: <CheckCircle className="w-5 h-5 text-green-700" />,
+      text: "Detailed estimates",
+    },
     { text: "Material samples" },
-    { text: "Site measurements" }
+    { text: "Site measurements" },
   ],
 
   pricingGuarantee: [
-    { icon: <Shield className="w-5 h-5 text-amber-700" />, text: "Satisfaction guarantee" },
+    {
+      icon: <Shield className="w-5 h-5 text-amber-700" />,
+      text: "Satisfaction guarantee",
+    },
     { text: "Waste removal included" },
-    { text: "Damage protection" }
+    { text: "Damage protection" },
   ],
 
   pricingButton: (
@@ -1803,30 +1885,34 @@ const carpentryServicesData = {
       text: "Download App",
       icon: <Download className="w-5 h-5" />,
       props: {
-        className: "cursor-pointer bg-violet-500 hover:bg-amber-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
-      }
+        className:
+          "cursor-pointer bg-violet-500 hover:bg-amber-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+      },
     },
     {
       text: "WhatsApp Us",
       icon: <MessageSquare className="w-5 h-5" />,
       props: {
-        className: "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
-      }
-    }
+        className:
+          "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
   ],
 
   ctaSectionBadges: [
     { icon: <Award className="w-4 h-4" />, text: "Master Craftsmen" },
     { icon: <Clock className="w-4 h-4" />, text: "On-Time Delivery" },
     { icon: <Heart className="w-4 h-4" />, text: "Eco-Conscious" },
-    { icon: <Shield className="w-4 h-4" />, text: "Insured Work" }
+    { icon: <Shield className="w-4 h-4" />, text: "Insured Work" },
   ],
 
   servicesSectionTitle: "Our Carpentry Services",
-  servicesSectionDescription: "From repairs to full custom builds - precision in every cut",
+  servicesSectionDescription:
+    "From repairs to full custom builds - precision in every cut",
 
   benefitsSectionTitle: "Why Choose Our Woodcraft",
-  benefitsSectionDescription: "Where traditional techniques meet modern design sensibilities"
+  benefitsSectionDescription:
+    "Where traditional techniques meet modern design sensibilities",
 };
 
 const packersMoversData = {
@@ -1835,75 +1921,65 @@ const packersMoversData = {
     {
       icon: <Truck className="w-6 h-6" />,
       title: "Local Relocation",
-      description: "Stress-free local moving with careful handling of all your belongings.",
-      benefits: [
-        "Door-to-door service",
-        "Item wrapping",
-        "Same-day delivery"
-      ],
+      description:
+        "Stress-free local moving with careful handling of all your belongings.",
+      benefits: ["Door-to-door service", "Item wrapping", "Same-day delivery"],
       price: "₹2999 - ₹9999/load",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Intercity Moving",
-      description: "Safe long-distance relocation with tracking and insurance coverage.",
+      description:
+        "Safe long-distance relocation with tracking and insurance coverage.",
       benefits: [
         "GPS-tracked vehicles",
         "Packing materials included",
-        "Loading/unloading"
+        "Loading/unloading",
       ],
       price: "₹8999 - ₹29999/load",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <Box className="w-6 h-6" />,
       title: "Packing Service",
-      description: "Professional packing using high-quality materials for fragile items.",
-      benefits: [
-        "Bubble wrapping",
-        "Custom crating",
-        "Inventory labeling"
-      ],
+      description:
+        "Professional packing using high-quality materials for fragile items.",
+      benefits: ["Bubble wrapping", "Custom crating", "Inventory labeling"],
       price: "₹499 - ₹2999/room",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <Building className="w-6 h-6" />,
       title: "Office Relocation",
-      description: "Efficient business moves with minimal downtime and equipment protection.",
+      description:
+        "Efficient business moves with minimal downtime and equipment protection.",
       benefits: [
         "After-hours service",
         "IT equipment handling",
-        "Furniture reassembly"
+        "Furniture reassembly",
       ],
       price: "₹14999 - ₹59999/office",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <PackageSearch className="w-6 h-6" />,
       title: "Storage Solutions",
-      description: "Secure short/long-term storage with climate control options.",
-      benefits: [
-        "24/7 security",
-        "Monthly contracts",
-        "Pickup/delivery"
-      ],
+      description:
+        "Secure short/long-term storage with climate control options.",
+      benefits: ["24/7 security", "Monthly contracts", "Pickup/delivery"],
       price: "₹999 - ₹4999/month",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
     },
     {
       icon: <Building className="w-6 h-6" />,
       title: "Single Item Moving",
-      description: "Specialized transport for heavy or delicate furniture pieces.",
-      benefits: [
-        "Blanket wrapping",
-        "Staircase handling",
-        "Placement setup"
-      ],
+      description:
+        "Specialized transport for heavy or delicate furniture pieces.",
+      benefits: ["Blanket wrapping", "Staircase handling", "Placement setup"],
       price: "₹799 - ₹4999/item",
-      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
-    }
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
   ],
 
   // Features
@@ -1911,53 +1987,63 @@ const packersMoversData = {
     { icon: <Shield className="w-5 h-5" />, text: "Fully Insured" },
     { icon: <Clock className="w-5 h-5" />, text: "On-Time Guarantee" },
     { icon: <Ruler className="w-5 h-5" />, text: "Transparent Pricing" },
-    { icon: <UserCheck className="w-5 h-5" />, text: "Trained Crew" }
+    { icon: <UserCheck className="w-5 h-5" />, text: "Trained Crew" },
   ],
 
   // Benefits
   benefits: [
     {
       title: "Damage Protection",
-      description: "Comprehensive insurance coverage for all your items during transit.",
-      icon: <ShieldCheck className="w-8 h-8" />
+      description:
+        "Comprehensive insurance coverage for all your items during transit.",
+      icon: <ShieldCheck className="w-8 h-8" />,
     },
     {
       title: "Real-Time Tracking",
       description: "Live updates on your shipment's location and status.",
-      icon: <Map className="w-8 h-8" />
+      icon: <Map className="w-8 h-8" />,
     },
     {
       title: "Flexible Scheduling",
-      description: "Book moves according to your convenience, including weekends.",
-      icon: <Calendar className="w-8 h-8" />
+      description:
+        "Book moves according to your convenience, including weekends.",
+      icon: <Calendar className="w-8 h-8" />,
     },
     {
       title: "Unpacking Assistance",
       description: "Help with unboxing and setting up at your new location.",
-      icon: <PackageOpen className="w-8 h-8" />
-    }
+      icon: <PackageOpen className="w-8 h-8" />,
+    },
   ],
 
   // Hero Section
-  heroImage: "https://plus.unsplash.com/premium_photo-1717529136641-c15d094ccfee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTB8fGx1Z2dhZ2V8ZW58MHx8MHx8fDA%3D",
-  heroTitle: <>Smooth <span className="text-violet-600">Relocations</span> Made Simple</>,
-  heroSubtitle: "Stress-free moving experiences with professional packing and transportation",
+  heroImage:
+    "https://plus.unsplash.com/premium_photo-1717529136641-c15d094ccfee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTB8fGx1Z2dhZ2V8ZW58MHx8MHx8fDA%3D",
+  heroTitle: (
+    <>
+      Smooth <span className="text-violet-600">Relocations</span> Made Simple
+    </>
+  ),
+  heroSubtitle:
+    "Stress-free moving experiences with professional packing and transportation",
 
   ctaButtons: [
     {
       text: "Download App",
       icon: <Download className="w-5 h-5" />,
       props: {
-        className: "bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
-      }
+        className:
+          "bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+      },
     },
     {
       text: "Get Quote",
       icon: <Calculator className="w-5 h-5" />,
       props: {
-        className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
-      }
-    }
+        className:
+          "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm",
+      },
+    },
   ],
 
   // Pricing Section
@@ -1967,15 +2053,21 @@ const packersMoversData = {
   pricingNote: "*Based on volume, distance, and services required",
 
   pricingIncluded: [
-    { icon: <CheckCircle className="w-5 h-5 text-green-700" />, text: "Free estimates" },
+    {
+      icon: <CheckCircle className="w-5 h-5 text-green-700" />,
+      text: "Free estimates",
+    },
     { text: "Basic packing materials" },
-    { text: "Loading/unloading" }
+    { text: "Loading/unloading" },
   ],
 
   pricingGuarantee: [
-    { icon: <Shield className="w-5 h-5 text-violet-700" />, text: "Damage protection" },
+    {
+      icon: <Shield className="w-5 h-5 text-violet-700" />,
+      text: "Damage protection",
+    },
     { text: "On-time delivery" },
-    { text: "Price match guarantee" }
+    { text: "Price match guarantee" },
   ],
 
   pricingButton: (
@@ -1987,37 +2079,42 @@ const packersMoversData = {
 
   // CTA Section
   ctaSectionTitle: "Ready to Move Without Stress?",
-  ctaSectionSubtitle: "Trusted by 500+ families monthly for seamless relocations",
+  ctaSectionSubtitle:
+    "Trusted by 500+ families monthly for seamless relocations",
 
   ctaSectionButtons: [
     {
       text: "Download App",
       icon: <Download className="w-5 h-5" />,
       props: {
-        className: "bg-violet-600 cursor-pointer hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
-      }
+        className:
+          "bg-violet-600 cursor-pointer hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+      },
     },
     {
       text: "Explore",
       icon: <MapPin className="w-5 h-5" />,
       props: {
-        className: "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
-      }
-    }
+        className:
+          "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
   ],
 
   ctaSectionBadges: [
     { icon: <Award className="w-4 h-4" />, text: "5-Star Rated" },
     { icon: <Clock className="w-4 h-4" />, text: "24/7 Support" },
     { icon: <Shield className="w-4 h-4" />, text: "Fully Licensed" },
-    { icon: <Heart className="w-4 h-4" />, text: "Eco-Friendly" }
+    { icon: <Heart className="w-4 h-4" />, text: "Eco-Friendly" },
   ],
 
   servicesSectionTitle: "Our Moving Services",
-  servicesSectionDescription: "Comprehensive solutions for homes and businesses",
+  servicesSectionDescription:
+    "Comprehensive solutions for homes and businesses",
 
   benefitsSectionTitle: "Why Choose Our Packers",
-  benefitsSectionDescription: "Where careful handling meets efficient logistics"
+  benefitsSectionDescription:
+    "Where careful handling meets efficient logistics",
 };
 
 const data = (id) => {
@@ -2041,7 +2138,7 @@ const data = (id) => {
     case "carpentory-services":
       return carpentryServicesData;
     case "movers-services":
-    return packersMoversData;
+      return packersMoversData;
     default:
       return careServicesData; // Default to electrician services if no match
   }

@@ -30,7 +30,11 @@ export default function Nav() {
             </div>
             {/* Center Logo */}
             <div className="flex justify-center">
-              <Link href="https://www.linkedin.com/company/zonomo" target="_blank"  className="flex items-center space-x-2">
+              <Link
+                href="https://www.linkedin.com/company/zonomo"
+                target="_blank"
+                className="flex items-center space-x-2"
+              >
                 <span className="font-SpecialGothic text-lg lg:text-xl text-gray-900 tracking-wider uppercase">
                   Zonomo
                 </span>
