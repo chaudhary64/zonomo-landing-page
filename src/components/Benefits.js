@@ -160,7 +160,7 @@ export default function ServiceProvidersSection() {
             <button
               className={`px-6 py-2 rounded-full font-semibold transition-colors duration-300 focus:outline-none cursor-pointer ${
                 showProvider
-                  ? "bg-gradient-to-r from-emerald-500 to-green-400 text-black"
+                  ? "bg-violet-500 text-black"
                   : "bg-gray-700 text-gray-300"
               }`}
               onClick={() => handleSwitch(true)}
@@ -171,7 +171,7 @@ export default function ServiceProvidersSection() {
             <button
               className={`px-6 py-2 rounded-full font-semibold transition-colors duration-300 focus:outline-none cursor-pointer ${
                 !showProvider
-                  ? "bg-gradient-to-r from-blue-500 to-cyan-400 text-black"
+                  ? "bg-violet-500 text-black"
                   : "bg-gray-700 text-gray-300"
               }`}
               onClick={() => handleSwitch(false)}

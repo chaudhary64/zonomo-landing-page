@@ -21,7 +21,7 @@ export default function Footer() {
             <h3 className="font-semibold mb-2 font-inter">Company</h3>
             <ul className="space-y-1">
               <li>
-                <a href="#" className="hover:underline font-inter">
+                <a href="/about" className="hover:underline font-inter">
                   About us
                 </a>
               </li>
@@ -40,21 +40,9 @@ export default function Footer() {
                   Privacy policy
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:underline font-inter">
-                  Anti-discrimination policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline font-inter">
-                  ESG Impact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline font-inter">
-                  Careers
-                </a>
-              </li>
+              
+
+              
             </ul>
           </div>
         </div>
@@ -84,7 +72,7 @@ export default function Footer() {
         {/* For Professionals */}
         <div>
           <h3 className="font-semibold mb-2 font-inter">For professionals</h3>
-          <a href="#" className="hover:underline font-inter">
+          <a href="/features" className="hover:underline font-inter">
             Register as a professional
           </a>
         </div>

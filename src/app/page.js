@@ -23,7 +23,7 @@ export default function Home() {
             className="aspect-video w-full"
           >
             <video
-              src="/videos/zonomo.mp4" // Replace with your video path
+              src="/videos/FinalVideo.mp4" // Replace with your video path
               loop
               autoPlay
               muted

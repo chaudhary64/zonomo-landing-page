@@ -49,6 +49,7 @@ const services = [
     icon: "🧳",
     thumbnail:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+    link: "/services/movers-services",
   },
   {
     id: 7,
@@ -87,6 +88,7 @@ const services = [
     description: "Custom furniture and carpentry services",
     icon: "🌱",
     thumbnail: "/images/wood.jpg",
+    link: "/services/carpentory-services",
   },
   {
     id: 12,

@@ -7,7 +7,13 @@ import {
   Camera,         // Photoshoot Makeup
   Smile,          // Natural Makeup
   Palette,        // Creative Makeup
-
+  Truck,
+  MapPin ,
+  Box ,
+  Building,
+  PackageSearch ,
+  PackageOpen ,
+  Calculator ,
   // Feature Icons
   Droplet,        // Hydrating Formulas
   Shield,         // Hypoallergenic/Sanitation
@@ -52,12 +58,18 @@ import {
   Brain,
   BedDouble,
   // AC Repair Services Icons
-  Tool,
+  Hammer,
+  SquareStack,
   UserCheck,
   AlertCircle,
   Dumbbell,
   UserCog,
-  
+  DoorOpen,
+  LayoutTemplate,
+  Table2,
+  ClipboardList,
+   Monitor,
+   Ruler, 
   // Pet Services Icons
   PawPrint,
   Bone,
@@ -174,7 +186,7 @@ const electricianServicesData = {
     {
       title: "Advanced Diagnostics",
       description:
-        "We use state-of-the-art tools to accurately diagnose electrical issues, saving you time and money on repairs.",
+        "We use state-of-the-art UserCogs to accurately diagnose electrical issues, saving you time and money on repairs.",
       icon: <HeartPulse className="w-8 h-8" />,
     },
     {
@@ -424,7 +436,7 @@ const plumbingServicesData = {
       icon: <CheckCircle className="w-5 h-5 text-green-700" />,
       text: "Thorough inspection and diagnosis",
     },
-    { text: "Quality materials and tools" },
+    { text: "Quality materials and UserCogs" },
     { text: "Clean and efficient service" },
   ],
   pricingGuarantee: [
@@ -815,7 +827,7 @@ const cleaningServicesData = {
       text: "Trained cleaning staff",
     },
     { text: "Safe and effective cleaning agents" },
-    { text: "All equipment and tools included" },
+    { text: "All equipment and UserCogs included" },
   ],
   pricingGuarantee: [
     {
@@ -955,7 +967,7 @@ const acRepairServicesData = {
     {
       title: "Advanced Equipment",
       description:
-        "Latest tools and digital gauges for precise diagnosis and servicing.",
+        "Latest UserCogs and digital gauges for precise diagnosis and servicing.",
       icon: <Briefcase className="w-8 h-8" />,
     },
     {
@@ -1342,8 +1354,8 @@ const facialMakeupData = {
       icon: <Droplet className="w-8 h-8" />
     },
     {
-      title: "Sanitized Tools",
-      description: "All brushes and tools are sterilized between clients",
+      title: "Sanitized UserCogs",
+      description: "All brushes and UserCogs are sterilized between clients",
       icon: <Shield className="w-8 h-8" />
     },
     {
@@ -1389,7 +1401,7 @@ const facialMakeupData = {
   
   pricingGuarantee: [
     { icon: <Shield className="w-5 h-5 text-pink-700" />, text: "Satisfaction guarantee" },
-    { text: "Sanitized tools" },
+    { text: "Sanitized UserCogs" },
     { text: "Touch-up tips" }
   ],
   
@@ -1626,6 +1638,387 @@ const careServicesData = {
   benefitsSectionDescription: "Dedicated to enhancing the lives of those who need it most"
 };
 
+const carpentryServicesData = {
+  // Services
+  services: [
+    {
+      icon: <Hammer className="w-6 h-6" />,
+      title: "Furniture Repair",
+      description: "Expert restoration of damaged furniture including chairs, tables, cabinets, and antique pieces.",
+      benefits: [
+        "Color matching",
+        "Structural reinforcement",
+        "Vintage restoration"
+      ],
+      price: "₹499 - ₹4999/item",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <SquareStack className="w-6 h-6" />,
+      title: "Custom Furniture",
+      description: "Handcrafted bespoke furniture tailored to your specifications and space requirements.",
+      benefits: [
+        "Design consultation",
+        "Premium materials",
+        "Precision joinery"
+      ],
+      price: "₹2999 - ₹29999/piece",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <DoorOpen className="w-6 h-6" />,
+      title: "Door Installation",
+      description: "Professional fitting of interior/exterior doors including adjustments and hardware installation.",
+      benefits: [
+        "Perfect alignment",
+        "Weatherproofing",
+        "Security checks"
+      ],
+      price: "₹999 - ₹5999/door",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <LayoutTemplate className="w-6 h-6" />,
+      title: "Shelving Units",
+      description: "Custom built-in or freestanding shelves for optimal storage solutions.",
+      benefits: [
+        "Space optimization",
+        "Weight capacity planning",
+        "Finish matching"
+      ],
+      price: "₹1299 - ₹9999/unit",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <Table2 className="w-6 h-6" />,
+      title: "Kitchen Cabinetry",
+      description: "Custom kitchen storage solutions including cabinets, pantries, and islands.",
+      benefits: [
+        "Ergonomic design",
+        "Soft-close hinges",
+        "Modular options"
+      ],
+      price: "₹5999 - ₹49999/set",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <BedDouble className="w-6 h-6" />,
+      title: "Bed Frame Crafting",
+      description: "Solid wood bed frames built to last with customized dimensions and storage options.",
+      benefits: [
+        "Load tested",
+        "Dust-proof designs",
+        "Anti-squeak construction"
+      ],
+      price: "₹3999 - ₹24999/frame",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    }
+  ],
+
+  // Features
+  features: [
+    { icon: <Ruler className="w-5 h-5" />, text: "Precision Measurements" },
+    { icon: <Clock className="w-5 h-5" />, text: "On-Time Completion" },
+    { icon: <Shield className="w-5 h-5" />, text: "5-Year Craftsmanship Warranty" },
+    { icon: <Leaf className="w-5 h-5" />, text: "Eco-Friendly Materials" }
+  ],
+
+  // Benefits
+  benefits: [
+    {
+      title: "Material Guidance",
+      description: "Expert advice on selecting the right wood type and finishes for your project.",
+      icon: <ClipboardList className="w-8 h-8" />
+    },
+    {
+      title: "Dust-Free Workspace",
+      description: "Contained work areas with daily cleanup to minimize disruption.",
+      icon: <Monitor className="w-8 h-8" />
+    },
+    {
+      title: "3D Design Preview",
+      description: "Visualize your custom pieces with digital mockups before construction.",
+      icon: <Monitor className="w-8 h-8" />
+    },
+    {
+      title: "Aftercare Support",
+      description: "Free maintenance advice and minor adjustments post-installation.",
+      icon: <UserCog className="w-8 h-8" />
+    }
+  ],
+
+  // Hero Section
+  heroImage: "/images/wood.jpg",
+  heroTitle: <>Precision <span className="text-violet-600">Woodcraft</span> for Your Home</>,
+  heroSubtitle: "Custom carpentry solutions blending functionality with artisan craftsmanship",
+
+  ctaButtons: [
+    {
+      text: "Download",
+      icon: <Download className="w-5 h-5" />,
+      props: {
+        className: "bg-violet-600 cursor-pointer hover:bg-amber-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+      }
+    },
+    {
+      text: "Explore",
+      icon: <Image className="w-5 h-5" />,
+      props: {
+        className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
+      }
+    }
+  ],
+
+  // Pricing Section
+  pricingTitle: "Transparent Carpentry Pricing",
+  pricingSubtitle: "Fair rates for exceptional woodworking quality",
+  pricingRange: "₹499 - ₹2999*",
+  pricingNote: "*Project-based pricing depending on materials and complexity",
+
+  pricingIncluded: [
+    { icon: <CheckCircle className="w-5 h-5 text-green-700" />, text: "Detailed estimates" },
+    { text: "Material samples" },
+    { text: "Site measurements" }
+  ],
+
+  pricingGuarantee: [
+    { icon: <Shield className="w-5 h-5 text-amber-700" />, text: "Satisfaction guarantee" },
+    { text: "Waste removal included" },
+    { text: "Damage protection" }
+  ],
+
+  pricingButton: (
+    <button className="bg-white text-violet-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
+      <Hammer className="w-5 h-5" />
+      Get Free Quote
+    </button>
+  ),
+
+  // CTA Section
+  ctaSectionTitle: "Ready to Transform Your Space?",
+  ctaSectionSubtitle: "50+ homeowners trust our carpentry team monthly",
+
+  ctaSectionButtons: [
+    {
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
+      props: {
+        className: "cursor-pointer bg-violet-500 hover:bg-amber-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+      }
+    },
+    {
+      text: "WhatsApp Us",
+      icon: <MessageSquare className="w-5 h-5" />,
+      props: {
+        className: "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
+      }
+    }
+  ],
+
+  ctaSectionBadges: [
+    { icon: <Award className="w-4 h-4" />, text: "Master Craftsmen" },
+    { icon: <Clock className="w-4 h-4" />, text: "On-Time Delivery" },
+    { icon: <Heart className="w-4 h-4" />, text: "Eco-Conscious" },
+    { icon: <Shield className="w-4 h-4" />, text: "Insured Work" }
+  ],
+
+  servicesSectionTitle: "Our Carpentry Services",
+  servicesSectionDescription: "From repairs to full custom builds - precision in every cut",
+
+  benefitsSectionTitle: "Why Choose Our Woodcraft",
+  benefitsSectionDescription: "Where traditional techniques meet modern design sensibilities"
+};
+
+const packersMoversData = {
+  // Services
+  services: [
+    {
+      icon: <Truck className="w-6 h-6" />,
+      title: "Local Relocation",
+      description: "Stress-free local moving with careful handling of all your belongings.",
+      benefits: [
+        "Door-to-door service",
+        "Item wrapping",
+        "Same-day delivery"
+      ],
+      price: "₹2999 - ₹9999/load",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <MapPin className="w-6 h-6" />,
+      title: "Intercity Moving",
+      description: "Safe long-distance relocation with tracking and insurance coverage.",
+      benefits: [
+        "GPS-tracked vehicles",
+        "Packing materials included",
+        "Loading/unloading"
+      ],
+      price: "₹8999 - ₹29999/load",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <Box className="w-6 h-6" />,
+      title: "Packing Service",
+      description: "Professional packing using high-quality materials for fragile items.",
+      benefits: [
+        "Bubble wrapping",
+        "Custom crating",
+        "Inventory labeling"
+      ],
+      price: "₹499 - ₹2999/room",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <Building className="w-6 h-6" />,
+      title: "Office Relocation",
+      description: "Efficient business moves with minimal downtime and equipment protection.",
+      benefits: [
+        "After-hours service",
+        "IT equipment handling",
+        "Furniture reassembly"
+      ],
+      price: "₹14999 - ₹59999/office",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <PackageSearch className="w-6 h-6" />,
+      title: "Storage Solutions",
+      description: "Secure short/long-term storage with climate control options.",
+      benefits: [
+        "24/7 security",
+        "Monthly contracts",
+        "Pickup/delivery"
+      ],
+      price: "₹999 - ₹4999/month",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    },
+    {
+      icon: <Building className="w-6 h-6" />,
+      title: "Single Item Moving",
+      description: "Specialized transport for heavy or delicate furniture pieces.",
+      benefits: [
+        "Blanket wrapping",
+        "Staircase handling",
+        "Placement setup"
+      ],
+      price: "₹799 - ₹4999/item",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />
+    }
+  ],
+
+  // Features
+  features: [
+    { icon: <Shield className="w-5 h-5" />, text: "Fully Insured" },
+    { icon: <Clock className="w-5 h-5" />, text: "On-Time Guarantee" },
+    { icon: <Ruler className="w-5 h-5" />, text: "Transparent Pricing" },
+    { icon: <UserCheck className="w-5 h-5" />, text: "Trained Crew" }
+  ],
+
+  // Benefits
+  benefits: [
+    {
+      title: "Damage Protection",
+      description: "Comprehensive insurance coverage for all your items during transit.",
+      icon: <ShieldCheck className="w-8 h-8" />
+    },
+    {
+      title: "Real-Time Tracking",
+      description: "Live updates on your shipment's location and status.",
+      icon: <Map className="w-8 h-8" />
+    },
+    {
+      title: "Flexible Scheduling",
+      description: "Book moves according to your convenience, including weekends.",
+      icon: <Calendar className="w-8 h-8" />
+    },
+    {
+      title: "Unpacking Assistance",
+      description: "Help with unboxing and setting up at your new location.",
+      icon: <PackageOpen className="w-8 h-8" />
+    }
+  ],
+
+  // Hero Section
+  heroImage: "https://plus.unsplash.com/premium_photo-1717529136641-c15d094ccfee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTB8fGx1Z2dhZ2V8ZW58MHx8MHx8fDA%3D",
+  heroTitle: <>Smooth <span className="text-violet-600">Relocations</span> Made Simple</>,
+  heroSubtitle: "Stress-free moving experiences with professional packing and transportation",
+
+  ctaButtons: [
+    {
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
+      props: {
+        className: "bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+      }
+    },
+    {
+      text: "Get Quote",
+      icon: <Calculator className="w-5 h-5" />,
+      props: {
+        className: "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
+      }
+    }
+  ],
+
+  // Pricing Section
+  pricingTitle: "Honest Moving Pricing",
+  pricingSubtitle: "No hidden charges - pay only for what you need",
+  pricingRange: "₹2999 - ₹59999*",
+  pricingNote: "*Based on volume, distance, and services required",
+
+  pricingIncluded: [
+    { icon: <CheckCircle className="w-5 h-5 text-green-700" />, text: "Free estimates" },
+    { text: "Basic packing materials" },
+    { text: "Loading/unloading" }
+  ],
+
+  pricingGuarantee: [
+    { icon: <Shield className="w-5 h-5 text-violet-700" />, text: "Damage protection" },
+    { text: "On-time delivery" },
+    { text: "Price match guarantee" }
+  ],
+
+  pricingButton: (
+    <button className="bg-white text-violet-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
+      <Truck className="w-5 h-5" />
+      Calculate Your Move
+    </button>
+  ),
+
+  // CTA Section
+  ctaSectionTitle: "Ready to Move Without Stress?",
+  ctaSectionSubtitle: "Trusted by 500+ families monthly for seamless relocations",
+
+  ctaSectionButtons: [
+    {
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
+      props: {
+        className: "bg-violet-600 cursor-pointer hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+      }
+    },
+    {
+      text: "Explore",
+      icon: <MapPin className="w-5 h-5" />,
+      props: {
+        className: "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
+      }
+    }
+  ],
+
+  ctaSectionBadges: [
+    { icon: <Award className="w-4 h-4" />, text: "5-Star Rated" },
+    { icon: <Clock className="w-4 h-4" />, text: "24/7 Support" },
+    { icon: <Shield className="w-4 h-4" />, text: "Fully Licensed" },
+    { icon: <Heart className="w-4 h-4" />, text: "Eco-Friendly" }
+  ],
+
+  servicesSectionTitle: "Our Moving Services",
+  servicesSectionDescription: "Comprehensive solutions for homes and businesses",
+
+  benefitsSectionTitle: "Why Choose Our Packers",
+  benefitsSectionDescription: "Where careful handling meets efficient logistics"
+};
 
 const data = (id) => {
   switch (id) {
@@ -1645,6 +2038,10 @@ const data = (id) => {
       return facialMakeupData;
     case "taker-services":
       return careServicesData;
+    case "carpentory-services":
+      return carpentryServicesData;
+    case "movers-services":
+    return packersMoversData;
     default:
       return careServicesData; // Default to electrician services if no match
   }

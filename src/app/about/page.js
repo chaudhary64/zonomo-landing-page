@@ -324,7 +324,7 @@ function About() {
               </button>
             </Link>
 
-            <button className="w-40 cursor-pointer  h-10 rounded-xl bg-white text-black border border-black hover:bg-blue-300 text-sm">
+            <button className="w-40 cursor-pointer  h-10 rounded-xl bg-white text-black border border-black hover:bg-violet-400 text-sm">
               Download
             </button>
           </div>
@@ -343,7 +343,7 @@ function About() {
               <div>
                 <Image
                   className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
-                  src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-1.png"
+                  src="/images/shan.jpg"
                   alt="Shantanu Sharma - Founder"
                   width={176}
                   height={176}
@@ -361,7 +361,7 @@ function About() {
               <div>
                 <Image
                   className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
-                  src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-2.png"
+                  src="/images/sparsh.jpg"
                   alt="Sparsh Saria – Chief Financial Officer (CFO)"
                   width={176}
                   height={176}
@@ -379,7 +379,7 @@ function About() {
               <div>
                 <Image
                   className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
-                  src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-3.png"
+                  src="/images/ish.jpg"
                   alt="Ishanvi Verma – Tech Co-Founder"
                   width={176}
                   height={176}
@@ -397,7 +397,7 @@ function About() {
               <div>
                 <Image
                   className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter"
-                  src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-4.png"
+                  src="/images/rak.jpg"
                   alt="Rakshith Dasari – Tech Co-Founder"
                   width={176}
                   height={176}
