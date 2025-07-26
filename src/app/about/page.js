@@ -120,7 +120,7 @@ function About() {
     <>
       <div className="bg-white overflow-hidden">
         {/* Hero Section with Enhanced Visual Elements */}
-        <section className="relative pt-8 pb-8 sm:pt-12 sm:pb-16 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+        <section className="relative pt-8 pb-8 sm:pt-12 sm:pb-16 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24">
           <div className="relative px-4 mx-auto max-w-7xl sm:px-6 md:px-8 lg:px-10">
             <motion.div
               ref={headerRef}
@@ -198,7 +198,7 @@ function About() {
         </section>
 
         {/* Mission & Vision Section with Enhanced Design */}
-        <section className="py-8 sm:py-16 bg-gradient-to-br from-gray-50 to-blue-50/30 relative">
+        <section className="py-8 sm:py-16 relative">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div
@@ -220,9 +220,9 @@ function About() {
               >
                 {/* Mission Card with Glow Effect */}
                 <div className="absolute -inset-2 sm:-inset-4 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl"></div>
-                <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 xs:p-6 sm:p-8 border border-blue-100 shadow-xl">
+                <div className="relative rounded-2xl sm:rounded-3xl p-4 xs:p-6 sm:p-8 border">
                   <div className="flex items-center mb-4 sm:mb-6">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-400 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                         fill="none"
@@ -260,11 +260,11 @@ function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="relative w-full max-w-md xs:max-w-lg sm:max-w-xl md:max-w-2xl mx-auto lg:ml-auto lg:w-[600px] lg:h-[600px]"
+                className="relative w-full max-w-md xs:max-w-lg sm:max-w-xl md:max-w-2xl mx-auto lg:ml-auto"
               >
                 {/* Responsive Video Container */}
                 <div className="relative bg-transparent rounded-xl sm:rounded-3xl overflow-hidden shadow-xl">
-                  <div className="w-full aspect-[16/9] lg:aspect-auto lg:w-full lg:h-[600px]">
+                  <div className="w-full aspect-[16/9]">
                     <video
                       autoPlay
                       loop
