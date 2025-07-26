@@ -151,7 +151,7 @@ export default function ServiceProvidersSection() {
   return (
     <div
       id="service-providers-section"
-      className="bg-black text-white py-12 px-3 min-h-screen flex items-start sm:items-center relative overflow-hidden"
+      className="bg-black text-white px-3 py-14 md:py-20 lg:py-40 flex items-start sm:items-center relative overflow-hidden"
     >
       <div className="w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto">
         {/* Toggle Indicator */}
