@@ -151,14 +151,14 @@ export default function ServiceProvidersSection() {
   return (
     <div
       id="service-providers-section"
-      className="bg-black text-white py-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center relative overflow-hidden"
+      className="bg-black text-white py-12 px-3 min-h-screen flex items-start sm:items-center relative overflow-hidden"
     >
-      <div className="max-w-4xl mx-auto w-full">
+      <div className="w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto">
         {/* Toggle Indicator */}
-        <div className="flex justify-center mb-10">
-          <div className="flex gap-4 items-center bg-gray-800 rounded-full px-2 py-2 shadow-lg">
+        <div className="flex justify-center mb-8 sm:mb-10">
+          <div className="flex gap-2 sm:gap-4 items-center bg-gray-800 rounded-full px-1.5 py-1.5 sm:px-2 sm:py-2 shadow-lg">
             <button
-              className={`px-6 py-2 rounded-full font-semibold transition-colors duration-300 focus:outline-none cursor-pointer ${
+              className={`px-4 py-1.5 sm:px-6 sm:py-2 rounded-full text-sm sm:text-base font-semibold transition-colors duration-300 focus:outline-none cursor-pointer ${
                 showProvider
                   ? "bg-violet-500 text-black"
                   : "bg-gray-700 text-gray-300"
@@ -167,9 +167,9 @@ export default function ServiceProvidersSection() {
             >
               Service Providers
             </button>
-            <span className="text-gray-400 font-bold">|</span>
+            <span className="text-gray-400 font-bold text-base">|</span>
             <button
-              className={`px-6 py-2 rounded-full font-semibold transition-colors duration-300 focus:outline-none cursor-pointer ${
+              className={`px-4 py-1.5 sm:px-6 sm:py-2 rounded-full text-sm sm:text-base font-semibold transition-colors duration-300 focus:outline-none cursor-pointer ${
                 !showProvider
                   ? "bg-violet-500 text-black"
                   : "bg-gray-700 text-gray-300"
@@ -182,11 +182,11 @@ export default function ServiceProvidersSection() {
         </div>
 
         {/* Animated Section Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16 px-1">
           <AnimatePresence mode="wait" initial={false}>
             <motion.h2
               key={activeData.heading}
-              className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-SpaceGrotesk"
+              className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-SpaceGrotesk"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -198,7 +198,7 @@ export default function ServiceProvidersSection() {
           <AnimatePresence mode="wait" initial={false}>
             <motion.p
               key={activeData.description}
-              className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-inter"
+              className="text-base xs:text-lg sm:text-xl text-gray-300 max-w-full sm:max-w-3xl mx-auto leading-relaxed font-inter"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -213,7 +213,7 @@ export default function ServiceProvidersSection() {
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={showProvider ? "provider" : "client"}
-            className="space-y-8 max-w-2xl mx-auto"
+            className="space-y-6 sm:space-y-8 max-w-full sm:max-w-2xl mx-auto"
             variants={listVariants}
             initial="initial"
             animate="animate"
@@ -239,29 +239,29 @@ export default function ServiceProvidersSection() {
 
                   {/* Connection Line */}
                   {index < benefits.length - 1 && (
-                    <div className="absolute left-8 top-20 w-0.5 h-16 bg-gradient-to-b from-blue-500/50 to-transparent" />
+                    <div className="hidden xs:block absolute left-8 top-20 w-0.5 h-16 bg-gradient-to-b from-blue-500/50 to-transparent" />
                   )}
 
                   {/* Main Card */}
-                  <div className="relative bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50">
-                    <div className="flex items-start gap-6">
+                  <div className="relative bg-gray-900/50 backdrop-blur-sm p-4 xs:p-6 sm:p-8 rounded-2xl border border-gray-700/50">
+                    <div className="flex flex-col xs:flex-row items-start gap-4 xs:gap-6">
                       {/* Icon Container */}
-                      <div className="relative shrink-0">
+                      <div className="relative shrink-0 mb-2 xs:mb-0">
                         <div
-                          className={`w-16 h-16 rounded-xl bg-gradient-to-br ${benefit.color} p-0.5`}
+                          className={`w-12 h-12 xs:w-16 xs:h-16 rounded-xl bg-gradient-to-br ${benefit.color} p-0.5`}
                         >
                           <div className="w-full h-full bg-gray-900 rounded-xl flex items-center justify-center">
-                            <Icon className="w-8 h-8 text-white" />
+                            <Icon className="w-7 h-7 xs:w-8 xs:h-8 text-white" />
                           </div>
                         </div>
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-2xl font-bold mb-3 text-white font-inter">
+                        <h3 className="text-lg xs:text-xl sm:text-2xl font-bold mb-2 xs:mb-3 text-white font-inter">
                           {benefit.title}
                         </h3>
-                        <p className="text-lg leading-relaxed text-gray-200 font-inter">
+                        <p className="text-base xs:text-lg sm:text-lg leading-relaxed text-gray-200 font-inter">
                           {benefit.description}
                         </p>
                       </div>
