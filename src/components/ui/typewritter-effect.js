@@ -4,11 +4,7 @@ import { cn } from "../lib/utils";
 import { motion, stagger, useAnimate, useInView } from "motion/react";
 import { useEffect } from "react";
 
-export const TypewriterEffect = ({
-  words,
-  className,
-  cursorClassName
-}) => {
+export const TypewriterEffect = ({ words, className, cursorClassName }) => {
   // split text inside of words into array of characters
   const wordsArray = words.map((word) => {
     return {
@@ -47,7 +43,11 @@ export const TypewriterEffect = ({
                 <motion.span
                   initial={{}}
                   key={`char-${index}`}
-                  className={cn(`dark:text-black text-black opacity-0 hidden`, word.className)}>
+                  className={cn(
+                    `dark:text-black text-black opacity-0 hidden`,
+                    word.className
+                  )}
+                >
                   {char}
                 </motion.span>
               ))}
@@ -60,9 +60,10 @@ export const TypewriterEffect = ({
   return (
     <div
       className={cn(
-        "text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center",
+        "text-sm xs:text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center",
         className
-      )}>
+      )}
+    >
       {renderWords()}
       <motion.span
         initial={{
@@ -77,9 +78,10 @@ export const TypewriterEffect = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-blue-500",
+          "inline-block rounded-sm w-[3px] h-3 xs:w-[4px] xs:h-4 md:h-6 lg:h-10 bg-blue-500",
           cursorClassName
-        )}></motion.span>
+        )}
+      ></motion.span>
     </div>
   );
 };
@@ -87,7 +89,7 @@ export const TypewriterEffect = ({
 export const TypewriterEffectSmooth = ({
   words,
   className,
-  cursorClassName
+  cursorClassName,
 }) => {
   // split text inside of words into array of characters
   const wordsArray = words.map((word) => {
@@ -101,11 +103,12 @@ export const TypewriterEffectSmooth = ({
       <div>
         {wordsArray.map((word, idx) => {
           return (
-            <div key={`word-${idx}`} className="inline-block p-1">
+            <div key={`word-${idx}`} className="inline-block px-0.5 xs:px-1">
               {word.text.map((char, index) => (
                 <span
                   key={`char-${index}`}
-                  className={cn(`dark:text-black text-black  `, word.className)}>
+                  className={cn(`dark:text-black text-black`, word.className)}
+                >
                   {char}
                 </span>
               ))}
@@ -117,9 +120,11 @@ export const TypewriterEffectSmooth = ({
   };
 
   return (
-    <div className={cn("flex space-x-1 my-6", className)}>
+    <div
+      className={cn("flex space-x-0.5 xs:space-x-1 my-4 xs:my-6", className)}
+    >
       <motion.div
-        className="overflow-hidden pb-2"
+        className="overflow-hidden overflow-x-hidden pb-1 xs:pb-2"
         initial={{
           width: "0%",
         }}
@@ -130,14 +135,16 @@ export const TypewriterEffectSmooth = ({
           duration: 2,
           ease: "linear",
           delay: 1,
-        }}>
+        }}
+      >
         <div
-          className="text-xs sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
+          className="text-xs xs:text-sm sm:text-base md:text-xl lg:text-3xl xl:text-5xl font-bold"
           style={{
             whiteSpace: "nowrap",
-          }}>
+          }}
+        >
           {renderWords()}{" "}
-        </div>{" "}
+        </div>
       </motion.div>
       <motion.span
         initial={{
@@ -148,14 +155,14 @@ export const TypewriterEffectSmooth = ({
         }}
         transition={{
           duration: 0.8,
-
           repeat: Infinity,
           repeatType: "reverse",
         }}
         className={cn(
-          "block rounded-sm w-[4px]  h-4 sm:h-6 xl:h-12 bg-blue-500",
+          "block rounded-sm w-[3px] h-3 xs:w-[4px] xs:h-4 sm:h-6 xl:h-12 bg-blue-500",
           cursorClassName
-        )}></motion.span>
+        )}
+      ></motion.span>
     </div>
   );
 };
