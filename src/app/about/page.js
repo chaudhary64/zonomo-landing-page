@@ -311,8 +311,8 @@ function About() {
         </section>
 
         {/* Stats Section with Enhanced Visual Appeal */}
-        <div className="flex flex-col items-center justify-center mt-16 sm:mt-20 md:mt-24 lg:mt-30 px-2 xs:px-4">
-          <p className="text-black dark:text-black text-xs xs:text-sm sm:text-base mb-2">
+        <section className="flex flex-col items-center justify-center mt-16 sm:mt-20 md:mt-24 lg:mt-30 px-2 xs:px-4">
+          <p className="text-black dark:text-black text-xs xs:text-sm sm:text-base text-center mb-2">
             Recognized for innovation and impact in service-tech
           </p>
           <TypewriterEffectSmooth words={words} />
@@ -326,7 +326,7 @@ function About() {
               Download
             </button>
           </div>
-        </div>
+        </section>
 
         {/* Team Section */}
         <section className="my-16 sm:my-20 md:my-24 lg:my-30">
