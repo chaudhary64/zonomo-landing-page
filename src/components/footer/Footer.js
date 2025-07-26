@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaTwitter,
   FaFacebookF,
@@ -40,9 +41,6 @@ export default function Footer() {
                   Privacy policy
                 </a>
               </li>
-              
-
-              
             </ul>
           </div>
         </div>
@@ -81,48 +79,51 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-2 font-inter">Social links</h3>
           <div className="flex space-x-3 mb-4">
-            <a
+            <Link
               href="#"
               className="text-gray-700 hover:text-blue-700 transition-colors"
             >
               <FaTwitter className="h-6 w-6" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-gray-700 hover:text-blue-700 transition-colors"
             >
               <FaFacebookF className="h-6 w-6" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-gray-700 hover:text-blue-700 transition-colors"
             >
               <FaInstagram className="h-6 w-6" />
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="https://www.linkedin.com/company/zonomo/"
               className="text-gray-700 hover:text-blue-700 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              passHref
             >
               <FaLinkedinIn className="h-6 w-6" />
-            </a>
+            </Link>
           </div>
           <div className="flex flex-col space-y-1.5">
-            <a href="#">
+            <Link href="#">
               <Image
                 src="/badges/ios-donwload.webp"
                 alt="App Store"
                 width={135}
                 height={30}
               />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <Image
                 src="/badges/android-download.webp"
                 alt="Google Play"
                 width={135}
                 height={30}
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
