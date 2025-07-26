@@ -220,22 +220,24 @@ function About() {
               >
                 {/* Mission Card with Glow Effect */}
                 <div className="absolute -inset-2 sm:-inset-4 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl"></div>
-                <div className="relative rounded-2xl sm:rounded-3xl p-4 xs:p-6 sm:p-8 border">
+                <div className="relative rounded-2xl sm:rounded-3xl p-4 xs:p-6 sm:p-8 border border-blue-100 backdrop-blur-sm shadow-xl">
                   <div className="flex items-center mb-4 sm:mb-6">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4">
-                      <svg
-                        className="w-5 h-5 sm:w-6 sm:h-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 10V3L4 14h7v7l9-11h-7z"
-                        />
-                      </svg>
+                      <div className="w-full h-full flex items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-r from-blue-400 to-teal-500 shadow-md">
+                        <svg
+                          className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 10V3L4 14h7v7l9-11h-7z"
+                          />
+                        </svg>
+                      </div>
                     </div>
                     <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 font-inter">
                       Our Mission
