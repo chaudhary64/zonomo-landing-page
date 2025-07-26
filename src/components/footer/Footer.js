@@ -27,19 +27,19 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline font-inter">
+                <span className="font-inter cursor-not-allowed select-none">
                   Investor Relations
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#" className="hover:underline font-inter">
+                <span className="font-inter cursor-not-allowed select-none">
                   Terms & conditions
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#" className="hover:underline font-inter">
+                <span className="font-inter cursor-not-allowed select-none">
                   Privacy policy
-                </a>
+                </span>
               </li>
             </ul>
           </div>
@@ -55,14 +55,14 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline font-inter">
+              <span className="font-inter cursor-not-allowed select-none">
                 Categories near you
-              </a>
+              </span>
             </li>
             <li>
-              <a href="#" className="hover:underline font-inter">
+              <span className="font-inter cursor-not-allowed select-none">
                 Contact us
-              </a>
+              </span>
             </li>
           </ul>
         </div>
@@ -70,33 +70,24 @@ export default function Footer() {
         {/* For Professionals */}
         <div>
           <h3 className="font-semibold mb-2 font-inter">For professionals</h3>
-          <a href="/features" className="hover:underline font-inter">
+          <span className="font-inter cursor-not-allowed select-none">
             Register as a professional
-          </a>
+          </span>
         </div>
 
         {/* Social Links */}
         <div>
           <h3 className="font-semibold mb-2 font-inter">Social links</h3>
           <div className="flex space-x-3 mb-4">
-            <Link
-              href="#"
-              className="text-gray-700 hover:text-blue-700 transition-colors"
-            >
+            <span className="cursor-not-allowed select-none">
               <FaTwitter className="h-6 w-6" />
-            </Link>
-            <Link
-              href="#"
-              className="text-gray-700 hover:text-blue-700 transition-colors"
-            >
+            </span>
+            <span className="cursor-not-allowed select-none">
               <FaFacebookF className="h-6 w-6" />
-            </Link>
-            <Link
-              href="#"
-              className="text-gray-700 hover:text-blue-700 transition-colors"
-            >
+            </span>
+            <span className="cursor-not-allowed select-none">
               <FaInstagram className="h-6 w-6" />
-            </Link>
+            </span>
             <Link
               href="https://www.linkedin.com/company/zonomo/"
               className="text-gray-700 hover:text-blue-700 transition-colors"
