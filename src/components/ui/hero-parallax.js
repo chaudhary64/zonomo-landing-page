@@ -56,8 +56,8 @@ export const ProductCard = ({ product, translate }) => {
 
 export const HeroParallax = ({ products }) => {
   const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
+  const secondRow = products.slice(5, 8);
+  const thirdRow = products.slice(8, 15);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
