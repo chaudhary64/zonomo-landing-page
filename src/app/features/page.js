@@ -391,7 +391,7 @@ const StickyNavigation = ({ features, activeSection }) => {
 // Features data
 const features = [
   {
-    title: "Middleman Model – Zero Ownership, Full Contro",
+    title: "Middleman Model – Zero Ownership, Full Control",
     subheading:
       "Directly connect with skilled professionals—no agencies, no middlemen. Full transparency and control for every service.",
     icon: <AIBrainIcon className="w-12 h-12 text-white" />,
