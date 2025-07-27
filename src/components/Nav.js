@@ -161,7 +161,7 @@ export default function Nav() {
                 </li>
                 <li role="none">
                   <Link
-                    href="/service-pro"
+                    href="#service-pro-main"
                     className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
                     onClick={() => setIsMenuOpen(false)}
                     role="menuitem"
