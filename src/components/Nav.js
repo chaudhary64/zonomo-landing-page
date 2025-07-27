@@ -10,7 +10,10 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="bg-white sticky top-0 z-50" aria-label="Main Navigation">
+      <nav
+        className="bg-white sticky top-0 z-50 py-1"
+        aria-label="Main Navigation"
+      >
         <div className="mx-auto px-4">
           <div className="py-1 hidden xl:grid grid-cols-3 items-center">
             {/* Left Side Links */}

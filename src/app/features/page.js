@@ -2,10 +2,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import {
   Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
   Title,
   Tooltip,
   Legend,
