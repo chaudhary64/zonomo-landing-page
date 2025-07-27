@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Coming__Soon from "@/components/modal/Coming__Soon";
 
@@ -14,7 +15,7 @@ export default function Nav() {
         className="bg-white sticky top-0 z-50 py-1"
         aria-label="Main Navigation"
       >
-        <div className="mx-auto px-4">
+        <div className="mx-auto px-4 relative">
           <div className="py-1 hidden xl:grid grid-cols-3 items-center">
             {/* Left Side Links */}
             <ul
@@ -132,79 +133,91 @@ export default function Nav() {
               </svg>
             </button>
           </div>
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <nav
-              className="xl:hidden border-t border-gray-200 py-4"
-              aria-label="Mobile Navigation"
-            >
-              <ul className="flex flex-col space-y-4" role="menu">
-                <li role="none">
-                  <Link
-                    href="/"
-                    className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
-                    onClick={() => setIsMenuOpen(false)}
-                    role="menuitem"
+          {/* Mobile Menu with AnimatePresence */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.nav
+                key="mobile-menu"
+                initial={{ opacity: 0, scale: 0.95, y: -30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: -30 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 28,
+                  duration: 0.38,
+                }}
+                className="xl:hidden border-t border-gray-200 py-4 absolute top-full left-0 z-50 bg-white w-full"
+                aria-label="Mobile Navigation"
+              >
+                <ul className="flex flex-col space-y-4" role="menu">
+                  <li role="none">
+                    <Link
+                      href="/"
+                      className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
+                      onClick={() => setIsMenuOpen(false)}
+                      role="menuitem"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li role="none">
+                    <Link
+                      href="/about"
+                      className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
+                      onClick={() => setIsMenuOpen(false)}
+                      role="menuitem"
+                    >
+                      About us
+                    </Link>
+                  </li>
+                  <li role="none">
+                    <Link
+                      href="#service-pro-main"
+                      className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
+                      onClick={() => setIsMenuOpen(false)}
+                      role="menuitem"
+                    >
+                      Services
+                    </Link>
+                  </li>
+                  <li role="none">
+                    <Link
+                      href="/features"
+                      className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
+                      onClick={() => setIsMenuOpen(false)}
+                      role="menuitem"
+                    >
+                      Features
+                    </Link>
+                  </li>
+                  <li role="none">
+                    <Link
+                      href="#faq"
+                      className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
+                      onClick={() => setIsMenuOpen(false)}
+                      role="menuitem"
+                    >
+                      FAQ
+                    </Link>
+                  </li>
+                  <li
+                    role="none"
+                    className="flex flex-col space-y-3 pt-4 border-t border-gray-200"
                   >
-                    Home
-                  </Link>
-                </li>
-                <li role="none">
-                  <Link
-                    href="/about"
-                    className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
-                    onClick={() => setIsMenuOpen(false)}
-                    role="menuitem"
-                  >
-                    About us
-                  </Link>
-                </li>
-                <li role="none">
-                  <Link
-                    href="#service-pro-main"
-                    className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
-                    onClick={() => setIsMenuOpen(false)}
-                    role="menuitem"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li role="none">
-                  <Link
-                    href="/features"
-                    className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
-                    onClick={() => setIsMenuOpen(false)}
-                    role="menuitem"
-                  >
-                    Features
-                  </Link>
-                </li>
-                <li role="none">
-                  <Link
-                    href="#faq"
-                    className="text-gray-800 hover:text-black font-bold py-2 px-3 rounded-xl hover:bg-violet-400 transition-all duration-200 font-SpaceGrotesk text-sm tracking-wide"
-                    onClick={() => setIsMenuOpen(false)}
-                    role="menuitem"
-                  >
-                    FAQ
-                  </Link>
-                </li>
-                <li
-                  role="none"
-                  className="flex flex-col space-y-3 pt-4 border-t border-gray-200"
-                >
-                  <button
-                    onClick={() => setAppear((prev) => !prev)}
-                    className="shrink-0 bg-black text-white font-bold px-4 py-1.5 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2rem] min-w-[4.5rem] flex items-center justify-center text-xs lg:text-sm font-SpaceGrotesk shadow tracking-wider cursor-pointer"
-                    style={{ letterSpacing: "0.04em" }}
-                    aria-label="Get Started"
-                  >
-                    Get Started
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          )}
+                    <button
+                      onClick={() => setAppear((prev) => !prev)}
+                      className="shrink-0 bg-black text-white font-bold px-4 py-1.5 rounded-full hover:bg-gray-800 transition-colors duration-200 text-center min-h-[2rem] min-w-[4.5rem] flex items-center justify-center text-xs lg:text-sm font-SpaceGrotesk shadow tracking-wider cursor-pointer"
+                      style={{ letterSpacing: "0.04em" }}
+                      aria-label="Get Started"
+                    >
+                      Get Started
+                    </button>
+                  </li>
+                </ul>
+              </motion.nav>
+            )}
+          </AnimatePresence>
         </div>
       </nav>
 
