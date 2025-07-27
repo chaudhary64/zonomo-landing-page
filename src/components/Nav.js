@@ -92,7 +92,7 @@ export default function Nav() {
           {/* Mobile Nav: unchanged except for aria-labels */}
           <div className="flex items-center justify-between h-14 xl:hidden">
             {/* Logo for mobile */}
-            <a
+            <Link
               href="/"
               className="flex items-center space-x-2"
               aria-label="Zonomo Home"
@@ -100,7 +100,7 @@ export default function Nav() {
               <span className="font-SpaceGrotesk font-extrabold text-base text-gray-900 tracking-wider uppercase">
                 Zonomo
               </span>
-            </a>
+            </Link>
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
