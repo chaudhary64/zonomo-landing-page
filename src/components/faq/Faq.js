@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+
 const faqData = [
   {
     id: 1,
@@ -84,31 +85,11 @@ const FAQ = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Generate FAQPage JSON-LD structured data
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqData.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <section
       id="faq"
       className="bg-gradient-to-br from-gray-50 to-white my-16 sm:my-24 lg:my-34"
-      aria-labelledby="faq-heading"
     >
-      {/* SEO: FAQPage structured data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -119,8 +100,8 @@ const FAQ = () => {
             <span className="mr-2 animate-bounce">❓</span>
             <span className="font-inter">Frequently Asked Questions</span>
           </div>
+
           <h2
-            id="faq-heading"
             className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in font-inter"
             style={{ animationDelay: "0.2s" }}
           >
@@ -129,6 +110,7 @@ const FAQ = () => {
               We&apos;ve Got Answers
             </span>
           </h2>
+
           <p
             className="mt-6 text-lg leading-relaxed text-gray-600 transform transition-all duration-500 opacity-0 translate-y-4 animate-fade-in font-inter"
             style={{ animationDelay: "0.3s" }}
@@ -138,9 +120,9 @@ const FAQ = () => {
           </p>
         </div>
 
-        {/* FAQ Items - semantic HTML */}
+        {/* FAQ Items */}
         <div className="max-w-4xl mx-auto">
-          <dl className="space-y-4">
+          <div className="space-y-4">
             {faqData.map((faq, index) => (
               <div
                 key={faq.id}
@@ -160,40 +142,33 @@ const FAQ = () => {
                   willChange: "transform, opacity",
                 }}
               >
-                <dt>
-                  <button
-                    onClick={() => toggleFAQ(faq.id)}
-                    className="w-full px-6 py-6 text-left rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 group cursor-pointer"
-                    aria-expanded={activeId === faq.id}
-                    aria-controls={`faq-answer-${faq.id}`}
-                    id={`faq-question-${faq.id}`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-blue-800 transition-colors duration-300 font-inter">
-                        {faq.question}
-                      </h3>
-                      <div
-                        className={`flex-shrink-0 p-2 rounded-full transition-all duration-400 ease-out ${
+                <button
+                  onClick={() => toggleFAQ(faq.id)}
+                  className="w-full px-6 py-6 text-left rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 group cursor-pointer"
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-blue-800 transition-colors duration-300 font-inter">
+                      {faq.question}
+                    </h3>
+                    <div
+                      className={`flex-shrink-0 p-2 rounded-full transition-all duration-400 ease-out ${
+                        activeId === faq.id
+                          ? "rotate-180 bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg scale-110"
+                          : "rotate-0 bg-gray-100 group-hover:bg-blue-100 group-hover:scale-105"
+                      }`}
+                    >
+                      <ChevronDown
+                        className={`w-5 h-5 transition-colors duration-300 ${
                           activeId === faq.id
-                            ? "rotate-180 bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg scale-110"
-                            : "rotate-0 bg-gray-100 group-hover:bg-blue-100 group-hover:scale-105"
+                            ? "text-white"
+                            : "text-gray-600 group-hover:text-blue-600"
                         }`}
-                      >
-                        <ChevronDown
-                          className={`w-5 h-5 transition-colors duration-300 ${
-                            activeId === faq.id
-                              ? "text-white"
-                              : "text-gray-600 group-hover:text-blue-600"
-                          }`}
-                        />
-                      </div>
+                      />
                     </div>
-                  </button>
-                </dt>
-                <dd
-                  id={`faq-answer-${faq.id}`}
-                  role="region"
-                  aria-labelledby={`faq-question-${faq.id}`}
+                  </div>
+                </button>
+
+                <div
                   className={`overflow-hidden transition-all duration-400 ease-out ${
                     activeId === faq.id
                       ? "max-h-96 opacity-100 transform translate-y-0"
@@ -211,10 +186,10 @@ const FAQ = () => {
                       </p>
                     </div>
                   </div>
-                </dd>
+                </div>
               </div>
             ))}
-          </dl>
+          </div>
         </div>
       </div>
 
@@ -320,4 +295,5 @@ const FAQ = () => {
     </section>
   );
 };
+
 export default FAQ;
