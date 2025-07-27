@@ -29,27 +29,29 @@ export const ProductCard = ({ product, translate }) => {
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0"
+      className="group/product h-50 w-60 sm:h-80 sm:w-[22rem] md:h-96 md:w-[30rem] relative shrink-0 overflow-hidden"
     >
       <Link
         href={product.link || "#"}
-        className="block group-hover/product:shadow-2xl "
+        className="block group-hover/product:shadow-2xl h-full w-full"
       >
+        <div className="flex flex-col justify-end h-full w-full relative z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
+          <h2 className="text-white text-lg sm:text-2xl font-bold mb-1">
+            {product.title}
+          </h2>
+          <p className="text-white text-xs sm:text-sm font-semibold">
+            {product.description}
+          </p>
+        </div>
         <Image
           src={product.thumbnail}
           height={600}
           width={600}
-          className="cursor-pointer object-cover object-left-top absolute h-full w-full inset-0 group-hover/product:grayscale-0"
+          className="cursor-pointer object-cover object-left-top absolute h-full w-full inset-0 group-hover/product:grayscale-0 z-0"
           alt={product.title}
           unoptimized
         />
       </Link>
-      <h2 className="absolute bottom-8 left-4 text-white text-2xl font-bold">
-        {product.title}
-      </h2>
-      <p className="text-white text-sm bottom-2 left-4 absolute font-semibold">
-        {product.description}
-      </p>
     </motion.div>
   );
 };
@@ -105,7 +107,7 @@ export const HeroParallax = ({ products }) => {
           opacity,
         }}
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-5 mb-10">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-5 mb-5 md:mb-10">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -114,7 +116,7 @@ export const HeroParallax = ({ products }) => {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-10 space-x-5">
+        <motion.div className="flex flex-row mb-5 md:mb-10 space-x-5">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
