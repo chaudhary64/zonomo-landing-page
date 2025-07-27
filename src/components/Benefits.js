@@ -149,9 +149,10 @@ export default function ServiceProvidersSection() {
     : clientData.clientBenefits;
 
   return (
-    <div
+    <section
       id="service-providers-section"
       className="bg-black text-white px-3 py-14 md:py-20 lg:py-40 flex items-start sm:items-center relative overflow-hidden"
+      aria-labelledby="benefits-section-heading"
     >
       <div className="w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto">
         {/* Toggle Indicator */}
@@ -182,9 +183,10 @@ export default function ServiceProvidersSection() {
         </div>
 
         {/* Animated Section Heading */}
-        <div className="text-center mb-10 sm:mb-16 px-1">
+        <header className="text-center mb-10 sm:mb-16 px-1">
           <AnimatePresence mode="wait" initial={false}>
             <motion.h2
+              id="benefits-section-heading"
               key={activeData.heading}
               className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-SpaceGrotesk"
               initial={{ opacity: 0, y: 20 }}
@@ -207,11 +209,11 @@ export default function ServiceProvidersSection() {
               {activeData.description}
             </motion.p>
           </AnimatePresence>
-        </div>
+        </header>
 
         {/* Animated Benefits List */}
         <AnimatePresence mode="wait" initial={false}>
-          <motion.div
+          <motion.ul
             key={showProvider ? "provider" : "client"}
             className="space-y-6 sm:space-y-8 max-w-full sm:max-w-2xl mx-auto"
             variants={listVariants}
@@ -219,13 +221,14 @@ export default function ServiceProvidersSection() {
             animate="animate"
             exit="exit"
             transition={{ staggerChildren: 0.2, duration: 0.5 }}
+            aria-label={activeData.heading}
           >
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
-                <motion.div
+                <motion.li
                   key={index}
-                  className="relative z-0"
+                  className="relative z-0 list-none"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -243,7 +246,7 @@ export default function ServiceProvidersSection() {
                   )}
 
                   {/* Main Card */}
-                  <div className="relative bg-gray-900/50 backdrop-blur-sm p-4 xs:p-6 sm:p-8 rounded-2xl border border-gray-700/50">
+                  <article className="relative bg-gray-900/50 backdrop-blur-sm p-4 xs:p-6 sm:p-8 rounded-2xl border border-gray-700/50">
                     <div className="flex flex-col xs:flex-row items-start gap-4 xs:gap-6">
                       {/* Icon Container */}
                       <div className="relative shrink-0 mb-2 xs:mb-0">
@@ -251,7 +254,10 @@ export default function ServiceProvidersSection() {
                           className={`w-12 h-12 xs:w-16 xs:h-16 rounded-xl bg-gradient-to-br ${benefit.color} p-0.5`}
                         >
                           <div className="w-full h-full bg-gray-900 rounded-xl flex items-center justify-center">
-                            <Icon className="w-7 h-7 xs:w-8 xs:h-8 text-white" />
+                            <Icon
+                              className="w-7 h-7 xs:w-8 xs:h-8 text-white"
+                              aria-hidden="true"
+                            />
                           </div>
                         </div>
                       </div>
@@ -266,13 +272,13 @@ export default function ServiceProvidersSection() {
                         </p>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </article>
+                </motion.li>
               );
             })}
-          </motion.div>
+          </motion.ul>
         </AnimatePresence>
       </div>
-    </div>
+    </section>
   );
 }
