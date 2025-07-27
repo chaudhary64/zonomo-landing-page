@@ -72,6 +72,7 @@ const services = [
     description: "Expert technicians for home appliances",
     icon: "🔧",
     thumbnail: "/images/ac-repairs.jpg",
+    link: "/services/appliance-repair-services",
   },
   {
     id: 10,

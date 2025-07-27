@@ -1273,6 +1273,7 @@ const petServicesData = {
   benefitsSectionDescription: "We treat your pets like our own",
 };
 
+// FACIAL MAKEUP DATA
 const facialMakeupData = {
   // Services
   services: [
@@ -1485,6 +1486,7 @@ const facialMakeupData = {
     "We enhance your natural beauty with professional techniques",
 };
 
+// CARE-SERVICE CONTENT
 const careServicesData = {
   // Services
   services: [
@@ -1702,6 +1704,7 @@ const careServicesData = {
     "Dedicated to enhancing the lives of those who need it most",
 };
 
+// CARPENTRY SERVICES
 const carpentryServicesData = {
   // Services
   services: [
@@ -1915,6 +1918,199 @@ const carpentryServicesData = {
     "Where traditional techniques meet modern design sensibilities",
 };
 
+const applianceRepairServicesData = {
+  // Services
+  services: [
+    {
+      icon: <Settings className="w-6 h-6" />,
+      title: "Washing Machine Repair",
+      description:
+        "Expert repair for all brands and types of washing machines, including drum, motor, and drainage issues.",
+      benefits: ["Quick diagnosis", "Genuine spare parts", "Doorstep service"],
+      price: "₹499 - ₹2499",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "Refrigerator Repair",
+      description:
+        "Compressor, cooling, and gas refill solutions for single/double door and side-by-side refrigerators.",
+      benefits: ["Same-day repair", "Cooling restoration", "Warranty on parts"],
+      price: "₹599 - ₹2999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Battery className="w-6 h-6" />,
+      title: "Microwave Oven Repair",
+      description:
+        "Fixing heating, turntable, and display issues for all types of microwave ovens.",
+      benefits: ["Original spares", "Quick turnaround", "Safety checks"],
+      price: "₹399 - ₹1499",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Water Purifier Service",
+      description:
+        "RO/UV/UF purifier installation, filter change, and complete servicing.",
+      benefits: ["Genuine filters", "TDS check", "Leak-proof installation"],
+      price: "₹299 - ₹1299",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "Geyser Repair",
+      description:
+        "Thermostat, heating element, and leakage repairs for instant and storage geysers.",
+      benefits: ["Fast repairs", "All brands covered", "Safety assured"],
+      price: "₹299 - ₹1499",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+    {
+      icon: <Monitor className="w-6 h-6" />,
+      title: "TV Repair",
+      description:
+        "Screen, sound, and power issues for LED, LCD, and Smart TVs.",
+      benefits: ["Panel replacement", "Home service", "Warranty support"],
+      price: "₹499 - ₹3999",
+      benefitIcon: <CheckCircle className="w-4 h-4 text-green-500" />,
+    },
+  ],
+
+  // Features
+  features: [
+    { icon: <BadgeCheck className="w-5 h-5" />, text: "Certified Technicians" },
+    { icon: <Clock className="w-5 h-5" />, text: "Same-Day Service" },
+    { icon: <Shield className="w-5 h-5" />, text: "Warranty on Repairs" },
+    { icon: <ThumbsUp className="w-5 h-5" />, text: "Transparent Pricing" },
+  ],
+
+  // Benefits
+  benefits: [
+    {
+      title: "Doorstep Convenience",
+      description:
+        "Get your appliances fixed at home by background-checked professionals.",
+      icon: <Home className="w-8 h-8" />,
+    },
+    {
+      title: "Genuine Spare Parts",
+      description: "We use only original manufacturer parts for all repairs.",
+      icon: <Settings className="w-8 h-8" />,
+    },
+    {
+      title: "Quick Turnaround",
+      description: "Most repairs completed within a few hours of booking.",
+      icon: <Zap className="w-8 h-8" />,
+    },
+    {
+      title: "Service Guarantee",
+      description:
+        "All repairs are covered by a service warranty for peace of mind.",
+      icon: <Shield className="w-8 h-8" />,
+    },
+  ],
+
+  // Hero Section
+  heroImage: "/images/service.jpg",
+  heroTitle: (
+    <>
+      Reliable <span className="text-blue-500">Appliance Repair</span> Services
+    </>
+  ),
+  heroSubtitle:
+    "Expert solutions for washing machines, refrigerators, microwaves, geysers, and more.",
+
+  ctaButtons: [
+    {
+      text: "Book Now",
+      icon: <Calendar className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg",
+      },
+    },
+    {
+      text: "Get Estimate",
+      icon: <DollarSign className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm",
+      },
+    },
+  ],
+
+  // Pricing Section
+  pricingTitle: "Transparent Appliance Repair Pricing",
+  pricingSubtitle: "No hidden charges – clear estimates before work begins",
+  pricingRange: "₹299 – ₹3999*",
+  pricingNote: "*Final pricing depends on appliance type and issue",
+
+  pricingIncluded: [
+    {
+      icon: <CheckCircle className="w-5 h-5 text-green-700" />,
+      text: "Certified technicians",
+    },
+    { text: "Genuine spare parts" },
+    { text: "Service warranty" },
+  ],
+
+  pricingGuarantee: [
+    {
+      icon: <Shield className="w-5 h-5 text-blue-700" />,
+      text: "Warranty on repairs",
+    },
+    { text: "No fix, no fee policy" },
+    { text: "Transparent billing" },
+  ],
+
+  pricingButton: (
+    <button className="bg-blue-600 text-white hover:bg-blue-700 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 inline-flex items-center gap-2">
+      <Settings className="w-5 h-5" />
+      Book Appliance Repair
+    </button>
+  ),
+
+  // CTA Section
+  ctaSectionTitle: "Need Fast Appliance Repairs?",
+  ctaSectionSubtitle:
+    "Book a certified technician for hassle-free service at your doorstep.",
+
+  ctaSectionButtons: [
+    {
+      text: "Download App",
+      icon: <Download className="w-5 h-5" />,
+      props: {
+        className:
+          "cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
+    {
+      text: "Call Now",
+      icon: <Phone className="w-5 h-5" />,
+      props: {
+        className:
+          "bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 flex items-center justify-center gap-2",
+      },
+    },
+  ],
+
+  ctaSectionBadges: [
+    { icon: <BadgeCheck className="w-4 h-4" />, text: "Certified Technicians" },
+    { icon: <Clock className="w-4 h-4" />, text: "Same-Day Service" },
+    { icon: <Star className="w-4 h-4" />, text: "Top Rated" },
+    { icon: <CheckCircle className="w-4 h-4" />, text: "Warranty Backed" },
+  ],
+
+  servicesSectionTitle: "Our Appliance Repair Services",
+  servicesSectionDescription:
+    "Washing machine, refrigerator, microwave, geyser, TV and more – all brands covered",
+
+  benefitsSectionTitle: "Why Choose Our Appliance Repairs?",
+  benefitsSectionDescription:
+    "Fast, reliable, and affordable solutions for all your home appliances",
+};
+
 const data = (id) => {
   switch (id) {
     case "electrician-services":
@@ -1935,6 +2131,8 @@ const data = (id) => {
       return careServicesData;
     case "carpentory-services":
       return carpentryServicesData;
+    case "appliance-repair-services":
+      return applianceRepairServicesData;
     default:
       return careServicesData; // Default to electrician services if no match
   }
