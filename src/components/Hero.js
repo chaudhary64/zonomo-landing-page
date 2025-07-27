@@ -27,7 +27,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative bg-[#080505] min-h-[calc(100vh-3rem)]"
+      className="relative bg-[#080505] min-h-[85vh] lg:min-h-[calc(100vh-3rem)]"
       aria-label="Hero section for Urban Services"
     >
       {/* Desktop Image */}
