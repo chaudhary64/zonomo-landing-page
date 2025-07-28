@@ -150,7 +150,7 @@ export default function Nav() {
                 className="xl:hidden border-t border-gray-200 py-4 absolute top-full left-0 z-50 bg-white w-full"
                 aria-label="Mobile Navigation"
               >
-                <ul className="flex flex-col space-y-4" role="menu">
+                <ul className="flex flex-col space-y-4 text-center" role="menu">
                   <li role="none">
                     <Link
                       href="/"
